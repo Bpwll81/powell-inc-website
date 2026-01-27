@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Protocol | Sovereign Finance</title>
+    <style>
+        /* --- CORE STYLES --- */
+        :root {
+            --gold: #d4af37;
+            --slate: #2c3e50;
+            --bg: #fdfdfd;
+            --text: #333;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* LOGO: Uses ../ to go up one folder */
+        .logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: var(--gold); }
+
+        /* --- HERO SECTION (CRYPTO/TECH) --- */
+        .crypto-header {
+            /* IMAGE: Blockchain / Data Nodes / Dark Tech */
+            background: linear-gradient(rgba(10, 20, 30, 0.9), rgba(10, 20, 30, 0.8)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .crypto-header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin-top: 15px;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .xdc-badge { 
+            display: inline-block; 
+            margin-top: 40px; 
+            border: 1px solid #fff; 
+            padding: 10px 25px; 
+            font-family: monospace; 
+            font-size: 0.9rem; 
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            letter-spacing: 2px;
+        }
+
+        /* --- CONTENT SECTION --- */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        /* --- GRID CARDS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--slate);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+
+        .card h3 {
+            color: var(--slate);
+            margin-top: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* --- BUTTON --- */
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            padding: 18px 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 80px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .btn-gold:hover { background: #c5a028; }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            padding: 40px;
+            text-align: center;
+            color: #888;
+            font-size: 0.8rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="../logo.jpg" alt="Unity Logo" class="logo-img">
+        
+        <a href="../index.html" class="back-link">← Return to Lobby</a>
+    </nav>
+
+    <div class="crypto-header">
+        <h1>Unity Protocol</h1>
+        <span class="subtitle">The Sovereign Settlement Layer</span>
+        
+        <div class="xdc-badge">POWERED BY XDC NETWORK</div>
+    </div>
+
+    <div class="container">
+        <p class="description">
+            Infrastructure built for the future of work. Unity combines the speed of the <strong>Blockchain</strong> 
+            with the stability of <strong>Audited Gold Reserves</strong>.
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Mutual Staking</h3>
+                <p>Shared liquidity pools where employer and employee incentives are perfectly aligned. When the company wins, the vault grows.</p>
+            </div>
+            <div class="card">
+                <h3>Daily Settlement</h3>
+                <p>Instant payroll off-ramps. Move money from shift-to-wallet in seconds using XDC's near-zero gas fees.</p>
+            </div>
+            <div class="card">
+                <h3>Legacy Vault</h3>
+                <p>A 7-Year retention lock designed to build generational wealth through asset accumulation and compound growth.</p>
+            </div>
+        </div>
+
+        <a href="vault.html" class="btn-gold">View The 7-Year Promise</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Powell Incorporated | Unity Protocol Division
+    </footer>
+
+</body>
+</html>

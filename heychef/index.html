@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hey Chef | Kitchen Intelligence</title>
+    <style>
+        :root { --accent: #d4af37; --slate: #2c3e50; --bg: #ffffff; }
+        body { margin: 0; font-family: 'Helvetica Neue', sans-serif; background: var(--bg); color: #333; }
+        
+        nav { padding: 20px 40px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
+        .back-link:hover { color: var(--accent); }
+
+        /* HERO: High Energy Kitchen */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; }
+        .hero p { font-size: 1.5rem; font-weight: 300; }
+
+        /* PAIN POINT */
+        .problem { display: flex; max-width: 1000px; margin: 80px auto; gap: 50px; align-items: center; padding: 0 20px; }
+        .problem img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .problem-text h2 { color: var(--slate); font-size: 2.5rem; margin-top: 0; }
+        
+        /* FEATURES */
+        .features { background: #f9f9f9; padding: 80px 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 40px auto; }
+        .card { background: #fff; padding: 30px; border: 1px solid #eee; }
+        .card h4 { color: var(--accent); text-transform: uppercase; }
+
+        @media (max-width: 768px) { .problem, .grid { flex-direction: column; display: block; } .grid { display: grid; grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight:bold; color:var(--slate);">POWELL INC.</div>
+        <a href="../index.html" class="back-link">← Return to Lobby</a>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <h1>Hey Chef</h1>
+            <p>Keep your eyes on the pass, not the paperwork.</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <div style="flex: 1;">
+            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800" alt="Stressed Office">
+        </div>
+        <div style="flex: 1;" class="problem-text">
+            <h2>The Office Trap</h2>
+            <p>Every hour you spend matching invoices to delivery slips is an hour you aren't leading your team.</p>
+            <p><strong>Hey Chef</strong> automates the boring stuff so you can get back to the food.</p>
+        </div>
+    </div>
+
+    <div class="features">
+        <h2 style="color: var(--slate);">The Shelf-to-Order Engine</h2>
+        <div class="grid">
+            <div class="card"><h4>Predictive Pars</h4><p>AI that predicts your prep list.</p></div>
+            <div class="card"><h4>Direct Ordering</h4><p>One-click vendor connection.</p></div>
+            <div class="card"><h4>KPI Dashboard</h4><p>Live food cost analysis.</p></div>
+            <div class="card"><h4>Voice Command</h4><p>"Order 3 cases of Lemons."</p></div>
+        </div>
+    </div>
+
+</body>
+</html>

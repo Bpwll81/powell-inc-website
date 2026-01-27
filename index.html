@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powell Incorporated</title>
+    <style>
+        /* CORE RESET */
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #000; }
+        
+        /* NAVIGATION */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 25px 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* TEXT BRANDING (No Image) */
+        .brand-text {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: 2px solid #2c3e50;
+            padding: 8px 12px;
+        }
+
+        .links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .links a:hover { color: #d4af37; }
+
+        /* SPLIT SCREEN CONTAINER */
+        .split-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* TOP HALF: COMMUNITY (Warm) */
+        .top-half {
+            flex: 1;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding-top: 80px; /* Space for Nav */
+        }
+
+        /* BOTTOM HALF: INFRASTRUCTURE (Business) */
+        .bottom-half {
+            flex: 1;
+            background: linear-gradient(rgba(10, 20, 30, 0.6), rgba(10, 20, 30, 0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            border-top: 5px solid #d4af37;
+        }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .slogan { font-size: 2rem; font-style: italic; margin-top: 15px; font-family: 'Georgia', serif; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+        
+        h2 { font-size: 2.2rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; }
+        p { font-size: 1.1rem; margin-top: 20px; max-width: 600px; line-height: 1.6; color: #ddd; }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .slogan { font-size: 1.5rem; }
+            nav { flex-direction: column; gap: 15px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="brand-text">Powell Inc.</a>
+        
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="unity/index.html">Unity Protocol</a>
+            <a href="heychef/index.html">Hey Chef</a>
+        </div>
+    </nav>
+
+    <div class="split-container">
+        <div class="top-half">
+            <div>
+                <h1>Powell Incorporated</h1>
+                <div class="slogan">"Innovation Sealed with a Handshake."</div>
+            </div>
+        </div>
+
+        <div class="bottom-half">
+            <div>
+                <h2>Strategic Growth</h2>
+                <p>Building the infrastructure that powers the industries of tomorrow. Stability, Legacy, and Vision.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
