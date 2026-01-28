@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Powell Incorporated</title>
+    <style>
+        body { font-family: 'Helvetica Neue', sans-serif; padding: 40px; max-width: 600px; margin: 0 auto; line-height: 1.6; color: #333; }
+        .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #2c3e50; border: 2px solid #2c3e50; padding: 5px 10px; text-decoration: none; display: inline-block; margin-bottom: 40px; font-size: 0.9rem; }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #2c3e50; }
+        
+        .contact-card { background: #f9f9f9; padding: 25px; border-left: 4px solid #d4af37; margin-bottom: 25px; }
+        .contact-card h3 { margin: 0 0 5px 0; font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+        .email-link { color: #2c3e50; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
+        
+        form { margin-top: 50px; border-top: 1px solid #eee; padding-top: 40px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; background: #fff; box-sizing: border-box; }
+        .btn { background: #2c3e50; color: #fff; padding: 15px 40px; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="logo-text">Powell Inc.</a>
+
+    <h1>Contact Us</h1>
+    
+    <div class="contact-card">
+        <h3>Corporate, Resort & Hey Chef</h3>
+        <a href="mailto:bpwll@powellincorporated.com" class="email-link">bpwll@powellincorporated.com</a>
+    </div>
+
+    <div class="contact-card" style="border-color: #2c3e50;">
+        <h3>Unity Protocol & Financial</h3>
+        <a href="mailto:unity@powellincorporated.org" class="email-link">unity@powellincorporated.org</a>
+    </div>
+
+    <form name="contact" method="POST" data-netlify="true">
+        <label>Name</label>
+        <input type="text" name="name" required>
+        
+        <label>Email</label>
+        <input type="email" name="email" required>
+        
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
+        
+        <button type="submit" class="btn">Send Inquiry</button>
+    </form>
+
+</body>
+</html>

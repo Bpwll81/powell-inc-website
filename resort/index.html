@@ -32,17 +32,21 @@
         .section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
         .section-title { font-size: 2.5rem; color: #2c3e50; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; border-left: 5px solid #d4af37; padding-left: 20px; }
         
-        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         .text-content p { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px; }
         
-        .rink-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 30px; text-align: center; }
-        .rink-name { background: #2c3e50; color: #fff; padding: 15px 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
-        .rink-main { background: #d4af37; color: #000; transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10; }
+        /* RINK LAYOUT */
+        .rink-diagram { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 10px; }
+        .rink-box { background: #2c3e50; color: #fff; padding: 20px 10px; flex: 1; text-align: center; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-radius: 4px; min-width: 100px; }
+        .rink-main { background: #d4af37; color: #000; transform: scale(1.15); box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 10; font-size: 0.9rem; border: 2px solid #fff; }
 
         /* FEATURE BOXES */
-        .feature-box { background: #f9f9f9; padding: 40px; margin-top: 40px; border-radius: 4px; }
-        .feature-box h3 { margin-top: 0; color: #2c3e50; }
+        .feature-box { background: #f9f9f9; padding: 40px; margin-top: 30px; border-radius: 4px; border-left: 4px solid #2c3e50; }
+        .feature-box h3 { margin-top: 0; color: #2c3e50; text-transform: uppercase; letter-spacing: 1px; }
         .highlight { color: #d4af37; font-weight: bold; }
+
+        /* IMAGE STYLING */
+        .img-container img { width: 100%; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
         /* FOOTER */
         footer { text-align: center; padding: 60px 0; background: #111; color: #666; font-size: 0.8rem; margin-top: 100px; }
@@ -58,80 +62,92 @@
     <div class="hero">
         <div>
             <h1>The Powell Campus</h1>
-            <p>A multi-level athletic ecosystem designed for the athlete, the family, and the community. Where the next generation plays, and the future of hospitality operates.</p>
+            <p>A multi-level athletic ecosystem. Where the next generation plays, and the future of hospitality operates.</p>
         </div>
     </div>
 
     <div class="section">
-        <h2 class="section-title">The Subterranean Ice Level</h2>
-        <div class="grid-layout">
-            <div class="text-content">
-                <p>
-                    Accessed via escalators from the main concourse, the ice level is designed as five distinct "stadiums." 
-                    This separation creates an intense, professional atmosphere for every game.
-                </p>
-                <p>
-                    <strong>The Professional Standard:</strong> Locker rooms mimic NHL facilities—lounge areas, equipment managers, and private ice access. 
-                    No more changing in hallways. This is professional respect for youth athletes.
-                </p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=800" style="width: 100%; border-radius: 4px; filter: grayscale(100%);">
-            </div>
+        <h2 class="section-title">Level B1: The Ice Stadiums</h2>
+        <div class="text-content">
+            <p>
+                <strong>The Subterranean Level.</strong> Accessed via escalators from the main concourse, the ice level is situated below ground to maintain perfect thermal regulation. 
+                It features 5 distinct rinks, separated like individual stadiums to give every game a professional atmosphere.
+            </p>
+            <p>
+                <strong>The NHL Standard:</strong> Every team receives private access to locker rooms modeled after professional facilities—featuring player lounges, equipment managers, and direct ice access.
+            </p>
         </div>
 
-        <div class="rink-list">
-            <div class="rink-name">Lafayette</div>
-            <div class="rink-name">Staten Island</div>
-            <div class="rink-name rink-main">Denver (Main)</div>
-            <div class="rink-name">Lancaster</div>
-            <div class="rink-name">Birmingham</div>
+        <div class="rink-diagram">
+            <div class="rink-box">Lafayette</div>
+            <div class="rink-box">Staten Island</div>
+            <div class="rink-box rink-main">Denver<br><span style="font-size:0.7rem; opacity:0.8;">(Varsity/Jrs)</span></div>
+            <div class="rink-box">Lancaster</div>
+            <div class="rink-box">Birmingham</div>
         </div>
     </div>
 
     <div class="section" style="background: #fafafa;">
-        <h2 class="section-title">The Main Concourse</h2>
+        <h2 class="section-title">Level 1: The Main Concourse</h2>
         <div class="grid-layout">
-            <div>
-                <img src="https://images.unsplash.com/photo-1577416412292-7661e3716d8e?q=80&w=800" style="width: 100%; border-radius: 4px;">
-            </div>
             <div class="text-content">
                 <p>
-                    While the hockey happens below, the main level is a hub of activity. 
-                    Featuring two basketball courts, an indoor soccer/flag football field, and a swimming pool with a high dive.
+                    While the hockey happens below, the main level is a massive, open-air hub of activity. 
+                    It houses two full basketball courts, an indoor soccer/flag football field, and a swimming pool with a high dive.
                 </p>
+                
                 <div class="feature-box">
-                    <h3>The Sibling Experience</h3>
-                    <p>We didn't forget the little brother or sister. Built directly into the walls and ceilings of the concourse is a <span class="highlight">Massive Tube Maze</span>. 
-                    It is an adventure playground that weaves through the architecture itself.</p>
+                    <h3>The Tube Maze</h3>
+                    <p>
+                        We didn't forget the siblings. Built directly into the <strong>walls and ceilings</strong> of the architecture is a massive, structural tube maze. 
+                        Kids can explore the building from above while parents watch the game.
+                    </p>
                 </div>
+            </div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1577416412292-7661e3716d8e?q=80&w=800" alt="Concourse">
             </div>
         </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">The Culinary Incubator</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 40px;">
-            We don't serve "concession stand" food. We built a mercantile that converts into a diverse Food Court.
-            This is a launchpad for young chefs—a place for those with a passion for food to get a foot in the door.
-        </p>
-        <p>
-            <strong>Powered by Hey Chef:</strong> Every kitchen in the incubator runs on our proprietary OS, allowing these young entrepreneurs to focus on the craft, not the paperwork.
-        </p>
+        <div class="grid-layout">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" alt="Food Hall">
+            </div>
+            <div class="text-content">
+                <p>
+                    <strong>Not a Concession Stand.</strong> We built a mercantile that converts into a diverse Food Court.
+                    This is a launchpad for young chefs—giving those with a passion for food a foot in the door.
+                </p>
+                <div class="feature-box" style="border-color: #d4af37;">
+                    <h3>Powered by Hey Chef</h3>
+                    <p>
+                        Every kitchen in the incubator runs on our proprietary OS. Young entrepreneurs focus on their craft, 
+                        while the software handles the inventory, margins, and operations.
+                    </p>
+                </div>
+                <p style="margin-top: 20px; font-weight: bold; color: #2c3e50;">
+                    <span style="font-size: 1.5rem;">🐾</span> Massive Dog-Friendly Foyer & Patio
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="section" style="border-top: 1px solid #eee;">
         <h2 class="section-title">Logistics & Training</h2>
         <div class="grid-layout">
             <div class="text-content">
+                <h3>The Bus Terminal</h3>
                 <p>
-                    <strong>The Bus Terminal:</strong> Located below the main entrance, this secure pick-up/drop-off zone connects directly to the Drylands Training Facility (with a dedicated Goalie Zone) and the Pro Shop.
+                    Located below the main entrance, the secure "Airport Style" drop-off zone connects directly to the 
+                    <strong>Drylands Training Facility</strong> (with a dedicated Goalie Zone) and the Pro Shop.
                 </p>
+                <h3>The Underground Link</h3>
                 <p>
-                    <strong>The Underground Link:</strong> Teams travel between The Hotel and The Campus via private terrain roads. No traffic, no weather, just focus.
-                </p>
-                <p style="margin-top: 20px; font-weight: bold; color: #2c3e50;">
-                    <span style="font-size: 1.5rem;">🐾</span> Dog Friendly Zones Everywhere.
+                    The Campus connects to The Hotel via a series of private, terrain-level roads. 
+                    Teams travel securely and privately. No traffic. No weather. Just focus.
                 </p>
             </div>
         </div>
