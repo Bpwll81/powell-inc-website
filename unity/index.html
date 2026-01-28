@@ -3,151 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powell Incorporated</title>
+    <title>Unity Protocol | Intrinsic Value</title>
     <style>
-        /* CORE RESET */
-        body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; overflow-x: hidden; }
+        /* CORE VARIABLES */
+        :root { --gold: #d4af37; --slate: #0f172a; --bg: #000; --text: #cbd5e1; }
         
-        /* ANIMATIONS */
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
         
-        .animate-on-scroll { opacity: 0; transition: opacity 1s ease-out, transform 1s ease-out; transform: translateY(30px); }
-        .visible { opacity: 1; transform: translateY(0); }
-
-        /* NAVIGATION */
-        nav { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 25px 40px; border-bottom: 1px solid rgba(0,0,0,0.05); 
-            position: sticky; top: 0; background: rgba(255,255,255,0.98); z-index: 1000; 
-        }
-        .brand-text { font-size: 1.2rem; font-weight: 900; color: #111; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; border: 2px solid #111; padding: 8px 12px; }
-        .links a { margin-left: 25px; text-decoration: none; color: #666; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
-        .links a:hover { color: #d4af37; }
+        /* TICKER WIDGET */
+        .ticker-wrap { width: 100%; background: #000; overflow: hidden; height: 40px; display: flex; align-items: center; border-bottom: 1px solid #333; }
+        
+        /* NAV */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
+        .logo-img { height: 40px; width: auto; }
+        .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; transition: 0.3s; }
+        .back-link:hover { color: var(--gold); }
 
         /* HERO SECTION */
-        .hero-container { height: 70vh; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
+        .crypto-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000');
             background-size: cover;
             background-position: center;
-            animation: slowZoom 25s infinite alternate linear;
-            z-index: 1;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 3px solid var(--gold);
         }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
-        .hero h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 8px; margin: 0; font-weight: 300; text-shadow: 0 4px 10px rgba(0,0,0,0.5); animation: fadeUp 1.5s ease-out forwards; }
-        .slogan { font-size: 1.5rem; font-style: italic; margin-top: 20px; font-family: 'Georgia', serif; color: #ddd; animation: fadeUp 1.5s ease-out 0.5s forwards; opacity: 0; }
+        .crypto-header h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 6px; font-weight: 300; }
+        .xdc-badge { display: inline-block; margin-top: 25px; border: 1px solid var(--gold); padding: 8px 20px; font-family: monospace; font-size: 0.9rem; color: var(--gold); background: rgba(0,0,0,0.5); letter-spacing: 2px; }
 
-        /* THE FOUNDATION (Dark Section) */
-        .manifesto-section { background: #111; color: #eee; padding: 100px 40px; position: relative; }
-        
-        .split-layout { display: flex; max-width: 1200px; margin: 0 auto; gap: 80px; align-items: center; }
-        .split-text { flex: 1; }
-        .split-image { flex: 1; height: 500px; overflow: hidden; position: relative; border-left: 1px solid #333; }
-        
-        .split-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.2); opacity: 0.7; transition: 1s; }
-        .split-image:hover img { opacity: 1; filter: grayscale(0%); transform: scale(1.05); }
+        /* PHILOSOPHY SECTION */
+        .philosophy-container { max-width: 900px; margin: 80px auto; padding: 0 20px; text-align: center; }
+        .section-title { font-size: 2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; }
+        .philosophy-text { font-size: 1.2rem; line-height: 1.8; color: #94a3b8; margin-bottom: 40px; }
+        .highlight { color: #fff; border-bottom: 1px solid var(--gold); }
 
-        .label { color: #d4af37; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-bottom: 20px; display: block; }
-        h2 { font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 30px 0; line-height: 1.1; color: #fff; }
-        p { font-size: 1.1rem; line-height: 1.8; color: #888; margin-bottom: 30px; }
+        /* GRID SYSTEM */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left; margin-top: 60px; }
+        .card { background: #111; padding: 40px; border: 1px solid #222; transition: 0.3s; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); }
         
-        .strong-text { color: #fff; font-weight: bold; border-left: 3px solid #d4af37; padding-left: 20px; }
+        .card h3 { color: #fff; font-size: 1.3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px; }
+        .card p { color: #777; line-height: 1.6; font-size: 0.95rem; }
 
-        /* SECTION 2: WHITE BACKGROUND */
-        .vision-section { background: #fff; color: #111; padding: 120px 40px; text-align: center; }
-        .vision-container { max-width: 800px; margin: 0 auto; }
-        .vision-quote { font-size: 2.5rem; font-family: 'Georgia', serif; font-style: italic; line-height: 1.4; color: #111; margin-bottom: 40px; }
+        /* BUTTONS */
+        .btn-gold { display: inline-block; background: var(--gold); color: #000; padding: 15px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; margin-top: 60px; transition: 0.3s; letter-spacing: 1px; }
+        .btn-gold:hover { background: #fff; }
 
         /* FOOTER */
-        footer { background: #000; color: #444; text-align: center; padding: 80px 20px; font-size: 0.8rem; border-top: 1px solid #222; }
-        footer a { color: #666; text-decoration: none; margin: 0 15px; transition: 0.3s; }
-        footer a:hover { color: #fff; }
-        .footer-email { color: #d4af37; font-size: 1rem; display: block; margin-bottom: 30px; letter-spacing: 1px; }
-
-        /* MOBILE FIX */
-        @media (max-width: 768px) {
-            .split-layout { flex-direction: column; gap: 40px; }
-            .split-image { width: 100%; height: 300px; }
-            .hero h1 { font-size: 2.2rem; }
-            h2 { font-size: 2rem; }
-            .vision-quote { font-size: 1.5rem; }
-            nav { flex-direction: column; gap: 20px; }
-        }
+        footer { text-align: center; padding: 60px 0; background: #050505; color: #555; font-size: 0.8rem; margin-top: 100px; border-top: 1px solid #111; }
+        .footer-email { color: var(--gold); font-size: 1rem; text-decoration: none; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="brand-text">Powell Inc.</a>
-        <div class="links">
-            <a href="unity/index.html">Unity</a>
-            <a href="heychef/index.html">Hey Chef</a>
-            <a href="resort/index.html">The Campus</a>
-            <a href="contact.html">Contact</a>
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+          "symbols": [
+            { "proName": "KUKOIN:XDCUSDT", "title": "XDC Network" },
+            { "proName": "OANDA:XAUUSD", "title": "Gold" },
+            { "proName": "OANDA:XAGUSD", "title": "Silver" },
+            { "proName": "OANDA:XPTUSD", "title": "Platinum" },
+            { "proName": "OANDA:XPDUSD", "title": "Palladium" },
+            { "proName": "COMEX:HG1!", "title": "Copper" },
+            { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+            { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
+            { "proName": "BITSTAMP:XRPUSD", "title": "XRP" }
+          ],
+          "showSymbolLogo": true,
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "displayMode": "adaptive",
+          "locale": "en"
+        }
+          </script>
         </div>
+    </div>
+
+    <nav>
+        <img src="../logo.jpg" alt="Unity Logo" class="logo-img">
+        <a href="../index.html" class="back-link">← Return to Powell Inc.</a>
     </nav>
 
-    <div class="hero-container">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Powell Incorporated</h1>
-            <div class="slogan">"Innovation Sealed with a Handshake."</div>
-        </div>
+    <div class="crypto-header">
+        <h1>Unity Protocol</h1>
+        <div class="xdc-badge">INTRINSIC VALUE MEETS BLOCKCHAIN VELOCITY</div>
     </div>
 
-    <div class="manifesto-section">
-        <div class="split-layout">
-            <div class="split-text animate-on-scroll">
-                <span class="label">The Mission</span>
-                <h2>Restoring the<br>Velocity of Money</h2>
-                <p>
-                    For too long, capital has been extracted from communities by distant intermediaries. 
-                    The value created by local hands is siphoned away, leaving neighborhoods debt-ridden and dependent.
-                </p>
-                <div class="strong-text">
-                    We are building the infrastructure of Sovereignty. Through the Unity Protocol and the Powell Campus, 
-                    we ensure that wealth stays where it is generated—circulating among the families, teams, and businesses that built it.
-                </div>
-            </div>
-            <div class="split-image animate-on-scroll">
-                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000" alt="Gold Flow">
-            </div>
-        </div>
-    </div>
+    <div class="philosophy-container">
+        
+        <h2 class="section-title">The Digital Stepping Stone</h2>
+        <p class="philosophy-text">
+            Unity is not just a wallet; it is the bridge between two eras of finance. 
+            As humanity transitions to digital currencies, we must not lose the foundation of real value.
+            <br><br>
+            By utilizing the efficiency of the <strong>Blockchain</strong> to mobilize the intrinsic stability of 
+            <strong>Precious Metals</strong>, Unity creates a financial engine that preserves purchasing power while enabling instant global velocity.
+        </p>
 
-    <div class="vision-section">
-        <div class="vision-container animate-on-scroll">
-            <span class="label" style="color: #2c3e50;">The Vision</span>
-            <div class="vision-quote">
-                "Our code does not replace trust.<br>It verifies it."
-            </div>
-            <p>
-                We are moving beyond the era of predatory debt. Powell Incorporated is not just a holding company; 
-                it is a shield. We use blockchain transparency and real-world assets to protect the dignity of the handshake. 
-                When you enter our ecosystem, you are not a user. You are a sovereign participant.
+        <div style="background: #111; padding: 40px; margin: 60px 0; border: 1px solid #333;">
+            <h3 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-top: 0;">Restoring Sovereignty</h3>
+            <p style="color: #ccc; margin-bottom: 0;">
+                "Code does not replace trust; it verifies it." <br><br>
+                For too long, value has been extracted from our communities by intermediaries. 
+                Unity Protocol restores the <strong>Velocity of Money</strong>—ensuring that wealth stays where it is generated, 
+                circulating among the families and teams that built it.
             </p>
         </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Asset-Backed Security</h3>
+                <p>Digital tokens anchored by audited reserves of Gold, Silver, and Platinum. Stability in a volatile world.</p>
+            </div>
+            <div class="card">
+                <h3>Mutual Staking</h3>
+                <p>A shared liquidity model where employer and employee incentives are aligned, fostering long-term growth.</p>
+            </div>
+            <div class="card">
+                <h3>The Legacy Vault</h3>
+                <p>A 7-Year retention lock designed to build generational wealth through disciplined asset accumulation.</p>
+            </div>
+        </div>
+
+        <a href="vault.html" class="btn-gold">View The 7-Year Promise</a>
     </div>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
-    </script>
-
     <footer>
-        <div style="margin-bottom: 20px;">
-            <a href="mailto:bpwll@powellincorporated.com" class="footer-email">bpwll@powellincorporated.com</a>
-        </div>
-        &copy; 2026 Powell Incorporated.<br><br>
-        <a href="legal.html">Legal & Privacy</a> | <a href="contact.html">Media & Press</a>
+        <span style="color: #777;">Financial & Blockchain Inquiries:</span><br>
+        <a href="mailto:unity@powellincorporated.org" class="footer-email">unity@powellincorporated.org</a>
+        <br><br>
+        &copy; 2026 Unity Protocol.<br>
+        A Division of Powell Incorporated.
     </footer>
 
 </body>

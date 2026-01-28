@@ -9,53 +9,67 @@
         body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; overflow-x: hidden; }
         
         /* ANIMATIONS */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
         
-        .animate-in { animation: fadeIn 1.5s ease-out forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.5s; }
-        .delay-2 { animation-delay: 1s; }
+        .animate-on-scroll { opacity: 0; transition: opacity 1s ease-out, transform 1s ease-out; transform: translateY(30px); }
+        .visible { opacity: 1; transform: translateY(0); }
 
-        /* NAVIGATION */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: rgba(255,255,255,0.95); z-index: 1000; backdrop-filter: blur(5px); }
-        .brand-text { font-size: 1.2rem; font-weight: 900; color: #2c3e50; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; border: 2px solid #2c3e50; padding: 8px 12px; }
-        .links a { margin-left: 20px; text-decoration: none; color: #555; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        /* NAV */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 25px 40px; border-bottom: 1px solid rgba(0,0,0,0.05); 
+            position: sticky; top: 0; background: rgba(255,255,255,0.98); z-index: 1000; 
+        }
+        .brand-text { font-size: 1.2rem; font-weight: 900; color: #111; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; border: 2px solid #111; padding: 8px 12px; }
+        .links a { margin-left: 25px; text-decoration: none; color: #666; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
         .links a:hover { color: #d4af37; }
 
-        /* HERO SECTIONS (Now Animated) */
-        .hero-container { height: 65vh; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
-        
+        /* HERO - WARMER VIBE */
+        .hero-container { height: 75vh; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            /* Image: Warm sunset, silhouette of people/community to imply family */
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070');
             background-size: cover;
             background-position: center;
-            animation: slowZoom 20s infinite alternate linear; /* THE MOVEMENT */
+            animation: slowZoom 25s infinite alternate linear;
             z-index: 1;
         }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 20px; }
+        .hero h1 { font-size: 3.8rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; font-weight: 300; text-shadow: 0 4px 10px rgba(0,0,0,0.5); animation: fadeUp 1.5s ease-out forwards; }
+        .slogan { font-size: 1.5rem; font-style: italic; margin-top: 20px; font-family: 'Georgia', serif; color: #f9f9f9; animation: fadeUp 1.5s ease-out 0.5s forwards; opacity: 0; }
 
-        .hero-content { position: relative; z-index: 2; }
-        .hero h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .slogan { font-size: 2rem; font-style: italic; margin-top: 15px; font-family: 'Georgia', serif; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
-
-        /* MASTER PLAN */
-        .master-plan { padding: 80px 20px; text-align: center; background: #fff; }
-        .section-title { font-size: 2rem; text-transform: uppercase; letter-spacing: 3px; color: #2c3e50; margin-bottom: 50px; position: relative; display: inline-block; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 15px auto 0; }
+        /* SECTION 1: PEOPLE OVER PROFIT (Dark) */
+        .mission-section { background: #1a1a1a; color: #eee; padding: 100px 40px; }
+        .split-layout { display: flex; max-width: 1100px; margin: 0 auto; gap: 80px; align-items: center; }
+        .split-text { flex: 1; }
+        .split-image { flex: 1; height: 450px; overflow: hidden; position: relative; border-radius: 4px; }
+        .split-image img { width: 100%; height: 100%; object-fit: cover; filter: sepia(20%) brightness(0.9); transition: 1s; }
         
-        .pillars { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-        .pillar { flex: 1; min-width: 300px; padding: 40px 30px; border: 1px solid #eee; transition: 0.3s; background: #fff; }
-        .pillar:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top: 3px solid #d4af37; }
-        .pillar h3 { color: #2c3e50; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; }
-        .pillar p { color: #666; line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; }
-        .btn-link { color: #d4af37; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; border-bottom: 2px solid transparent; transition: 0.3s; }
-        .btn-link:hover { border-bottom: 2px solid #d4af37; }
+        .label { color: #d4af37; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-bottom: 20px; display: block; }
+        h2 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 30px 0; line-height: 1.2; color: #fff; }
+        p { font-size: 1.1rem; line-height: 1.8; color: #aaa; margin-bottom: 30px; }
+
+        /* SECTION 2: EDUCATION & LEGACY (White) */
+        .legacy-section { background: #fff; color: #222; padding: 120px 40px; text-align: center; }
+        .legacy-container { max-width: 800px; margin: 0 auto; }
+        .legacy-quote { font-size: 2.2rem; font-family: 'Georgia', serif; font-style: italic; line-height: 1.4; color: #111; margin-bottom: 40px; }
+        .legacy-text { font-size: 1.1rem; color: #555; line-height: 1.8; }
 
         /* FOOTER */
-        footer { background: #1a1a1a; color: #888; text-align: center; padding: 60px 20px; font-size: 0.9rem; line-height: 2; }
-        footer a { color: #aaa; text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        footer a:hover { color: #fff; }
-        .footer-email { color: #d4af37; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 20px; }
+        footer { background: #111; color: #666; text-align: center; padding: 80px 20px; font-size: 0.9rem; }
+        footer a { color: #888; margin: 0 10px; text-decoration: none; }
+        .footer-email { color: #d4af37; font-size: 1.1rem; margin-bottom: 20px; display: block; }
+        
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .split-layout { flex-direction: column; }
+            .hero h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .legacy-quote { font-size: 1.5rem; }
+            nav { flex-direction: column; gap: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -73,44 +87,60 @@
     <div class="hero-container">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1 class="animate-in">Powell Incorporated</h1>
-            <div class="slogan animate-in delay-1">"Innovation Sealed with a Handshake."</div>
+            <h1>Powell Incorporated</h1>
+            <div class="slogan">"Building a Legacy on Human Connection."</div>
         </div>
     </div>
 
-    <div class="master-plan">
-        <h2 class="section-title animate-in delay-2">The Three Pillars</h2>
-        <div class="pillars animate-in delay-2">
-            
-            <div class="pillar">
-                <h3>01. The Capital</h3>
-                <p><strong>Unity Protocol</strong><br>A sovereign financial engine built on XDC. Stabilizing cash flow and building asset-backed wealth.</p>
-                <a href="unity/index.html" class="btn-link">View Protocol &rarr;</a>
+    <div class="mission-section">
+        <div class="split-layout">
+            <div class="split-text animate-on-scroll">
+                <span class="label">Our Philosophy</span>
+                <h2>People Over Profit</h2>
+                <p>
+                    We believe the hospitality industry lost its way when it started treating people like line items. 
+                    Powell Inc. is a family-first holding company dedicated to restoring the dignity of service.
+                </p>
+                <p style="border-left: 3px solid #d4af37; padding-left: 20px; color: #ddd;">
+                    True hospitality starts with the employee. When we prioritize the well-being of our teams, 
+                    we create an environment where success is shared, not extracted.
+                </p>
             </div>
-
-            <div class="pillar">
-                <h3>02. The Intelligence</h3>
-                <p><strong>Hey Chef</strong><br>An AI operating system that removes the friction of management. Humans cook; the system handles the rest.</p>
-                <a href="heychef/index.html" class="btn-link">View System &rarr;</a>
+            <div class="split-image animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600" alt="Community">
             </div>
-
-            <div class="pillar" style="background: #fafafa; border-color: #d4af37;">
-                <h3>03. The Campus</h3>
-                <p><strong>The Resort</strong><br>The destination. A multi-level athletic ecosystem where the next generation plays and lives.</p>
-                <a href="resort/index.html" class="btn-link">Enter The Campus &rarr;</a>
-            </div>
-
         </div>
     </div>
+
+    <div class="legacy-section">
+        <div class="legacy-container animate-on-scroll">
+            <span class="label" style="color: #2c3e50;">The Outreach</span>
+            <div class="legacy-quote">
+                "Success is not what you build for yourself.<br>It's what you leave for them."
+            </div>
+            <p class="legacy-text">
+                Our mission extends beyond our walls. Through community grants and educational outreach, 
+                we are dedicated to bringing real-world education back to the forefront. We are equipping the next generation 
+                with the tools, the mentorship, and the opportunities they need to thrive—in business, in sports, and in life.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        });
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    </script>
 
     <footer>
         <div style="margin-bottom: 20px;">
-            Inquiries: <a href="mailto:bpwll@powellincorporated.com" class="footer-email">bpwll@powellincorporated.com</a>
+            <a href="mailto:bpwll@powellincorporated.com" class="footer-email">bpwll@powellincorporated.com</a>
         </div>
-        &copy; 2026 Powell Incorporated.<br>
-        <div style="margin-top: 15px;">
-            <a href="legal.html">Legal & Privacy</a> | <a href="contact.html">Press</a>
-        </div>
+        &copy; 2026 Powell Incorporated.<br><br>
+        <a href="legal.html">Legal & Privacy</a> | <a href="contact.html">Grant Inquiries</a>
     </footer>
 
 </body>
