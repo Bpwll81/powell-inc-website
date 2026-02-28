@@ -13,18 +13,24 @@
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #2c3e50; border: 2px solid #2c3e50; padding: 5px 10px; text-decoration: none; font-size: 1rem; }
         .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
 
-        /* HERO - Multi-Sport Athletic Aesthetic */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
+        /* HERO - MULTI-SPORT ANIMATION */
+        .hero { position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; }
+        
+        .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: fadeCycle 15s infinite; }
+        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)); }
+        
+        /* Slide 1: Hockey | Slide 2: Basketball | Slide 3: Turf/Football */
+        .slide-1 { background-image: url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000'); animation-delay: 0s; }
+        .slide-2 { background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000'); animation-delay: 5s; }
+        .slide-3 { background-image: url('https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=2000'); animation-delay: 10s; }
+        
+        @keyframes fadeCycle { 
+            0%, 25% { opacity: 1; } 
+            33.33%, 91.66% { opacity: 0; } 
+            100% { opacity: 1; } 
         }
+
+        .hero-content { position: relative; z-index: 2; }
         .hero h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 5px; font-weight: 300; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .hero p { font-size: 1.2rem; font-family: 'Georgia', serif; font-style: italic; margin-top: 20px; max-width: 700px; line-height: 1.6; }
 
@@ -37,7 +43,11 @@
         
         .text-content p { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px; }
         
-        /* BLOCKCHAIN SECTION STYLING */
+        /* ALERTS & BLOCKCHAIN HUB */
+        .mockup-alert { display: inline-block; background: #111; color: #d4af37; padding: 15px 25px; margin-bottom: 30px; border-left: 4px solid #d4af37; border-radius: 3px; }
+        .mockup-alert strong { font-family: monospace; letter-spacing: 1px; font-size: 1rem; }
+        .mockup-alert p { color: #ccc; margin: 8px 0 0 0; font-size: 0.95rem; line-height: 1.5; }
+
         .blockchain-hub { background: #111; color: #fff; padding: 100px 20px; text-align: center; margin: 40px 0; border-top: 3px solid #d4af37; border-bottom: 3px solid #d4af37; }
         .blockchain-hub h2 { color: #d4af37; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
         .blockchain-hub p { font-size: 1.15rem; line-height: 1.8; color: #ccc; max-width: 900px; margin: 0 auto 20px auto; }
@@ -67,7 +77,11 @@
     </nav>
 
     <div class="hero">
-        <div>
+        <div class="hero-slide slide-1"></div>
+        <div class="hero-slide slide-2"></div>
+        <div class="hero-slide slide-3"></div>
+        
+        <div class="hero-content">
             <h1>The Resort</h1>
             <p>Phase 5: A two-part infrastructure project bridging elite hospitality with a multi-tiered educational and athletic ecosystem.</p>
         </div>
@@ -101,6 +115,11 @@
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Part II: The Vaitukaitis Educational & Athletic Complex (V-Plex)</h2>
             
+            <div class="mockup-alert">
+                <strong>3D ARCHITECTURAL RENDERINGS COMING SOON</strong>
+                <p>The physical design of the V-Plex is not an afterthought. It is a meticulously engineered, multi-tiered facility currently undergoing advanced 3D architectural modeling to perfect the operational flow.</p>
+            </div>
+            
             <p style="font-size: 1.2rem; color: #555; margin-bottom: 20px; max-width: 900px; line-height: 1.6;">
                 The V-Plex utilizes a revolutionary 3-Ring design. By physically separating academics, sibling entertainment, and high-level athletics, we eliminate the chaotic environment of traditional sports facilities.
             </p>
@@ -131,10 +150,30 @@
                 <div class="feature-box" style="border-left-color: #2c3e50;">
                     <h3>The Core: Main Building Hub</h3>
                     <p>
-                        The center of the complex houses our indoor pool, gymnasiums, and basketball courts. It provides direct, centralized access to the rinks and serves as the gateway to our Mercantile Food Court—a culinary incubator fully powered by the Hey Chef operating system. 
+                        The center of the complex houses our indoor pool, gymnasiums, and basketball courts. It provides direct, centralized access to the rinks and serves as the gateway to the massive culinary incubator and food hall known as The Mercantile.
                     </p>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">The Mercantile: Culinary Incubator</h2>
+        <div class="grid-layout">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" alt="Culinary Incubator and High-End Food Court">
+            </div>
+            <div class="text-content">
+                <p>
+                    <strong>This is not a traditional concession stand or food court.</strong> Drawing from 30 years of hard-fought experience in the hospitality industry, The Mercantile is engineered to be a culinary launchpad for talented, ambitious chefs.
+                </p>
+                <p>
+                    We know the operational friction and razor-thin margins that kill new restaurants. That is why The Mercantile offers <strong>near-free entry</strong> and radically reasonable operational terms. We provide the infrastructure, the massive built-in foot traffic, and our proprietary Hey Chef POS integration—the chefs simply provide their passion.
+                </p>
+                <p>
+                    Operating 365 days a year within this high-traffic community ecosystem, the incubator guarantees mutual success. It allows rising culinary stars to build their brands, test their concepts, and thrive financially without the crushing overhead of a traditional brick-and-mortar lease.
+                </p>
             </div>
         </div>
     </div>
