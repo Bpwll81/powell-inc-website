@@ -1,3 +1,9 @@
+I understand completely. We are moving away from those generic placeholders and grounding the imagery in the high-ceiling, industrial-artisan hangar aesthetic you provided, while correctly detailing the "Equipment Reward" arcade logic and the V-Plex Pro Shop.
+
+I have updated the code to reflect the Colorado-specific landlocked environment, the specific arcade prize system, and the late-night Pro Shop operations for teams.
+
+Final Master Code for resort/index.html
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,44 +13,45 @@
     <style>
         :root { --gold: #d4af37; --slate: #2c3e50; --bg: #fff; --text: #333; }
         body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.8; }
+        
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--slate); border: 2px solid var(--slate); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
-        
-        /* HERO - MULTI-SPORT ANIMATION */
-        .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; background: #000; }
-        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000'); background-size: cover; background-position: center; }
+
+        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2000'); background-size: cover; background-position: center; }
         .hero-content { position: relative; z-index: 2; padding: 20px; }
-        
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); text-transform: uppercase; letter-spacing: 5px; }
+
         .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: clamp(2rem, 6vw, 2.8rem); color: var(--slate); margin-bottom: 40px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; }
+        
         .grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
         @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
 
-        /* HOTEL ILONA */
         .feature-list { list-style: none; padding: 0; }
-        .feature-list li { margin-bottom: 20px; padding-left: 35px; position: relative; font-size: 1.1rem; }
+        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.15rem; }
         .feature-list li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: 1.2rem; }
-        .img-box img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #eee; }
 
-        /* THE MERCANTILE - ARTISAN GALLERY */
-        .mercantile-wrap { background: #000; color: #fff; padding: 100px 20px; }
-        .m-gallery { position: relative; height: 500px; border-radius: 4px; overflow: hidden; margin: 40px 0; border: 1px solid #333; }
-        .m-slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: mFade 12s infinite; }
-        .m-slide-1 { background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200'); animation-delay: 0s; }
-        .m-slide-2 { background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200'); animation-delay: 4s; }
-        .m-slide-3 { background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200'); animation-delay: 8s; }
-        @keyframes mFade { 0%, 33% { opacity: 1; } 41%, 100% { opacity: 0; } }
+        /* THE MERCANTILE - ARTISAN HANGAR */
+        .mercantile-wrap { background: #0a0a0a; color: #fff; padding: 100px 20px; margin: 60px 0; border-top: 4px solid var(--gold); }
+        .m-container { max-width: 1200px; margin: 0 auto; }
+        .m-visual { width: 100%; height: 550px; background-image: url('Blog_Post_1_Final (1).jpg'); background-size: cover; background-position: center; border-radius: 4px; border: 1px solid #333; margin: 40px 0; }
+        
+        .m-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .m-card { background: #111; padding: 40px; border-top: 2px solid var(--gold); }
+        .m-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; }
 
         /* V-PLEX RINGS */
-        .ring-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .ring-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
         @media (min-width: 1000px) { .ring-grid { grid-template-columns: repeat(3, 1fr); } }
-        .ring-card { background: #f9f9f9; padding: 40px; border-left: 5px solid var(--slate); height: 100%; color: #333; }
-        .ring-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-top: 0; color: var(--slate); border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 20px; }
+        .ring-card { background: #f9f9f9; padding: 45px; border-left: 5px solid var(--slate); height: 100%; color: #333; }
+        .ring-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-top: 0; color: var(--slate); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px; }
 
-        footer { text-align: center; padding: 60px 20px; background: #000; color: #555; font-size: 0.8rem; }
+        footer { text-align: center; padding: 80px 20px; background: #000; color: #555; }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="../index.html" class="logo-text">Powell Global LLC</a>
         <a href="../index.html" style="text-decoration:none; color:#888; font-weight:bold; font-size:0.8rem;">RETURN</a>
@@ -52,7 +59,9 @@
 
     <div class="hero">
         <div class="hero-bg"></div>
-        <div class="hero-content"><h1>The Resort</h1></div>
+        <div class="hero-content">
+            <h1>The Resort</h1>
+        </div>
     </div>
 
     <div class="section">
@@ -60,36 +69,38 @@
         <div class="grid">
             <div class="text-content">
                 <ul class="feature-list">
-                    <li><strong>The Player's Floor:</strong> A dedicated level for athletes with a full-size knee hockey room, private pool hall, and elite lounges.</li>
-                    <li><strong>Sports Arcade:</strong> High-utility prize system awarding ice skates, duffle bags, and basketballs to serious athletes.</li>
-                    <li><strong>Family Architecture:</strong> Outward-facing suites with master bedrooms, Murphy bunk beds for 4 children, and mid-sized fridges.</li>
-                    <li><strong>Tesla Energy Grid:</strong> Wireless power distribution via the on-site Tesla Tower to the entire Resort ecosystem.</li>
+                    <li><strong>The Player's Floor:</strong> A dedicated level for athletes featuring a full-size knee hockey room, private pool hall, and elite lounges.</li>
+                    <li><strong>The Equipment Arcade:</strong> A classic ticket-redemption arcade where rewards are strictly high-utility sports gear—from skate laces and basketballs to duffle bags and professional ice skates.</li>
+                    <li><strong>Family Suite Architecture:</strong> Outward-facing rooms with master bedrooms, mid-sized fridges, and Murphy bunk beds designed to sleep four children comfortably.</li>
+                    <li><strong>Tesla Energy:</strong> Powered by an on-site Tesla Tower for wireless energy distribution throughout the entire Resort.</li>
                 </ul>
             </div>
-            <div class="img-box">
-                <img src="Hotel Ilona.png" alt="Hotel Ilona Architecture">
+            <div class="img-container">
+                <img src="Hotel Ilona.png" alt="Hotel Ilona 3D Architecture" style="width:100%; border-radius:4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 <p style="text-align:center; font-style:italic; color:#888; font-size:0.8rem; margin-top:10px;">* Official 3D Mockup</p>
             </div>
         </div>
     </div>
 
     <div class="mercantile-wrap">
-        <div class="section" style="padding:0;">
+        <div class="m-container">
             <h2 class="section-title" style="color:var(--gold); border-left-color:var(--gold);">The Mercantile: Artisan Hangar</h2>
-            <p style="font-size: 1.3rem; line-height: 1.9; color: #ccc;">A high-volume industrial cathedral for culinary talent, featuring global artisan cuisine directly next to the rink.</p>
-            <div class="m-gallery">
-                <div class="m-slide m-slide-1"></div>
-                <div class="m-slide m-slide-2"></div>
-                <div class="m-slide m-slide-3"></div>
-            </div>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 40px; color: #fff;">
-                <div style="background:#111; padding:30px; border-top:2px solid var(--gold);">
-                    <h3>Marketplace & Ovens</h3>
-                    <p>Featuring massive bread and pizza ovens, organic product markets, and dedicated Farmers Market booths for local produce.</p>
+            <p style="font-size: 1.3rem; line-height: 1.9; color: #ccc;">A massive industrial cathedral where families find global artisan cuisine and fresh local goods right next to the rink.</p>
+            
+            <div class="m-visual"></div>
+
+            <div class="m-card-grid">
+                <div class="m-card">
+                    <h3>Market & Ovens</h3>
+                    <p>Featuring massive bread and pizza ovens, organic marketplaces, and "Farmers Market" booths for fresh produce from local farmers.</p>
                 </div>
-                <div style="background:#111; padding:30px; border-top:2px solid var(--gold);">
-                    <h3>Unity & Metal Payments</h3>
-                    <p>Native UNT/UGLD settlement with certified exchange hubs for physical Gold and Silver transactions.</p>
+                <div class="m-card">
+                    <h3>On-Chain Payments</h3>
+                    <p>Powered by <strong>Unity Protocol</strong>. Native UNT/UGLD settlement with certified on-site exchange hubs for Gold and Silver.</p>
+                </div>
+                <div class="m-card">
+                    <h3>Chef Launchpad</h3>
+                    <p>6 months zero rent for qualified chefs to build their brand in a high-traffic, 365-day community ecosystem.</p>
                 </div>
             </div>
         </div>
@@ -97,19 +108,24 @@
 
     <div class="section">
         <h2 class="section-title">The V-Plex (Vaitukaitis Educational & Athletic Complex)</h2>
-        <div style="background:#000; color:var(--gold); padding:20px; font-family:monospace; text-align:center; border:1px solid #333; margin-bottom:40px;">3D ARCHITECTURAL RENDERINGS COMING SOON</div>
+        <div style="background:#000; color:var(--gold); padding:20px; font-family:monospace; text-align:center; border:1px solid #333; margin-bottom:40px;">
+            3D ARCHITECTURAL RENDERINGS COMING SOON
+        </div>
+        
+        <p><strong>Foundation-First Education:</strong> Curriculum focused on Reading, Writing, Arithmetic, Constitutional/Common Law, Homesteading, and Hunting.</p>
+
         <div class="ring-grid">
             <div class="ring-card">
                 <h3>Ring 1: Learning Annex</h3>
-                <p>Education first: Reading, Writing, Arithmetic, Constitutional Law, Homesteading, and Hunting. Outdoor-focused passion learning.</p>
+                <p>Primarily outdoor, passion-based learning for students 10+. Focus on technical foundations and development of the moral compass.</p>
             </div>
             <div class="ring-card" style="border-left-color: var(--gold);">
                 <h3>Ring 2: Sibling Zone</h3>
-                <p>Enclosed play hub with fun houses. Parents monitor games via broadcast viewing while siblings play in a safe, high-energy environment.</p>
+                <p>Enclosed high-energy play hub with fun houses. Parents monitor rinks via broadcast viewing while siblings play in a safe, central area.</p>
             </div>
             <div class="ring-card">
-                <h3>Ring 3: Athletic Core</h3>
-                <p>Direct gateway to gyms, pool, and the **Dedicated Pro Shop** featuring equipment and apparel for all sports. Open late for team access.</p>
+                <h3>Ring 3: Athletic Hub</h3>
+                <p>Gateway to gyms and pool. Features a <strong>Dedicated Pro Shop</strong> with equipment and apparel for all sports. Open late for team-only access during tournaments and games.</p>
             </div>
         </div>
     </div>
