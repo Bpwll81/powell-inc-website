@@ -13,10 +13,10 @@
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #2c3e50; border: 2px solid #2c3e50; padding: 5px 10px; text-decoration: none; font-size: 1rem; }
         .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
 
-        /* HERO */
+        /* HERO - Multi-Sport Athletic Aesthetic */
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -32,8 +32,15 @@
         .section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
         .section-title { font-size: 2.5rem; color: #2c3e50; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; border-left: 5px solid #d4af37; padding-left: 20px; }
         
-        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .ring-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        
         .text-content p { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px; }
+        
+        /* BLOCKCHAIN SECTION STYLING */
+        .blockchain-hub { background: #111; color: #fff; padding: 100px 20px; text-align: center; margin: 40px 0; border-top: 3px solid #d4af37; border-bottom: 3px solid #d4af37; }
+        .blockchain-hub h2 { color: #d4af37; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+        .blockchain-hub p { font-size: 1.15rem; line-height: 1.8; color: #ccc; max-width: 900px; margin: 0 auto 20px auto; }
         
         /* RINK LAYOUT */
         .rink-diagram { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 10px; }
@@ -41,15 +48,12 @@
         .rink-main { background: #d4af37; color: #000; transform: scale(1.15); box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 10; font-size: 0.9rem; border: 2px solid #fff; }
 
         /* FEATURE BOXES */
-        .feature-box { background: #f9f9f9; padding: 40px; margin-top: 30px; border-radius: 4px; border-left: 4px solid #2c3e50; }
+        .feature-box { background: #f9f9f9; padding: 40px; border-radius: 4px; border-left: 4px solid #2c3e50; height: 100%; box-sizing: border-box; }
         .feature-box h3 { margin-top: 0; color: #2c3e50; text-transform: uppercase; letter-spacing: 1px; }
-        .highlight { color: #d4af37; font-weight: bold; }
-
-        /* MOCKUP ALERT */
-        .mockup-alert { display: inline-block; background: #111; color: #d4af37; padding: 10px 20px; font-family: monospace; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 20px; border-radius: 3px; }
 
         /* IMAGE STYLING */
-        .img-container img { width: 100%; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .img-container img { width: 100%; border-radius: 4px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); border: 1px solid #eee; }
+        .footnote { font-size: 0.85rem; color: #888; margin-top: 12px; font-style: italic; text-align: center; }
 
         /* FOOTER */
         footer { text-align: center; padding: 60px 0; background: #111; color: #666; font-size: 0.8rem; margin-top: 100px; }
@@ -73,72 +77,86 @@
         <h2 class="section-title">Part I: Hotel Ilona</h2>
         <div class="grid-layout">
             <div class="text-content">
-                <div class="mockup-alert">3D Architectural Renderings Coming Soon</div>
                 <p>
-                    Serving as the hospitality anchor for the property, Hotel Ilona provides luxury accommodations for visiting teams, 
-                    families, and professionals. 
+                    Designed with state-of-the-art technology and a new-age, modern feel, Hotel Ilona serves as the ultimate hospitality destination for families traveling for sports competitions. The stunning all-glass architecture features outward-facing rooms and mini-lobbies on every floor, including a dedicated floor specifically for players of all ages.
                 </p>
                 <p>
-                    Designed to seamlessly integrate with the broader resort, it acts as the primary hub 
-                    for rest, recovery, and executive operations. It connects to the V-Plex via private, terrain-level roads, allowing teams to travel securely and privately. No traffic. No weather. Just focus.
+                    <strong>Next-Generation Power:</strong> A massive Tesla Tower powers not only the hotel but the nearby V-Plex, utilizing advanced transfer towers distributed dynamically throughout The Resort.
+                </p>
+                <p>
+                    <strong>The Family Suite:</strong> Built explicitly for the needs of sports families, every suite features spacious living areas, mid-sized refrigerators, a master bedroom with a separate bathroom area, and a secondary room equipped with Murphy bunk beds that comfortably sleep four children. 
+                </p>
+                <p>
+                    First-class room service ensures guests can have meals and essentials waiting in their rooms regardless of late-night arrival times. Complete with dedicated team shuttles providing seamless airport pick-up and drop-off, Hotel Ilona is a frictionless hub for rest and recovery.
                 </p>
             </div>
             <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800" alt="Hotel Architecture">
+                <img src="Hotel Ilona.png" alt="Hotel Ilona Architecture">
+                <p class="footnote">* 3D architectural mockup of the finalized Hotel Ilona exterior design.</p>
             </div>
         </div>
     </div>
 
     <div class="section" style="background: #fafafa; max-width: 100%; padding: 80px 20px;">
-        <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Part II: The Vaitukaitis Educational & Athletic Complex (V-Plex)</h2>
-            <p style="font-size: 1.2rem; color: #555; margin-bottom: 40px; max-width: 800px; line-height: 1.6;">
+            
+            <p style="font-size: 1.2rem; color: #555; margin-bottom: 20px; max-width: 900px; line-height: 1.6;">
                 The V-Plex utilizes a revolutionary 3-Ring design. By physically separating academics, sibling entertainment, and high-level athletics, we eliminate the chaotic environment of traditional sports facilities.
             </p>
+            
+            <p style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 40px; max-width: 900px; line-height: 1.6; border-left: 3px solid #d4af37; padding-left: 15px;">
+                <strong>Beyond the Ice:</strong> The V-Plex is a comprehensive athletic ecosystem. It will be home to basketball, indoor soccer, flag football, lacrosse, and numerous other school athletic programs. Our long-term aim is to achieve college-level athletic accreditation (at least Division II) while operating an elite-tier Jrs. program.
+            </p>
 
-            <div class="grid-layout">
-                <div class="text-content">
-                    
-                    <div class="feature-box" style="border-left-color: #2c3e50; margin-top: 0;">
-                        <h3>Ring 1: The Learning Annex</h3>
-                        <p>
-                            Education comes before athletics. Starting at age 10—ensuring early childhood moral development remains at home—our curriculum returns to the foundations: reading, writing, and arithmetic, paired with Constitutional and Common Law studies, homesteading, and hunting. 
-                        </p>
-                        <p style="margin-bottom: 0;">
-                            Weather permitting, classes are predominantly outdoors. We focus on individual learning styles, ensuring children embrace their passions while mastering core disciplines. The annex opens into a vast buffer featuring walking trails, gardens, and outdoor workspaces.
-                        </p>
-                    </div>
-
-                    <div class="feature-box" style="border-left-color: #d4af37;">
-                        <h3>Ring 2: The Sibling Zone</h3>
-                        <p>
-                            We eliminated the friction of younger siblings running through athletic concourses. This massive inner ring is an enclosed entertainment hub loaded with fun houses, indoor playgrounds, and bounce rooms. It keeps kids engaged while offering parents dedicated broadcast screens to watch games from any of the 5 rinks.
-                        </p>
-                    </div>
-
-                    <div class="feature-box" style="border-left-color: #2c3e50;">
-                        <h3>The Core: Main Building Hub</h3>
-                        <p>
-                            The center of the complex houses our indoor pool, gymnasiums, and basketball courts. It provides direct, centralized access to the rinks and serves as the gateway to our Mercantile Food Court—a culinary incubator fully powered by the Hey Chef operating system. 
-                        </p>
-                    </div>
-
+            <div class="ring-grid">
+                
+                <div class="feature-box" style="border-left-color: #2c3e50;">
+                    <h3>Ring 1: The Learning Annex</h3>
+                    <p>
+                        Education comes before athletics. Starting at age 10—ensuring early childhood moral development remains at home—our curriculum returns to the foundations: reading, writing, and arithmetic, paired with Constitutional and Common Law studies, homesteading, and hunting. 
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        Weather permitting, classes are predominantly outdoors. We focus on individual learning styles, ensuring children embrace their passions while mastering core disciplines. The annex opens into a vast buffer featuring walking trails, gardens, and outdoor workspaces.
+                    </p>
                 </div>
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1577416412292-7661e3716d8e?q=80&w=800" alt="Main Concourse">
+
+                <div class="feature-box" style="border-left-color: #d4af37;">
+                    <h3>Ring 2: The Sibling Zone</h3>
+                    <p>
+                        We eliminated the friction of younger siblings running through athletic concourses. This massive inner ring is an enclosed entertainment hub loaded with fun houses, indoor playgrounds, and bounce rooms. It keeps kids engaged while offering parents dedicated broadcast screens to watch games from any of the 5 rinks in total comfort.
+                    </p>
                 </div>
+
+                <div class="feature-box" style="border-left-color: #2c3e50;">
+                    <h3>The Core: Main Building Hub</h3>
+                    <p>
+                        The center of the complex houses our indoor pool, gymnasiums, and basketball courts. It provides direct, centralized access to the rinks and serves as the gateway to our Mercantile Food Court—a culinary incubator fully powered by the Hey Chef operating system. 
+                    </p>
+                </div>
+
             </div>
         </div>
+    </div>
+
+    <div class="blockchain-hub">
+        <h2>The First On-Chain Resort Ecosystem</h2>
+        <p>
+            The Resort is poised to become the world's first multi-unit hospitality hub engineered for full blockchain integration. Operating natively on the XDC Network, Hotel Ilona and the V-Plex will seamlessly communicate across the board, establishing a frictionless, real-time settlement layer for all internal operations.
+        </p>
+        <p>
+            Designed to drive massive real-world adoption of the <strong>Unity Protocol (UNT)</strong> and <strong>UGLD</strong>, the ecosystem will feature dedicated, certified precious metals dealers and on-site currency exchange hubs. This allows guests, teams, and vendors to interact seamlessly with asset-backed digital currencies throughout their entire experience.
+        </p>
     </div>
 
     <div class="section">
         <h2 class="section-title">The Elevation Drop: Ice Stadiums</h2>
         <div class="text-content">
             <p>
-                <strong>Not an Underground Bunker.</strong> The rinks are accessed via a beautiful elevation drop-off from the main building. Once at the rink level, athletes and fans utilize a dedicated trail and shuttle service to navigate between the arenas. 
+                <strong>Not an Underground Bunker.</strong> The rinks are accessed via a beautiful elevation drop-off from the main building. Once at the rink level, athletes and fans utilize a dedicated trail and shuttle service to navigate seamlessly between the arenas. 
             </p>
             <p>
-                Each rink operates as a unique, globally-themed stadium, separating the crowds and giving every tier of play a professional atmosphere.
+                Each rink operates as a unique, globally-themed stadium, separating the crowds and giving every tier of play a professional, broadcast-ready atmosphere.
             </p>
         </div>
 
