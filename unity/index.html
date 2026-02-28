@@ -32,11 +32,23 @@
         .crypto-header h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 6px; font-weight: 300; }
         .xdc-badge { display: inline-block; margin-top: 25px; border: 1px solid var(--gold); padding: 8px 20px; font-family: monospace; font-size: 0.9rem; color: var(--gold); background: rgba(0,0,0,0.5); letter-spacing: 2px; }
 
-        /* PHILOSOPHY SECTION */
+        /* PHILOSOPHY & DATA SECTION */
         .philosophy-container { max-width: 900px; margin: 80px auto; padding: 0 20px; text-align: center; }
         .section-title { font-size: 2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; }
         .philosophy-text { font-size: 1.2rem; line-height: 1.8; color: #94a3b8; margin-bottom: 40px; }
-        .highlight { color: #fff; border-bottom: 1px solid var(--gold); }
+        
+        /* NEW DATA ROOM STYLES */
+        .data-section { text-align: left; margin: 60px 0; padding-top: 40px; border-top: 1px solid #222; }
+        .data-title { color: var(--gold); font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .data-text { color: #ccc; line-height: 1.6; margin-bottom: 20px; font-size: 1.05rem; }
+        .data-list { color: #94a3b8; line-height: 1.8; margin-bottom: 30px; padding-left: 20px; font-size: 1rem; }
+        .data-list li { margin-bottom: 15px; }
+        .data-list strong { color: #fff; }
+        
+        code { background: #111; padding: 4px 8px; border: 1px solid #333; color: var(--gold); font-family: monospace; font-size: 0.9rem; word-break: break-all; border-radius: 3px; }
+        
+        .btn-small { display: inline-block; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 20px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; margin-top: 8px; border-radius: 3px;}
+        .btn-small:hover { background: var(--gold); color: #000; }
 
         /* GRID SYSTEM */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left; margin-top: 60px; }
@@ -86,7 +98,7 @@
 
     <nav>
         <img src="../logo.jpg" alt="Unity Logo" class="logo-img">
-        <a href="../index.html" class="back-link">← Return to Powell Inc.</a>
+        <a href="../index.html" class="back-link">← Return to Powell Global LLC</a>
     </nav>
 
     <div class="crypto-header">
@@ -115,18 +127,53 @@
             </p>
         </div>
 
+        <div class="data-section">
+            <h3 class="data-title">1. Official Documentation & Demos</h3>
+            <p class="data-text">Transparency and mathematical precision are the foundations of the Unity ecosystem.</p>
+            <ul class="data-list">
+                <li><strong>The White Paper:</strong> A comprehensive breakdown of the protocol mechanics, the dual-token architecture, and the 5-phase physical deployment roadmap.<br>
+                <a href="https://docs.google.com/document/d/1SM33_yfX58HIRc4BMacbxeXiFDl15p6QsIvFCJTEDZg/edit?usp=sharing" target="_blank" class="btn-small">Read the Official White Paper &rarr;</a></li>
+                <li><strong>Concept & Protocol Demo:</strong> Watch the "Last Mile of Settlement" middleware in action.<br>
+                <a href="https://youtube.com/shorts/eaXlTxe6dvw?si=NfSWqyZftYub29ig" target="_blank" class="btn-small">Watch the Settlement Layer Demo &rarr;</a></li>
+            </ul>
+
+            <h3 class="data-title">2. Open-Source Development</h3>
+            <p class="data-text">We build in public. Our core framework, including the middleware designed to execute ISO 20022-compliant settlements on-chain without leaving legacy accounting interfaces, is open for review.</p>
+            <ul class="data-list">
+                <li><a href="https://github.com/Bpwll81/powell-inc-website" target="_blank" class="btn-small">View the Repository on GitHub &rarr;</a></li>
+            </ul>
+
+            <h3 class="data-title">3. On-Chain Transparency & Treasury Protocol</h3>
+            <p class="data-text">The initial seed circulation of the Unity token is mathematically fixed, and all holdings are publicly verifiable on the XDC ledger.</p>
+            <ul class="data-list">
+                <li><strong>The Unity Token Contract:</strong> The official smart contract address for the UNT token.<br>
+                <code>xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code><br>
+                <a href="https://explorer.xinfin.network/address/xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271" target="_blank" class="btn-small">Verify Contract on Explorer &rarr;</a></li>
+                
+                <li><strong>The Genesis Treasury (Tangem Hardware Secured):</strong> Verify the uncirculated UNT supply and early-stage allocations directly in our cold-storage vault.<br>
+                <code>xdc33CE501714DEB68C56a7A27ad369de7B62846Cda</code><br>
+                <a href="https://explorer.xinfin.network/address/xdc33CE501714DEB68C56a7A27ad369de7B62846Cda" target="_blank" class="btn-small">Verify Treasury on Explorer &rarr;</a></li>
+                
+                <li><strong>Ecosystem Mechanics:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Seed Round Circulating Supply: <strong>72,000,000 UNT</strong> (Post-seed completion)</li>
+                        <li>Hardcoded Listing Price Floor: <strong>$0.005</strong> (Defended by $380,000 total decentralized liquidity)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <div class="grid">
             <div class="card">
                 <h3>Asset-Backed Security</h3>
-                <p>Digital tokens anchored by audited reserves of Gold, Silver, and Platinum. Stability in a volatile world.</p>
+                <p>Digital tokens anchored by a diversified 5-metal strategic reserve basket: Gold (50%), Silver (25%), Platinum (10%), Palladium (10%), and Copper (5%).</p>
             </div>
             <div class="card">
-                <h3>Mutual Staking</h3>
-                <p>A shared liquidity model where employer and employee incentives are aligned, fostering long-term growth.</p>
+                <h3>Dual-Asset Stability</h3>
+                <p>UGLD serves as the stabilization layer—a specialized reserve token representing "Senior Rights" to physical gold reserves, minted at 5,000oz intervals in a Bail-Free Vault.</p>
             </div>
             <div class="card">
                 <h3>The Legacy Vault</h3>
-                <p>A 7-Year retention lock designed to build generational wealth through disciplined asset accumulation.</p>
+                <p>A 7-Year retention lock designed to build generational wealth through disciplined asset accumulation and shared liquidity.</p>
             </div>
         </div>
 
@@ -138,7 +185,7 @@
         <a href="mailto:unity@powellincorporated.org" class="footer-email">unity@powellincorporated.org</a>
         <br><br>
         &copy; 2026 Unity Protocol.<br>
-        A Division of Powell Incorporated.
+        A Division of Powell Global LLC.
     </footer>
 
 </body>
