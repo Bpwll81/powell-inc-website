@@ -25,11 +25,10 @@
         .links a { margin-left: 25px; text-decoration: none; color: #666; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
         .links a:hover { color: #d4af37; }
 
-        /* HERO - WARMER VIBE */
+        /* HERO */
         .hero-container { height: 75vh; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            /* Image: Warm sunset, silhouette of people/community to imply family */
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070');
             background-size: cover;
             background-position: center;
@@ -40,7 +39,7 @@
         .hero h1 { font-size: 3.8rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; font-weight: 300; text-shadow: 0 4px 10px rgba(0,0,0,0.5); animation: fadeUp 1.5s ease-out forwards; }
         .slogan { font-size: 1.5rem; font-style: italic; margin-top: 20px; font-family: 'Georgia', serif; color: #f9f9f9; animation: fadeUp 1.5s ease-out 0.5s forwards; opacity: 0; }
 
-        /* SECTION 1: PEOPLE OVER PROFIT (Dark) */
+        /* MISSION SECTION */
         .mission-section { background: #1a1a1a; color: #eee; padding: 100px 40px; }
         .split-layout { display: flex; max-width: 1100px; margin: 0 auto; gap: 80px; align-items: center; }
         .split-text { flex: 1; }
@@ -51,11 +50,12 @@
         h2 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 30px 0; line-height: 1.2; color: #fff; }
         p { font-size: 1.1rem; line-height: 1.8; color: #aaa; margin-bottom: 30px; }
 
-        /* SECTION 2: EDUCATION & LEGACY (White) */
-        .legacy-section { background: #fff; color: #222; padding: 120px 40px; text-align: center; }
-        .legacy-container { max-width: 800px; margin: 0 auto; }
-        .legacy-quote { font-size: 2.2rem; font-family: 'Georgia', serif; font-style: italic; line-height: 1.4; color: #111; margin-bottom: 40px; }
-        .legacy-text { font-size: 1.1rem; color: #555; line-height: 1.8; }
+        /* PROJECT GRID */
+        .project-section { background: #fff; padding: 100px 40px; text-align: center; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 50px auto 0; }
+        .project-card { background: #f9f9f9; padding: 40px; border: 1px solid #eee; text-decoration: none; color: inherit; transition: 0.3s; border-radius: 4px; }
+        .project-card:hover { border-color: #d4af37; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .project-card h3 { color: #111; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
 
         /* COMPLIANCE SECTION */
         .compliance-section { background: #f9f9f9; padding: 80px 40px; text-align: center; border-top: 1px solid #eee; }
@@ -63,16 +63,12 @@
         .btn-outline:hover { background: #111; color: #fff; }
 
         /* FOOTER */
-        footer { background: #111; color: #666; text-align: center; padding: 80px 20px; font-size: 0.9rem; }
-        footer a { color: #888; margin: 0 10px; text-decoration: none; }
-        .footer-email { color: #d4af37; font-size: 1.1rem; margin-bottom: 20px; display: block; }
+        footer { background: #111; color: #666; text-align: center; padding: 80px 20px; font-size: 0.9rem; border-top: 1px solid #111; }
+        .footer-email { color: #d4af37; font-size: 1.1rem; margin-bottom: 20px; display: block; text-decoration: none; }
         
-        /* MOBILE */
         @media (max-width: 768px) {
             .split-layout { flex-direction: column; }
             .hero h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            .legacy-quote { font-size: 1.5rem; }
             nav { flex-direction: column; gap: 15px; }
         }
     </style>
@@ -84,7 +80,7 @@
         <div class="links">
             <a href="unity/index.html">Unity</a>
             <a href="heychef/index.html">Hey Chef</a>
-            <a href="resort/index.html">The Campus</a>
+            <a href="resort/index.html">The Resort</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
@@ -103,12 +99,10 @@
                 <span class="label">Our Philosophy</span>
                 <h2>People Over Profit</h2>
                 <p>
-                    We believe the hospitality industry lost its way when it started treating people like line items. 
-                    Powell Global LLC is a family-first holding company dedicated to restoring the dignity of service.
+                    Powell Global LLC is a family-first holding company dedicated to restoring the dignity of service. We believe the hospitality industry lost its way when it started treating people like line items.
                 </p>
                 <p style="border-left: 3px solid #d4af37; padding-left: 20px; color: #ddd;">
-                    True hospitality starts with the employee. When we prioritize the well-being of our teams, 
-                    we create an environment where success is shared, not extracted.
+                    True hospitality starts with the employee. When we prioritize the well-being of our teams through innovative settlement technology and better environments, we create a shared success.
                 </p>
             </div>
             <div class="split-image animate-on-scroll">
@@ -117,24 +111,29 @@
         </div>
     </div>
 
-    <div class="legacy-section">
-        <div class="legacy-container animate-on-scroll">
-            <span class="label" style="color: #2c3e50;">The Outreach</span>
-            <div class="legacy-quote">
-                "Success is not what you build for yourself.<br>It's what you leave for them."
-            </div>
-            <p class="legacy-text">
-                Our mission extends beyond our walls. Through community grants and educational outreach, 
-                we are dedicated to bringing real-world education back to the forefront. We are equipping the next generation 
-                with the tools, the mentorship, and the opportunities they need to thrive—in business, in sports, and in life.
-            </p>
+    <div class="project-section animate-on-scroll">
+        <span class="label" style="color: #333;">The Ecosystem</span>
+        <h2>Core Divisions</h2>
+        <div class="project-grid">
+            <a href="unity/index.html" class="project-card">
+                <h3>Unity Protocol</h3>
+                <p>Real-world asset (RWA) blockchain settlement engine powering the next era of hospitality finance.</p>
+            </a>
+            <a href="heychef/index.html" class="project-card">
+                <h3>Hey Chef</h3>
+                <p>Proprietary OS for culinary entrepreneurs, automating the friction of back-of-house operations.</p>
+            </a>
+            <a href="resort/index.html" class="project-card">
+                <h3>The Resort</h3>
+                <p>Phase 5 infrastructure: The V-Plex and Hotel Ilona. The first multi-unit on-chain hospitality hub.</p>
+            </a>
         </div>
     </div>
 
     <div class="compliance-section animate-on-scroll">
         <span class="label" style="color: #111;">Corporate Transparency</span>
         <h3 style="font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #111;">Legal & Compliance</h3>
-        <p style="color: #555; max-width: 600px; margin: 0 auto 20px auto; line-height: 1.6;">Powell Global LLC operates with full institutional transparency. Our foundational corporate filings and status are publicly available for partner review.</p>
+        <p style="color: #555; max-width: 600px; margin: 0 auto 20px auto; line-height: 1.6;">Powell Global LLC operates with full institutional transparency. Our foundational corporate filings are available for partner review.</p>
         <a href="Certificate_of_Good_Standing.pdf" target="_blank" class="btn-outline">View Certificate of Good Standing &rarr;</a>
     </div>
 
