@@ -5,58 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Resort | Powell Global LLC</title>
     <style>
-        /* CORE & MOBILE SCALING */
         :root { --gold: #d4af37; --slate: #2c3e50; --bg: #fff; --text: #333; }
         body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.8; }
         
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--slate); border: 2px solid var(--slate); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
-        .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
 
-        /* HERO - MULTI-SPORT ANIMATION */
-        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; background: #000; }
+        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
         .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2000'); background-size: cover; background-position: center; }
         .hero-content { position: relative; z-index: 2; padding: 20px; }
         .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); text-transform: uppercase; letter-spacing: 5px; margin: 0; }
 
-        /* SECTIONS */
         .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: clamp(2rem, 6vw, 2.8rem); color: var(--slate); margin-bottom: 40px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; }
         
         .grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
         @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
 
-        /* HOTEL ILONA DETAILS */
         .feature-list { list-style: none; padding: 0; }
-        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.15rem; }
+        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; }
         .feature-list li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: 1.2rem; }
-        .img-container img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #eee; }
 
-        /* THE MERCANTILE - ARTISAN HANGAR */
+        /* THE MERCANTILE - MULTI-LEVEL FOOD HALL */
         .mercantile-wrap { background: #0a0a0a; color: #fff; padding: 100px 20px; margin: 60px 0; border-top: 4px solid var(--gold); }
         .m-container { max-width: 1200px; margin: 0 auto; }
-        .m-visual { width: 100%; height: 550px; background-image: url('Blog_Post_1_Final (1).jpg'); background-size: cover; background-position: center; border-radius: 4px; border: 1px solid #333; margin: 40px 0; }
+        .m-visual { 
+            width: 100%; height: 650px; 
+            background-image: url('merc 2.jpg'); 
+            background-size: cover; background-position: center; 
+            border-radius: 4px; border: 1px solid #333; margin: 40px 0;
+        }
         
-        .m-highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .m-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .m-card { background: #111; padding: 40px; border-top: 2px solid var(--gold); }
         .m-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; }
 
-        /* V-PLEX - THE COMPLETE 3-RING ARCHITECTURE */
-        .vplex-notice { background: #000; color: var(--gold); padding: 25px; font-family: monospace; text-align: center; margin-bottom: 40px; letter-spacing: 2px; border: 1px solid var(--gold); }
-        .ring-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        /* V-PLEX RINGS */
+        .ring-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
         @media (min-width: 1000px) { .ring-grid { grid-template-columns: repeat(3, 1fr); } }
-        .ring-card { background: #f9f9f9; padding: 45px; border-left: 5px solid var(--slate); color: #333; height: 100%; }
-        .ring-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-top: 0; color: var(--slate); border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 20px; }
+        .ring-card { background: #f9f9f9; padding: 45px; border-left: 5px solid var(--slate); height: 100%; color: #333; }
+        .ring-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-top: 0; color: var(--slate); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px; }
 
-        /* FOOTER */
-        footer { text-align: center; padding: 80px 20px; background: #000; color: #555; font-size: 0.85rem; }
+        footer { text-align: center; padding: 80px 20px; background: #000; color: #555; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="../index.html" class="logo-text">Powell Global LLC</a>
-        <a href="../index.html" class="back-link">Return to Lobby</a>
+        <a href="../index.html" style="text-decoration:none; color:#888; font-weight:bold; font-size:0.8rem;">RETURN</a>
     </nav>
 
     <div class="hero">
@@ -70,35 +67,30 @@
         <h2 class="section-title">Hotel Ilona: Hospitality Reimagined</h2>
         <div class="grid">
             <div class="text-content">
-                <p>Designed with state-of-the-art glass architecture and a modern feel, Hotel Ilona is a premier destination for sports families.</p>
                 <ul class="feature-list">
-                    <li><strong>The Player's Floor:</strong> A dedicated level for athletes featuring a full-sized knee hockey room, private pool hall, and elite lounges.</li>
-                    <li><strong>The Equipment Arcade:</strong> A ticket-redemption hub where players cash in winnings for professional gear—ice skates, duffle bags, and basketballs—instead of traditional gimmicks.</li>
-                    <li><strong>Family Architecture:</strong> Outward-facing rooms with master bedrooms, mid-sized refrigerators, and Murphy bunk beds designed to sleep four children comfortably.</li>
-                    <li><strong>Tesla Energy:</strong> Powered by an on-site Tesla Tower for wireless energy distribution throughout the entire landlocked Resort.</li>
+                    <li><strong>The Player's Floor:</strong> A dedicated level for athletes featuring a full-size knee hockey room, private pool hall, and elite lounges.</li>
+                    <li><strong>The Equipment Arcade:</strong> Classic ticket-redemption hub where winnings are traded for professional gear (Skate laces, basketballs, duffle bags, and ice skates) rather than toys.</li>
+                    <li><strong>Family Suite Architecture:</strong> Outward-facing rooms with master bedrooms, mid-sized fridges, and Murphy bunk beds designed to sleep four children comfortably.</li>
+                    <li><strong>Tesla Energy Grid:</strong> Powered by an on-site Tesla Tower for wireless energy distribution throughout the entire landlocked Resort.</li>
                 </ul>
             </div>
             <div class="img-container">
-                <img src="Hotel Ilona.png" alt="Hotel Ilona Architecture Mockup">
-                <p style="text-align:center; font-style:italic; color:#888; font-size:0.8rem; margin-top:10px;">* 3D Architectural Mockup Coming Soon</p>
+                <img src="Hotel Ilona.png" alt="Hotel Ilona Architecture Mockup" style="width:100%; border-radius:4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
     </div>
 
     <div class="mercantile-wrap">
         <div class="m-container">
-            <h2 class="section-title" style="color:var(--gold); border-left-color:var(--gold);">The Mercantile: Artisan Hangar</h2>
-            <p style="font-size: 1.3rem; line-height: 1.9; color: #ccc;">
-                <strong>A Massive Industrial Cathedral:</strong> Drawing from 30 years in hospitality, this hangar is a launchpad where families find global artisan cuisine and fresh local goods directly next to the rink.
-            </p>
+            <h2 class="section-title" style="color:var(--gold); border-left-color:var(--gold);">The Mercantile</h2>
+            <p style="font-size: 1.3rem; line-height: 1.9; color: #ccc;">An upscale, multi-level culinary hub flooded with natural light. Designed with a grand central staircase, mezzanine seating, and high vaulted ceilings, it is the community's premier food court and marketplace.</p>
             
             <div class="m-visual"></div>
-            <p style="text-align:center; font-style:italic; color:#888; font-size:0.8rem; margin-top:-30px;">* 3D Architectural Mockup Coming Soon</p>
 
-            <div class="m-highlight-grid">
+            <div class="m-card-grid">
                 <div class="m-card">
-                    <h3>Market & Ovens</h3>
-                    <p>Featuring massive bread and pizza ovens, dedicated organic product markets, and "Farmers Market" booths for fresh produce from local farmers.</p>
+                    <h3>Bakeries & Markets</h3>
+                    <p>Featuring dedicated artisan bakeries, upscale food stalls, and a tiered central marketplace for local fresh produce and premium items.</p>
                 </div>
                 <div class="m-card">
                     <h3>On-Chain Payments</h3>
@@ -106,7 +98,7 @@
                 </div>
                 <div class="m-card">
                     <h3>The Chef Launchpad</h3>
-                    <p>Qualified chefs present their model to receive <strong>6 months of zero rent</strong> and free Varis Project access to build their brand 365 days a year.</p>
+                    <p>6 months zero rent for qualified chefs to build their brand in a high-traffic, 365-day community ecosystem using Varis Project rails.</p>
                 </div>
             </div>
         </div>
@@ -114,33 +106,28 @@
 
     <div class="section">
         <h2 class="section-title">The Vaitukaitis Educational & Athletic Complex (V-Plex)</h2>
-        <div class="vplex-notice">
-            3D ARCHITECTURAL RENDERINGS COMING SOON - ENGINEERING IN PROGRESS
+        <div style="background:#000; color:var(--gold); padding:20px; font-family:monospace; text-align:center; border:1px solid #333; margin-bottom:40px;">
+            3D ARCHITECTURAL RENDERINGS COMING SOON
         </div>
         
-        <p style="font-size: 1.2rem; margin-bottom: 50px; border-bottom: 1px solid #eee; padding-bottom: 30px;">
-            A multi-sport ecosystem home to Basketball, Soccer, Lacrosse, and elite Jrs. Hockey. Our focus is <strong>Foundation-First Education</strong> followed by D2 College-level athletic accreditation.
-        </p>
+        <p><strong>Foundation-First Education:</strong> Curriculum focused on Reading, Writing, Arithmetic, Constitutional/Common Law, Homesteading, and Hunting.</p>
 
         <div class="ring-grid">
             <div class="ring-card">
                 <h3>Ring 1: Learning Annex</h3>
-                <p>Education first: Reading, Writing, Arithmetic, Constitutional/Common Law, Homesteading, and Hunting. Primarily outdoor, passion-based learning for students age 10+.</p>
+                <p>Primarily outdoor, passion-based learning for students 10+. Focus on technical foundations and the development of the moral compass.</p>
             </div>
             <div class="ring-card" style="border-left-color: var(--gold);">
                 <h3>Ring 2: Sibling Zone</h3>
-                <p>Enclosed high-energy play areas with fun houses. Parents monitor rinks via broadcast viewing while siblings play in a safe, central hub.</p>
+                <p>Enclosed high-energy play hub with fun houses. Parents monitor rinks via broadcast viewing while siblings play in a safe area.</p>
             </div>
             <div class="ring-card">
                 <h3>Ring 3: Athletic Hub</h3>
-                <p>Gateway to gyms and pool. Features a <strong>Dedicated Pro Shop</strong> with apparel for all sports, sizing/fitting areas, and late hours for team-only access during tournaments.</p>
+                <p>Gateway to gyms and pool. Features a <strong>Dedicated Pro Shop</strong> with equipment and apparel for all sports. Open late for team-only access during tournaments.</p>
             </div>
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 Powell Global LLC. | Building the Infrastructure of Community.
-    </footer>
-
+    <footer>&copy; 2026 Powell Global LLC.</footer>
 </body>
 </html>
