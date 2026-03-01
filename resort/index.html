@@ -33,16 +33,18 @@
             width: 100%; height: 650px; 
             background-image: url('merc 2.jpg'); 
             background-size: cover; background-position: center; 
-            border-radius: 4px; border: 1px solid #333; margin: 40px 0;
+            border-radius: 4px; border: 1px solid #333; margin: 40px 0 10px 0;
         }
         
         .m-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .m-card { background: #111; padding: 40px; border-top: 2px solid var(--gold); }
         .m-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; }
 
-        /* V-PLEX RINGS */
-        .ring-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
-        @media (min-width: 1000px) { .ring-grid { grid-template-columns: repeat(3, 1fr); } }
+        /* V-PLEX ARCHITECTURE */
+        .vplex-notice { background: #000; color: var(--gold); padding: 20px; font-family: monospace; text-align: center; border: 1px solid #333; margin-bottom: 40px; letter-spacing: 1px; }
+        .main-hub { background: #111; color: #fff; padding: 50px; border-left: 5px solid var(--gold); margin-bottom: 40px; border-radius: 4px; }
+        .main-hub h3 { color: var(--gold); text-transform: uppercase; font-size: 1.8rem; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        
         .ring-card { background: #f9f9f9; padding: 45px; border-left: 5px solid var(--slate); height: 100%; color: #333; }
         .ring-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-top: 0; color: var(--slate); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px; }
 
@@ -86,6 +88,7 @@
             <p style="font-size: 1.3rem; line-height: 1.9; color: #ccc;">An upscale, multi-level culinary hub flooded with natural light. Designed with a grand central staircase, mezzanine seating, and high vaulted ceilings, it is the community's premier food court and marketplace.</p>
             
             <div class="m-visual"></div>
+            <p style="text-align:center; font-style:italic; color:#888; font-size:0.85rem; margin-bottom: 40px;">* Close 3D Mockup of what the Mercantile will look like.</p>
 
             <div class="m-card-grid">
                 <div class="m-card">
@@ -106,24 +109,30 @@
 
     <div class="section">
         <h2 class="section-title">The Vaitukaitis Educational & Athletic Complex (V-Plex)</h2>
-        <div style="background:#000; color:var(--gold); padding:20px; font-family:monospace; text-align:center; border:1px solid #333; margin-bottom:40px;">
-            3D ARCHITECTURAL RENDERINGS COMING SOON
+        <div class="vplex-notice">
+            3D ARCHITECTURAL RENDERINGS COMING SOON - ENGINEERING IN PROGRESS
         </div>
         
-        <p><strong>Foundation-First Education:</strong> Curriculum focused on Reading, Writing, Arithmetic, Constitutional/Common Law, Homesteading, and Hunting.</p>
+        <p style="font-size: 1.2rem; margin-bottom: 40px;">A multi-sport ecosystem home to Basketball, Soccer, Lacrosse, and elite Ice Sports. Our focus is Foundation-First Education followed by elite athletic development.</p>
 
-        <div class="ring-grid">
+        <div class="main-hub">
+            <h3>The Central Hub & Ice Complex</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 25px;">The core building of the V-Plex, enclosed by two outer rings. This massive central hub features <strong>5 full-size ice rinks</strong> and acts as the official home of the <strong>Colorado Vipers</strong>.</p>
+            <ul class="feature-list" style="color: #eee;">
+                <li><strong>The Colorado Vipers:</strong> A comprehensive pipeline developing athletes from mini-mites all the way up to D2 College and Junior level hockey.</li>
+                <li><strong>Inclusive Ice Sports:</strong> Fully dedicated programming for girls and women's hockey, alongside competitive and recreational figure skating.</li>
+                <li><strong>The Pro Shop:</strong> A massive dedicated facility featuring equipment, apparel, and sizing/fitting areas for all sports. Open late for team-only access during tournaments.</li>
+            </ul>
+        </div>
+
+        <div class="grid">
             <div class="ring-card">
-                <h3>Ring 1: Learning Annex</h3>
-                <p>Primarily outdoor, passion-based learning for students 10+. Focus on technical foundations and the development of the moral compass.</p>
+                <h3>Outer Ring 1: Learning Annex</h3>
+                <p>Curriculum focused on the core foundations: Reading, Writing, and Arithmetic, alongside Constitutional and Common Law, Homesteading, and Hunting. Primarily outdoor, passion-based learning designed for students age 10+ to develop strong moral compasses.</p>
             </div>
             <div class="ring-card" style="border-left-color: var(--gold);">
-                <h3>Ring 2: Sibling Zone</h3>
-                <p>Enclosed high-energy play hub with fun houses. Parents monitor rinks via broadcast viewing while siblings play in a safe area.</p>
-            </div>
-            <div class="ring-card">
-                <h3>Ring 3: Athletic Hub</h3>
-                <p>Gateway to gyms and pool. Features a <strong>Dedicated Pro Shop</strong> with equipment and apparel for all sports. Open late for team-only access during tournaments.</p>
+                <h3>Outer Ring 2: Sibling Zone</h3>
+                <p>An enclosed, high-energy play hub wrapping around the facility. It features fun houses and indoor playgrounds so parents can monitor games via broadcast viewing areas while siblings play in a safe, central environment.</p>
             </div>
         </div>
     </div>
