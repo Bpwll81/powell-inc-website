@@ -15,12 +15,199 @@
         .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; background: #000; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: fadeCycle 15s infinite; }
         .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)); }
-        .slide-1 { background-image: url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000'); animation-delay: 0s; }
-        .slide-2 { background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000'); animation-delay: 5s; }
-        .slide-3 { background-image: url('https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=2000'); animation-delay: 10s; }
+        .slide-1 { background-image: url('[https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000](https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000)'); animation-delay: 0s; }
+        .slide-2 { background-image: url('[https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000](https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000)'); animation-delay: 5s; }
+        .slide-3 { background-image: url('[https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=2000](https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=2000)'); animation-delay: 10s; }
         @keyframes fadeCycle { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
         .hero-content { position: relative; z-index: 2; padding: 20px; }
         .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); text-transform: uppercase; letter-spacing: 5px; margin: 0; }
 
         .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: clamp(2rem, 6vw, 2.8rem); color:
+        .section-title { font-size: clamp(2rem, 6vw, 2.8rem); color: var(--slate); margin-bottom: 40px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
+        @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; }
+        .feature-list li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: 1.2rem; }
+
+        /* THE MERCANTILE */
+        .mercantile-wrap { background: #0a0a0a; color: #fff; padding: 100px 20px; margin: 60px 0; border-top: 4px solid var(--gold); }
+        .m-container { max-width: 1200px; margin: 0 auto; }
+        .m-visual { 
+            width: 100%; height: 650px; 
+            background-image: url('merc 2.jpg'); 
+            background-size: cover; background-position: center; 
+            border-radius: 4px; border: 1px solid #333; margin: 40px 0 10px 0;
+        }
+        
+        .m-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .m-card { background: #111; padding: 40px; border-top: 2px solid var(--gold); }
+        .m-card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; }
+
+        /* V-PLEX ARCHITECTURE */
+        .vplex-notice { background: #000; color: var(--gold); padding: 20px; font-family: monospace; text-align: center; border: 1px solid #333; margin-bottom: 40px; letter-spacing: 1px; }
+        .main-hub { background: #111; color: #fff; padding: 50px; border-left: 5px solid var(--gold); margin-bottom: 40px; border-radius: 4px; }
+        .main-hub h3 { color: var(--gold); text-transform: uppercase; font-size: 1.8rem; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        
+        .ice-complex { background: #1a202c; color: #fff; padding: 40px; border-left: 5px solid #4299e1; margin-bottom: 20px; border-radius: 4px; }
+        .ice-complex h3 { color: #4299e1; text-transform: uppercase; font-size: 1.5rem; margin-top: 0; border-bottom: 1px solid #2d3748; padding-bottom: 15px; }
+
+        /* RINK INDIVIDUAL CARDS */
+        .rink-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .rink-box { background: #f1f5f9; border-top: 4px solid #4299e1; padding: 30px; border-radius: 4px; }
+        .rink-box h4 { margin: 0 0 10px 0; color: #2d3748; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
+        .rink-box .rink-type { display: block; color: #4299e1; font-weight: bold; font-size: 0.8rem; margin-bottom: 15px; }
+        .rink-box p { margin: 0; color: #4a5568; font-size: 0.95rem; line-height: 1.6; }
+
+        .ring-card { background: #f9f9f9; padding: 45px; border-left: 5px solid var(--slate); height: 100%; color: #333; }
+        .ring-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-top: 0; color: var(--slate); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px; }
+
+        footer { text-align: center; padding: 80px 20px; background: #000; color: #555; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo-text">Powell Global LLC</a>
+        <a href="../index.html" style="text-decoration:none; color:#888; font-weight:bold; font-size:0.8rem;">RETURN</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-slide slide-1"></div>
+        <div class="hero-slide slide-2"></div>
+        <div class="hero-slide slide-3"></div>
+        <div class="hero-content">
+            <h1>The Resort</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Hotel Ilona: Hospitality Reimagined</h2>
+        <div class="grid">
+            <div class="text-content">
+                <ul class="feature-list">
+                    <li><strong>The Player's Floor:</strong> A dedicated level for athletes featuring a full-size knee hockey room, private pool hall, and elite lounges.</li>
+                    <li><strong>The Equipment Arcade:</strong> Classic ticket-redemption hub where winnings are traded for professional gear (laces, basketballs, duffle bags, and ice skates) rather than toys.</li>
+                    <li><strong>Family Suite Architecture:</strong> Outward-facing rooms with master bedrooms and Murphy bunk beds designed to sleep four children comfortably.</li>
+                    <li><strong>Institutional Exchange:</strong> On-site precious metal dealer and currency exchange booth supporting Crypto and Fiat.</li>
+                    <li><strong>The Tesla Core:</strong> While all guest rooms face outwards, each floor has a uniquely designed lobby that faces the inside of the hotel, all centered around the massive Tesla Tower.</li>
+                </ul>
+            </div>
+            <div class="img-container">
+                <img src="Hotel Ilona.png" alt="Hotel Ilona Architecture Mockup" style="width:100%; border-radius:4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <p style="text-align:center; font-style:italic; color:#888; font-size:0.85rem; margin-top: 10px;">* Accurate 3D mockup of Hotel design</p>
+            </div>
+        </div>
+
+        <div class="grid" style="margin-top: 30px;">
+            <div class="text-content">
+                <ul class="feature-list">
+                    <li><strong>Smart-Room Ecosystem:</strong> Automated rooms tailored to your preferences, featuring smart windows that will automatically dim or open based on preference.</li>
+                    <li><strong>Leisure & Grooming:</strong> On-site hair salon, therapeutic centers, and a men's lounge with a wide selection of liquors, craft beers, and cigars.</li>
+                </ul>
+            </div>
+            <div class="text-content">
+                <ul class="feature-list">
+                    <li><strong>Subterranean Athletic Loop:</strong> An underground running, walking, and biking track circling the entire property with a full-sized gym, spa, and aerobics classes.</li>
+                    <li><strong>White-Glove Service:</strong> Amenities include late-night room service specifically tailored for late arrivals.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mercantile-wrap">
+        <div class="m-container">
+            <h2 class="section-title" style="color:var(--gold); border-left-color:var(--gold);">The Mercantile</h2>
+            <p style="font-size: 1.3rem; line-height: 1.9; color: #ccc;">An upscale, multi-level culinary hub flooded with natural light. Designed with a grand central staircase, mezzanine seating, and high vaulted ceilings, it is the community's premier food court and marketplace.</p>
+            
+            <div class="m-visual"></div>
+            <p style="text-align:center; font-style:italic; color:#888; font-size:0.85rem; margin-bottom: 40px;">* Close 3D Mockup of what the Mercantile will look like.</p>
+
+            <div class="m-card-grid">
+                <div class="m-card">
+                    <h3>Bakeries & Markets</h3>
+                    <p>Featuring dedicated artisan bakeries, upscale food stalls, and a tiered central marketplace for local fresh produce and premium items.</p>
+                </div>
+                <div class="m-card">
+                    <h3>On-Chain Payments</h3>
+                    <p>Powered by <strong>Unity Protocol</strong>. Native UNT/UGLD settlement with certified on-site exchange hubs for Gold and Silver payments.</p>
+                </div>
+                <div class="m-card">
+                    <h3>The Chef Launchpad</h3>
+                    <p>6 months zero rent for qualified chefs to build their brand in a high-traffic, 365-day community ecosystem using Varis Project rails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">The Vaitukaitis Educational & Athletic Complex (V-Plex)</h2>
+        <div class="vplex-notice">
+            3D ARCHITECTURAL RENDERINGS COMING SOON - ENGINEERING IN PROGRESS
+        </div>
+        
+        <p style="font-size: 1.2rem; margin-bottom: 40px;">A multi-sport ecosystem home to Basketball, Soccer, Lacrosse, and elite Ice Sports. Our focus is Foundation-First Education followed by elite athletic development.</p>
+
+        <div class="main-hub">
+            <h3>The Central Hub</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 25px;">The elevated core building of the V-Plex. This massive structure houses the dry-land and aquatic sports infrastructure, featuring the indoor swimming pool, multi-sport gymnasiums, basketball courts, and indoor soccer/flag football arenas.</p>
+            <ul class="feature-list" style="color: #eee;">
+                <li><strong>The Pro Shop:</strong> A massive dedicated facility inside the hub featuring equipment, apparel, and sizing/fitting areas for all sports. Open late for team-only access during tournaments.</li>
+            </ul>
+        </div>
+
+        <div class="ice-complex">
+            <h3>The Ice Campus (Recessed Topography)</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e0; margin-bottom: 25px;">Sitting on a recessed, lower topographic level below the Main Hub are <strong>5 individual, dedicated ice arenas</strong>. Guests transition down to the ice level via a series of clear vertical shafts featuring leisurely walkways, escalators, and ADA-compliant elevators. Once at the ice level, guests can navigate between the 5 rinks via landscaped trails or an underground shuttle system.</p>
+            <ul class="feature-list" style="color: #e2e8f0;">
+                <li><strong>The Colorado Vipers:</strong> The official home of a comprehensive pipeline developing athletes from mini-mites all the way up to D2 College and Junior level hockey.</li>
+                <li><strong>Professional Locker Rooms:</strong> Every locker room is built with a professional scope. Amenities, space, and architectural finishes upgrade significantly as players advance to higher levels of the program.</li>
+                <li><strong>Inclusive Ice Sports:</strong> Fully dedicated programming for girls and women's hockey, alongside competitive and recreational figure skating.</li>
+            </ul>
+        </div>
+
+        <div class="rink-grid">
+            <div class="rink-box">
+                <h4>Rink: Denver</h4>
+                <span class="rink-type">Olympic Sized Arena</span>
+                <p>The main competition ice and official home to the D2 College and Junior level hockey programs.</p>
+            </div>
+            <div class="rink-box">
+                <h4>Rink: Lafayette</h4>
+                <span class="rink-type">Regular Sized Arena</span>
+                <p>Dedicated ice for recreational hockey leagues and professional figure skating training.</p>
+            </div>
+            <div class="rink-box">
+                <h4>Rink: Staten Island</h4>
+                <span class="rink-type">Regular Sized Arena</span>
+                <p>Supporting facility for recreational hockey, figure skating, and community ice programs.</p>
+            </div>
+            <div class="rink-box">
+                <h4>Rink: Birmingham</h4>
+                <span class="rink-type">NHL Sized Arena</span>
+                <p>Core facility for the travel pipeline. Primary home for A, AA, AAA, JV, and Varsity teams.</p>
+            </div>
+            <div class="rink-box">
+                <h4>Rink: Lancaster</h4>
+                <span class="rink-type">NHL Sized Arena</span>
+                <p>Secondary NHL-sized ice supporting the extensive travel program and high-school varsity athletics.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="ring-card">
+                <h3>Outer Ring 1: Learning Annex</h3>
+                <p>Curriculum focused on the core foundations: Reading, Writing, and Arithmetic, alongside Constitutional and Common Law, Homesteading, and Hunting. Primarily outdoor, passion-based learning designed for students age 10+ to develop strong moral compasses.</p>
+            </div>
+            <div class="ring-card" style="border-left-color: var(--gold);">
+                <h3>Outer Ring 2: Sibling Zone</h3>
+                <p>An enclosed, high-energy play hub wrapping around the facility. It features fun houses and indoor playgrounds so parents can monitor games via broadcast viewing areas while siblings play in a safe, central environment.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Powell Global LLC.</footer>
+</body>
+</html>
