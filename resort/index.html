@@ -11,8 +11,14 @@
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--slate); border: 2px solid var(--slate); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
 
-        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #000; }
-        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2000'); background-size: cover; background-position: center; }
+        /* HERO - MULTI-SPORT CROSSFADE */
+        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; background: #000; }
+        .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: fadeCycle 15s infinite; }
+        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)); }
+        .slide-1 { background-image: url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000'); animation-delay: 0s; }
+        .slide-2 { background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000'); animation-delay: 5s; }
+        .slide-3 { background-image: url('https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=2000'); animation-delay: 10s; }
+        @keyframes fadeCycle { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
         .hero-content { position: relative; z-index: 2; padding: 20px; }
         .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); text-transform: uppercase; letter-spacing: 5px; margin: 0; }
 
@@ -59,7 +65,9 @@
     </nav>
 
     <div class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-slide slide-1"></div>
+        <div class="hero-slide slide-2"></div>
+        <div class="hero-slide slide-3"></div>
         <div class="hero-content">
             <h1>The Resort</h1>
         </div>
@@ -117,10 +125,11 @@
 
         <div class="main-hub">
             <h3>The Central Hub & Ice Complex</h3>
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 25px;">The core building of the V-Plex, enclosed by two outer rings. This massive central hub features <strong>5 full-size ice rinks</strong> and acts as the official home of the <strong>Colorado Vipers</strong>.</p>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 25px;">The core building of the V-Plex, enclosed by two outer rings. This massive central hub <strong>houses all 5 full-size ice rinks under one roof</strong> and acts as the official home of the <strong>Colorado Vipers</strong>.</p>
             <ul class="feature-list" style="color: #eee;">
                 <li><strong>The Colorado Vipers:</strong> A comprehensive pipeline developing athletes from mini-mites all the way up to D2 College and Junior level hockey.</li>
                 <li><strong>Inclusive Ice Sports:</strong> Fully dedicated programming for girls and women's hockey, alongside competitive and recreational figure skating.</li>
+                <li><strong>Professional Locker Rooms:</strong> Every locker room is built with a professional scope. Amenities and architectural finishes upgrade significantly as players advance to higher levels of the program.</li>
                 <li><strong>The Pro Shop:</strong> A massive dedicated facility featuring equipment, apparel, and sizing/fitting areas for all sports. Open late for team-only access during tournaments.</li>
             </ul>
         </div>
