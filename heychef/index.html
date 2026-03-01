@@ -2,77 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hey Chef | Kitchen Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Varis Project | Powell Global LLC</title>
     <style>
-        :root { --accent: #d4af37; --slate: #2c3e50; --bg: #ffffff; }
-        body { margin: 0; font-family: 'Helvetica Neue', sans-serif; background: var(--bg); color: #333; }
+        /* CORE & MOBILE SCALING (DARK THEME) */
+        :root { --slate: #0f172a; --gold: #d4af37; --bg: #0f172a; --text: #f8fafc; --card-bg: #1e293b; --border: #334155; }
+        body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.8; }
         
-        nav { padding: 20px 40px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
-        .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
-        .back-link:hover { color: var(--accent); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15, 23, 42, 0.98); z-index: 1000; }
+        .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #fff; border: 2px solid var(--gold); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
+        .back-link { text-decoration: none; color: #94a3b8; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; }
 
-        /* HERO: High Energy Kitchen */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-        .hero h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; }
-        .hero p { font-size: 1.5rem; font-weight: 300; }
-
-        /* PAIN POINT */
-        .problem { display: flex; max-width: 1000px; margin: 80px auto; gap: 50px; align-items: center; padding: 0 20px; }
-        .problem img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .problem-text h2 { color: var(--slate); font-size: 2.5rem; margin-top: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
         
-        /* FEATURES */
-        .features { background: #f9f9f9; padding: 80px 20px; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 40px auto; }
-        .card { background: #fff; padding: 30px; border: 1px solid #eee; }
-        .card h4 { color: var(--accent); text-transform: uppercase; }
+        /* HEADER */
+        .header-block { text-align: center; margin-bottom: 60px; }
+        .header-block h1 { font-size: clamp(3rem, 8vw, 5rem); color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin: 0; }
+        .header-block p { color: #94a3b8; font-size: 1.3rem; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
-        @media (max-width: 768px) { .problem, .grid { flex-direction: column; display: block; } .grid { display: grid; grid-template-columns: 1fr; } }
+        /* PROTOCOL BANNER */
+        .protocol-banner { background: #000; padding: 20px; text-align: center; border: 1px solid var(--border); margin: 40px 0; font-family: monospace; color: #94a3b8; letter-spacing: 1.5px; }
+        .protocol-banner span { color: var(--gold); font-weight: bold; }
+
+        /* LAYER GRID */
+        .grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
+        @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+        .layer-card { background: var(--card-bg); padding: 40px; border-radius: 4px; border-top: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .layer-card.full-width { grid-column: 1 / -1; border-top: 3px solid #4299e1; }
+        
+        .layer-card h3 { color: var(--gold); text-transform: uppercase; font-size: 1.2rem; margin-top: 0; letter-spacing: 1px; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
+        .full-width h3 { color: #4299e1; }
+        .layer-card p { color: #cbd5e1; margin-bottom: 0; }
+
+        /* RESTRICTED MODULE (HEY CHEF) */
+        .hey-chef-module { margin-top: 100px; text-align: center; padding: 30px; border: 1px dashed var(--border); opacity: 0.3; transition: opacity 0.3s ease; cursor: default; }
+        .hey-chef-module:hover { opacity: 0.8; border-color: #64748b; }
+        .hey-chef-module h4 { font-family: monospace; color: #fff; margin: 0 0 10px 0; letter-spacing: 2px; text-transform: uppercase; }
+        .hey-chef-module p { font-size: 0.85rem; color: #64748b; margin: 0; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div style="font-weight:bold; color:var(--slate);">POWELL INC.</div>
-        <a href="../index.html" class="back-link">← Return to Lobby</a>
+        <a href="../index.html" class="logo-text">Powell Global LLC</a>
+        <a href="../index.html" class="back-link">Return to Lobby</a>
     </nav>
 
-    <div class="hero">
-        <div>
-            <h1>Hey Chef</h1>
-            <p>Keep your eyes on the pass, not the paperwork.</p>
+    <div class="container">
+        <div class="header-block">
+            <h1>The Varis Project</h1>
+            <p>A multi-layered institutional blockchain architecture designed to eliminate friction across hospitality and commercial real estate operations.</p>
         </div>
-    </div>
 
-    <div class="problem">
-        <div style="flex: 1;">
-            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800" alt="Stressed Office">
+        <div class="protocol-banner">
+            OPERATING INFRASTRUCTURE POWERED BY <span>THE UNITY PROTOCOL</span>
         </div>
-        <div style="flex: 1;" class="problem-text">
-            <h2>The Office Trap</h2>
-            <p>Every hour you spend matching invoices to delivery slips is an hour you aren't leading your team.</p>
-            <p><strong>Hey Chef</strong> automates the boring stuff so you can get back to the food.</p>
-        </div>
-    </div>
 
-    <div class="features">
-        <h2 style="color: var(--slate);">The Shelf-to-Order Engine</h2>
         <div class="grid">
-            <div class="card"><h4>Predictive Pars</h4><p>AI that predicts your prep list.</p></div>
-            <div class="card"><h4>Direct Ordering</h4><p>One-click vendor connection.</p></div>
-            <div class="card"><h4>KPI Dashboard</h4><p>Live food cost analysis.</p></div>
-            <div class="card"><h4>Voice Command</h4><p>"Order 3 cases of Lemons."</p></div>
+            <div class="layer-card">
+                <h3>The HR & Payroll Arm</h3>
+                <p>Designed for real-time settlement. Employees define their own financial flow, with options to receive pay daily, weekly, or every other day. Varis automates the entire human resources lifecycle on-chain, eliminating legacy administrative bottlenecks.</p>
+            </div>
+
+            <div class="layer-card">
+                <h3>Accounting & QuickBooks Arm</h3>
+                <p>Blockchain precision meets legacy compliance. This arm integrates seamlessly into the Payroll tier and pushes data via direct API into <strong>QuickBooks</strong>. It provides real-time ledger balancing and tax alignment for high-volume commercial environments.</p>
+            </div>
+
+            <div class="layer-card full-width">
+                <h3>The XDC Network: Bridging Legacy Banking</h3>
+                <p>The entire Varis Project is designed to eliminate the standard Net-10 and Net-30 holding patterns that cripple vendor liquidity. By utilizing the <strong>XDC Network</strong>, Varis achieves instant settlement finality on the blockchain while retaining full, frictionless interoperability with legacy fiat banking systems. Smart contracts ensure immediate vendor payout upon invoice approval.</p>
+            </div>
         </div>
+
+        <div class="hey-chef-module">
+            <h4>[ Restricted Access: Module H.C. ]</h4>
+            <p>Proprietary Food & Beverage OS Upgrade. Technical details classified pending deployment within the Mercantile ecosystem.</p>
+        </div>
+
     </div>
 
 </body>
