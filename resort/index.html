@@ -12,22 +12,23 @@
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #fff; border: 2px solid var(--gold); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
         .back-link { text-decoration: none; color: #94a3b8; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .header-block { text-align: center; margin-bottom: 80px; }
-        .header-block h1 { font-size: clamp(2.5rem, 6vw, 4rem); color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
         
-        .section-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 50px; margin-bottom: 40px; }
-        .section-card h2 { color: var(--gold); text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; letter-spacing: 2px; }
+        .header-block { text-align: center; margin-bottom: 60px; }
+        .header-block h1 { font-size: clamp(3rem, 8vw, 5rem); color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin: 0; }
+        
+        .resort-section { margin-bottom: 100px; }
+        .resort-section h2 { color: var(--gold); text-transform: uppercase; font-size: 2rem; letter-spacing: 2px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .resort-section p { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 30px; }
+        
+        .image-placeholder { width: 100%; height: 400px; background: #1e293b; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: #475569; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
 
-        /* RINK GRID */
-        .rink-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
-        .rink-item { background: #0f172a; border: 1px solid #475569; padding: 20px; border-top: 3px solid #4299e1; text-align: center; }
-        .rink-item h4 { margin: 0 0 10px 0; color: #4299e1; text-transform: uppercase; font-size: 0.9rem; }
-        .rink-item p { margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4; }
-
-        .feature-list { list-style: none; padding: 0; }
-        .feature-list li { margin-bottom: 15px; padding-left: 25px; position: relative; color: #cbd5e1; }
-        .feature-list li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+        /* RINK SPEC GRID */
+        .rink-specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+        .rink-card { border-left: 3px solid var(--gold); background: rgba(255,255,255,0.03); padding: 20px; }
+        .rink-card h4 { color: var(--gold); margin: 0 0 5px 0; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; }
+        .rink-card .sub-head { color: #4299e1; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .rink-card p { font-size: 0.95rem; margin: 0; color: #94a3b8; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -40,53 +41,40 @@
     <div class="container">
         <div class="header-block">
             <h1>The Resort</h1>
-            <p style="color: #94a3b8; font-size: 1.2rem;">Hotel Ilona | The Mercantile | The V-Plex</p>
         </div>
 
-        <div class="section-card">
+        <div class="resort-section">
             <h2>Hotel Ilona</h2>
-            <p>An elite hospitality experience designed to bridge physical luxury with digital fluidity. Hotel Ilona serves as the anchor for the resort, providing high-end accommodations for athletes, culinary tourists, and institutional partners.</p>
-            <ul class="feature-list">
-                <li>Integrated "Unity Wallet" room access and localized settlement.</li>
-                <li>Exclusive rooftop lounge for VIP protocol members.</li>
-                <li>Direct biometric tunnel access to the V-Plex.</li>
-            </ul>
+            <div class="image-placeholder">Hotel Ilona - Render Coming Soon</div>
+            <p>The premier luxury anchor of the resort. Hotel Ilona is designed to provide world-class accommodations for elite athletes, institutional partners, and culinary tourists, serving as the high-end residential heart of the Powell Global ecosystem.</p>
         </div>
 
-        <div class="section-card">
+        <div class="resort-section">
             <h2>The Mercantile</h2>
-            <p>A multi-vendor industrial culinary hub powered by Module H.C. (Hey Chef). The Mercantile eliminates the friction of traditional food hall operations through automated splinter-settlement.</p>
-            <ul class="feature-list">
-                <li>8+ Proprietary Artisan Culinary Modules.</li>
-                <li>Real-time automated inventory tokenization.</li>
-                <li>Centralized kitchen logistics on-chain.</li>
-            </ul>
+            <div class="image-placeholder">The Mercantile - Artisan Culinary Hub</div>
+            <p>Our industrial-scale culinary destination. Featuring high-volume artisan modules, The Mercantile utilizes Module H.C. to provide a frictionless, blockchain-integrated environment for both vendors and guests.</p>
         </div>
 
-        <div class="section-card">
+        <div class="resort-section">
             <h2>The V-Plex</h2>
-            <p>A massive, recessed-topography athletic complex. This is the home of the <strong>Vipers</strong> and the premier training ground for professional ice sports.</p>
+            <div class="image-placeholder">The V-Plex - Recessed Topography View</div>
+            <p>A massive, recessed-topography athletic complex designed for high-performance ice sports. The V-Plex is the operational headquarters for the Vipers and the ultimate pipeline for athletic development.</p>
             
-            <div class="rink-grid">
-                <div class="rink-item">
-                    <h4>Rink 1</h4>
-                    <p>Olympic Championship Arena (Tier 1 Events)</p>
+            <div class="rink-specs">
+                <div class="rink-card">
+                    <h4>Rink: Denver</h4>
+                    <span class="sub-head">Main Arena - Olympic Sized</span>
+                    <p>Home to the D2 and JR teams. High-capacity seating for championship events.</p>
                 </div>
-                <div class="rink-item">
-                    <h4>Rink 2</h4>
-                    <p>The Vipers Main Training Center</p>
+                <div class="rink-card">
+                    <h4>Rinks: Lafayette & Staten Island</h4>
+                    <span class="sub-head">Regular Sized</span>
+                    <p>Dedicated ice for recreational hockey and professional figure skating training.</p>
                 </div>
-                <div class="rink-item">
-                    <h4>Rink 3</h4>
-                    <p>Youth Academy & Community Pipeline</p>
-                </div>
-                <div class="rink-item">
-                    <h4>Rink 4</h4>
-                    <p>High-Performance Skating Studio</p>
-                </div>
-                <div class="rink-item">
-                    <h4>Rink 5</h4>
-                    <p>Curling & Short-Track Tactical Center</p>
+                <div class="rink-card">
+                    <h4>Rinks: Birmingham & Lancaster</h4>
+                    <span class="sub-head">NHL Sized</span>
+                    <p>Home to the Travel Pipeline: A, AA, AAA, JV, and Varsity teams.</p>
                 </div>
             </div>
         </div>
