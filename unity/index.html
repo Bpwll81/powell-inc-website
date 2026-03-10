@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity Protocol | Institutional Asset Settlement</title>
+    <title>Unity Protocol | Sovereign Asset Settlement</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --gold: #d4af37; --bg: #030712; --slate: #0f172a; --text: #cbd5e1; }
+        :root { 
+            --gold: #d4af37; 
+            --bg: #121212; /* Sophisticated Institutional Grey */
+            --slate: #1e1e1e; 
+            --text: #cbd5e1; 
+        }
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
         .text-gold { color: var(--gold); }
         .border-gold { border-color: var(--gold); }
-        .bg-gold-fade { background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%); }
+        
+        /* Fixed scrolling ticker container */
+        .ticker-container { background: #000; border-bottom: 1px solid rgba(212,175,55,0.2); }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <div class="w-full bg-black border-b border-white/10 h-10 flex items-center">
+    <div class="ticker-container w-full h-12 flex items-center">
         <div class="tradingview-widget-container w-full">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -42,148 +49,140 @@
         </div>
     </div>
 
-    <nav class="flex justify-between items-center px-10 py-6 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
+    <nav class="flex justify-between items-center px-10 py-6 bg-black/40 backdrop-blur-lg sticky top-0 z-50 border-b border-white/5">
         <div class="text-white font-bold tracking-[0.2em] uppercase text-lg">Powell Global</div>
-        <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-gold transition-all">← Back to Manifesto</a>
+        <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest">
+            <a href="index.html" class="text-slate-500 hover:text-gold transition-all">Manifesto</a>
+            <a href="varis.html" class="text-slate-500 hover:text-gold transition-all">Varis OS</a>
+            <a href="heychef.html" class="text-slate-500 hover:text-gold transition-all">Hey Chef</a>
+        </div>
     </nav>
 
-    <header class="relative py-32 px-6 border-b border-gold/30 overflow-hidden">
+    <header class="relative py-32 px-6 border-b border-gold/20 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
-            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-bg"></div>
+            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000" class="w-full h-full object-cover opacity-10 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-bg"></div>
         </div>
         <div class="relative z-10 max-w-5xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-extralight tracking-[0.15em] text-white uppercase mb-8">Unity Protocol</h1>
-            <div class="inline-block border border-gold/50 px-6 py-2 bg-gold/5 text-gold font-mono text-sm tracking-widest mb-12">
-                ISO 20022 COMPLIANCE // INSTANT FINALITY
+            <h1 class="text-5xl md:text-7xl font-extralight tracking-[0.2em] text-white uppercase mb-8">Unity Protocol</h1>
+            <div class="inline-block border border-gold/40 px-6 py-2 bg-gold/5 text-gold font-mono text-xs tracking-widest mb-12">
+                ISO 20022 COMPLIANCE // 70B MAX SUPPLY
             </div>
             <p class="text-xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
-                The institutional-grade bridge between traditional commodity value and digital velocity. Powered by the XDC Network for sub-second, bail-free global settlement.
+                Institutional-grade settlement utilizing the XDC Network. Sub-second finality with native EVM compatibility (ETH) and XRP liquidity bridge integration.
             </p>
         </div>
     </header>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div>
-            <h2 class="text-3xl font-bold text-white uppercase tracking-wider mb-8">The XDC Network Moat</h2>
-            <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                Unity Protocol operates exclusively on the <strong>XDC Network</strong>—the world's leading institutional blockchain for trade finance. While legacy networks struggle with congestion, XDC provides the speed and messaging structure required for the next era of global finance.
-            </p>
-            <div class="space-y-6">
-                <div class="p-6 bg-white/5 border-l-2 border-gold rounded-r">
-                    <h4 class="text-white font-bold mb-2 uppercase text-sm tracking-widest">Cross-Chain Interoperability</h4>
-                    <p class="text-sm text-slate-400">Natively EVM-compatible for seamless <strong>Ethereum</strong> integration and integrated with the XDC-XRP bridge for liquidity access across the <strong>Ripple</strong> ecosystem.</p>
-                </div>
-                <div class="p-6 bg-white/5 border-l-2 border-gold rounded-r">
-                    <h4 class="text-white font-bold mb-2 uppercase text-sm tracking-widest">ISO 20022 Standard</h4>
-                    <p class="text-sm text-slate-400">Utilizing the rich financial messaging standard adopted by SWIFT and central banks. Unity transactions carry the data required for instant institutional audit.</p>
-                </div>
-            </div>
-        </div>
-        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2000" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gold/10 mix-blend-overlay"></div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white/[0.02] border-y border-white/5 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-sm font-bold text-gold uppercase tracking-[0.3em] mb-4">The Dual-Token Engine</h2>
-                <h3 class="text-4xl text-white font-light">Autonomy Meets Intrinsic Weight</h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-black/40 border border-white/10 p-10 hover:border-gold/50 transition-all group">
-                    <h4 class="text-2xl font-mono text-white mb-4">UNT Utility Token</h4>
-                    <p class="text-slate-400 leading-relaxed mb-8">
-                        The "Gas" of the Powell Global ecosystem. UNT is the consumptive medium required to process hardware nodes, AI requests, and ISO 20022 messaging. Every transaction on Varis OS triggers an automated micro-buy and burn, protecting network value through sheer operational velocity.
-                    </p>
-                    <div class="bg-gold/5 border border-gold/20 p-4 font-mono text-[10px] text-gold uppercase tracking-widest">
-                        Supply: 72,000,000 // Initial Peg: $0.05
-                    </div>
-                </div>
-
-                <div class="bg-black/40 border border-white/10 p-10 hover:border-gold/50 transition-all group">
-                    <h4 class="text-2xl font-mono text-white mb-4">UGLD Asset Token</h4>
-                    <p class="text-slate-400 leading-relaxed mb-8">
-                        The Settlement Layer. UGLD is a digital warehouse receipt for our 5-metal strategic reserve. It allows merchants to exit inflationary fiat and park profits in hard physical assets without leaving the blockchain, minted in strictly audited 5,000oz intervals.
-                    </p>
-                    <div class="bg-gold/5 border border-gold/20 p-4 font-mono text-[10px] text-gold uppercase tracking-widest">
-                        Bail-Free Vault // 1:1 Physical Allocation
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div class="sticky top-32">
-                <h2 class="text-4xl font-light text-white uppercase tracking-widest mb-8">The Reserve Basket</h2>
-                <p class="text-slate-400 leading-relaxed text-lg mb-8">
-                    UGLD is anchored by a diverse industrial and monetary basket. These percentages were chosen to balance store-of-value stability with the aggressive industrial demand required for modern infrastructure.
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">50%</span> <span class="text-[10px] uppercase text-slate-500">Gold</span></div>
-                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">25%</span> <span class="text-[10px] uppercase text-slate-500">Silver</span></div>
-                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">10%</span> <span class="text-[10px] uppercase text-slate-500">Platinum</span></div>
-                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">10%</span> <span class="text-[10px] uppercase text-slate-500">Palladium</span></div>
-                    <div class="border border-white/10 p-4 col-span-2"><span class="block text-gold font-mono text-xl">5%</span> <span class="text-[10px] uppercase text-slate-500">Copper</span></div>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-light text-white uppercase tracking-widest mb-4">The Strategic Reserve</h2>
+            <p class="text-slate-500 font-mono text-xs uppercase tracking-widest">Mathematical Weighting & Rationale</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 mb-16">
+            <div class="bg-white/5 p-8 border-t-2 border-gold flex flex-col justify-between">
+                <div>
+                    <span class="block text-white font-bold text-4xl mb-2">50%</span>
+                    <span class="block text-gold font-mono text-xs uppercase mb-6 tracking-widest">Gold (XAU)</span>
+                    <p class="text-xs text-slate-400 leading-relaxed">The primary monetary anchor. Chosen to provide the bedrock of purchasing power preservation across decade-long cycles.</p>
                 </div>
             </div>
-            <div class="space-y-12">
-                <div class="border-b border-white/5 pb-8">
-                    <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-4">Bail-Free Vault Architecture</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Traditional banks "bail-in" your deposits, making you an unsecured creditor. Unity's metal reserves are stored in high-security, <strong>Bail-Free Vaults</strong>. This means the assets are owned by the token holder—not the bank—preventing rehypothecation and ensuring 1:1 physical backing at all times.
-                    </p>
+            <div class="bg-white/5 p-8 border-t-2 border-slate-400 flex flex-col justify-between">
+                <div>
+                    <span class="block text-white font-bold text-4xl mb-2">25%</span>
+                    <span class="block text-slate-400 font-mono text-xs uppercase mb-6 tracking-widest">Silver (XAG)</span>
+                    <p class="text-xs text-slate-400 leading-relaxed">The high-velocity multiplier. Selected for its dual-role in historical commerce and modern tech-manufacturing demand.</p>
                 </div>
-                <div class="border-b border-white/5 pb-8">
-                    <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-4">Minting Transparency</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        UGLD tokens are only minted upon physical delivery and independent audit. Every 5,000oz tranche is verified by third-party custodians, providing a mathematical assurance that digital supply never exceeds physical storage.
-                    </p>
+            </div>
+            <div class="bg-white/5 p-8 border-t-2 border-slate-500 flex flex-col justify-between">
+                <div>
+                    <span class="block text-white font-bold text-4xl mb-2">10%</span>
+                    <span class="block text-slate-500 font-mono text-xs uppercase mb-6 tracking-widest">Platinum (XPT)</span>
+                    <p class="text-xs text-slate-400 leading-relaxed">Rare industrial necessity. Included to capture value from elite medical and green-energy manufacturing sectors.</p>
                 </div>
+            </div>
+            <div class="bg-white/5 p-8 border-t-2 border-slate-600 flex flex-col justify-between">
+                <div>
+                    <span class="block text-white font-bold text-4xl mb-2">10%</span>
+                    <span class="block text-slate-600 font-mono text-xs uppercase mb-6 tracking-widest">Palladium (XPD)</span>
+                    <p class="text-xs text-slate-400 leading-relaxed">Strategic scarcity. Heavily weighted toward the global shift in automotive and aerospace electrification.</p>
+                </div>
+            </div>
+            <div class="bg-white/5 p-8 border-t-2 border-orange-900 flex flex-col justify-between">
+                <div>
+                    <span class="block text-white font-bold text-4xl mb-2">5%</span>
+                    <span class="block text-orange-900 font-mono text-xs uppercase mb-6 tracking-widest">Copper (HG)</span>
+                    <p class="text-xs text-slate-400 leading-relaxed">Infrastructure bedrock. Kept at a 5% floor to maintain industrial relevance without diluting the basket's precious-metal weight.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto bg-black/20 p-10 border border-white/5">
+            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-6">The Rationale: Why 5% Copper?</h4>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                Copper is the metal of human progress. While not a "precious" metal in the traditional sense, its necessity in energy grids and electronics makes it an essential anchor for a trade-finance protocol. We maintain a <strong>5% strategic floor</strong> to ensure the reserve is tethered to physical infrastructure development while allowing the 95% precious-metal core to focus on pure wealth preservation and scarcity.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/5 border-y border-white/5 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl text-white uppercase tracking-widest mb-8">Bail-Free Architecture</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Legacy banking systems operate on "Bail-In" laws, where your deposits are technically unsecured loans to the bank. Unity Protocol utilizes <strong>Bail-Free Vaults</strong>.
+                </p>
+                <ul class="space-y-4 font-mono text-xs text-gold">
+                    <li class="flex items-center"><span class="mr-4">>></span> ZERO REHYPOTHECATION</li>
+                    <li class="flex items-center"><span class="mr-4">>></span> 1:1 PHYSICAL ALLOCATION</li>
+                    <li class="flex items-center"><span class="mr-4">>></span> INDEPENDENT QUARTERLY AUDIT</li>
+                </ul>
+            </div>
+            <div class="relative rounded-lg overflow-hidden border border-gold/20 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1518134454611-3a9d397e822a?q=80&w=1000" class="w-full h-full object-cover opacity-40 grayscale">
+                <div class="absolute inset-0 bg-gold/5 mix-blend-overlay"></div>
             </div>
         </div>
     </section>
 
     <section class="py-24 px-6 bg-black border-y border-white/5">
         <div class="max-w-5xl mx-auto">
-            <h3 class="text-gold font-mono text-xs uppercase tracking-[0.4em] mb-12 text-center">Institutional Verification</h3>
-            <div class="space-y-8">
-                <div class="flex flex-col md:flex-row justify-between items-center p-8 bg-white/5 border border-white/10">
-                    <div class="mb-4 md:mb-0">
-                        <span class="block text-white font-bold uppercase tracking-widest mb-1">Official White Paper</span>
-                        <span class="text-xs text-slate-500 font-mono">PDF // SYSTEM_PROTOCOL_v4.2</span>
-                    </div>
-                    <a href="Unity_Varis White Paper.pdf" target="_blank" class="border border-gold px-8 py-3 text-[10px] font-bold text-gold uppercase tracking-widest hover:bg-gold hover:text-black transition-all">Download Full Briefing</a>
+            <h3 class="text-gold font-mono text-xs uppercase tracking-[0.4em] mb-12 text-center">Protocol Specs & Verification</h3>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center p-6 bg-white/5 border border-white/10 hover:border-gold/40 transition-all">
+                    <span class="text-white text-xs font-bold uppercase tracking-widest">Updated White Paper</span>
+                    <a href="Unity_Varis White Paper.pdf" target="_blank" class="text-[10px] text-gold underline underline-offset-4">Download PDF Briefing</a>
                 </div>
-                <div class="p-8 bg-white/5 border border-white/10">
-                    <span class="block text-white font-bold uppercase tracking-widest mb-4">UNT Contract Address</span>
-                    <code class="block bg-black p-4 text-gold border border-gold/30 rounded text-[10px] md:text-sm font-mono overflow-x-auto">xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code>
-                    <a href="https://explorer.xinfin.network/address/xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271" target="_blank" class="inline-block mt-4 text-[10px] text-slate-500 underline underline-offset-4 hover:text-gold">Verify on Explorer</a>
+                <div class="p-6 bg-white/5 border border-white/10">
+                    <span class="block text-slate-500 text-[10px] uppercase font-bold mb-4 tracking-widest">UNT Smart Contract (XDC Ledger)</span>
+                    <code class="block bg-black p-4 text-gold border border-gold/20 text-[10px] md:text-xs font-mono">xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code>
+                    <a href="https://explorer.xinfin.network/address/xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271" target="_blank" class="inline-block mt-4 text-[9px] text-slate-500 hover:text-gold transition-all uppercase font-bold tracking-widest">Verify Contract on Explorer →</a>
+                </div>
+                <div class="p-6 bg-white/5 border border-white/10">
+                    <span class="block text-slate-500 text-[10px] uppercase font-bold mb-4 tracking-widest">Genesis Treasury (Cold Storage)</span>
+                    <code class="block bg-black p-4 text-gold border border-gold/20 text-[10px] md:text-xs font-mono">xdc33CE501714DEB68C56a7A27ad369de7B62846Cda</code>
+                    <a href="https://explorer.xinfin.network/address/xdc33CE501714DEB68C56a7A27ad369de7B62846Cda" target="_blank" class="inline-block mt-4 text-[9px] text-slate-500 hover:text-gold transition-all uppercase font-bold tracking-widest">Verify Treasury on Explorer →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="relative py-48 px-6 text-center border-b border-gold/30 overflow-hidden">
+    <section class="relative py-48 px-6 text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1518134454611-3a9d397e822a?q=80&w=2000" class="w-full h-full object-cover opacity-20 contrast-125">
-            <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/80 to-bg"></div>
+            <img src="https://images.unsplash.com/photo-1516934024742-b461fbc4760e?q=80&w=2000" class="w-full h-full object-cover opacity-20 contrast-125 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-bg"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-extralight text-white uppercase tracking-[0.2em] mb-8">The Legacy Vault</h2>
             <p class="text-xl text-slate-400 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
                 A hardcoded 7-Year retention lock. Built for the disciplined—ensuring the wealth generated by the ecosystem remains protected, liquid, and generational.
             </p>
-            <a href="vault.html" class="inline-block bg-gold text-black px-12 py-5 font-bold uppercase tracking-[0.3em] text-sm hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all">Enter the Vault</a>
+            <a href="vault.html" class="inline-block bg-gold text-black px-12 py-5 font-bold uppercase tracking-[0.3em] text-sm hover:bg-white transition-all">Enter the Vault</a>
         </div>
     </section>
 
-    <footer class="py-16 text-center text-slate-600 bg-black">
+    <footer class="py-16 text-center text-slate-600 bg-black border-t border-white/5">
         <div class="mb-8">
             <a href="mailto:unity@powellincorporated.org" class="text-gold font-mono text-sm hover:underline">unity@powellincorporated.org</a>
         </div>
