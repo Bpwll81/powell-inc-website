@@ -3,189 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity Protocol | Intrinsic Value</title>
+    <title>Unity Protocol | Institutional Asset Settlement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* CORE VARIABLES */
-        :root { --gold: #d4af37; --slate: #0f172a; --bg: #000; --text: #cbd5e1; }
-        
-        body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
-        
-        /* TICKER WIDGET */
-        .ticker-wrap { width: 100%; background: #000; overflow: hidden; height: 40px; display: flex; align-items: center; border-bottom: 1px solid #333; }
-        
-        /* NAV */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 40px; width: auto; }
-        .back-link { text-decoration: none; color: #888; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; transition: 0.3s; }
-        .back-link:hover { color: var(--gold); }
-
-        /* HERO SECTION */
-        .crypto-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 120px 20px;
-            border-bottom: 3px solid var(--gold);
-        }
-        .crypto-header h1 { font-size: 3.5rem; margin: 0; text-transform: uppercase; letter-spacing: 6px; font-weight: 300; }
-        .xdc-badge { display: inline-block; margin-top: 25px; border: 1px solid var(--gold); padding: 8px 20px; font-family: monospace; font-size: 0.9rem; color: var(--gold); background: rgba(0,0,0,0.5); letter-spacing: 2px; }
-
-        /* PHILOSOPHY & DATA SECTION */
-        .philosophy-container { max-width: 900px; margin: 80px auto; padding: 0 20px; text-align: center; }
-        .section-title { font-size: 2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; }
-        .philosophy-text { font-size: 1.2rem; line-height: 1.8; color: #94a3b8; margin-bottom: 40px; }
-        
-        /* NEW DATA ROOM STYLES */
-        .data-section { text-align: left; margin: 60px 0; padding-top: 40px; border-top: 1px solid #222; }
-        .data-title { color: var(--gold); font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-        .data-text { color: #ccc; line-height: 1.6; margin-bottom: 20px; font-size: 1.05rem; }
-        .data-list { color: #94a3b8; line-height: 1.8; margin-bottom: 30px; padding-left: 20px; font-size: 1rem; }
-        .data-list li { margin-bottom: 15px; }
-        .data-list strong { color: #fff; }
-        
-        code { background: #111; padding: 4px 8px; border: 1px solid #333; color: var(--gold); font-family: monospace; font-size: 0.9rem; word-break: break-all; border-radius: 3px; }
-        
-        .btn-small { display: inline-block; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 20px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; margin-top: 8px; border-radius: 3px;}
-        .btn-small:hover { background: var(--gold); color: #000; }
-
-        /* GRID SYSTEM */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left; margin-top: 60px; }
-        .card { background: #111; padding: 40px; border: 1px solid #222; transition: 0.3s; position: relative; overflow: hidden; }
-        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); }
-        
-        .card h3 { color: #fff; font-size: 1.3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px; }
-        .card p { color: #777; line-height: 1.6; font-size: 0.95rem; }
-
-        /* BUTTONS */
-        .btn-gold { display: inline-block; background: var(--gold); color: #000; padding: 15px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; margin-top: 60px; transition: 0.3s; letter-spacing: 1px; }
-        .btn-gold:hover { background: #fff; }
-
-        /* FOOTER */
-        footer { text-align: center; padding: 60px 0; background: #050505; color: #555; font-size: 0.8rem; margin-top: 100px; border-top: 1px solid #111; }
-        .footer-email { color: var(--gold); font-size: 1rem; text-decoration: none; margin-bottom: 10px; display: block; }
+        :root { --gold: #d4af37; --bg: #030712; --slate: #0f172a; --text: #cbd5e1; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+        .text-gold { color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        .bg-gold-fade { background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%); }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <div class="ticker-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-          {
-          "symbols": [
-            { "proName": "KUKOIN:XDCUSDT", "title": "XDC Network" },
-            { "proName": "OANDA:XAUUSD", "title": "Gold" },
-            { "proName": "OANDA:XAGUSD", "title": "Silver" },
-            { "proName": "OANDA:XPTUSD", "title": "Platinum" },
-            { "proName": "OANDA:XPDUSD", "title": "Palladium" },
-            { "proName": "COMEX:HG1!", "title": "Copper" },
-            { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
-            { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
-            { "proName": "BITSTAMP:XRPUSD", "title": "XRP" }
-          ],
-          "showSymbolLogo": true,
-          "colorTheme": "dark",
-          "isTransparent": true,
-          "displayMode": "adaptive",
-          "locale": "en"
-        }
-          </script>
+    <div class="w-full bg-black border-b border-white/10 h-10 flex items-center">
+        <div class="tradingview-widget-container w-full">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                    { "proName": "KUKOIN:XDCUSDT", "title": "XDC Network" },
+                    { "proName": "OANDA:XAUUSD", "title": "Gold" },
+                    { "proName": "OANDA:XAGUSD", "title": "Silver" },
+                    { "proName": "OANDA:XPTUSD", "title": "Platinum" },
+                    { "proName": "OANDA:XPDUSD", "title": "Palladium" },
+                    { "proName": "COMEX:HG1!", "title": "Copper" },
+                    { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+                    { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
+                    { "proName": "BITSTAMP:XRPUSD", "title": "XRP" }
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "displayMode": "adaptive",
+                "locale": "en"
+            }
+            </script>
         </div>
     </div>
 
-    <nav>
-        <img src="../logo.jpg" alt="Unity Logo" class="logo-img">
-        <a href="../index.html" class="back-link">← Return to Powell Global LLC</a>
+    <nav class="flex justify-between items-center px-10 py-6 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
+        <div class="text-white font-bold tracking-[0.2em] uppercase text-lg">Powell Global</div>
+        <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-gold transition-all">← Back to Manifesto</a>
     </nav>
 
-    <div class="crypto-header">
-        <h1>Unity Protocol</h1>
-        <div class="xdc-badge">INTRINSIC VALUE MEETS BLOCKCHAIN VELOCITY</div>
-    </div>
-
-    <div class="philosophy-container">
-        
-        <h2 class="section-title">The Digital Stepping Stone</h2>
-        <p class="philosophy-text">
-            Unity is not just a wallet; it is the bridge between two eras of finance. 
-            As humanity transitions to digital currencies, we must not lose the foundation of real value.
-            <br><br>
-            By utilizing the efficiency of the <strong>Blockchain</strong> to mobilize the intrinsic stability of 
-            <strong>Precious Metals</strong>, Unity creates a financial engine that preserves purchasing power while enabling instant global velocity.
-        </p>
-
-        <div style="background: #111; padding: 40px; margin: 60px 0; border: 1px solid #333;">
-            <h3 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-top: 0;">Restoring Sovereignty</h3>
-            <p style="color: #ccc; margin-bottom: 0;">
-                "Code does not replace trust; it verifies it." <br><br>
-                For too long, value has been extracted from our communities by intermediaries. 
-                Unity Protocol restores the <strong>Velocity of Money</strong>—ensuring that wealth stays where it is generated, 
-                circulating among the families and teams that built it.
+    <header class="relative py-32 px-6 border-b border-gold/30 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-bg"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extralight tracking-[0.15em] text-white uppercase mb-8">Unity Protocol</h1>
+            <div class="inline-block border border-gold/50 px-6 py-2 bg-gold/5 text-gold font-mono text-sm tracking-widest mb-12">
+                ISO 20022 COMPLIANCE // INSTANT FINALITY
+            </div>
+            <p class="text-xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
+                The institutional-grade bridge between traditional commodity value and digital velocity. Powered by the XDC Network for sub-second, bail-free global settlement.
             </p>
         </div>
+    </header>
 
-        <div class="data-section">
-            <h3 class="data-title">1. Official Documentation & Demos</h3>
-            <p class="data-text">Transparency and mathematical precision are the foundations of the Unity ecosystem.</p>
-            <ul class="data-list">
-                <li><strong>The White Paper:</strong> A comprehensive breakdown of the protocol mechanics, the dual-token architecture, and the 5-phase physical deployment roadmap.<br>
-                <a href="Unity-Whitepaper.pdf" target="_blank" class="btn-small">Read the Official White Paper &rarr;</a></li>
-                <li><strong>Concept & Protocol Demo:</strong> Watch the "Last Mile of Settlement" middleware in action.<br>
-                <a href="https://youtube.com/shorts/eaXlTxe6dvw?si=NfSWqyZftYub29ig" target="_blank" class="btn-small">Watch the Settlement Layer Demo &rarr;</a></li>
-            </ul>
-
-            <h3 class="data-title">2. Open-Source Development</h3>
-            <p class="data-text">We build in public. Our core framework, including the middleware designed to execute ISO 20022-compliant settlements on-chain without leaving legacy accounting interfaces, is open for review.</p>
-            <ul class="data-list">
-                <li><a href="https://github.com/Bpwll81/powell-inc-website" target="_blank" class="btn-small">View the Repository on GitHub &rarr;</a></li>
-            </ul>
-
-            <h3 class="data-title">3. On-Chain Transparency & Treasury Protocol</h3>
-            <p class="data-text">The initial seed circulation of the Unity token is mathematically fixed, and all holdings are publicly verifiable on the XDC ledger.</p>
-            <ul class="data-list">
-                <li><strong>The Unity Token Contract:</strong> The official smart contract address for the UNT token.<br>
-                <code>xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code><br>
-                <a href="https://explorer.xinfin.network/address/xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271" target="_blank" class="btn-small">Verify Contract on Explorer &rarr;</a></li>
-                
-                <li><strong>The Genesis Treasury (Tangem Hardware Secured):</strong> Verify the uncirculated UNT supply and early-stage allocations directly in our cold-storage vault.<br>
-                <code>xdc33CE501714DEB68C56a7A27ad369de7B62846Cda</code><br>
-                <a href="https://explorer.xinfin.network/address/xdc33CE501714DEB68C56a7A27ad369de7B62846Cda" target="_blank" class="btn-small">Verify Treasury on Explorer &rarr;</a></li>
-                
-                <li><strong>Ecosystem Mechanics:</strong>
-                    <ul style="margin-top: 10px;">
-                        <li>Seed Round Circulating Supply: <strong>72,000,000 UNT</strong> (Post-seed completion)</li>
-                        <li>Hardcoded Listing Price Floor: <strong>$0.005</strong> (Defended by $380,000 total decentralized liquidity)</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <h3>Asset-Backed Security</h3>
-                <p>Digital tokens anchored by a diversified 5-metal strategic reserve basket: Gold (50%), Silver (25%), Platinum (10%), Palladium (10%), and Copper (5%).</p>
-            </div>
-            <div class="card">
-                <h3>Dual-Asset Stability</h3>
-                <p>UGLD serves as the stabilization layer—a specialized reserve token representing "Senior Rights" to physical gold reserves, minted at 5,000oz intervals in a Bail-Free Vault.</p>
-            </div>
-            <div class="card">
-                <h3>The Legacy Vault</h3>
-                <p>A 7-Year retention lock designed to build generational wealth through disciplined asset accumulation and shared liquidity.</p>
+    <section class="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div>
+            <h2 class="text-3xl font-bold text-white uppercase tracking-wider mb-8">The XDC Network Moat</h2>
+            <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                Unity Protocol operates exclusively on the <strong>XDC Network</strong>—the world's leading institutional blockchain for trade finance. While legacy networks struggle with congestion, XDC provides the speed and messaging structure required for the next era of global finance.
+            </p>
+            <div class="space-y-6">
+                <div class="p-6 bg-white/5 border-l-2 border-gold rounded-r">
+                    <h4 class="text-white font-bold mb-2 uppercase text-sm tracking-widest">Cross-Chain Interoperability</h4>
+                    <p class="text-sm text-slate-400">Natively EVM-compatible for seamless <strong>Ethereum</strong> integration and integrated with the XDC-XRP bridge for liquidity access across the <strong>Ripple</strong> ecosystem.</p>
+                </div>
+                <div class="p-6 bg-white/5 border-l-2 border-gold rounded-r">
+                    <h4 class="text-white font-bold mb-2 uppercase text-sm tracking-widest">ISO 20022 Standard</h4>
+                    <p class="text-sm text-slate-400">Utilizing the rich financial messaging standard adopted by SWIFT and central banks. Unity transactions carry the data required for instant institutional audit.</p>
+                </div>
             </div>
         </div>
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2000" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gold/10 mix-blend-overlay"></div>
+        </div>
+    </section>
 
-        <a href="vault.html" class="btn-gold">View The 7-Year Promise</a>
-    </div>
+    <section class="py-24 bg-white/[0.02] border-y border-white/5 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-gold uppercase tracking-[0.3em] mb-4">The Dual-Token Engine</h2>
+                <h3 class="text-4xl text-white font-light">Autonomy Meets Intrinsic Weight</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-black/40 border border-white/10 p-10 hover:border-gold/50 transition-all group">
+                    <h4 class="text-2xl font-mono text-white mb-4">UNT Utility Token</h4>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        The "Gas" of the Powell Global ecosystem. UNT is the consumptive medium required to process hardware nodes, AI requests, and ISO 20022 messaging. Every transaction on Varis OS triggers an automated micro-buy and burn, protecting network value through sheer operational velocity.
+                    </p>
+                    <div class="bg-gold/5 border border-gold/20 p-4 font-mono text-[10px] text-gold uppercase tracking-widest">
+                        Supply: 72,000,000 // Initial Peg: $0.05
+                    </div>
+                </div>
 
-    <footer>
-        <span style="color: #777;">Financial & Blockchain Inquiries:</span><br>
-        <a href="mailto:unity@powellincorporated.org" class="footer-email">unity@powellincorporated.org</a>
-        <br><br>
-        &copy; 2026 Unity Protocol.<br>
-        A Division of Powell Global LLC.
+                <div class="bg-black/40 border border-white/10 p-10 hover:border-gold/50 transition-all group">
+                    <h4 class="text-2xl font-mono text-white mb-4">UGLD Asset Token</h4>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        The Settlement Layer. UGLD is a digital warehouse receipt for our 5-metal strategic reserve. It allows merchants to exit inflationary fiat and park profits in hard physical assets without leaving the blockchain, minted in strictly audited 5,000oz intervals.
+                    </p>
+                    <div class="bg-gold/5 border border-gold/20 p-4 font-mono text-[10px] text-gold uppercase tracking-widest">
+                        Bail-Free Vault // 1:1 Physical Allocation
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div class="sticky top-32">
+                <h2 class="text-4xl font-light text-white uppercase tracking-widest mb-8">The Reserve Basket</h2>
+                <p class="text-slate-400 leading-relaxed text-lg mb-8">
+                    UGLD is anchored by a diverse industrial and monetary basket. These percentages were chosen to balance store-of-value stability with the aggressive industrial demand required for modern infrastructure.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">50%</span> <span class="text-[10px] uppercase text-slate-500">Gold</span></div>
+                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">25%</span> <span class="text-[10px] uppercase text-slate-500">Silver</span></div>
+                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">10%</span> <span class="text-[10px] uppercase text-slate-500">Platinum</span></div>
+                    <div class="border border-white/10 p-4"><span class="block text-gold font-mono text-xl">10%</span> <span class="text-[10px] uppercase text-slate-500">Palladium</span></div>
+                    <div class="border border-white/10 p-4 col-span-2"><span class="block text-gold font-mono text-xl">5%</span> <span class="text-[10px] uppercase text-slate-500">Copper</span></div>
+                </div>
+            </div>
+            <div class="space-y-12">
+                <div class="border-b border-white/5 pb-8">
+                    <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-4">Bail-Free Vault Architecture</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Traditional banks "bail-in" your deposits, making you an unsecured creditor. Unity's metal reserves are stored in high-security, <strong>Bail-Free Vaults</strong>. This means the assets are owned by the token holder—not the bank—preventing rehypothecation and ensuring 1:1 physical backing at all times.
+                    </p>
+                </div>
+                <div class="border-b border-white/5 pb-8">
+                    <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-4">Minting Transparency</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        UGLD tokens are only minted upon physical delivery and independent audit. Every 5,000oz tranche is verified by third-party custodians, providing a mathematical assurance that digital supply never exceeds physical storage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-black border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-gold font-mono text-xs uppercase tracking-[0.4em] mb-12 text-center">Institutional Verification</h3>
+            <div class="space-y-8">
+                <div class="flex flex-col md:flex-row justify-between items-center p-8 bg-white/5 border border-white/10">
+                    <div class="mb-4 md:mb-0">
+                        <span class="block text-white font-bold uppercase tracking-widest mb-1">Official White Paper</span>
+                        <span class="text-xs text-slate-500 font-mono">PDF // SYSTEM_PROTOCOL_v4.2</span>
+                    </div>
+                    <a href="Unity_Varis White Paper.pdf" target="_blank" class="border border-gold px-8 py-3 text-[10px] font-bold text-gold uppercase tracking-widest hover:bg-gold hover:text-black transition-all">Download Full Briefing</a>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10">
+                    <span class="block text-white font-bold uppercase tracking-widest mb-4">UNT Contract Address</span>
+                    <code class="block bg-black p-4 text-gold border border-gold/30 rounded text-[10px] md:text-sm font-mono overflow-x-auto">xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code>
+                    <a href="https://explorer.xinfin.network/address/xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271" target="_blank" class="inline-block mt-4 text-[10px] text-slate-500 underline underline-offset-4 hover:text-gold">Verify on Explorer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-48 px-6 text-center border-b border-gold/30 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1518134454611-3a9d397e822a?q=80&w=2000" class="w-full h-full object-cover opacity-20 contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/80 to-bg"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-extralight text-white uppercase tracking-[0.2em] mb-8">The Legacy Vault</h2>
+            <p class="text-xl text-slate-400 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                A hardcoded 7-Year retention lock. Built for the disciplined—ensuring the wealth generated by the ecosystem remains protected, liquid, and generational.
+            </p>
+            <a href="vault.html" class="inline-block bg-gold text-black px-12 py-5 font-bold uppercase tracking-[0.3em] text-sm hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all">Enter the Vault</a>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center text-slate-600 bg-black">
+        <div class="mb-8">
+            <a href="mailto:unity@powellincorporated.org" class="text-gold font-mono text-sm hover:underline">unity@powellincorporated.org</a>
+        </div>
+        <div class="text-[10px] uppercase tracking-widest leading-loose">
+            &copy; 2026 Unity Protocol // A Division of Powell Global LLC<br>
+            ISO 20022 COMPLIANT // XDC NETWORK PARTNER
+        </div>
     </footer>
 
 </body>
