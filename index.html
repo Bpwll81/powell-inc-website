@@ -11,9 +11,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            gold: '#D4AF37',
-                            dark: '#0B0F19',
-                            card: '#111827'
+                            gold: '#D4AF37',     // Warm, premium gold
+                            dark: '#0B0F19',     // Kept for footers/accents
+                            light: '#F8FAFC',    // Clean, crisp background
+                            surface: '#FFFFFF'   // Pure white for content cards
                         }
                     }
                 }
@@ -21,119 +22,120 @@
         }
     </script>
 </head>
-<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-gold selection:text-black">
+<body class="bg-brand-light text-slate-600 font-sans antialiased selection:bg-brand-gold selection:text-white">
 
-    <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-brand-dark/90 backdrop-blur-md">
+    <nav class="fixed w-full z-50 top-0 border-b border-slate-200 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-white font-bold text-xl tracking-widest uppercase">
+            <div class="text-slate-900 font-bold text-xl tracking-widest uppercase">
                 Powell Global
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#mission" class="hover:text-brand-gold transition-colors">Our Mission</a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#ethos" class="hover:text-brand-gold transition-colors">Our Ethos</a>
                 <a href="varis.html" class="hover:text-brand-gold transition-colors">Varis OS</a>
                 <a href="heychef.html" class="hover:text-brand-gold transition-colors">Hey Chef</a>
                 <a href="unity.html" class="hover:text-brand-gold transition-colors">The Unity Protocol</a>
             </div>
-            <a href="#contact" class="bg-brand-gold text-black px-6 py-2 rounded font-bold text-sm hover:bg-yellow-500 transition-colors">
-                Join the Ecosystem
-            </a>
         </div>
     </nav>
 
-    <section class="relative pt-40 pb-24 md:pt-52 md:pb-32 flex items-center justify-center min-h-screen text-center px-6">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark to-black opacity-90 z-0"></div>
-        
-        
+    <section class="relative pt-40 pb-16 md:pt-52 md:pb-24 flex flex-col items-center justify-center text-center px-6">
         <div class="relative max-w-4xl mx-auto z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
                 Technology should serve <br>
                 <span class="text-brand-gold">Humanity.</span>
             </h1>
-            <p class="text-lg md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
+            <p class="text-lg md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light mb-16">
                 We build sovereign infrastructure to remove the friction from the service industry—so your team can return to the art of hospitality.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#mission" class="w-full sm:w-auto bg-brand-gold text-black px-8 py-4 rounded font-bold hover:bg-yellow-500 transition-all">Read Our Ethos</a>
-            </div>
+            
+            <p class="text-xl md:text-3xl text-slate-400 font-serif italic tracking-wide">
+                ...and our ethos...
+            </p>
         </div>
     </section>
 
-    <section id="mission" class="py-24 bg-black px-6 border-t border-white/10">
+    <section id="ethos" class="py-20 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop" alt="Community Dining" class="absolute inset-0 w-full h-full object-cover">
+            </div>
             <div>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Put the <span class="text-brand-gold">Employee First.</span></h2>
-                <h3 class="text-xl text-slate-300 mb-6 font-medium">Quality always trumps quantity.</h3>
-                <p class="text-slate-400 mb-6 leading-relaxed">
-                    The modern commercial system has lost its way, prioritizing maximum extraction over the human experience. Service industry professionals are suffocating under the weight of fragmented software, endless inventory counting, and administrative burnout. 
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">...is built on <span class="text-brand-gold">Community.</span></h2>
+                <h3 class="text-xl text-slate-700 mb-6 font-semibold">Quality will always trump quantity.</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed text-lg">
+                    The modern commercial system prioritizes maximum extraction over the human experience. But true hospitality is the heartbeat of a neighborhood. Powell Global is dedicated to giving back to the communities we operate in, ensuring that local economies thrive and local capital stays where it belongs.
                 </p>
-                <p class="text-slate-400 leading-relaxed">
-                    At Powell Global, we believe that when you remove the friction, a job stops being a grind and becomes a passion. By automating the back-office with intelligent hardware, we empower your staff to stay on the floor, doing what they love. When you put the employee first, the guest experience naturally elevates. Profit follows purpose.
-                </p>
-            </div>
-            <div class="relative h-[500px] w-full rounded-lg overflow-hidden border border-white/10 bg-brand-card flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.05)]">
-                
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 bg-brand-dark">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative h-[500px] w-full rounded-lg overflow-hidden border border-white/10 bg-brand-card flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.02)]">
-                
-            </div>
-            <div class="order-1 md:order-2">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Restoring the <span class="text-brand-gold">Community.</span></h2>
-                <p class="text-slate-400 mb-6 leading-relaxed">
-                    True hospitality is the heartbeat of a community. But legacy banking rails and third-party processors drain billions of dollars out of local economies every year.
-                </p>
-                <p class="text-slate-400 leading-relaxed">
-                    We are building a new standard. Powell Global develops the hardware and decentralized protocols necessary to return economic sovereignty to the individual. We believe in building resilient, asset-backed ecosystems that keep local capital where it belongs: in the hands of the merchants and the communities they serve.
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    We never forget the people who help us push the envelope. We are building this ecosystem for the servers, the chefs, the bartenders, and the managers who carry this industry on their backs. When you remove the friction, a job stops being a daily grind. It becomes a passion.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-black px-6 border-t border-b border-white/10">
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Honor the <span class="text-brand-gold">Craft.</span></h2>
+                <p class="text-lg text-slate-600">
+                    We understand the intensity of the service industry. We are replacing the stress of administrative burnout with the pure joy of delivering exceptional service.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1977&auto=format&fit=crop" alt="Chef focused on prep" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">The Dedication</h3>
+                        <p class="text-slate-300 text-sm">Empowering the relentless focus required to master the culinary and service arts.</p>
+                    </div>
+                </div>
+
+                <div class="group relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=2072&auto=format&fit=crop" alt="Bartenders laughing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">The Enjoyment</h3>
+                        <p class="text-slate-300 text-sm">When systems work autonomously, staff can breathe, smile, and connect.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">The <span class="text-brand-gold">Infrastructure</span> of Connection</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Explore the proprietary technology stack designed to automate the mundane and elevate the human.</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">The <span class="text-brand-gold">Infrastructure</span> of Connection</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg">Explore the proprietary technology stack designed to automate the mundane and elevate the human.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             
-            <a href="varis.html" class="block p-10 rounded-lg bg-brand-card border border-white/10 hover:border-brand-gold transition-all group">
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">Varis OS</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            <a href="varis.html" class="block p-10 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all group">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-gold transition-colors">Varis OS</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-8">
                     The physical-to-digital bridge. Gravimetric V-Shelves and Triple-Entry accounting ledgers that autonomously translate physical inventory into settled data.
                 </p>
                 <span class="text-brand-gold text-sm font-bold uppercase tracking-wider flex items-center">Explore Hardware <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
             </a>
 
-            <a href="heychef.html" class="block p-10 rounded-lg bg-brand-card border border-white/10 hover:border-brand-gold transition-all group">
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">Hey Chef AI</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            <a href="heychef.html" class="block p-10 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all group">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-gold transition-colors">Hey Chef AI</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-8">
                     The autonomous digital sous chef. Predictive algorithms that anticipate kitchen velocity and execute vendor restocks without human intervention.
                 </p>
                 <span class="text-brand-gold text-sm font-bold uppercase tracking-wider flex items-center">Explore AI <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
             </a>
 
-            <a href="unity.html" class="block p-10 rounded-lg bg-brand-card border border-white/10 hover:border-brand-gold transition-all group">
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-gold transition-colors">The Unity Protocol</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            <a href="unity.html" class="block p-10 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all group">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-gold transition-colors">The Unity Protocol</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-8">
                     The sovereign settlement layer. A decentralized, 5-metal asset-backed protocol that eliminates legacy processing fees and protects against inflation.
                 </p>
                 <span class="text-brand-gold text-sm font-bold uppercase tracking-wider flex items-center">Explore Settlement <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
             </a>
 
         </div>
-    </section>
-
-    <section class="py-20 bg-brand-dark text-center px-6">
-        <h2 class="text-3xl font-extrabold text-white mb-4">Ready to rebuild the standard?</h2>
-        <p class="text-slate-400 mb-8 max-w-2xl mx-auto">Join the merchants, developers, and institutions committed to human-centric commerce.</p>
-        <a href="#contact" class="inline-block bg-brand-gold text-black px-10 py-4 rounded font-bold hover:bg-yellow-500 transition-colors">
-            Contact Our Team
-        </a>
     </section>
 
 </body>
