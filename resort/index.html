@@ -8,20 +8,18 @@
     <style>
         :root { 
             --gold: #d4af37; 
-            --forest: #2D372E; 
-            --slate: #2c3e50; 
-            --bg: #F9F7F2; /* Warm, outdoor parchment tone */
-            --text: #333; 
+            --forest: #1B261D; 
+            --bg: #F9F7F2; 
+            --text: #334155; 
         }
         body, html { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.8; }
         
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; background: rgba(249, 247, 242, 0.95); backdrop-filter: blur(10px); z-index: 1000; }
         .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--forest); border: 2px solid var(--forest); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
 
-        /* HERO - MULTI-SPORT CROSSFADE */
         .hero { position: relative; height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; background: #000; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: fadeCycle 15s infinite; }
-        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(45, 55, 46, 0.4), rgba(45, 55, 46, 0.8)); }
+        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(27, 38, 29, 0.4), rgba(27, 38, 29, 0.8)); }
         
         .slide-1 { background-image: url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?q=80&w=2000'); animation-delay: 0s; }
         .slide-2 { background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000'); animation-delay: 5s; }
@@ -37,20 +35,12 @@
         .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; color: #4b5563; }
         .feature-list li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: 1.2rem; }
 
-        /* THE MERCANTILE */
         .mercantile-wrap { background: var(--forest); color: #fff; padding: 100px 20px; margin: 60px 0; border-top: 4px solid var(--gold); }
-        .m-visual { 
-            width: 100%; height: 500px; 
-            background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000'); 
-            background-size: cover; background-position: center; 
-            border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); margin: 40px 0 10px 0;
-            filter: sepia(20%) contrast(110%);
-        }
+        .m-visual { width: 100%; height: 500px; background-image: url('merc 2.jpg'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.1); margin: 40px 0 10px 0; }
         
         .vplex-notice { background: rgba(0,0,0,0.2); color: var(--gold); padding: 25px; font-family: ui-monospace, monospace; text-align: center; border: 1px solid rgba(212, 175, 55, 0.3); margin-bottom: 60px; letter-spacing: 2px; font-weight: bold; font-size: 0.9rem; }
         
-        .rink-box { background: white; border-top: 4px solid #3b82f6; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-
+        .rink-box { background: white; border-top: 4px solid #3b82f6; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); height: 100%; }
         .ring-card { background: white; padding: 45px; border-left: 5px solid var(--forest); height: 100%; border: 1px solid rgba(0,0,0,0.05); border-left-width: 5px; }
     </style>
 </head>
@@ -58,7 +48,11 @@
 
     <nav>
         <a href="../index.html" class="logo-text">Powell Global LLC</a>
-        <a href="../index.html" class="text-slate-400 font-bold text-[10px] uppercase tracking-widest hover:text-brand-gold transition-all">RETURN</a>
+        <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+            <a href="../index.html" class="hover:text-gold transition-all">Home</a>
+            <a href="../varis.html" class="hover:text-gold transition-all">Varis OS</a>
+            <a href="../unity.html" class="hover:text-gold transition-all">Unity</a>
+        </div>
     </nav>
 
     <div class="hero">
@@ -75,30 +69,30 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div class="text-content">
                 <ul class="feature-list">
-                    <li><strong>V-Band Integration:</strong> Every guest is issued a V-Band upon arrival. This serves as your <strong>integrated digital room key</strong> and <strong>NFC tap-to-pay</strong> link for all Resort commerce. Optional location tracking allows for "Fast-Pass" room unlocks as you approach your door.</li>
-                    <li><strong>The Player's Floor:</strong> A dedicated athletic level featuring knee hockey suites, private pool halls, and elite player lounges.</li>
-                    <li><strong>The Equipment Arcade:</strong> Ticket-redemption hub where winnings are traded for professional gear (Skates, Basketballs, Duffle Bags) instead of toys.</li>
+                    <li><strong>V-Band Integration:</strong> Guests utilize the V-Band as an <strong>integrated digital room key</strong> and <strong>NFC tap-to-pay</strong> interface. Location-aware triggers allow for "Fast-Pass" room unlocks upon approach.</li>
+                    <li><strong>The Player's Floor:</strong> A dedicated athletic level featuring knee hockey suites, private pool halls, and elite lounges for team decompression.</li>
+                    <li><strong>The Equipment Arcade:</strong> A ticket-redemption ecosystem where winnings are traded for professional athletic gear rather than novelties.</li>
                     <li><strong>Family Suite Architecture:</strong> Outward-facing rooms with master bedrooms and integrated Murphy bunk beds designed to sleep families of six comfortably.</li>
                     <li><strong>Institutional Exchange:</strong> On-site precious metal dealer and currency booth supporting native UNT, Gold, Silver, and Fiat.</li>
-                    <li><strong>The Tesla Core:</strong> Internal-facing lobbies centered around a massive indoor Tesla Tower, while all guest suites look out onto the Colorado landscape.</li>
+                    <li><strong>The Tesla Core:</strong> Multi-floor internal lobbies centered around a massive indoor Tesla Tower.</li>
                 </ul>
             </div>
             <div class="relative">
-                <div class="bg-white aspect-video rounded-lg flex items-center justify-center border border-slate-200 shadow-xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070" alt="Hotel Architecture" class="w-full h-full object-cover">
+                <div class="bg-white rounded-lg flex items-center justify-center border border-slate-200 shadow-2xl overflow-hidden">
+                    <img src="Hotel Ilona.jpg" alt="Hotel Ilona Architecture Mockup" class="w-full h-full object-cover">
                 </div>
-                <p class="text-center italic text-slate-400 text-xs mt-4 tracking-widest uppercase font-bold">Concept Mockup: Hotel Ilona Wing</p>
+                <p class="text-center italic text-slate-400 text-xs mt-4 tracking-widest uppercase font-bold">Proprietary Render: Hotel Ilona</p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 border-t border-slate-200 pt-16">
             <ul class="feature-list">
-                <li><strong>Smart-Room Ecosystem:</strong> Rooms that dim, open, and adjust temperature based on your pre-set profile and smart-window preferences.</li>
-                <li><strong>Leisure & Grooming:</strong> On-site hair salon, therapeutic recovery centers, and a refined cigar & liquor lounge.</li>
+                <li><strong>Smart-Room Ecosystem:</strong> Automated profile-based lighting, temperature, and smart-window dimming preferences.</li>
+                <li><strong>Leisure & Grooming:</strong> On-site salon, recovery centers, and a refined cigar & liquor lounge for community connection.</li>
             </ul>
             <ul class="feature-list">
-                <li><strong>Subterranean Athletic Loop:</strong> An underground track circling the property, connecting the gym, spa, and hydrotherapy zones for year-round training.</li>
-                <li><strong>White-Glove Service:</strong> Post-game meal delivery and late-night culinary service specifically for athlete arrivals.</li>
+                <li><strong>Subterranean Athletic Loop:</strong> An underground track circling the property, connecting the gym, spa, and training zones.</li>
+                <li><strong>White-Glove Service:</strong> 24/7 room service specifically optimized for late-arrival athletic schedules.</li>
             </ul>
         </div>
     </div>
@@ -106,8 +100,8 @@
     <div class="mercantile-wrap">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="section-title !border-gold !text-gold">The Mercantile</h2>
-            <p class="text-2xl text-slate-300 font-light max-w-4xl leading-relaxed">
-                An upscale, multi-level culinary hub flooded with natural light. Designed with a grand central staircase and vaulted ceilings, it is the community's premier food court and marketplace.
+            <p class="text-2xl text-slate-200 font-light max-w-4xl leading-relaxed">
+                An upscale culinary hub designed with a grand central staircase and vaulted ceilings. It serves as the community's premier marketplace.
             </p>
             
             <div class="m-visual"></div>
@@ -116,72 +110,77 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                 <div class="bg-white/5 p-8 border-t-2 border-gold">
                     <h3 class="text-gold font-bold uppercase tracking-widest mb-4">Artisan Markets</h3>
-                    <p class="text-slate-400 text-sm">Dedicated bakeries, upscale food stalls, and a tiered central marketplace for local fresh produce and premium items.</p>
+                    <p class="text-slate-300 text-sm">Artisan bakeries, upscale food stalls, and a tiered marketplace for local fresh produce and premium items.</p>
                 </div>
                 <div class="bg-white/5 p-8 border-t-2 border-gold">
                     <h3 class="text-gold font-bold uppercase tracking-widest mb-4">On-Chain Payments</h3>
-                    <p class="text-slate-400 text-sm">Powered by <strong>Unity Protocol</strong>. Native UNT/UGLD settlement with certified on-site hubs for physical metal exchange.</p>
+                    <p class="text-slate-300 text-sm">Powered by <strong>Unity Protocol</strong>. Native UNT/UGLD settlement with certified on-site hubs for physical metal exchange.</p>
                 </div>
                 <div class="bg-white/5 p-8 border-t-2 border-gold">
                     <h3 class="text-gold font-bold uppercase tracking-widest mb-4">The Chef Launchpad</h3>
-                    <p class="text-slate-400 text-sm">6 months zero rent for qualified chefs to build their brand in a high-traffic ecosystem using Varis Project rails.</p>
+                    <p class="text-slate-300 text-sm">6 months zero rent for qualified chefs to build their brand using Varis Project infrastructure.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-24">
-        <h2 class="section-title">The V-Plex (Educational & Athletic Complex)</h2>
+        <h2 class="section-title">The Vaitukaitis Educational & Athletic Complex (V-Plex)</h2>
         <div class="vplex-notice uppercase">
             3D ARCHITECTURAL RENDERINGS COMING SOON - ENGINEERING IN PROGRESS
         </div>
         
-        <p class="text-xl text-slate-500 mb-12 max-w-3xl">A multi-sport ecosystem focused on <strong>Foundation-First Education</strong> followed by elite athletic development in Basketball, Soccer, Lacrosse, and Ice Sports.</p>
+        <p class="text-xl text-slate-500 mb-12 max-w-3xl">A multi-sport ecosystem focused on <strong>Foundation-First Education</strong> followed by elite athletic development.</p>
 
         <div class="bg-white p-12 border-l-8 border-gold rounded shadow-md mb-12 border border-slate-100">
             <h3 class="text-forest font-bold text-2xl uppercase tracking-widest mb-6 border-b border-slate-100 pb-4">The Central Hub</h3>
-            <p class="text-slate-500 text-lg mb-8">The elevated core of the V-Plex housing dry-land and aquatic infrastructure, including an indoor swimming pool, multi-sport gymnasiums, and soccer arenas.</p>
+            <p class="text-slate-500 text-lg mb-8">The core building housing dry-land and aquatic sports infrastructure, including swimming pools, gymnasiums, basketball courts, and soccer arenas.</p>
             <ul class="feature-list">
-                <li><strong>The Pro Shop:</strong> Massive facility inside the hub featuring sizing/fitting areas for all sports. Open late for team-only access during tournaments.</li>
+                <li><strong>The Pro Shop:</strong> Massive facility featuring sizing/fitting areas for all sports. Open late for team-only access.</li>
             </ul>
         </div>
 
         <div class="bg-slate-800 text-white p-12 border-l-8 border-blue-400 rounded shadow-2xl mb-12">
-            <h3 class="text-blue-400 font-bold text-2xl uppercase tracking-widest mb-6">The Ice Campus (Recessed Topography)</h3>
-            <p class="text-slate-300 text-lg mb-8">Located on a lower topographic level below the Main Hub are <strong>5 dedicated ice arenas</strong>. Guests transition via vertical glass shafts and escalators to navigate between rinks via landscaped trails.</p>
-            <ul class="feature-list !text-slate-100">
-                <li><strong>The Colorado Vipers:</strong> Official home of a comprehensive pipeline developing athletes from Mini-Mites to D2 College.</li>
-                <li><strong>Professional Locker Rooms:</strong> Every room features pro-grade finishes that upgrade as players advance through the program levels.</li>
-                <li><strong>Inclusive Programming:</strong> Fully dedicated ice for Girls/Women's hockey and competitive figure skating.</li>
-            </ul>
+            <h3 class="text-blue-400 font-bold text-2xl uppercase tracking-widest mb-6 italic">The Ice Campus (5-Rink Complex)</h3>
+            <p class="text-slate-300 text-lg mb-12">Located on a lower topographic level below the Main Hub are <strong>5 dedicated ice arenas</strong>. Guests navigate via vertical glass shafts and escalators.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rink-box">
+                    <h4 class="font-black text-slate-900">Rink: Denver</h4>
+                    <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Olympic Sized Arena</span>
+                    <p class="mt-2 text-sm">The main competition ice and home to D2 College and Junior level hockey programs.</p>
+                </div>
+                <div class="rink-box">
+                    <h4 class="font-black text-slate-900">Rink: Lafayette</h4>
+                    <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Regular Sized Arena</span>
+                    <p class="mt-2 text-sm">Dedicated ice for recreational hockey leagues and professional figure skating training.</p>
+                </div>
+                <div class="rink-box">
+                    <h4 class="font-black text-slate-900">Rink: Staten Island</h4>
+                    <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Regular Sized Arena</span>
+                    <p class="mt-2 text-sm">Supporting facility for community ice programs and figure skating development.</p>
+                </div>
+                <div class="rink-box">
+                    <h4 class="font-black text-slate-900">Rink: Birmingham</h4>
+                    <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">NHL Sized Arena</span>
+                    <p class="mt-2 text-sm">Core facility for the travel pipeline: A, AA, AAA, JV, and Varsity teams.</p>
+                </div>
+                <div class="rink-box">
+                    <h4 class="font-black text-slate-900">Rink: Lancaster</h4>
+                    <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">NHL Sized Arena</span>
+                    <p class="mt-2 text-sm">Secondary NHL-sized ice supporting extensive travel and varsity athletics.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            <div class="rink-box">
-                <h4 class="font-black text-slate-900">Rink: Denver</h4>
-                <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Olympic Sized Arena</span>
-                <p class="mt-2 text-sm">Official home to the D2 College and Junior level hockey programs.</p>
-            </div>
-            <div class="rink-box">
-                <h4 class="font-black text-slate-900">Rink: Birmingham</h4>
-                <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">NHL Sized Arena</span>
-                <p class="mt-2 text-sm">Primary facility for the travel pipeline: A, AA, AAA, JV, and Varsity teams.</p>
-            </div>
-            <div class="rink-box">
-                <h4 class="font-black text-slate-900">Rink: Lancaster</h4>
-                <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">NHL Sized Arena</span>
-                <p class="mt-2 text-sm">Secondary NHL-sized ice supporting the extensive travel and varsity athletics program.</p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div class="ring-card">
                 <h3 class="font-black uppercase tracking-widest text-sm mb-4 border-b border-slate-100 pb-2">Outer Ring 1: Learning Annex</h3>
-                <p class="text-sm text-slate-600">Curriculum focused on core foundations: Reading, Writing, Arithmetic, Constitutional Law, Homesteading, and Hunting. Passion-based learning designed for students 10+.</p>
+                <p class="text-sm text-slate-600">Reading, Writing, Arithmetic, Constitutional Law, Homesteading, and Hunting. Passion-based learning for students 10+.</p>
             </div>
             <div class="ring-card !border-gold">
                 <h3 class="font-black uppercase tracking-widest text-sm mb-4 border-b border-slate-100 pb-2">Outer Ring 2: Sibling Zone</h3>
-                <p class="text-sm text-slate-600">Enclosed, high-energy play hub featuring indoor playgrounds so parents can monitor games via broadcast while siblings play in a safe environment.</p>
+                <p class="text-sm text-slate-600">High-energy play hub featuring indoor playgrounds so parents can monitor games while siblings play safely.</p>
             </div>
         </div>
     </div>
@@ -189,7 +188,7 @@
     <div class="bg-forest py-24 px-6 text-center border-t border-gold/20">
         <h3 class="text-gold font-bold uppercase tracking-[0.3em] text-sm mb-6">Phase V: The 10-Year Horizon</h3>
         <p class="text-slate-400 max-w-3xl mx-auto leading-loose text-lg font-light">
-            The Resort and V-Plex represent the apex of the Powell Global roadmap. This massive physical infrastructure is designed as a strategic decade-long capstone. Its realization is tied to network adoption; as the Unity Protocol scales, the digital treasury will be systematically leveraged to capitalize the brick-and-mortar construction. In our ecosystem, digital adoption physically builds the future.
+            The Resort and V-Plex represent the apex of the Powell Global roadmap. This physical infrastructure is designed as a strategic decade-long capstone. Its realization is tied to network adoption; as the Unity Protocol scales, the digital treasury will be systematically leveraged to capitalize the brick-and-mortar construction. In our ecosystem, digital adoption physically builds the future.
         </p>
     </div>
 
