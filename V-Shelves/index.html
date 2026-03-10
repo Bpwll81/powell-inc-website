@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Shelves | Recovering Culinary Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#0B0F19',
+                            steel: '#475569',
+                            action: '#EA580C', 
+                            surface: '#E2E8F0' 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #menu.hidden { display: none; }
+        #menu.flex { display: flex; }
+        .steel-texture {
+            background-color: #f1f5f9;
+            background-image: linear-gradient(315deg, #f1f5f9 0%, #e2e8f0 74%);
+        }
+    </style>
+</head>
+<body class="steel-texture text-slate-800 font-sans antialiased">
+
+    <nav class="fixed w-full z-50 top-0 border-b border-slate-300 bg-white/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-slate-900 font-black text-xl tracking-tighter uppercase italic">Powell <span class="text-brand-action">Global</span></div>
+            
+            <button id="menu-btn" class="md:hidden text-slate-900 focus:outline-none p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <div id="menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-slate-300 flex-col p-6 space-y-4 md:static md:flex md:flex-row md:w-auto md:bg-transparent md:border-none md:p-0 md:space-y-0 md:space-x-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="../index.html" class="hover:text-brand-action">Home</a>
+                <a href="../varis.html" class="hover:text-brand-action">Varis OS</a>
+                <a href="index.html" class="text-brand-action">V-Shelves</a>
+                <a href="../heychef/index.html" class="hover:text-brand-action">Hey Chef</a>
+                <a href="../unity.html" class="hover:text-brand-action">Unity Protocol</a>
+                <a href="../resort/index.html" class="hover:text-brand-action">The Resort</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-block px-3 py-1 bg-brand-action text-white font-mono text-[10px] uppercase tracking-widest mb-6 shadow-lg">
+                    Profit Recovery: Active
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black text-slate-900 leading-none mb-8 uppercase italic tracking-tighter">
+                    Stop the <br><span class="text-brand-action underline decoration-slate-900">Bleeding.</span>
+                </h1>
+                <p class="text-xl text-slate-600 max-w-lg font-medium leading-relaxed">
+                    Inventory shrinkage is the industry's silent killer. V-Shelves transform the high-pressure back-of-house into a high-precision profit center.
+                </p>
+            </div>
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-brand-action rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-white p-2 rounded-xl border border-slate-200 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2000" class="rounded-lg" alt="Professional Kitchen BOH">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="p-8 bg-brand-action/10 border border-brand-action/30 rounded-lg">
+                        <h4 class="text-brand-action font-mono text-sm mb-4 uppercase tracking-widest">// Loss_Prevention_Protocol</h4>
+                        <p class="text-2xl font-bold mb-6 italic text-slate-100">"V-Shelves register a mass inconsistency: Premium inventory removed without a corresponding transaction entry."</p>
+                        <div class="space-y-4 text-sm text-slate-400">
+                            <p class="flex items-start"><span class="text-brand-action mr-2">▶</span> <strong>Hey Chef</strong> issues an immediate BOH anomaly alert.</p>
+                            <p class="flex items-start"><span class="text-brand-action mr-2">▶</span> Leadership activates <strong>V-Lens</strong> for real-time visual verification.</p>
+                            <p class="flex items-start"><span class="text-brand-action mr-2">▶</span> AI isolates the recording segment and transmits the data to HR for audit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-xs font-bold text-brand-action uppercase tracking-[0.4em] mb-4 font-mono">Total Accountability</h2>
+                    <h3 class="text-4xl md:text-5xl font-black mb-8 uppercase italic">Visuals meet <br>Gravimetrics.</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        By pairing gravimetric weight loops with <strong>V-Lens</strong> AI cameras, we close the gap between inventory and reality. We don't just log the loss; we identify the source.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-black text-slate-900 mb-16 uppercase italic text-center">Industrial <span class="text-brand-action">Utility.</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-10 bg-white border-b-8 border-brand-action shadow-xl">
+                    <h4 class="text-2xl font-black uppercase mb-4">V-Scanner Node</h4>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        A mobile companion for preventative maintenance and receiving. V-Scanners monitor internal thermostats and equipment health, triggering Varis OS alerts if a refrigeration unit fluctuates before product safety is compromised.
+                    </p>
+                </div>
+                <div class="p-10 bg-white border-b-8 border-brand-action shadow-xl">
+                    <h4 class="text-2xl font-black uppercase mb-4">The V-Cart</h4>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        The definitive solution for catering and events. V-Carts track waste and depletion as it exits the floor, providing a 1:1 audit of consumption vs. loss to maximize yield on every contract.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black uppercase italic">Deployment Tiers</h2>
+                <p class="text-slate-500 font-medium">Precision hardware for immediate capital recovery.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-12 bg-white border border-slate-300 shadow-sm">
+                    <h5 class="font-bold text-slate-400 uppercase text-xs mb-2">Tier 01</h5>
+                    <h4 class="text-2xl font-black mb-6 uppercase">Foundation</h4>
+                    <ul class="space-y-4 text-sm text-slate-600 font-mono mb-10">
+                        <li>+ 4x V-Shelf Nodes</li>
+                        <li>+ Varis OS Link</li>
+                        <li>+ Basic LP Logic</li>
+                    </ul>
+                    <div class="text-3xl font-black text-slate-900">$4,999</div>
+                </div>
+                <div class="p-12 bg-white border-2 border-brand-action shadow-2xl scale-105 relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-action text-white text-[10px] font-bold px-4 py-1 uppercase tracking-widest">Enterprise Standard</div>
+                    <h5 class="font-bold text-brand-action uppercase text-xs mb-2">Tier 02</h5>
+                    <h4 class="text-2xl font-black mb-6 uppercase">Enterprise</h4>
+                    <ul class="space-y-4 text-sm text-slate-600 font-mono mb-10">
+                        <li>+ 12x V-Shelf Nodes</li>
+                        <li>+ 2x V-Lens AI Camera</li>
+                        <li>+ 1x V-Scanner Hub</li>
+                    </ul>
+                    <div class="text-3xl font-black text-slate-900">$12,499</div>
+                </div>
+                <div class="p-12 bg-white border border-slate-300 shadow-sm">
+                    <h5 class="font-bold text-slate-400 uppercase text-xs mb-2">Tier 03</h5>
+                    <h4 class="text-2xl font-black mb-6 uppercase">Logistics</h4>
+                    <ul class="space-y-4 text-sm text-slate-600 font-mono mb-10">
+                        <li>+ Custom Shelf Array</li>
+                        <li>+ V-Cart Fleet</li>
+                        <li>+ Institutional Support</li>
+                    </ul>
+                    <div class="text-3xl font-black text-slate-900 uppercase">Contact</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark py-16 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="text-white font-black text-2xl tracking-widest uppercase mb-10 italic">
+                Powell <span class="text-brand-gold">Global</span>
+            </div>
+            
+            <p class="text-slate-400 text-xs leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
+                <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, V-Shelves, V-Lens, and Unity Protocol architectures are proprietary intellectual property. 
+            </p>
+            
+            <p class="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto mb-10 font-medium">
+                <strong>Regulatory Disclaimer:</strong> The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and consumptive gas fees. It is not an investment contract. Unity Gold (UGLD) acts as a digital warehouse receipt for physical commodities. This ecosystem operates in alignment with the EU MiCA Regulation (2023/1114), the Colorado Digital Token Act (SB 19-023), and ISO 20022 financial messaging standards.
+            </p>
+
+            <div class="text-slate-600 text-[10px] border-t border-slate-800/50 pt-8 w-full font-mono uppercase tracking-widest">
+                &copy; 2026 Powell Global LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+    </script>
+
+</body>
+</html>
