@@ -1,93 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Varis Project | Powell Global LLC</title>
-    <style>
-        /* CORE & MOBILE SCALING (DARK THEME) */
-        :root { --slate: #0f172a; --gold: #d4af37; --bg: #0f172a; --text: #f8fafc; --card-bg: #1e293b; --border: #334155; }
-        body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.8; }
-        
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15, 23, 42, 0.98); z-index: 1000; }
-        .logo-text { font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #fff; border: 2px solid var(--gold); padding: 5px 10px; text-decoration: none; font-size: 1rem; }
-        .back-link { text-decoration: none; color: #94a3b8; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
-        
-        /* HEADER */
-        .header-block { text-align: center; margin-bottom: 60px; }
-        .header-block h1 { font-size: clamp(3rem, 8vw, 5rem); color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin: 0; }
-        .header-block p { color: #94a3b8; font-size: 1.3rem; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-
-        /* PROTOCOL BANNER */
-        .protocol-banner { background: #000; padding: 20px; text-align: center; border: 1px solid var(--border); margin: 40px 0; font-family: monospace; color: #94a3b8; letter-spacing: 1.5px; }
-        .protocol-banner span { color: var(--gold); font-weight: bold; }
-
-        /* LAYER GRID */
-        .grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
-        @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
-
-        .layer-card { background: var(--card-bg); padding: 40px; border-radius: 4px; border-top: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .layer-card.full-width { grid-column: 1 / -1; border-top: 3px solid #4299e1; }
-        
-        .layer-card h3 { color: var(--gold); text-transform: uppercase; font-size: 1.2rem; margin-top: 0; letter-spacing: 1px; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
-        .full-width h3 { color: #4299e1; }
-        .layer-card p { color: #cbd5e1; margin-bottom: 0; }
-
-        /* RESTRICTED MODULE (HEY CHEF) */
-        .hey-chef-module { background: #0a0f1a; border: 1px solid #475569; padding: 40px; margin-top: 40px; border-radius: 4px; border-top: 3px solid #f59e0b; }
-        .hey-chef-module h3 { color: #f59e0b; text-transform: uppercase; font-size: 1.2rem; margin-top: 0; letter-spacing: 1px; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
-        .hey-chef-module p { color: #cbd5e1; margin-bottom: 20px; }
-        .restricted-badge { background: #000; color: #ef4444; padding: 15px; font-family: monospace; text-align: center; border: 1px dashed #ef4444; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem; }
-
-    </style>
+    <title>Varis OS & Hardware | Powell Global LLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',     // Technical Gold
+                            dark: '#050914',     // Deepest terminal black/blue
+                            surface: '#0B0F19',  // Standard dark background
+                            card: '#111827',     // Elevated card background
+                            accent: '#1E293B'    // Subtle borders
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden">
 
-    <nav>
-        <a href="../index.html" class="logo-text">Powell Global LLC</a>
-        <a href="../index.html" class="back-link">Return to Lobby</a>
+    <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-brand-surface/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-white font-bold text-xl tracking-widest uppercase">
+                Powell Global
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-mono text-slate-400">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="varis.html" class="text-brand-gold transition-colors">Varis_OS</a>
+                <a href="heychef.html" class="hover:text-brand-gold transition-colors">Hey_Chef</a>
+                <a href="unity.html" class="hover:text-brand-gold transition-colors">Unity_Protocol</a>
+            </div>
+        </div>
     </nav>
 
-    <div class="container">
-        <div class="header-block">
-            <h1>The Varis Project</h1>
-            <p>A multi-layered institutional blockchain architecture designed to eliminate friction across hospitality and commercial real estate operations.</p>
+    <section class="relative pt-40 pb-20 px-6 border-b border-white/10 overflow-hidden min-h-[70vh] flex flex-col justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Data Center Architecture" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/80 to-brand-surface"></div>
         </div>
-
-        <div class="protocol-banner">
-            OPERATING INFRASTRUCTURE POWERED BY <span>THE UNITY PROTOCOL</span>
+        
+        <div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(#D4AF37 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="relative max-w-5xl mx-auto z-10 text-center mt-12">
+            <div class="inline-block border border-brand-gold/50 bg-brand-gold/10 text-brand-gold font-mono text-xs px-4 py-1.5 mb-8 rounded shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                SYSTEM_ARCHITECTURE // V1.0
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 drop-shadow-lg">
+                The Central Nervous <br>System of <span class="text-brand-gold drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">Commerce.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light mb-10">
+                Varis OS is the proprietary middleware bridge. It autonomously translates physical inventory depletion, employee labor, and legacy POS data into immutable cryptographic logic.
+            </p>
         </div>
+    </section>
 
-        <div class="grid">
-            <div class="layer-card">
-                <h3>The HR & Payroll Arm</h3>
-                <p>Designed for real-time settlement. Employees define their own financial flow, with options to receive pay daily, weekly, or every other day. Varis automates the entire human resources lifecycle on-chain, eliminating legacy administrative bottlenecks.</p>
+    <section class="py-24 bg-brand-surface px-6 border-b border-white/10 relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Unity Books Integration</h2>
+                <p class="text-slate-400 max-w-3xl leading-relaxed">
+                    Varis OS eliminates fragmented software subscriptions by unifying all back-office operations into a single, natively integrated ecosystem: Unity Books.
+                </p>
             </div>
 
-            <div class="layer-card">
-                <h3>Accounting & QuickBooks Arm</h3>
-                <p>Blockchain precision meets legacy compliance. This arm integrates seamlessly into the Payroll tier and pushes data via direct API into <strong>QuickBooks</strong>. It provides real-time ledger balancing and tax alignment for high-volume commercial environments.</p>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors flex flex-col justify-between group">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono text-brand-gold">01. Triple-Entry Accounting</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Legacy double-entry ledgers rely on trust and manual reconciliation. Unity Books seals every transaction (procurement, sales, payroll) with a third, cryptographically verifiable receipt on a distributed ledger. Discrepancies become mathematically impossible.
+                        </p>
+                    </div>
+                    <div class="w-full h-48 rounded overflow-hidden border border-white/5 group-hover:border-brand-gold/30 transition-colors relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data Abstract" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity">
+                        <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay"></div>
+                    </div>
+                </div>
 
-            <div class="layer-card full-width">
-                <h3>The XDC Network: Bridging Legacy Banking</h3>
-                <p>The entire Varis Project is designed to eliminate the standard Net-10 and Net-30 holding patterns that cripple vendor liquidity. By utilizing the <strong>XDC Network</strong>, Varis achieves instant settlement finality on the blockchain while retaining full, frictionless interoperability with legacy fiat banking systems. Smart contracts ensure immediate vendor payout upon invoice approval.</p>
+                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono text-brand-gold">02. Payroll & HR Compliance</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Labor hours tracked via Varis Biometric arrays are settled in real-time. Smart contracts automatically route fractional tax withholding, benefits distribution, and shift pay without manual HR oversight, ensuring perfect state and federal compliance.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors md:col-span-2 relative overflow-hidden">
+                    <div class="relative z-10 w-full md:w-2/3">
+                        <h3 class="text-xl font-bold text-white mb-3 font-mono text-brand-gold">03. Native Property Management (PMS)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            A full-suite PMS built directly into the operating system. Varis OS intercepts front-of-house POS logic, table mapping, reservations, and ticketing, routing them directly into the Unity Books ledger for real-time profitability tracking down to the micro-margin.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="hey-chef-module">
-            <h3>Module H.C. (Hey Chef)</h3>
-            <p>Our proprietary Food & Beverage Operating System. Built natively for the Mercantile's high-volume artisan environment, Hey Chef manages seamless point-of-sale, multi-vendor inventory management, and real-time kitchen logistics on the blockchain.</p>
+    <section class="py-24 bg-brand-dark px-6 border-b border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">Physical Triggers & <span class="text-brand-gold">Network Velocity</span></h2>
+                <p class="text-slate-400 mb-8 leading-relaxed">
+                    Varis OS relies on proprietary, hermetically sealed V-Shelves and Smart Carts utilizing enterprise gravimetric technology. When a physical item is removed, the OS registers a micro-fluctuation in mass.
+                </p>
+                
+                <div class="bg-brand-card border-l-4 border-brand-gold p-6 mb-8 rounded-r shadow-lg">
+                    <h4 class="text-white font-mono text-sm font-bold mb-2">Automated Micro-Burns</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        This is where hardware drives token velocity. Every physical inventory depletion registers as a digital state-change on the network. These non-sales data events trigger automated micro-buys and burns in the background—enforcing continuous, 24/7 ledger volume independent of front-of-house consumer transactions.
+                    </p>
+                </div>
+
+                <ul class="space-y-4 font-mono text-sm">
+                    <li class="flex items-center p-3 border border-white/5 rounded bg-brand-surface">
+                        <span class="text-brand-gold mr-4 font-bold">>></span>
+                        <span class="text-slate-300">Wheatstone Bridge Load Cells (4x S-Type)</span>
+                    </li>
+                    <li class="flex items-center p-3 border border-white/5 rounded bg-brand-surface">
+                        <span class="text-brand-gold mr-4 font-bold">>></span>
+                        <span class="text-slate-300">24-Bit Delta-Sigma ADC Converter</span>
+                    </li>
+                    <li class="flex items-center p-3 border border-white/5 rounded bg-brand-surface">
+                        <span class="text-brand-gold mr-4 font-bold">>></span>
+                        <span class="text-slate-300">Recursive Kalman Filter Algorithms</span>
+                    </li>
+                </ul>
+            </div>
             
-            <div class="restricted-badge">
-                [ RESTRICTED ACCESS: PATENTS PENDING ]<br><br>
-                Further technical architecture, proprietary routing algorithms, and source code are highly classified.
+            <div class="w-full flex justify-center relative">
+                <div class="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-lg overflow-hidden border border-brand-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.15)] group">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="Circuit Board Macro" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 font-mono text-brand-gold text-xs bg-brand-dark/80 px-3 py-1 rounded border border-brand-gold/30 backdrop-blur-sm">
+                        SENSOR_NODE_ACTIVE // ADC_STATUS: ONLINE
+                    </div>
+                    <div class="absolute top-6 right-6 w-3 h-3 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
+    <section class="relative py-32 px-6 border-b border-brand-gold/30 overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=2069&auto=format&fit=crop" alt="Blueprints" class="w-full h-full object-cover opacity-15 mix-blend-screen invert">
+            <div class="absolute inset-0 bg-brand-surface/80"></div>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto text-center z-10">
+            <h2 class="text-sm font-mono text-brand-gold mb-4 uppercase tracking-widest drop-shadow-sm">Intellectual Property</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-10 drop-shadow-lg">The Proprietary Moat</h3>
+            
+            <div class="p-10 border border-brand-gold/40 bg-brand-dark/90 backdrop-blur-md rounded text-left relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 bg-brand-gold text-black text-xs font-mono font-bold px-4 py-1.5 rounded-bl">86 CLAIMS SECURED</div>
+                <h4 class="text-2xl md:text-3xl font-bold text-white mb-3 font-mono">Utility Patent App. No. 63/997,798</h4>
+                <p class="text-brand-gold text-sm md:text-base font-medium mb-6">"System and Method for Autonomous Distributed Ledger Accounting, AI-Driven Procurement, and Multimodal Sensory Synchronization."</p>
+                <div class="w-16 h-px bg-white/20 mb-6"></div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Unlike standard decentralized protocols vulnerable to open-source forks, the Varis ecosystem is legally insulated by a massive <strong>86-claim patent</strong>. This application extensively protects the unique hardware-software middleware bridge, the methodology of using gravimetric physical sensory nodes to execute smart contracts, and the automated reconciliation formatting.
+                </p>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    This vertical integration secures absolute institutional value—competitors cannot replicate the physical data ingestion loop without infringing on Powell Global LLC IP.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-surface px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Scalable Infrastructure</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto font-mono text-sm">Choose the hardware array that fits your footprint. Upgrading to a 10-Year Fast-Track instantly unlocks the Sovereign Processing Floor.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors flex flex-col">
+                    <h3 class="text-xl font-bold text-white mb-2">Varis OS</h3>
+                    <p class="text-brand-gold text-sm font-mono mb-4">Software Only</p>
+                    <p class="text-slate-400 text-xs mb-6 italic border-b border-brand-accent pb-4">For merchants utilizing existing, compatible third-party POS hardware.</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8 flex-grow font-mono text-xs">
+                        <li>> Unity Books Access</li>
+                        <li>> Varis POS Middleware</li>
+                        <li>> Biometric TFA Integration</li>
+                    </ul>
+                    <div class="pt-4 border-t border-brand-accent">
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Starting from</p>
+                        <p class="text-2xl font-bold text-white font-mono">$375.00 <span class="text-sm text-slate-500 font-sans">/ mo</span></p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors flex flex-col">
+                    <h3 class="text-xl font-bold text-white mb-2">Standard Bundle</h3>
+                    <p class="text-brand-gold text-sm font-mono mb-4">OS + POS Hardware</p>
+                    <p class="text-slate-400 text-xs mb-6 italic border-b border-brand-accent pb-4">The foundational hardware upgrade.</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8 flex-grow font-mono text-xs">
+                        <li>> Varis OS Software License</li>
+                        <li>> Proprietary POS Monitors</li>
+                        <li>> Handhelds & V-Printers</li>
+                    </ul>
+                    <div class="pt-4 border-t border-brand-accent">
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Starting from</p>
+                        <p class="text-2xl font-bold text-white font-mono">$500.00 <span class="text-sm text-slate-500 font-sans">/ mo</span></p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors flex flex-col">
+                    <h3 class="text-xl font-bold text-white mb-2">The Total Package</h3>
+                    <p class="text-brand-gold text-sm font-mono mb-4">OS + POS + V-Shelves</p>
+                    <p class="text-slate-400 text-xs mb-6 italic border-b border-brand-accent pb-4">Full spatial tracking and autonomous AI restocking.</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8 flex-grow font-mono text-xs">
+                        <li>> Varis OS & All POS Hardware</li>
+                        <li>> V-Shelf Sensory Array</li>
+                        <li>> Hey Chef AI Activation</li>
+                    </ul>
+                    <div class="pt-4 border-t border-brand-accent">
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Starting from</p>
+                        <p class="text-2xl font-bold text-white font-mono">$937.50 <span class="text-sm text-slate-500 font-sans">/ mo*</span></p>
+                        <p class="text-[10px] text-brand-gold mt-2">*Plus refundable hardware deposit</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded bg-brand-dark border-2 border-brand-gold shadow-[0_0_20px_rgba(212,175,55,0.15)] flex flex-col relative overflow-hidden transform md:-translate-y-2">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-black text-[10px] font-mono font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                    <h3 class="text-xl font-bold text-white mb-2">10-Year Fast-Track</h3>
+                    <p class="text-brand-gold text-sm font-mono mb-4">Ecosystem Lock-In</p>
+                    <p class="text-slate-400 text-xs mb-6 italic border-b border-white/10 pb-4">The ultimate onboarding vehicle.</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8 flex-grow font-mono text-xs">
+                        <li>> Complete Total Package Array</li>
+                        <li>> Waived rental fees & deposits</li>
+                        <li class="text-white border-l-2 border-brand-gold pl-3 py-1 bg-brand-gold/5">Instantly unlocks Sovereign Processing Rate</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10">
+                        <p class="text-xs text-brand-gold uppercase tracking-wider mb-1">Total Entry</p>
+                        <p class="text-3xl font-bold text-white font-mono">$56,000</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center max-w-4xl mx-auto">
+                <p class="text-[10px] text-slate-600 font-mono uppercase tracking-wide">
+                    Disclaimer: Pricing reflects baseline modeling. All fees, hardware costs, and licensing rates are starting estimates and are subject to change based on specific commercial footprint, final hardware prototyping, and institutional underwriting.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark py-12 px-6 border-t border-brand-accent">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="text-white font-bold text-xl tracking-widest uppercase mb-6">
+                Powell Global
+            </div>
+            <p class="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto mb-6 font-medium">
+                <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, and Unity Protocol architectures are proprietary intellectual property.
+            </p>
+            <p class="text-slate-600 text-xs leading-relaxed max-w-4xl mx-auto mb-6 font-medium">
+                <strong>Regulatory Disclaimer:</strong> The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and consumptive gas fees. It is not an investment contract. Unity Gold (UGLD) acts as a digital warehouse receipt for physical commodities. This ecosystem operates in alignment with the EU MiCA Regulation (2023/1114), the Colorado Digital Token Act (SB 19-023), and ISO 20022 financial messaging standards.
+            </p>
+            <div class="text-slate-700 text-xs border-t border-brand-accent pt-6 w-full font-mono">
+                &copy; 2026 Powell Global LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
