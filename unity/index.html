@@ -13,7 +13,8 @@
                         brand: {
                             gold: '#D4AF37',
                             grey: '#1A1A1A',     // Institutional Grey
-                            dark: '#0A0A0A'      // Ticker/Footer Black
+                            dark: '#0A0A0A',      // Ticker/Footer Black
+                            surface: '#121212'    // Dark theme surface
                         }
                     }
                 }
@@ -23,6 +24,8 @@
     <style>
         body { background-color: #121212; color: #cbd5e1; font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
+        #menu.hidden { display: none; }
+        #menu.flex { display: flex; }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -53,12 +56,33 @@
         </div>
     </div>
 
-    <nav class="flex justify-between items-center px-10 py-6 bg-black/40 backdrop-blur-lg sticky top-0 z-50 border-b border-white/5">
-        <div class="text-white font-bold tracking-[0.2em] uppercase text-lg">Powell Global</div>
-        <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-brand-gold transition-all">← Back to Manifesto</a>
+    <nav class="fixed w-full z-50 top-12 border-b border-white/5 bg-black/40 backdrop-blur-lg shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-white font-bold tracking-[0.2em] uppercase text-lg">
+                Powell Global
+            </div>
+
+            <div class="flex items-center">
+                <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu" class="hidden absolute top-20 right-0 w-full md:w-72 bg-brand-dark border-l border-b border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-all">Home</a>
+                <hr class="border-white/5">
+                <a href="unity.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold">1. Unity Protocol</a>
+                <a href="varis.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
+                <a href="V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
+                <a href="heychef/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
+                <a href="resort/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
+            </div>
+        </div>
     </nav>
 
-    <header class="relative py-32 px-6 border-b border-brand-gold/20 overflow-hidden">
+    <header class="relative py-48 px-6 border-b border-brand-gold/20 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000" class="w-full h-full object-cover opacity-40 grayscale">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#121212]"></div>
@@ -168,6 +192,30 @@
             ISO 20022 COMPLIANT // XDC NETWORK PARTNER
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        window.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        });
+    </script>
 
 </body>
 </html>
