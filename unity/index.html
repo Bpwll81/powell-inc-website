@@ -30,33 +30,7 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <div class="sticky top-0 z-50">
-        <nav class="w-full border-b border-white/5 bg-black/90 backdrop-blur-md">
-            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <a href="index.html" class="text-white font-bold tracking-[0.2em] uppercase text-lg hover:text-brand-gold transition-colors">
-                    Powell Global
-                </a>
-
-                <div class="flex items-center">
-                    <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <div id="menu" class="hidden absolute top-20 right-0 w-full md:w-72 bg-brand-dark border-l border-b border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left">
-                    <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Home</a>
-                    <hr class="border-white/5">
-                    <a href="unity.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold">1. Unity Protocol</a>
-                    <a href="varis.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
-                    <a href="V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
-                    <a href="heychef/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
-                    <a href="resort/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
-                </div>
-            </div>
-        </nav>
-
+    <div class="fixed top-0 w-full z-50">
         <div class="w-full bg-black border-b border-brand-gold/30 h-12 flex items-center">
             <div class="tradingview-widget-container w-full">
                 <div class="tradingview-widget-container__widget"></div>
@@ -82,7 +56,29 @@
                 </script>
             </div>
         </div>
+
+        <nav class="flex justify-between items-center px-10 py-6 bg-black/80 backdrop-blur-lg border-b border-white/5">
+            <a href="index.html" class="text-white font-bold tracking-[0.2em] uppercase text-lg hover:text-brand-gold transition-all">Powell Global</a>
+            
+            <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Home</a>
+                <hr class="border-white/5">
+                <a href="unity.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">1. Unity Protocol</a>
+                <a href="varis.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
+                <a href="V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
+                <a href="heychef/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
+                <a href="resort/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
+            </div>
+        </nav>
     </div>
+
+    <div class="h-32"></div>
 
     <header class="relative py-32 px-6 border-b border-brand-gold/20 overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -91,11 +87,11 @@
         </div>
         <div class="relative z-10 max-w-5xl mx-auto text-center">
             <h1 class="text-5xl md:text-7xl font-extralight tracking-[0.2em] text-white uppercase mb-8">Unity Protocol</h1>
-            <div class="inline-block border border-brand-gold/40 px-6 py-2 bg-brand-gold/5 text-brand-gold font-mono text-xs tracking-widest mb-12 uppercase">
-                Institutional Digital Commodity Settlement
+            <div class="inline-block border border-brand-gold/40 px-6 py-2 bg-brand-gold/5 text-brand-gold font-mono text-xs tracking-widest mb-12">
+                70B MAX SUPPLY // ISO 20022 COMPLIANT
             </div>
             <p class="text-xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
-                Sovereign asset settlement powered by the XDC Network. A hybrid commodity layer designed for high-fidelity commerce.
+                Institutional settlement powered by the XDC Network. A bail-free asset layer designed for the transition to digital-commodity commerce.
             </p>
         </div>
     </header>
@@ -105,6 +101,7 @@
             <h2 class="text-3xl font-light text-white uppercase tracking-widest">The Strategic Reserve</h2>
             <div class="h-px w-24 bg-brand-gold mx-auto mt-4"></div>
         </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
             <div class="bg-white/5 p-6 border-t border-brand-gold text-center">
                 <span class="block text-white font-bold text-3xl mb-2">50%</span>
@@ -127,6 +124,64 @@
                 <span class="text-[10px] text-orange-900 font-mono uppercase tracking-widest">Copper</span>
             </div>
         </div>
+
+        <div class="mt-16 bg-black/40 p-10 border border-white/5">
+            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-6">Macro Rationale: The Copper Floor</h4>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                Copper is the fundamental metal of infrastructure. We maintain a 5% allocation to ensure Unity is tethered to the physical electrification of the global grid.
+            </p>
+            <div class="p-6 bg-red-900/10 border border-red-900/30 rounded">
+                <h5 class="text-xs font-bold text-red-400 uppercase mb-2">Regulatory & Tax Management</h5>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Physical Copper acquisition can trigger VAT or Sales Tax liabilities. Powell Global LLC manages these complexities at the treasury level to ensure UGLD holders maintain net-zero tax exposure on digital assets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-black border-y border-white/5">
+        <div class="max-w-5xl mx-auto space-y-6">
+            <h3 class="text-brand-gold font-mono text-xs uppercase tracking-[0.4em] mb-10 text-center">Institutional Verification Room</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-8 bg-white/5 border border-white/10 hover:border-brand-gold/30 transition-all">
+                    <span class="block text-white font-bold uppercase tracking-widest mb-4 text-xs">Protocol White Paper</span>
+                    <a href="Unity_Varis White Paper.pdf" target="_blank" class="text-brand-gold text-[10px] font-mono underline underline-offset-4">Download Briefing PDF</a>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 hover:border-brand-gold/30 transition-all">
+                    <span class="block text-white font-bold uppercase tracking-widest mb-4 text-xs">GitHub Repository</span>
+                    <a href="https://github.com/Bpwll81/powell-inc-website" target="_blank" class="text-brand-gold text-[10px] font-mono underline underline-offset-4">Bpwll81 // Source Audit</a>
+                </div>
+            </div>
+
+            <div class="p-8 bg-white/5 border border-white/10">
+                <span class="block text-white font-bold uppercase tracking-widest mb-6 text-center text-xs">On-Chain Verification</span>
+                <div class="space-y-4">
+                    <div class="p-4 bg-black border border-white/5">
+                        <span class="text-[9px] text-slate-500 uppercase block mb-2 tracking-widest">UNT Smart Contract (XDC Network)</span>
+                        <code class="text-[10px] text-brand-gold font-mono break-all">xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code>
+                    </div>
+                    <div class="p-4 bg-black border border-white/5">
+                        <span class="text-[9px] text-slate-500 uppercase block mb-2 tracking-widest">Genesis Treasury (Cold Storage)</span>
+                        <code class="text-[10px] text-brand-gold font-mono break-all">xdc33CE501714DEB68C56a7A27ad369de7B62846Cda</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-48 px-6 text-center overflow-hidden border-t border-brand-gold/20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1518134454611-3a9d397e822a?q=80&w=1000" class="w-full h-full object-cover opacity-10 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-[#121212]"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-extralight text-white uppercase tracking-[0.2em] mb-8">The Legacy Vault</h2>
+            <p class="text-xl text-slate-400 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                A hardcoded 7-Year retention lock. Built for the disciplined—ensuring the wealth generated by the ecosystem remains protected and generational.
+            </p>
+            <a href="vault.html" class="inline-block bg-brand-gold text-black px-12 py-5 font-bold uppercase tracking-[0.3em] text-sm hover:bg-white transition-all">Enter the Vault</a>
+        </div>
     </section>
 
     <footer class="bg-black py-20 px-6 border-t border-white/5 relative">
@@ -141,15 +196,15 @@
                 </p>
 
                 <p>
-                    <strong>Non-Security Classification:</strong> The Unity Protocol (UNT) is strictly classified as a <strong>Consumptive Utility Token</strong>. It is designed solely for network governance, node participation, and hardware infrastructure settlement. UNT does not represent an investment contract, an expectation of profit from the efforts of others, or an equity stake in any entity. It is a functional tool for the Varis OS ecosystem.
+                    <strong>Non-Security Classification:</strong> The Unity Protocol (UNT) is strictly classified as a <strong>Consumptive Utility Token</strong>. It is designed solely for network governance, hardware financing, and consumptive gas fees. It is not an investment contract, an expectation of profit, or an equity stake.
                 </p>
 
                 <p>
-                    <strong>Asset Custody & Verification:</strong> Unity Gold (UGLD) serves as a digital warehouse receipt for physical commodities. All underlying precious metals are held in <strong>Bail-Free, third-party insured vaults</strong>. Powell Global LLC maintains full <strong>Auditory Compliance</strong>; physical reserves are subject to regular, independent inspections to verify 1:1 digital-to-physical parity.
+                    <strong>Asset Custody & Verification:</strong> Unity Gold (UGLD) serves as a digital warehouse receipt for physical commodities. All precious metals are held in <strong>Bail-Free, third-party insured vaults</strong> with full <strong>Auditory Compliance</strong>; reserves are subject to independent inspections to verify 1:1 parity.
                 </p>
 
                 <p>
-                    <strong>Regulatory Compliance:</strong> This ecosystem is engineered for global institutional standards, operating in alignment with the <strong>EU MiCA Regulation (2023/1114)</strong>, the <strong>Colorado Digital Token Act (SB 19-023)</strong>, and <strong>ISO 20022</strong> financial messaging protocols. 
+                    <strong>Regulatory Alignment:</strong> This ecosystem operates in alignment with the <strong>EU MiCA Regulation (2023/1114)</strong>, the <strong>Colorado Digital Token Act (SB 19-023)</strong>, and <strong>ISO 20022</strong> financial messaging standards.
                 </p>
             </div>
 
@@ -168,6 +223,7 @@
             e.stopPropagation();
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
+            
             if (menu.classList.contains('hidden')) {
                 icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             } else {
@@ -181,5 +237,6 @@
             icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
         });
     </script>
+
 </body>
 </html>
