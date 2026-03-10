@@ -13,14 +13,19 @@
                         brand: {
                             gold: '#D4AF37',     // Warm, premium gold
                             dark: '#0B0F19',     // Deep slate for footers
-                            light: '#EBE9E1',    // Muted stone/canvas (no blinding white)
-                            surface: '#F5F4F0'   // Soft, warm off-white for content cards
+                            light: '#EBE9E1',    // Muted stone/canvas
+                            surface: '#F5F4F0'   // Soft, warm off-white
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Essential for the mobile menu functionality */
+        #menu.hidden { display: none; }
+        #menu.flex { display: flex; }
+    </style>
 </head>
 <body class="bg-brand-light text-slate-700 font-sans antialiased selection:bg-brand-gold selection:text-white">
 
@@ -29,7 +34,14 @@
             <div class="text-slate-900 font-bold text-xl tracking-widest uppercase">
                 Powell Global
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+
+            <button id="menu-btn" class="md:hidden text-slate-900 focus:outline-none p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div id="menu" class="hidden absolute top-20 left-0 w-full bg-brand-surface border-b border-black/5 flex-col p-6 space-y-4 md:static md:flex md:flex-row md:w-auto md:bg-transparent md:border-none md:p-0 md:space-y-0 md:space-x-8 text-sm font-semibold text-slate-600">
                 <a href="varis.html" class="hover:text-brand-gold transition-colors">Varis OS</a>
                 <a href="heychef/index.html" class="hover:text-brand-gold transition-colors">Hey Chef</a>
                 <a href="unity.html" class="hover:text-brand-gold transition-colors">The Unity Protocol</a>
@@ -141,6 +153,34 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            
+            // Toggle icons between Hamburger and X
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        // Close menu on link click (useful for single-page or mobile feel)
+        const links = menu.querySelectorAll('a');
+        links.forEach(l => {
+            l.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+    </script>
 
 </body>
 </html>
