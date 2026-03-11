@@ -32,26 +32,35 @@
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
 
-        /* Hero: High-Alpine Morning */
+        /* Hero: Alpine Morning */
         .hero { position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: #f1f5f9; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: fadeCycle 15s infinite; }
         .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.7)); }
         
-        /* Slides: Families and Friends enjoying the Resort */
+        /* Bustling Atmosphere Slides */
         .slide-1 { background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070'); animation-delay: 0s; } 
         .slide-2 { background-image: url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=2069'); animation-delay: 5s; } 
         .slide-3 { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069'); animation-delay: 10s; } 
         
-        /* Fixed Education Transition Logic */
+        /* Fixed Education Transition Logic (15s Loop, 3 Images) */
         .edu-container { position: relative; width: 100%; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid #E2E8F0; }
-        .edu-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; animation: eduFade 12s infinite; }
+        .edu-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; animation: eduFadeLoop 15s infinite; }
         
-        .edu-1 { background-image: url('https://images.unsplash.com/photo-1472162072142-d544e73e7fb2?q=80&w=2070'); animation-delay: 0s; } 
-        .edu-2 { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022'); animation-delay: 4s; } 
-        .edu-3 { background-image: url('https://images.unsplash.com/photo-1472289065668-ce6a5ae5906d?q=80&w=2070'); animation-delay: 8s; } 
+        /* Themed Images for Education/Outdoors/Active Life */
+        .edu-1 { background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2000'); animation-delay: 0s; } /* Learning Arithmetic (Outdoor/Rustic setting) */
+        .edu-2 { background-image: url('https://images.unsplash.com/photo-1628153359146-24876b5d2780?q=80&w=2000'); animation-delay: 5s; } /* Outdoors/Sustainability (Kids gardening/farming) */
+        .edu-3 { background-image: url('https://images.unsplash.com/photo-1563608226949-b00e62af664a?q=80&w=2000'); animation-delay: 10s; } /* Sports/Hunting (Archery/Physics of active life) */
 
         @keyframes fadeCycle { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
-        @keyframes eduFade { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
+
+        /* Smoother Loop with significant visibility and fade overlap */
+        @keyframes eduFadeLoop {
+            0% { opacity: 0; }
+            3.3% { opacity: 1; }  /* Fade in 0.5s */
+            30% { opacity: 1; }   /* Hold 4s */
+            33.33% { opacity: 0; } /* Fade out 0.5s */
+            33.34%, 100% { opacity: 0; } /* Hidden 10s */
+        }
 
         .hero-content { position: relative; z-index: 2; padding: 20px; }
         .hero h1 { font-size: clamp(3rem, 10vw, 6.5rem); text-transform: uppercase; letter-spacing: 15px; margin: 0; font-weight: 900; color: #0F172A; }
@@ -113,16 +122,16 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-32">
-        <h2 class="section-title">Hotel Ilona: A Shared Sanctuary</h2>
+        <h2 class="section-title">Hotel Ilona: Family Sanctuary</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="space-y-8">
                 <p class="text-xl text-slate-500 font-light leading-relaxed">
-                    Designed as a bridge between elite hospitality and autonomous finance, Hotel Ilona integrates private social hubs with high-fidelity biometric security.
+                    Designed as a physical bridge between elite hospitality and autonomous finance, Hotel Ilona integrates private social hubs with high-fidelity biometric security.
                 </p>
                 <ul class="feature-list">
-                    <li><strong>Integrated Knee Hockey Arena:</strong> Located directly within the hotel architecture, the arena serves as a private social core for players and families to bond.</li>
-                    <li><strong>Lifetime V-Band Assets:</strong> Every guest receives a V-Band meant to be kept—a permanent badge of belonging. Keep it year-round for <strong>biometric measurements</strong>, notifications, and real-time synchronization with resort activities.</li>
-                    <li><strong>Child Independence:</strong> Parents can load funds directly onto their children's V-Bands, granting them the freedom to purchase healthy lunches at the Mercantile independently.</li>
+                    <li><strong>Integrated Knee Hockey Arena:</strong> Located within the hotel, the arena serves as a private social core for players and families to bond.</li>
+                    <li><strong>Lifetime V-Band Assets:</strong> Every guest receives a V-Band meant to be kept—a permanent badge of belonging. Keep it year-round for <strong>biometric measurements</strong>, notifications, and real-time sync with resort activities.</li>
+                    <li><strong>Child Independence:</strong> Parents can load funds directly onto their children's V-Bands, granting them the freedom to purchase fresh, healthy lunches at the Mercantile independently.</li>
                     <li><strong>Biometric Unlock:</strong> Proximity sensors activate a biometric PIN or optical fingerprint scanner for suite entry. For absolute privacy, <strong>proximity sensing is automatically disabled</strong> the moment you depart Resort grounds.</li>
                 </ul>
             </div>
@@ -141,7 +150,7 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
                 <div>
                     <h2 class="text-5xl font-black uppercase italic tracking-tighter mb-4">The Mercantile</h2>
-                    <p class="text-slate-400 text-xl font-light max-w-2xl">A culinary marketplace operating on a 100% closed financial circuit, where the family remains sovereign.</p>
+                    <p class="text-slate-400 text-xl font-light max-w-2xl">A culinary marketplace operating on a 100% closed financial circuit, powered by Unity Protocol settlement.</p>
                 </div>
                 <div class="mt-8 md:mt-0">
                     <div class="px-6 py-2 border-2 border-brand-gold text-brand-gold font-mono text-xs uppercase tracking-widest">
@@ -196,9 +205,9 @@
             </div>
             <div class="order-1 lg:order-2">
                 <div class="edu-container">
-                    <div class="edu-slide edu-1"></div>
-                    <div class="edu-slide edu-2"></div>
                     <div class="edu-slide edu-3"></div>
+                    <div class="edu-slide edu-2"></div>
+                    <div class="edu-slide edu-1"></div>
                 </div>
             </div>
         </div>
@@ -213,12 +222,12 @@
             <div class="order-2">
                 <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-6">The Inner Ring: Sibling Play Hub</h3>
                 <p class="text-slate-600 text-lg mb-6 leading-relaxed">
-                    A multi-rink facility can naturally become rowdy; the inner ring serves as a high-energy world for children to explore without crowding the commons.
+                    A multi-rink facility naturally becomes rowdy; the inner ring serves as a high-energy world for children to explore, giving active siblings a dedicated sanctuary.
                 </p>
                 <ul class="feature-list mb-6">
-                    <li><strong>Integrated Hub:</strong> Professional-grade indoor climbing and active play arrays.</li>
-                    <li><strong>Outdoor Commons:</strong> Gated access to protected outdoor playgrounds for fresh air and movement.</li>
-                    <li><strong>Viewing Hubs:</strong> Parents sit in designated hubs within this ring to monitor the ice and stay synchronized with children via real-time V-Band updates.</li>
+                    <li><strong>Integrated Hub:</strong> Professional-grade indoor climbing, active play arrays, and gated transitions to protected outdoor playgrounds.</li>
+                    <li><strong>Viewing Hubs:</strong> Parents sit in designated hubs within this ring to monitor the ice while keeping children engaged in safe recreation.</li>
+                    <li><strong>Family Sync:</strong> Monitor child wellness and location at the rink via real-time V-Band updates delivered directly to your device.</li>
                 </ul>
             </div>
         </div>
@@ -257,7 +266,7 @@
                 </div>
                 <div class="v-card p-8 border-t-4 border-brand-gold bg-brand-gold/5 flex flex-col justify-center">
                     <h4 class="text-lg font-black text-brand-gold uppercase">V-Band Hub Support</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 italic">Order food from the Mercantile and have it delivered directly to your Viewing Hub via V-Band tracking.</p>
+                    <p class="text-[10px] text-slate-400 mt-2 italic">Sync game scores and Mercantile ordering via your wristband node.</p>
                 </div>
             </div>
         </div>
