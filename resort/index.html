@@ -16,10 +16,10 @@
                     colors: {
                         brand: {
                             gold: '#D4AF37',     
-                            dark: '#050914',     
-                            light: '#F8FAFC',    // Alpine White
-                            slate: '#334155',    // Text contrast
-                            goldLight: '#FDFCF0' // Warm glow
+                            dark: '#0F172A',     
+                            light: '#FFFFFF',    
+                            slate: '#475569',    
+                            accent: '#F8FAFC'    
                         }
                     }
                 }
@@ -27,15 +27,14 @@
         }
     </script>
     <style>
-        body, html { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #F8FAFC; color: #334155; overflow-x: hidden; line-height: 1.8; }
+        body, html { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #FFFFFF; color: #475569; overflow-x: hidden; line-height: 1.8; }
         
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
 
-        /* Hero: Brighter, more "Freedom" focused */
-        .hero { position: relative; height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; }
+        .hero { position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: #f1f5f9; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: fadeCycle 15s infinite; }
-        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(248, 250, 252, 0.1), rgba(15, 23, 42, 0.6)); }
+        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.7)); }
         
         .slide-1 { background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070'); animation-delay: 0s; }
         .slide-2 { background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000'); animation-delay: 5s; }
@@ -43,31 +42,42 @@
         
         @keyframes fadeCycle { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
         .hero-content { position: relative; z-index: 2; padding: 20px; }
-        .hero h1 { font-size: clamp(3rem, 10vw, 6rem); text-transform: uppercase; letter-spacing: 12px; margin: 0; font-weight: 900; color: white; text-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .hero h1 { font-size: clamp(3rem, 10vw, 6.5rem); text-transform: uppercase; letter-spacing: 15px; margin: 0; font-weight: 900; color: #0F172A; }
 
-        .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); color: #0F172A; margin-bottom: 40px; text-transform: uppercase; border-left: 6px solid var(--gold); padding-left: 20px; font-weight: 900; letter-spacing: -0.02em; }
+        .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); color: #0F172A; margin-bottom: 40px; text-transform: uppercase; border-left: 8px solid #D4AF37; padding-left: 25px; font-weight: 900; }
         
-        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; color: #475569; }
+        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; }
         .feature-list li strong { color: #0F172A; }
         .feature-list li::before { content: '◈'; position: absolute; left: 0; color: #D4AF37; font-size: 1.2rem; }
 
-        .mercantile-wrap { background: #0F172A; color: #fff; padding: 120px 20px; border-top: 8px solid #D4AF37; }
-        
-        .vplex-notice { background: #fff; color: #D4AF37; padding: 25px; font-family: ui-monospace, monospace; text-align: center; border: 1px solid #E2E8F0; margin-bottom: 60px; letter-spacing: 3px; font-weight: bold; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .v-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.3s ease; }
+        .v-card:hover { border-color: #D4AF37; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        .m-visual { 
+            width: 100%; 
+            height: 500px; 
+            background-image: url('Mercantile.png'); 
+            background-size: cover; 
+            background-position: center; 
+            border: 1px solid rgba(0,0,0,0.05); 
+            margin: 40px 0 10px 0; 
+            border-radius: 12px; 
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1); 
+        }
     </style>
 </head>
 <body>
 
     <div class="fixed top-0 w-full z-50">
-        <nav class="flex justify-between items-center px-10 py-6 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-            <a href="../index.html" class="text-slate-900 font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all italic">Powell Global</a>
-            <button id="menu-btn" class="text-slate-900 focus:outline-none p-2 hover:text-brand-gold transition-colors">
+        <nav class="flex justify-between items-center px-10 py-6 bg-white/90 backdrop-blur-lg border-b border-slate-100">
+            <a href="../index.html" class="text-slate-900 font-black tracking-[0.2em] uppercase text-xl italic">Powell Global</a>
+            <button id="menu-btn" class="text-slate-900 p-2 hover:text-brand-gold transition-colors">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
 
-            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl rounded-lg">
                 <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">Home</a>
                 <hr class="border-white/5">
                 <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">1. Unity Protocol</a>
@@ -84,152 +94,195 @@
         <div class="hero-slide slide-2"></div>
         <div class="hero-slide slide-3"></div>
         <div class="hero-content">
-            <div class="inline-block px-4 py-1 border border-white text-white font-mono text-[10px] uppercase tracking-[0.5em] mb-6 backdrop-blur-sm">
-                The Final Architecture
-            </div>
-            <h1>The Resort</h1>
-            <p class="text-white text-xl font-light tracking-widest uppercase mt-4 opacity-80">A Closed-Circuit Financial Sanctuary</p>
+            <h1 class="drop-shadow-sm">The Resort</h1>
+            <p class="text-slate-900 text-lg font-bold tracking-[0.4em] uppercase mt-4">We are finally free.</p>
         </div>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-32">
-        <h2 class="section-title">Hotel Ilona: We are Finally Free.</h2>
-        
+        <h2 class="section-title">Hotel Ilona: Family Sovereignty</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="space-y-8">
-                <p class="text-2xl text-slate-500 font-light leading-relaxed italic">
-                    This is where the mission statement comes to fruition. A physical environment decoupled from legacy banking, powered by autonomous logic and asset-backed settlement.
+                <p class="text-xl text-slate-500 font-light leading-relaxed">
+                    This is where the mission statement on our main page comes to full fruition. A physical sanctuary decoupled from legacy banking, powered by autonomous logic and asset-backed settlement.
                 </p>
                 <ul class="feature-list">
-                    <li><strong>The Lifelong V-Band:</strong> This is your permanent key to the ecosystem. It is meant to be kept and used whenever you return. Beyond the Resort, it remains a vital tool for <strong>biometric measurements</strong> and real-time <strong>notifications</strong> for upcoming events.</li>
-                    <li><strong>Community & Family Sovereignty:</strong> Peace of mind is engineered into the campus. Monitor your children during their hours of practice or while they enjoy a game at the Ice Campus—even during the school day—with secure, encrypted updates sent directly to your V-Band.</li>
-                    <li><strong>Proximity Autonomy:</strong> While the Band is an always-on wellness tool, all <strong>proximity sensing</strong> (door unlocks/location triggers) is <strong>automatically disabled</strong> the moment you depart Resort grounds, ensuring absolute privacy in the outside world.</li>
-                    <li><strong>Biometric Security:</strong> Proximity sensors at your suite activate a PIN or fingerprint scanner, ensuring that only you—not just your band—can authorize entry.</li>
+                    <li><strong>A Lifetime Key:</strong> All guests receive a V-Band. This is meant to be kept—a permanent badge of belonging. Use it year-round for <strong>biometric measurements</strong>, wellness tracking, and <strong>updates</strong> about upcoming reservations or events.</li>
+                    <li><strong>Child Independence:</strong> Parents can <strong>load money</strong> directly onto their children's V-Bands, allowing them to purchase fresh, healthy lunches at the Mercantile. Monitor their status while they are at the rink for practice or enjoying a game.</li>
+                    <li><strong>The Player's Social Core:</strong> The hotel architecture explicitly houses the <strong>Integrated Knee Hockey Arena</strong> and private lounges, providing a secure athletic hub for team bonding and social sanctuary.</li>
+                    <li><strong>Biometric Security & Privacy:</strong> Proximity sensors activate a PIN or fingerprint scanner for suite entry. For absolute privacy, all proximity sensing is <strong>automatically disabled</strong> the moment you depart from Resort grounds.</li>
                 </ul>
             </div>
-            <div class="relative group">
-                <div class="absolute -inset-4 bg-brand-gold/10 rounded-xl blur-2xl group-hover:bg-brand-gold/20 transition-all"></div>
-                <div class="relative bg-white border border-slate-200 shadow-2xl rounded-lg overflow-hidden p-3">
-                    <img src="Hotel Ilona.png" alt="Hotel Ilona" class="w-full h-auto rounded">
-                    <div class="mt-4 p-4 border-t border-slate-100 flex justify-between items-center">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-brand-gold">Design Alpha // 2026</span>
-                        <span class="text-[10px] font-mono text-slate-400">ARCH_ID: ILONA_01</span>
-                    </div>
+            <div class="relative">
+                <img src="Hotel Ilona.png" alt="Hotel Ilona" class="w-full h-auto rounded-xl shadow-2xl border border-slate-100">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 shadow-xl rounded-lg border border-slate-100 hidden md:block">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-brand-gold">Proximity Node Active</p>
+                    <p class="text-sm font-black text-slate-900 italic">Official Mockup of Final Architecture</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-brand-goldLight py-32 border-y border-brand-gold/20">
+    <div class="bg-brand-accent py-32 border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] border-4 border-white">
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-brand-gold/10 mix-blend-overlay"></div>
                     <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded shadow-lg">
-                        <p class="text-[10px] font-bold uppercase tracking-tighter text-slate-900 mb-1">Power Generation Core</p>
+                        <p class="text-[10px] font-bold uppercase tracking-tighter text-slate-900 mb-1">Central Power Hub</p>
                         <p class="text-xl font-black text-brand-gold">The Tesla Tower</p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-4xl font-black text-slate-900 mb-6 uppercase italic">Infinite Energy. <br>Zero Cables.</h3>
+                    <h3 class="text-4xl font-black text-slate-900 mb-6 uppercase italic">Omnipresent Power</h3>
                     <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                        The Tesla Tower is the heartbeat of the Resort. It broadcasts a proprietary <strong>Over-The-Air (OTA)</strong> power network that blankets the entire property—from the suites to the rinks.
+                        Fed directly from the central Tesla Tower, an <strong>Over-The-Air (OTA)</strong> power delivery network blankets the entire Resort.
                     </p>
                     <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                        Any device equipped with our RF-harvesting technology, and specifically the V-Band, stays continuously charged ambiently. No charging pads, no downtime—just a seamless flow of energy as you move through the community.
+                        This ambient charging infrastructure continuously powers any device equipped with our RF-harvesting technology—specifically the V-Band, which is fully capable of ambient wireless charging. No pads, no cables, just a continuous flow of energy as you move through the community.
                     </p>
                     <div class="p-6 bg-white border border-brand-gold/30 rounded-lg shadow-sm font-mono text-xs text-brand-gold">
                         >> OTA_BROADCAST: ENABLED <br>
-                        >> TARGET: V-BAND_Qi_ARRAY <br>
-                        >> RADIUS: RESORT_WIDE_OMNI
+                        >> NETWORK: RESORT_WIDE_OMNI <br>
+                        >> RECTENNA_SYNC: ACTIVE
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 
-    <div class="mercantile-wrap">
+    <div class="bg-brand-dark py-32 text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-black text-white mb-12 uppercase italic tracking-tighter">The Mercantile</h2>
-            <div class="m-visual"></div>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-5xl font-black uppercase italic tracking-tighter mb-4">The Mercantile</h2>
+                    <p class="text-slate-400 text-xl font-light max-w-2xl">The culimation of all work—a fully automated, closed-circuit financial marketplace.</p>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <div class="px-6 py-2 border-2 border-brand-gold text-brand-gold font-mono text-xs uppercase tracking-widest">
+                        Settlement Node: ILONA_M01
+                    </div>
+                </div>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
-                <div class="space-y-4">
-                    <div class="w-12 h-1 bg-brand-gold"></div>
-                    <h4 class="text-xl font-bold uppercase tracking-widest">Village Marketplace</h4>
-                    <p class="text-slate-400 text-sm">A soaring culinary hub with vaulted ceilings, hosting artisan bakeries and upscale food stalls in a truly closed-circuit financial loop.</p>
+            <div class="m-visual"></div>
+            <p class="text-center italic text-brand-gold text-xs mt-4 tracking-widest uppercase font-bold">Conceptual Rendering: Central Marketplace</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20">
+                <div class="p-10 bg-white/5 border border-white/10 rounded-xl">
+                    <h4 class="text-brand-gold font-black uppercase tracking-widest mb-6">Viewing Hub Delivery</h4>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Parents sitting in the designated **Viewing Hubs** around the rink ring can order fresh artisan food directly from the Mercantile using kiosks or the Resort app. 
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        Utilizing <strong>V-Band Tracking</strong>, our staff will deliver your meal directly to you, anywhere in the V-Plex complex. Enjoy the game while the Mercantile comes to you.
+                    </p>
                 </div>
-                <div class="space-y-4">
-                    <div class="w-12 h-1 bg-brand-gold"></div>
-                    <h4 class="text-xl font-bold uppercase tracking-widest">Tap & Forget</h4>
-                    <p class="text-slate-400 text-sm">The V-Band executes instant <strong>Tap-to-Pay</strong>. No wallets, no banks—just instant cryptographic settlement via native UNT/UGLD tokens.</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="w-12 h-1 bg-brand-gold"></div>
-                    <h4 class="text-xl font-bold uppercase tracking-widest">Real-Time Sync</h4>
-                    <p class="text-slate-400 text-sm">Stay synchronized with the community. Receive live updates on game scores, rink availability, and event times directly on your wrist.</p>
+                <div class="p-10 border border-brand-gold/20 rounded-xl bg-white/5 flex flex-col justify-center text-center">
+                    <h4 class="text-white font-black uppercase tracking-widest mb-4">Tap-To-Pay Sovereignty</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed italic">
+                        The V-Band executes instant settlement via native Unity Protocol tokens. No legacy bank accounts, no static fees—just the flow of a free community economy.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-32">
-        <h2 class="section-title">The V-Plex Campus</h2>
+        <h2 class="section-title">The V-Plex Complex</h2>
         <div class="vplex-notice uppercase">
             3D ARCHITECTURAL RENDERINGS COMING SOON - ENGINEERING IN PROGRESS
         </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 bg-white p-12 border border-slate-200 rounded-xl shadow-xl">
-                <h3 class="text-3xl font-black text-slate-900 mb-6 uppercase italic">The Ice Campus</h3>
-                <p class="text-slate-500 mb-10 leading-relaxed">The training ground for the Colorado Vipers. Five world-class rinks designed for elite athletic development and massive community engagement.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="rink-box">
-                        <h4 class="text-slate-900 font-black">Rink: Denver</h4>
-                        <p class="text-[10px] text-blue-600 font-bold uppercase">Olympic Arena // College D2</p>
-                    </div>
-                    <div class="rink-box">
-                        <h4 class="text-slate-900 font-black">Rink: Birmingham</h4>
-                        <p class="text-[10px] text-blue-600 font-bold uppercase">NHL Arena // Travel AAA</p>
-                    </div>
-                    <div class="rink-box">
-                        <h4 class="text-slate-900 font-black">Rink: Staten Island</h4>
-                        <p class="text-[10px] text-blue-600 font-bold uppercase">Figure Skating Academy</p>
-                    </div>
-                    <div class="rink-box border-brand-gold">
-                        <h4 class="text-slate-900 font-black">The Player's Suites</h4>
-                        <p class="text-[10px] text-brand-gold font-bold uppercase">Knee Hockey // Private Lounges</p>
-                    </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32 items-center">
+            <div class="order-2 lg:order-1">
+                <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-6">Ring 1: The Foundation Center</h3>
+                <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                    <strong>Education is the cornerstone.</strong> The Foundation Center is the inner-most ring of the V-Plex because knowledge must precede athletics.
+                </p>
+                <p class="text-slate-600 mb-6">
+                    Enrollment begins at <strong>age 10</strong>. We believe the early years are sacred for parents to mold a child's <strong>moral compass and values</strong>. Once that character is set at home, the Center takes over with rigorous passion-based learning: arithmetic, constitutional law, homesteading, and hunting.
+                </p>
+            </div>
+            <div class="order-1 lg:order-2 p-12 bg-brand-gold/5 border-2 border-brand-gold rounded-full aspect-square flex flex-col justify-center text-center">
+                <span class="text-brand-gold font-mono text-sm uppercase tracking-widest mb-2">Primary Ring</span>
+                <span class="text-4xl font-black text-slate-900 leading-none uppercase">Foundation <br>Center</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32 items-center">
+            <div class="order-1">
+                <div class="relative h-[450px] rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1533158307587-828f0a76ef46?q=80&w=2000" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-brand-gold/5"></div>
                 </div>
             </div>
-            
-            <div class="space-y-8">
-                <div class="ring-card">
-                    <h4 class="text-slate-900 font-black uppercase text-sm mb-3">Foundation Education</h4>
-                    <p class="text-slate-500 text-xs">Passion-based learning: arithmetic, constitutional law, and homesteading for the next generation.</p>
+            <div class="order-2">
+                <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-6">Ring 2: Sibling Play Hub</h3>
+                <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                    Designed to keep siblings active and safe during long practice hours. This massive hub prevents kids from wandering through common areas and keeps them moving.
+                </p>
+                <ul class="feature-list mb-6">
+                    <li><strong>Wall Climbing & Play:</strong> Integrated climbing walls and high-energy play zones.</li>
+                    <li><strong>Outdoor Playground:</strong> Gated transitions to sprawlng outdoor recreation areas.</li>
+                    <li><strong>Safety Tracking:</strong> Parents can sit in the Viewing Hubs and monitor sibling activity via their device.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 p-12 rounded-2xl border border-slate-200">
+            <div class="mb-12 text-center">
+                <h3 class="text-4xl font-black text-slate-900 uppercase italic">The Ice Campus Core</h3>
+                <p class="text-slate-500 text-lg">Five world-class rinks powering the Colorado Vipers pipeline and community recreation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="v-card p-8 border-t-4 border-blue-500">
+                    <h4 class="text-xl font-black">Rink: Denver</h4>
+                    <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Olympic Sized</span>
+                    <p class="text-xs text-slate-400 mt-4">College D2 & National Team Training.</p>
                 </div>
-                <div class="ring-card">
-                    <h4 class="text-slate-900 font-black uppercase text-sm mb-3">Sibling Safe-Zone</h4>
-                    <p class="text-slate-500 text-xs">A high-energy hub where parents can monitor games while younger siblings play in safety.</p>
+                <div class="v-card p-8 border-t-4 border-blue-500">
+                    <h4 class="text-xl font-black">Rink: Birmingham</h4>
+                    <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">NHL Sized</span>
+                    <p class="text-xs text-slate-400 mt-4">AAA Travel Tier & Varsity Home Ice.</p>
+                </div>
+                <div class="v-card p-8 border-t-4 border-blue-500">
+                    <h4 class="text-xl font-black">Rink: Lancaster</h4>
+                    <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">NHL Sized</span>
+                    <p class="text-xs text-slate-400 mt-4">AA Travel & High School Pipeline.</p>
+                </div>
+                <div class="v-card p-8 border-t-4 border-blue-500">
+                    <h4 class="text-xl font-black">Rink: Lafayette</h4>
+                    <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Standard Sized</span>
+                    <p class="text-xs text-slate-400 mt-4">House Leagues & Adult Recreation.</p>
+                </div>
+                <div class="v-card p-8 border-t-4 border-blue-500">
+                    <h4 class="text-xl font-black">Rink: Staten Island</h4>
+                    <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Standard Sized</span>
+                    <p class="text-xs text-slate-400 mt-4">Figure Skating Academy & Public Instruction.</p>
+                </div>
+                <div class="v-card p-8 border-t-4 border-brand-gold bg-brand-gold/5">
+                    <h4 class="text-xl font-black text-brand-gold">Viewing Hubs</h4>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Omni-Channel Support</p>
+                    <p class="text-xs text-slate-600 mt-4 italic">Sit around the entire ring—order food from the Mercantile and have it delivered directly to you via V-Band tracking.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-brand-gold py-24 text-center">
+    <div class="bg-brand-gold py-32 text-center text-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h3 class="text-white font-black text-4xl md:text-5xl uppercase tracking-tighter italic mb-8">Phase V: The Horizon.</h3>
-            <p class="text-white/90 text-xl font-light leading-relaxed">
-                As the Unity Protocol scales, the digital treasury builds this physical reality. This isn't just a hotel; it is the culmination of an entire ecosystem reaching maturity. The future isn't just digital—it's built in stone, ice, and community.
+            <h3 class="text-5xl font-black uppercase italic mb-8">Freedom Found.</h3>
+            <p class="text-2xl font-light leading-relaxed">
+                The Resort is the physical manifestation of the Powellroadmap. A fully automated, closed-circuit financial system where the family is sovereign.
             </p>
         </div>
     </div>
 
-    <footer class="bg-brand-dark py-16 text-center">
-        <div class="text-white font-bold text-xl tracking-widest uppercase mb-4 italic">Powell Global</div>
+    <footer class="bg-brand-dark py-20 text-center">
+        <div class="text-white font-black text-2xl tracking-widest uppercase mb-4 italic">Powell Global</div>
         <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">
             &copy; 2026 Powell Global LLC. All rights reserved.
         </div>
