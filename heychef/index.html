@@ -39,22 +39,39 @@
         .text-glow {
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
+
+        /* Unified Menu Overrides */
+        #menu.hidden { display: none; }
+        #menu.flex { display: flex; }
     </style>
 </head>
 <body class="overflow-x-hidden ai-grid">
 
-    <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-brand-dark/90 backdrop-blur-md shadow-2xl">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-white font-bold text-xl tracking-widest uppercase italic">Powell Global</div>
-            <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">
-                <a href="../index.html" class="hover:text-brand-gold transition-all">01_Home</a>
-                <a href="../varis.html" class="hover:text-brand-gold transition-all">02_Varis_OS</a>
-                <a href="../unity.html" class="hover:text-brand-gold transition-all">03_Unity</a>
-            </div>
-        </div>
-    </nav>
+    <div class="fixed top-0 w-full z-50">
+        <nav class="flex justify-between items-center px-10 py-6 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm">
+            <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all italic">Powell Global</a>
+            
+            <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
 
-    <header class="relative pt-40 pb-24 px-6 overflow-hidden min-h-[90vh] flex items-center border-b border-brand-gold/20">
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
+                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">Home</a>
+                <hr class="border-white/5">
+                <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">1. Unity Protocol</a>
+                <a href="../varis/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">2. Varis OS</a>
+                <a href="../V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">3. V-Shelves</a>
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">5. The Resort</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="h-24"></div>
+
+    <header class="relative pt-24 pb-24 px-6 overflow-hidden min-h-[90vh] flex items-center border-b border-brand-gold/20">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2000" class="w-full h-full object-cover opacity-30 mix-blend-screen">
             <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
@@ -68,7 +85,7 @@
                 The Brain of <br><span class="text-brand-gold text-glow">The Kitchen.</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed max-w-2xl font-light">
-                Hey Chef is the first autonomous intelligence designed to eliminate the mental fatigue of service. It synchronizes physical gravimetric sensors with real-time POS data to orchestrate the back-of-house with absolute mathematical precision.
+                Hey Chef is the first autonomous intelligence designed to eliminate the mental fatigue of service. Provided as a <strong class="text-white">free activation add-on</strong> for F&B operations, it synchronizes physical gravimetric sensors with real-time POS data to orchestrate the back-of-house with absolute mathematical precision.
             </p>
         </div>
     </header>
@@ -82,12 +99,12 @@
             </div>
             <div>
                 <h2 class="text-xs font-bold text-brand-gold uppercase tracking-[0.5em] mb-6 font-mono">Cornerstone Moat</h2>
-                <h3 class="text-4xl font-black text-white mb-8 uppercase italic leading-none">Utility Patent App. <br>No. 19/559,956</h3>
+                <h3 class="text-4xl font-black text-white mb-8 uppercase italic leading-none">Provisional Patent App. <br>No. 63/997,798</h3>
                 <p class="text-slate-400 leading-relaxed mb-10 text-lg font-light">
-                    Our foundational patent secures the hardware-software middleware bridge. It is the legal moat protecting the translation of physical gravimetric depletion into autonomous, self-executing procurement via the Unity Protocol.
+                    Our foundational provisional patent secures the AI-driven hospitality procurement. It is the legal moat protecting the translation of physical gravimetric depletion into autonomous, self-executing hospitality logic via the Unity Protocol.
                 </p>
                 <div class="p-8 bg-white/5 border-l-4 border-brand-gold font-mono text-[12px] text-brand-gold/80 italic backdrop-blur-sm">
-                    "Protects the methodology of autonomous procurement triggered via gravimetric physical sensory nodes and the conversion of physical state-change into consumptive ledger execution."
+                    "System and Method for Autonomous Distributed Ledger Accounting, AI-Driven Hospitality Procurement, and Multi-Metal Asset-Backed Settlement."
                 </div>
             </div>
         </div>
@@ -107,7 +124,7 @@
                         <h4 class="text-2xl font-black text-white uppercase tracking-tighter leading-none">Real-Time <br>FOH Sync</h4>
                     </div>
                     <p class="text-slate-400 leading-relaxed text-lg font-light italic">
-                        The V-Shelf senses depletion—the POS updates instantly. Servers are notified of 86'd items before the order is ever taken, eliminating guest friction and "the apology" forever.
+                        Through deep integration with V-Shelves, the moment depletion is sensed, your legacy POS and PMS systems update instantly. Servers are notified of 86'd items before the order is ever taken, eliminating guest friction and "the apology" forever.
                     </p>
                 </div>
 
@@ -117,7 +134,7 @@
                         <h4 class="text-2xl font-black text-white uppercase tracking-tighter leading-none">Interactive <br>Assistance</h4>
                     </div>
                     <p class="text-slate-400 leading-relaxed text-lg font-light italic">
-                        Standardize the plate. Scalable recipes, plating guides, and allergen cross-checks delivered to the kitchen display nodes. Absolute culinary consistency, regardless of shift rotation.
+                        Standardize the plate. Scalable recipes, plating guides, and allergen cross-checks delivered directly to kitchen display nodes to ensure absolute culinary consistency, regardless of shift rotation.
                     </p>
                 </div>
             </div>
@@ -126,17 +143,17 @@
                 <div class="p-8 border-2 border-brand-gold bg-brand-gold/5 flex flex-col justify-between">
                     <h5 class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">// GRAVITY_SYNC</h5>
                     <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">Autonomous <br>Restocking</p>
-                    <p class="text-slate-500 text-sm">Monitors gravimetric mass. Pre-authorizes procurement based on inventory velocity.</p>
+                    <p class="text-slate-500 text-sm">Deeply integrated with V-Shelves to monitor gravimetric mass and autonomously pre-authorize procurement based on inventory velocity.</p>
                 </div>
                 <div class="p-8 border-2 border-brand-gold bg-brand-gold/5 flex flex-col justify-between">
                     <h5 class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">// VISION_SAFETY</h5>
-                    <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">loss <br>Prevention</p>
-                    <p class="text-slate-500 text-sm">Auto-Cameras track product movement to eliminate internal theft and ghost waste.</p>
+                    <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">Loss <br>Prevention</p>
+                    <p class="text-slate-500 text-sm">Synchronized with V-Lens optical AI to dynamically track product movement, actively deterring internal theft and eliminating ghost waste.</p>
                 </div>
                 <div class="p-8 border-2 border-brand-gold bg-brand-gold/5 flex flex-col justify-between">
                     <h5 class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">// COMPLIANCE_AI</h5>
                     <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">HACCP <br>Safety</p>
-                    <p class="text-slate-500 text-sm">Continuous temperature monitoring and automated digital audit trails for total safety.</p>
+                    <p class="text-slate-500 text-sm">Pairs with handheld Scanners to log real-time prep stages, while automated thermal gauges ensure total, 24/7 HACCP compliance.</p>
                 </div>
             </div>
         </div>
@@ -164,5 +181,28 @@
         </div>
     </footer>
 
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        window.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        });
+    </script>
 </body>
 </html>
