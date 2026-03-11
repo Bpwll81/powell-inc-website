@@ -28,29 +28,36 @@
     </script>
     <style>
         body, html { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #FFFFFF; color: #475569; overflow-x: hidden; line-height: 1.8; }
+        
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
 
-        /* HEADER SLIDER - STAYS AS IS (WORKING) */
+        /* HERO HEADER */
         .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: #f1f5f9; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: headerFade 15s infinite; }
         .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.8)); }
+        
         .hero-1 { background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070'); animation-delay: 0s; } 
         .hero-2 { background-image: url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=2069'); animation-delay: 5s; } 
         .hero-3 { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069'); animation-delay: 10s; } 
+
         @keyframes headerFade { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
 
         /* BANNERS */
-        .banner-gold { background: #D4AF37; color: white; padding: 120px 0; text-align: center; width: 100%; }
-        .banner-dark { background: #0F172A; color: white; padding: 120px 0; text-align: center; width: 100%; }
-        .banner-accent { background: #F8FAFC; border-y: 1px solid #E2E8F0; padding: 100px 0; }
+        .banner-dark { background: #0F172A; color: white; padding: 100px 0; text-align: center; width: 100%; }
 
         .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); color: #0F172A; margin-bottom: 40px; text-transform: uppercase; border-left: 8px solid #D4AF37; padding-left: 25px; font-weight: 900; }
         .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; }
         .feature-list li strong { color: #0F172A; }
         .feature-list li::before { content: '◈'; position: absolute; left: 0; color: #D4AF37; font-size: 1.2rem; }
         
-        .v-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.3s ease; text-align: center;}
+        /* MERCANTILE IMAGE */
+        .m-visual { 
+            width: 100%; height: 600px; background-image: url('merc 2.jpg'); background-size: cover; background-position: center; 
+            border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); margin: 40px 0 10px 0;
+        }
+
+        .v-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.3s ease; }
     </style>
 </head>
 <body class="selection:bg-brand-gold selection:text-black">
@@ -89,7 +96,7 @@
         <h2 class="section-title">Hotel Ilona: Family Sanctuary</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div class="space-y-8">
-                <p class="text-2xl text-slate-900 font-bold leading-tight">Elite Hospitality meets Autonomous Finance.</p>
+                <p class="text-2xl text-slate-900 font-bold leading-tight italic">Elite Hospitality meets Autonomous Finance.</p>
                 <p class="text-xl text-slate-500 font-light leading-relaxed">Designed as the bridge to a closed-circuit lifestyle, Ilona restores family connection through high-fidelity security and private social cores.</p>
                 <ul class="feature-list">
                     <li><strong>Integrated Knee Hockey Arena:</strong> A private athletic hub located within the hotel architecture for social connectivity.</li>
@@ -115,105 +122,93 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div>
-            <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-8">Culinary Marketplace</h3>
-            <p class="text-lg text-slate-600 mb-8">A culinary marketplace operating on a 100% closed circuit, powered by native settlement logic and physical gold/silver exchange hubs.</p>
-            <ul class="feature-list">
-                <li><strong>Omni-Channel Delivery:</strong> V-Band tracking delivers artisan meals directly to your Viewing Hub or Suite.</li>
-                <li><strong>Closed-Loop Economy:</strong> Decoupled from legacy banking through Unity Protocol settlement.</li>
-            </ul>
-        </div>
-        <div class="p-10 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col justify-center italic text-slate-400">
-            [Institutional Mockup: Marketplace Central Hub Rendering]
+    <div class="max-w-7xl mx-auto px-6 py-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-8">Culinary Marketplace</h3>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">A culinary marketplace operating on a 100% closed circuit, powered by native settlement logic and physical gold/silver exchange hubs.</p>
+                <ul class="feature-list">
+                    <li><strong>Omni-Channel Delivery:</strong> V-Band tracking delivers artisan meals directly to your Viewing Hub or Suite.</li>
+                    <li><strong>Closed-Loop Economy:</strong> Decoupled from legacy banking through Unity Protocol settlement.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="m-visual"></div>
+                <p class="text-[10px] text-slate-400 mt-2 text-center uppercase tracking-[0.2em] font-bold italic">Conceptual Rendering: Marketplace Central Hub</p>
+            </div>
         </div>
     </div>
 
-    <div class="banner-gold">
+    <div class="banner-dark bg-[#1a2233]">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">Outermost Ring</h2>
-            <p class="text-white text-xl font-bold uppercase tracking-widest">The Foundation Center</p>
+            <h2 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-2">The V-Plex</h2>
+            <p class="text-brand-gold text-sm md:text-lg font-bold uppercase tracking-widest italic opacity-90">(The Vaitukaitis Learning and Sports Complex)</p>
         </div>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-32">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div class="space-y-8">
-                <p class="text-2xl text-slate-900 font-bold">Knowledge is the bedrock of sovereignty.</p>
-                <p class="text-slate-600 text-lg leading-relaxed">The outermost protective ring ensures that **education comes before anything.** Enrollment begins at **age 8** to protect the sacred early childhood years at home.</p>
-                <ul class="feature-list">
-                    <li><strong>Core Mastery:</strong> Reading, writing, arithmetic, and sciences.</li>
-                    <li><strong>Self-Sustenance:</strong> Homesteading, gardening, and hunting.</li>
-                    <li><strong>Self-Governance:</strong> Mastering the knowledge required for institutional freedom.</li>
-                </ul>
-            </div>
-            <div class="grid grid-cols-2 gap-4 h-[400px]">
-                <div class="bg-slate-900 rounded-xl flex items-center justify-center text-center p-6 text-white uppercase text-[10px] font-black tracking-widest">Learning Foundations</div>
-                <div class="bg-brand-gold rounded-xl flex items-center justify-center text-center p-6 text-white uppercase text-[10px] font-black tracking-widest">Outdoor Homesteading</div>
-                <div class="bg-brand-gold rounded-xl flex items-center justify-center text-center p-6 text-white uppercase text-[10px] font-black tracking-widest">Self-Reliance Training</div>
-                <div class="bg-slate-900 rounded-xl flex items-center justify-center text-center p-6 text-white uppercase text-[10px] font-black tracking-widest">Athletic Development</div>
-            </div>
+        <div class="mb-20">
+            <h2 class="section-title">Concentric Infrastructure</h2>
+            <p class="text-xl text-slate-500 font-light italic">Layered rings of security, education, and athletics.</p>
         </div>
-    </div>
 
-    <div class="banner-dark">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-4">Inner Ring</h2>
-            <p class="text-brand-gold text-xl font-bold uppercase tracking-widest">The Sibling Play Hub</p>
-        </div>
-    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div class="space-y-16">
+                <div class="p-8 border-l-4 border-brand-gold bg-slate-50">
+                    <h3 class="text-2xl font-black text-slate-900 uppercase italic mb-4">Ring 1: Outermost Hub – Foundation Center</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Education is the first circle of defense. This ring protects the core by ensuring **knowledge comes before anything.** Enrollment begins at **age 8**.</p>
+                    <ul class="feature-list text-sm">
+                        <li><strong>Core:</strong> Reading, Writing, Arithmetic, and Sciences.</li>
+                        <li><strong>Self-Sustenance:</strong> Homesteading, Gardening, and Hunting.</li>
+                        <li><strong>Governance:</strong> Mastering the specific knowledge for institutional freedom.</li>
+                    </ul>
+                </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div class="p-12 bg-slate-50 border border-slate-200 rounded-2xl italic text-slate-400 text-center">
-            [Architectural Mockup: Sibling Play Hub & Viewing Hubs]
-        </div>
-        <div class="space-y-8">
-            <p class="text-xl text-slate-900 font-bold">A sanctuary of energy and safety.</p>
-            <p class="text-slate-600 text-lg leading-relaxed">The inner ring provides active siblings a world of their own to explore, keeping the central Ice Campus focused and productive.</p>
-            <ul class="feature-list">
-                <li><strong>Integrated Hub:</strong> Wall climbing, active play arrays, and gated outdoor playgrounds.</li>
-                <li><strong>Viewing Hubs:</strong> Sit within this ring to monitor the ice building while staying synchronized with children via V-Band.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="bg-slate-50 py-32 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-20 text-center">
-                <h3 class="text-5xl font-black text-slate-900 uppercase italic mb-4">The Core: Ice Campus</h3>
-                <p class="text-slate-500 text-xl font-light">Five world-class rinks powering the community.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="v-card p-10 border-t-8 border-blue-500">
-                    <h4 class="text-2xl font-black mb-2">Denver</h4>
-                    <p class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-4 italic">Olympic / College D2</p>
-                    <p class="text-sm text-slate-500">Elite National Team Training.</p>
-                </div>
-                <div class="v-card p-10 border-t-8 border-blue-500">
-                    <h4 class="text-2xl font-black mb-2">Birmingham</h4>
-                    <p class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-4 italic">NHL / AAA Varsity</p>
-                    <p class="text-sm text-slate-500">Primary Travel Team Home Ice.</p>
-                </div>
-                <div class="v-card p-10 border-t-8 border-blue-500">
-                    <h4 class="text-2xl font-black mb-2">Lancaster</h4>
-                    <p class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-4 italic">NHL / Travel AA</p>
-                    <p class="text-sm text-slate-500">High School Pipeline Core.</p>
-                </div>
-                <div class="v-card p-10 border-t-8 border-blue-500">
-                    <h4 class="text-2xl font-black mb-2">Lafayette</h4>
-                    <p class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-4 italic">Standard / House League</p>
-                    <p class="text-sm text-slate-500">Recreational Development Hub.</p>
-                </div>
-                <div class="v-card p-10 border-t-8 border-blue-500">
-                    <h4 class="text-2xl font-black mb-2">Staten Island</h4>
-                    <p class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-4 italic">Standard / Figure Academy</p>
-                    <p class="text-sm text-slate-500">Figure Skating & Public Sessions.</p>
-                </div>
-                <div class="v-card p-10 border-t-8 border-brand-gold bg-brand-gold/5 flex flex-col justify-center">
-                    <h4 class="text-xl font-black text-brand-gold uppercase italic">V-Band Hub</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Sync Active // 100%</p>
+                <div class="p-8 border-l-4 border-slate-900 bg-slate-50">
+                    <h3 class="text-2xl font-black text-slate-900 uppercase italic mb-4">Ring 2: Inner Hub – Sibling Play & Viewing</h3>
+                    <p class="text-slate-600 leading-relaxed">A sanctuary for active siblings and a control node for parents. Keeps the central building productive and the commons clear.</p>
+                    <ul class="feature-list text-sm">
+                        <li><strong>Integrated Play:</strong> Wall climbing, active play arrays, and gated outdoor access.</li>
+                        <li><strong>Viewing Hubs:</strong> Parents monitor the ice while synchronized with children via V-Band.</li>
+                    </ul>
                 </div>
             </div>
+
+            <div class="bg-slate-50 p-12 rounded-2xl border border-slate-200">
+                <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-8 text-center underline decoration-brand-gold underline-offset-8">The Core: 5-Rink Ice Campus</h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 1: Denver</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">Olympic / College D2</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 2: Birmingham</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">NHL / AAA Varsity</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 3: Lancaster</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">NHL / Travel AA</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 4: Lafayette</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">Standard / House</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 5: Staten Island</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">Standard / Figure</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-brand-gold bg-brand-gold/5 flex justify-between items-center">
+                        <span class="font-bold text-brand-gold uppercase italic">V-Band Hub Sync</span>
+                        <span class="text-[10px] uppercase font-mono text-brand-gold">Real-Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 p-8 bg-brand-accent border border-slate-200 rounded-xl text-center">
+            <p class="text-xs text-slate-400 font-mono uppercase tracking-[0.2em] leading-relaxed max-w-4xl mx-auto">
+                Architectural mockups in design. The V-Plex is engineered as a layered ecosystem of massive concentric rings surrounding a central ice campus building.
+            </p>
         </div>
     </div>
 
@@ -226,8 +221,8 @@
                     "Configured to maximize RF-to-DC conversion efficiency at low ambient power densities via proximity-triggered OTA power delivery."
                 </div>
                 <div class="p-8 border border-white/10 rounded-xl">
-                    <strong class="text-white block mb-4 uppercase tracking-widest">// Claim 47: Seniority Tranche</strong>
-                    "Cryptographically barring treasury liquidations during recognized decoupling events to ensure asset-backed stability."
+                    <strong class="text-white block mb-4 uppercase tracking-widest">// Claim 86: Physical Decoupling</strong>
+                    "A legally compliant architecture for transitioning physical environments into autonomous, asset-backed economic nodes."
                 </div>
             </div>
         </div>
