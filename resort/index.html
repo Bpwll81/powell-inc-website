@@ -43,31 +43,30 @@
 
         @keyframes headerFade { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
 
-        /* FOUNDATION FADER (Cloned exactly from Header logic) */
-        .edu-container { position: relative; width: 100%; height: 500px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; }
-        .edu-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: eduFade 12s infinite; }
+        /* FOUNDATION SLIDER (Cloned from Header - 2s Transition) */
+        .ring-slider-box { position: relative; width: 100%; height: 500px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; }
+        .ring-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: ringFade 8s infinite; }
         
-        /* 12s Cycle / 4 Images = 3s intervals */
-        /* Specific IDs to block random cycling/yoga/etc */
-        .e-1 { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2000'); animation-delay: 0s; } /* Reading/Writing/Arithmetic */
-        .e-2 { background-image: url('https://images.unsplash.com/photo-1592393394018-80e227d8122c?q=80&w=2000'); animation-delay: 3s; } /* Growing Gardens/Homesteading */
-        .e-3 { background-image: url('https://images.unsplash.com/photo-1472162072142-d544e73e7fb2?q=80&w=2000'); animation-delay: 6s; } /* Outdoors Science/Exploration */
-        .e-4 { background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000'); animation-delay: 9s; } /* Sports Practice/Athletics */
+        /* 4 Images, 2s each = 8s total loop */
+        .r-1 { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2000'); animation-delay: 0s; } /* Core Arithmetic */
+        .r-2 { background-image: url('https://images.unsplash.com/photo-1592393394018-80e227d8122c?q=80&w=2000'); animation-delay: 2s; } /* Growing Gardens */
+        .r-3 { background-image: url('https://images.unsplash.com/photo-1472162072142-d544e73e7fb2?q=80&w=2000'); animation-delay: 4s; } /* Science Outdoors */
+        .r-4 { background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000'); animation-delay: 6s; } /* Elite Practice */
 
-        @keyframes eduFade { 0%, 20% { opacity: 1; } 25%, 100% { opacity: 0; } }
+        @keyframes ringFade { 0%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
 
         .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); color: #0F172A; margin-bottom: 40px; text-transform: uppercase; border-left: 8px solid #D4AF37; padding-left: 25px; font-weight: 900; }
         .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; }
         .feature-list li strong { color: #0F172A; }
         .feature-list li::before { content: '◈'; position: absolute; left: 0; color: #D4AF37; font-size: 1.2rem; }
-
-        .v-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.3s ease; }
-        .v-card:hover { border-color: #D4AF37; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-
+        
         .m-visual { 
             width: 100%; height: 600px; background-image: url('merc 2.jpg'); background-size: cover; background-position: center; 
             border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); margin: 40px 0 10px 0;
         }
+
+        .v-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.3s ease; }
+        .v-card:hover { border-color: #D4AF37; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
     </style>
 </head>
 <body>
@@ -128,14 +127,10 @@
     <div class="bg-brand-accent py-32 border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-5xl font-black uppercase italic mb-8 text-slate-900 tracking-tighter">The Mercantile</h2>
-            <p class="text-slate-500 text-xl font-light max-w-2xl mb-12">A culinary marketplace operating on a 100% closed financial circuit, powered by Unity Protocol settlement.</p>
-            
             <div class="m-visual"></div>
-            <p class="text-center italic text-brand-gold text-xs mt-4 tracking-widest uppercase font-bold">Official Rendering: The Marketplace Hub</p>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20">
                 <div class="p-10 bg-white border border-slate-200 rounded-xl shadow-sm">
-                    <h4 class="text-brand-gold font-black uppercase tracking-widest mb-6">Omni-Channel Delivery</h4>
+                    <h4 class="text-brand-gold font-black uppercase tracking-widest mb-6">Viewing Hub Delivery</h4>
                     <p class="text-slate-600">Order from kiosks or the app. <strong>V-Band Tracking</strong> delivers meals directly to you in the <strong>Viewing Hubs</strong> within the Sibling Zone.</p>
                 </div>
                 <div class="p-10 border border-brand-gold/20 rounded-xl bg-white flex flex-col justify-center">
@@ -161,11 +156,11 @@
                 </ul>
             </div>
             <div>
-                <div class="edu-container">
-                    <div class="edu-slide e-1"></div>
-                    <div class="edu-slide e-2"></div>
-                    <div class="edu-slide e-3"></div>
-                    <div class="edu-slide e-4"></div>
+                <div class="ring-slider-box">
+                    <div class="ring-slide r-1"></div>
+                    <div class="ring-slide r-2"></div>
+                    <div class="ring-slide r-3"></div>
+                    <div class="ring-slide r-4"></div>
                 </div>
             </div>
         </div>
@@ -179,7 +174,7 @@
             </div>
             <div class="order-2">
                 <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-6">The Inner Ring: Sibling Play Hub</h3>
-                <p class="text-slate-600 text-lg mb-6 leading-relaxed">The main building can get rowdy; the inner ring provides active siblings a world of their own to explore, giving them a high-energy sanctuary.</p>
+                <p class="text-slate-600 text-lg mb-6 leading-relaxed">A multi-rink environment can naturally become rowdy; the inner ring provides active siblings a world of their own to explore, giving them a high-energy sanctuary.</p>
                 <ul class="feature-list mb-6">
                     <li><strong>Integrated Hub:</strong> Wall climbing, active play arrays, and gated outdoor playgrounds.</li>
                     <li><strong>Viewing Hubs:</strong> Sit within this ring to monitor the ice and stay synchronized with children via real-time V-Band updates.</li>
@@ -192,18 +187,18 @@
                 <h3 class="text-4xl font-black text-slate-900 uppercase italic">The Center Building: 5-Rink Ice Campus</h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="v-card p-8 border-t-4 border-blue-500"><strong>Rink 1: Denver</strong><p class="text-xs mt-2">Olympic / College D2</p></div>
-                <div class="v-card p-8 border-t-4 border-blue-500"><strong>Rink 2: Birmingham</strong><p class="text-xs mt-2">NHL / Travel AAA</p></div>
-                <div class="v-card p-8 border-t-4 border-blue-500"><strong>Rink 3: Lancaster</strong><p class="text-xs mt-2">NHL / Travel AA</p></div>
-                <div class="v-card p-8 border-t-4 border-blue-500"><strong>Rink 4: Lafayette</strong><p class="text-xs mt-2">Standard / House Leagues</p></div>
-                <div class="v-card p-8 border-t-4 border-blue-500"><strong>Rink 5: Staten Island</strong><p class="text-xs mt-2">Standard / Figure Skating</p></div>
-                <div class="v-card p-8 border-t-4 border-brand-gold bg-brand-gold/5 flex flex-col justify-center"><strong>V-Band Hub Sync</strong></div>
+                <div class="v-card p-8 border-t-4 border-blue-500 text-center"><strong>Rink 1: Denver</strong><p class="text-xs mt-2">Olympic / College D2</p></div>
+                <div class="v-card p-8 border-t-4 border-blue-500 text-center"><strong>Rink 2: Birmingham</strong><p class="text-xs mt-2">NHL / Travel AAA</p></div>
+                <div class="v-card p-8 border-t-4 border-blue-500 text-center"><strong>Rink 3: Lancaster</strong><p class="text-xs mt-2">NHL / Travel AA</p></div>
+                <div class="v-card p-8 border-t-4 border-blue-500 text-center"><strong>Rink 4: Lafayette</strong><p class="text-xs mt-2">Standard / House Leagues</p></div>
+                <div class="v-card p-8 border-t-4 border-blue-500 text-center"><strong>Rink 5: Staten Island</strong><p class="text-xs mt-2">Standard / Figure Skating</p></div>
+                <div class="v-card p-8 border-t-4 border-brand-gold bg-brand-gold/5 flex flex-col justify-center text-center"><strong>V-Band Hub Sync</strong></div>
             </div>
         </div>
     </div>
 
     <section class="py-24 px-6 bg-brand-accent border-t border-slate-200">
-        <div class="max-w-5xl mx-auto font-mono text-[11px] text-slate-500">
+        <div class="max-w-5xl mx-auto font-mono text-[11px] text-slate-500 leading-relaxed">
             <h3 class="text-slate-900 mb-8 uppercase italic font-bold tracking-widest text-xs">Powell Global Patent Application No. 19/559,956</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="p-6 bg-white border border-slate-200 rounded">
@@ -228,9 +223,6 @@
 
     <footer class="bg-brand-dark py-20 text-center text-white">
         <div class="font-black text-2xl tracking-widest uppercase italic">Powell Global</div>
-        <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mt-4">
-            &copy; 2026 Powell Global LLC. All rights reserved.
-        </div>
     </footer>
 
     <script>
