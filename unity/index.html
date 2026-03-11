@@ -31,6 +31,26 @@
 <body class="overflow-x-hidden">
 
     <div class="fixed top-0 w-full z-50">
+        <nav class="flex justify-between items-center px-10 py-6 bg-black/80 backdrop-blur-lg border-b border-white/5">
+            <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-lg hover:text-brand-gold transition-all">Powell Global</a>
+            
+            <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
+                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Home</a>
+                <hr class="border-white/5">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">1. Unity Protocol</a>
+                <a href="../varis/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
+                <a href="../V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
+            </div>
+        </nav>
+
         <div class="w-full bg-black border-b border-brand-gold/30 h-12 flex items-center">
             <div class="tradingview-widget-container w-full">
                 <div class="tradingview-widget-container__widget"></div>
@@ -56,26 +76,6 @@
                 </script>
             </div>
         </div>
-
-        <nav class="flex justify-between items-center px-10 py-6 bg-black/80 backdrop-blur-lg border-b border-white/5">
-            <a href="index.html" class="text-white font-bold tracking-[0.2em] uppercase text-lg hover:text-brand-gold transition-all">Powell Global</a>
-            
-            <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-
-            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
-                <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Home</a>
-                <hr class="border-white/5">
-                <a href="unity.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">1. Unity Protocol</a>
-                <a href="varis.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
-                <a href="V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
-                <a href="heychef/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
-                <a href="resort/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
-            </div>
-        </nav>
     </div>
 
     <div class="h-32"></div>
@@ -87,7 +87,7 @@
         </div>
         <div class="relative z-10 max-w-5xl mx-auto text-center">
             <h1 class="text-5xl md:text-7xl font-extralight tracking-[0.2em] text-white uppercase mb-8">Unity Protocol</h1>
-            <div class="inline-block border border-brand-gold/40 px-6 py-2 bg-brand-gold/5 text-brand-gold font-mono text-xs tracking-widest mb-12">
+            <div class="inline-block border border-brand-gold/40 px-6 py-2 bg-brand-gold/5 text-brand-gold font-mono text-xs tracking-widest mb-12 uppercase">
                 70B MAX SUPPLY // ISO 20022 COMPLIANT
             </div>
             <p class="text-xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto">
@@ -102,6 +102,13 @@
             <div class="h-px w-24 bg-brand-gold mx-auto mt-4"></div>
         </div>
         
+        <div class="mb-12 border border-brand-gold/20 bg-brand-gold/5 p-8 text-center max-w-3xl mx-auto rounded-sm">
+            <h3 class="text-brand-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">UGLD: Native Stablecoin</h3>
+            <p class="text-slate-300 font-light text-sm leading-relaxed">
+                Unity Gold (UGLD) acts as the ecosystem's native asset-backed stablecoin and digital warehouse receipt. To maintain institutional-grade auditability and 1:1 physical parity, UGLD is strictly minted at <span class="text-white font-bold underline decoration-brand-gold underline-offset-4">5,000 oz intervals</span>.
+            </p>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
             <div class="bg-white/5 p-6 border-t border-brand-gold text-center">
                 <span class="block text-white font-bold text-3xl mb-2">50%</span>
@@ -180,7 +187,7 @@
             <p class="text-xl text-slate-400 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
                 A hardcoded 7-Year retention lock. Built for the disciplined—ensuring the wealth generated by the ecosystem remains protected and generational.
             </p>
-            <a href="vault.html" class="inline-block bg-brand-gold text-black px-12 py-5 font-bold uppercase tracking-[0.3em] text-sm hover:bg-white transition-all">Enter the Vault</a>
+            <a href="../vault.html" class="inline-block bg-brand-gold text-black px-12 py-5 font-bold uppercase tracking-[0.3em] text-sm hover:bg-white transition-all">Enter the Vault</a>
         </div>
     </section>
 
@@ -237,6 +244,5 @@
             icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
         });
     </script>
-
 </body>
 </html>
