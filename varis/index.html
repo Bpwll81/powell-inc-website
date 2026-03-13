@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varis OS & Hardware | Powell Global LLC</title>
+    <title>V-Shelves & Hardware | Powell Global LLC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,9 +17,9 @@
                         brand: {
                             gold: '#D4AF37',     // Technical Gold
                             dark: '#050914',     // Deepest terminal black/blue
-                            surface: '#0B0F19',  // Standard dark background
-                            card: '#111827',     // Elevated card background
-                            accent: '#1E293B'    // Subtle borders
+                            surface: '#f8fafc',  // Light airy slate-50
+                            card: '#ffffff',     // Pure white for cards
+                            accent: '#e2e8f0'    // Light slate border
                         }
                     }
                 }
@@ -27,14 +27,15 @@
         }
     </script>
     <style>
+        body { background-color: #f8fafc; color: #334155; }
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
     </style>
 </head>
-<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden">
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden">
 
     <div class="fixed top-0 w-full z-50">
-        <nav class="flex justify-between items-center px-10 py-6 bg-brand-surface/90 backdrop-blur-md border-b border-white/10 shadow-sm">
+        <nav class="flex justify-between items-center px-10 py-6 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm">
             <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all">Powell Global</a>
             
             <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
@@ -44,160 +45,134 @@
             </button>
 
             <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
-                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">Home</a>
+                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">Home</a>
                 <hr class="border-white/5">
-                <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">1. Unity Protocol</a>
-                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">2. Varis OS</a>
-                <a href="../V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
-                <a href="../heychef/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
-                <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
+                <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">1. Unity Protocol</a>
+                <a href="../varis/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">2. Varis OS</a>
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">5. The Resort</a>
             </div>
         </nav>
     </div>
 
     <div class="h-24"></div>
 
-    <section class="relative pt-24 pb-20 px-6 border-b border-white/10 overflow-hidden min-h-[70vh] flex flex-col justify-center">
+    <section class="relative pt-24 pb-20 px-6 border-b border-brand-accent overflow-hidden min-h-[70vh] flex flex-col justify-center bg-white">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Data Center Architecture" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/80 to-brand-surface"></div>
+            <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?q=80&w=2070&auto=format&fit=crop" alt="Pantry and Walk-in" class="w-full h-full object-cover opacity-[0.07] grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-surface"></div>
         </div>
         
-        <div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(#D4AF37 1px, transparent 1px); background-size: 40px 40px;"></div>
-        
         <div class="relative max-w-5xl mx-auto z-10 text-center mt-12">
-            <div class="inline-block border border-brand-gold/50 bg-brand-gold/10 text-brand-gold font-mono text-xs px-4 py-1.5 mb-8 rounded shadow-[0_0_15px_rgba(212,175,55,0.2)] uppercase">
-                SYSTEM_ARCHITECTURE // V1.0
+            <div class="inline-block border border-brand-gold/50 bg-brand-gold/5 text-brand-gold font-mono text-xs px-4 py-1.5 mb-8 rounded shadow-sm uppercase font-bold tracking-widest">
+                AI INNOVATION // HARDWARE ARRAY
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 drop-shadow-lg">
-                The Central Nervous <br>System of <span class="text-brand-gold drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">Commerce.</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                Physical Inventory, <br><span class="text-brand-gold">Digitally Mastered.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light mb-10">
-                Varis OS is the proprietary middleware bridge. It autonomously translates physical inventory depletion, employee labor, and legacy POS data into immutable cryptographic logic.
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mb-10">
+                The Varis hardware array integrates enterprise gravimetric sensors, thermal AI, and visual optics. It eliminates manual counting, tracks waste, enforces HACCP compliance, and streams physical data directly to the immutable ledger.
             </p>
         </div>
     </section>
 
-    <section class="py-24 bg-brand-surface px-6 border-b border-white/10 relative">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Unity Books Integration</h2>
-                <p class="text-slate-400 max-w-3xl leading-relaxed">
-                    Varis OS eliminates fragmented software subscriptions by unifying all back-office operations into a single, natively integrated ecosystem: Unity Books.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors flex flex-col justify-between group">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-3 font-mono text-brand-gold">01. Triple-Entry Accounting</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Legacy double-entry ledgers rely on trust and manual reconciliation. Unity Books seals every transaction (procurement, sales, payroll) with a third, cryptographically verifiable receipt on a distributed ledger. Discrepancies become mathematically impossible.
-                        </p>
-                    </div>
-                    <div class="w-full h-48 rounded overflow-hidden border border-white/5 group-hover:border-brand-gold/30 transition-colors relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data Abstract" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity">
-                        <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay"></div>
-                    </div>
+    <section class="py-24 bg-brand-surface px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2070&auto=format&fit=crop" alt="Commercial Walk-in Cooler" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6 text-white font-mono text-xs tracking-widest uppercase">Walk-In & Dry Storage Integration</div>
                 </div>
-
-                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors flex flex-col justify-between group">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-3 font-mono text-brand-gold">02. Payroll & HR Compliance</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Labor hours tracked via Varis Biometric arrays are settled in real-time. Smart contracts automatically route fractional tax withholding, benefits distribution, and shift pay without manual HR oversight, ensuring perfect state and federal compliance.
-                        </p>
-                    </div>
-                    <div class="w-full h-48 rounded overflow-hidden border border-white/5 group-hover:border-brand-gold/30 transition-colors relative">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop" alt="Network Node Abstract" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity">
-                        <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay"></div>
-                    </div>
-                </div>
-
-                <div class="p-8 rounded bg-brand-card border border-brand-accent hover:border-brand-gold/50 transition-colors md:col-span-2 relative overflow-hidden group">
-                    <div class="absolute inset-0 z-0">
-                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025&auto=format&fit=crop" alt="Hotel Architecture" class="w-full h-full object-cover opacity-10 mix-blend-luminosity group-hover:opacity-20 transition-opacity duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-r from-brand-card via-brand-card/90 to-transparent"></div>
-                    </div>
-                    
-                    <div class="relative z-10 w-full md:w-2/3">
-                        <h3 class="text-xl font-bold text-white mb-3 font-mono text-brand-gold">03. Native Property Management (PMS)</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            A full-suite Property Management System built natively for hotel and resort operations. The core architecture is designed around automated room management, housekeeping logistics, and streamlined guest experiences.
-                        </p>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Through encrypted digital identity profiles and secure access nodes, guest movement and room entry are seamlessly tied directly to the Unity Books ledger. This perfectly unifies front desk ticketing, F&B tracking across the property, and back-of-house operations into one continuous, unified state.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-brand-dark px-6 border-b border-white/10 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
-            <div>
-                <h2 class="text-3xl font-bold text-white mb-6">Digital Triggers & <span class="text-brand-gold">Network Velocity</span></h2>
-                <p class="text-slate-400 mb-8 leading-relaxed">
-                    Varis OS acts as the cognitive core of the ecosystem. As the central brain, it continuously ingests external data—from legacy POS transactions and biometric time-clocks to IoT sensory arrays. Every real-world commercial event is instantly translated into immutable cryptographic action.
-                </p>
-                
-                <div class="bg-brand-card border-l-4 border-brand-gold p-6 mb-8 rounded-r shadow-lg">
-                    <h4 class="text-white font-mono text-sm font-bold mb-2">Automated Micro-Burns</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        While external hardware acts as the peripheral nervous system gathering data, Varis OS is the engine driving token velocity. Every inventory depletion or labor event processed creates a digital state-change on the network. These operational data events trigger automated micro-buys and burns in the background—enforcing continuous, 24/7 ledger volume independent of front-of-house consumer sales.
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">V-Shelves: Autonomous Depletion</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Outfitted with highly calibrated Wheatstone Bridge Load Cells, V-Shelves monitor dry storage, walk-in coolers, and supply closets in real-time. The moment an item is removed, the shift in mass triggers an immediate data transmission to the AI core.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Inventory levels are updated instantly without human intervention. Reorder thresholds are managed predictively, ensuring you never over-stock or under-serve.
                     </p>
                 </div>
-
-                <ul class="space-y-4 font-mono text-sm">
-                    <li class="flex items-center p-3 border border-white/5 rounded bg-brand-surface">
-                        <span class="text-brand-gold mr-4 font-bold">>></span>
-                        <span class="text-slate-300">Real-Time Triple-Entry Ledger Synchronization</span>
-                    </li>
-                    <li class="flex items-center p-3 border border-white/5 rounded bg-brand-surface">
-                        <span class="text-brand-gold mr-4 font-bold">>></span>
-                        <span class="text-slate-300">Automated Fiat-to-Digital Value Routing</span>
-                    </li>
-                    <li class="flex items-center p-3 border border-white/5 rounded bg-brand-surface">
-                        <span class="text-brand-gold mr-4 font-bold">>></span>
-                        <span class="text-slate-300">Smart-Contract Executed Labor & Tax Withholding</span>
-                    </li>
-                </ul>
             </div>
-            
-            <div class="w-full flex justify-center relative">
-                <div class="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-lg overflow-hidden border border-brand-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.15)] group">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="Circuit Board Macro" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 font-mono text-brand-gold text-xs bg-brand-dark/80 px-3 py-1 rounded border border-brand-gold/30 backdrop-blur-sm">
-                        OS_CORE_ACTIVE // DATA_INGESTION: ONLINE
-                    </div>
-                    <div class="absolute top-6 right-6 w-3 h-3 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32 md:flex-row-reverse flex-col-reverse flex">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Smart Carts: Waste on the Go</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Waste management doesn't just happen at a stationary bin—it happens during transit, table busing, and banquet breakdown. Our mobile Smart Carts are equipped with the same gravimetric technology as our stationary shelves.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        As staff move through banquet halls and dining floors, the AI tracks discarded weight in real-time, assigning loss metrics dynamically. This turns a previously unmeasurable variable into highly actionable cost-control data.
+                    </p>
+                </div>
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group w-full">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" alt="Banquet Hall" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6 text-white font-mono text-xs tracking-widest uppercase">Banquet & Floor Mobility</div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop" alt="POS Tech" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6 text-white font-mono text-xs tracking-widest uppercase">Peripheral Logistics</div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">V-Scanners & V-Printers</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Bridging the physical-to-digital divide requires seamless front-of-house execution. Our approved handheld V-Scanners utilize fast QR and Barcode scanning to track physical items as they move from the loading dock, through prep stations, and onto the dining floor.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        This real-time chain of custody tracks prep stages and waste dynamically while automatically logging HACCP compliance—eliminating manual clipboards. Once a cycle completes, V-Printers generate cryptographic receipts that perfectly mirror the immutable ledger.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse flex-col-reverse flex">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">V-Lens & Thermal Arrays</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        The Varis ecosystem sees and feels the environment. The <strong>V-Lens</strong> provides an overhead visual AI heuristic to track anomalous inventory movement, actively deterring internal shrinkage and theft. 
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Paired with integrated <strong>Thermal Gauges</strong> inside walk-ins and freezers, the ecosystem monitors ambient temperatures 24/7. If a compressor fails or a door is left ajar, Varis OS instantly flags the anomaly—ensuring absolute, zero-lapse HACCP compliance and preventing catastrophic inventory loss.
+                    </p>
+                </div>
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group w-full">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop" alt="Thermal and Visual Array" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6 text-white font-mono text-xs tracking-widest uppercase">24/7 AI Environmental Monitoring</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="relative py-32 px-6 border-b border-brand-gold/30 overflow-hidden flex items-center justify-center">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=2069&auto=format&fit=crop" alt="Blueprints" class="w-full h-full object-cover opacity-15 mix-blend-screen invert">
-            <div class="absolute inset-0 bg-brand-surface/80"></div>
+    <section class="relative py-32 px-6 border-y border-brand-accent overflow-hidden flex items-center justify-center bg-white">
+        <div class="absolute inset-0 z-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D4AF37" stroke-width="1"/></pattern></defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
         </div>
 
         <div class="relative max-w-5xl mx-auto text-center z-10">
-            <h2 class="text-sm font-mono text-brand-gold mb-4 uppercase tracking-widest drop-shadow-sm">Intellectual Property</h2>
-            <h3 class="text-4xl md:text-5xl font-bold text-white mb-10 drop-shadow-lg">The Proprietary Moat</h3>
+            <h2 class="text-sm font-mono text-brand-gold mb-4 uppercase tracking-widest font-bold">Intellectual Property</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-slate-900 mb-10">The Proprietary Moat</h3>
             
-            <div class="p-10 border border-brand-gold/40 bg-brand-dark/90 backdrop-blur-md rounded text-left relative overflow-hidden shadow-2xl">
-                <div class="absolute top-0 right-0 bg-brand-gold text-black text-xs font-mono font-bold px-4 py-1.5 rounded-bl">86 CLAIMS SECURED</div>
-                <h4 class="text-2xl md:text-3xl font-bold text-white mb-3 font-mono">Utility Patent Application No. 19/559,956</h4>
-                <p class="text-brand-gold text-sm md:text-base font-medium mb-6">"Protects the proprietary hardware-software middleware bridge, gravimetric physical sensory nodes, biometric authentication apparatuses, and automated smart-contract routing."</p>
-                <div class="w-16 h-px bg-white/20 mb-6"></div>
-                <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                    Unlike standard decentralized protocols vulnerable to open-source forks, the Varis ecosystem is legally insulated by a massive <strong>86-claim patent</strong>. This application extensively protects the unique hardware-software middleware bridge, the methodology of using physical sensory nodes to execute smart contracts, and the automated reconciliation formatting.
+            <div class="p-10 border border-brand-gold/30 bg-slate-50 shadow-xl rounded text-left relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-brand-gold text-white text-xs font-mono font-bold px-4 py-1.5 rounded-bl">86 CLAIMS SECURED</div>
+                <h4 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 font-mono">Utility Patent Application No. 19/559,956</h4>
+                <p class="text-brand-gold text-sm md:text-base font-bold mb-6">"Protects the proprietary hardware-software middleware bridge, gravimetric physical sensory nodes, biometric authentication apparatuses, and automated smart-contract routing."</p>
+                <div class="w-16 h-px bg-brand-accent mb-6"></div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    The V-Shelf array and Smart Carts are legally insulated by a massive <strong>86-claim patent</strong>. This application extensively protects the methodology of using physical gravimetric nodes to autonomously dictate inventory logistics and execute accounting smart contracts.
                 </p>
-                <p class="text-slate-300 text-sm leading-relaxed">
-                    This vertical integration secures absolute institutional value—competitors cannot replicate the physical data ingestion loop without infringing on Powell Global LLC IP.
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    This vertical integration secures absolute institutional value—competitors cannot replicate this physical data ingestion hardware loop without infringing on Powell Global LLC IP.
                 </p>
             </div>
         </div>
@@ -206,89 +181,111 @@
     <section class="py-24 bg-brand-surface px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Deployment Architectures</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto font-mono text-sm">Select software-only integration or deploy with our dedicated hardware arrays. Extended commitments unlock aggressive institutional pricing.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Hardware Deployment Architectures</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-mono text-sm">Choose from a hardware-as-a-service model, an outright CapEx purchase for lower software overhead, or full institutional ecosystem lock-in.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
                 
-                <div class="border border-brand-accent bg-brand-card rounded overflow-hidden">
-                    <div class="p-8 border-b border-brand-accent bg-brand-dark">
-                        <h3 class="text-2xl font-bold text-white mb-2">Varis OS Core</h3>
-                        <p class="text-brand-gold font-mono text-sm uppercase tracking-widest mb-4">Software Only (BYOD)</p>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            For merchants utilizing existing, compatible third-party POS hardware and approved scanning devices. Includes full Unity Books access and Hey Chef AI activation.
+                <div class="border border-brand-accent bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
+                    <div class="p-6 border-b border-brand-accent bg-slate-100 flex-grow-0">
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">The Total Package</h3>
+                        <p class="text-brand-gold font-mono text-[10px] uppercase tracking-widest mb-3 font-bold">Hardware-as-a-Service</p>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Full spatial tracking and autonomous restocking via a monthly lease model. Includes Varis OS licensing and the complete proprietary hardware/sensor array.
+                            <br><span class="text-slate-800 font-bold italic mt-2 block">(Includes hardware equipment rental fees)</span>
                         </p>
                     </div>
-                    <div class="p-8 space-y-4 font-mono text-sm">
-                        <div class="flex justify-between items-center p-4 border border-white/5 rounded bg-brand-surface">
+                    <div class="p-6 space-y-4 font-mono text-sm flex-grow flex flex-col justify-end bg-white">
+                        <div class="flex justify-between items-center p-3 border border-brand-accent rounded bg-brand-surface">
                             <div class="flex flex-col">
-                                <span class="text-slate-300">1-Year Term</span>
-                                <span class="text-[10px] text-brand-gold mt-1">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% SOVEREIGN FLOOR (Yr 10)</span>
+                                <span class="text-slate-800 font-bold text-xs">1-Year Term</span>
+                                <span class="text-[9px] text-brand-gold mt-1 font-bold">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% (Yr 10)</span>
                             </div>
-                            <span class="text-white font-bold">$500 <span class="text-xs text-slate-500 font-sans">/ mo</span></span>
+                            <span class="text-slate-900 font-bold">$937.50 <span class="text-[10px] text-slate-500 font-sans font-normal">/ mo</span></span>
                         </div>
-                        <div class="flex justify-between items-center p-4 border border-white/5 rounded bg-brand-surface">
+                        <div class="flex justify-between items-center p-3 border border-brand-accent rounded bg-brand-surface">
                             <div class="flex flex-col">
-                                <span class="text-slate-300">3-Year Term</span>
-                                <span class="text-[10px] text-brand-gold mt-1">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% SOVEREIGN FLOOR (Yr 10)</span>
+                                <span class="text-slate-800 font-bold text-xs">3-Year Term</span>
+                                <span class="text-[9px] text-brand-gold mt-1 font-bold">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% (Yr 10)</span>
                             </div>
-                            <span class="text-white font-bold">$450 <span class="text-xs text-slate-500 font-sans">/ mo</span></span>
+                            <span class="text-slate-900 font-bold">$887.50 <span class="text-[10px] text-slate-500 font-sans font-normal">/ mo</span></span>
                         </div>
-                        <div class="flex justify-between items-center p-4 border border-white/5 rounded bg-brand-surface">
+                        <div class="flex justify-between items-center p-3 border border-brand-accent rounded bg-brand-surface">
                             <div class="flex flex-col">
-                                <span class="text-slate-300">5-Year Term</span>
-                                <span class="text-[10px] text-brand-gold mt-1">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% SOVEREIGN FLOOR (Yr 10)</span>
+                                <span class="text-slate-800 font-bold text-xs">5-Year Term</span>
+                                <span class="text-[9px] text-brand-gold mt-1 font-bold">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% (Yr 10)</span>
                             </div>
-                            <span class="text-white font-bold">$400 <span class="text-xs text-slate-500 font-sans">/ mo</span></span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 border border-brand-gold/50 rounded bg-brand-gold/10 shadow-[0_0_15px_rgba(212,175,55,0.1)] relative overflow-hidden">
-                            <div class="flex flex-col z-10">
-                                <span class="text-brand-gold font-bold">10-Year Fast-Track</span>
-                                <span class="text-[10px] text-brand-gold/80 mt-1">Bypasses schedule: Billed at 0.70% SOVEREIGN FLOOR immediately.</span>
-                            </div>
-                            <span class="text-brand-gold font-bold z-10">$350 <span class="text-xs text-brand-gold/60 font-sans">/ mo</span></span>
+                            <span class="text-slate-900 font-bold">$837.50 <span class="text-[10px] text-slate-500 font-sans font-normal">/ mo</span></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="border border-brand-gold/50 bg-brand-card rounded overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.05)]">
-                    <div class="p-8 border-b border-brand-gold/20 bg-brand-dark relative">
-                        <div class="absolute top-0 right-0 bg-brand-gold text-black text-[10px] font-mono font-bold px-3 py-1 rounded-bl">ENTERPRISE STANDARD</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">OS + Hardware Bundle</h3>
-                        <p class="text-brand-gold font-mono text-sm uppercase tracking-widest mb-4">Turnkey Array</p>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Includes Varis OS licensing plus dedicated proprietary POS monitors and scanning devices. <span class="text-white italic">(Includes $275/mo equipment fee)</span>.
+                <div class="border border-brand-gold/50 bg-white rounded-lg overflow-hidden shadow-lg flex flex-col relative transform lg:-translate-y-2">
+                    <div class="absolute top-0 right-0 bg-slate-800 text-white text-[9px] font-mono font-bold px-2 py-1 rounded-bl z-10">BEST LONG-TERM ROI</div>
+                    <div class="p-6 border-b border-brand-gold/20 bg-brand-gold/5 flex-grow-0 relative z-0">
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">CapEx Outright Purchase</h3>
+                        <p class="text-brand-gold font-mono text-[10px] uppercase tracking-widest mb-3 font-bold">Hardware Ownership</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Purchase the complete hardware array upfront for maximum monthly savings. Secures deeply discounted Varis OS licensing software fees.
                         </p>
+                        <div class="p-3 border border-brand-gold/30 bg-white rounded text-center">
+                            <span class="block text-slate-500 font-bold font-mono text-[10px] mb-1 uppercase tracking-widest">Estimated Hardware Array Cost</span>
+                            <span class="block text-slate-900 font-bold text-2xl font-mono">$14,500</span>
+                            <span class="text-[9px] text-slate-400 font-mono">(Avg. Mid-Size Walk-In & Freezer)</span>
+                        </div>
                     </div>
-                    <div class="p-8 space-y-4 font-mono text-sm">
-                        <div class="flex justify-between items-center p-4 border border-white/5 rounded bg-brand-surface">
+                    <div class="p-6 space-y-4 font-mono text-sm flex-grow flex flex-col justify-end bg-white">
+                        <div class="text-[10px] text-brand-gold font-bold text-center uppercase tracking-widest">Monthly OS Licensing Fees</div>
+                        <div class="flex justify-between items-center p-3 border border-brand-accent rounded bg-brand-surface">
                             <div class="flex flex-col">
-                                <span class="text-slate-300">1-Year Term</span>
-                                <span class="text-[10px] text-brand-gold mt-1">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% SOVEREIGN FLOOR (Yr 10)</span>
+                                <span class="text-slate-800 font-bold text-xs">1-Year Term</span>
+                                <span class="text-[9px] text-brand-gold mt-1 font-bold">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% (Yr 10)</span>
                             </div>
-                            <span class="text-white font-bold">$775 <span class="text-xs text-slate-500 font-sans">/ mo</span></span>
+                            <span class="text-slate-900 font-bold">$450 <span class="text-[10px] text-slate-500 font-sans font-normal">/ mo</span></span>
                         </div>
-                        <div class="flex justify-between items-center p-4 border border-white/5 rounded bg-brand-surface">
+                        <div class="flex justify-between items-center p-3 border border-brand-accent rounded bg-brand-surface">
                             <div class="flex flex-col">
-                                <span class="text-slate-300">3-Year Term</span>
-                                <span class="text-[10px] text-brand-gold mt-1">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% SOVEREIGN FLOOR (Yr 10)</span>
+                                <span class="text-slate-800 font-bold text-xs">3-Year Term</span>
+                                <span class="text-[9px] text-brand-gold mt-1 font-bold">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% (Yr 10)</span>
                             </div>
-                            <span class="text-white font-bold">$725 <span class="text-xs text-slate-500 font-sans">/ mo</span></span>
+                            <span class="text-slate-900 font-bold">$375 <span class="text-[10px] text-slate-500 font-sans font-normal">/ mo</span></span>
                         </div>
-                        <div class="flex justify-between items-center p-4 border border-white/5 rounded bg-brand-surface">
+                        <div class="flex justify-between items-center p-3 border border-brand-accent rounded bg-brand-surface">
                             <div class="flex flex-col">
-                                <span class="text-slate-300">5-Year Term</span>
-                                <span class="text-[10px] text-brand-gold mt-1">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% SOVEREIGN FLOOR (Yr 10)</span>
+                                <span class="text-slate-800 font-bold text-xs">5-Year Term</span>
+                                <span class="text-[9px] text-brand-gold mt-1 font-bold">1.25% Processing Fee (Yr 1-3) / 1.00% (Yr 3-5) / 0.80% (Yr 5-10) / 0.70% (Yr 10)</span>
                             </div>
-                            <span class="text-white font-bold">$675 <span class="text-xs text-slate-500 font-sans">/ mo</span></span>
+                            <span class="text-slate-900 font-bold">$295 <span class="text-[10px] text-slate-500 font-sans font-normal">/ mo</span></span>
                         </div>
-                        <div class="flex justify-between items-center p-4 border border-brand-gold/50 rounded bg-brand-gold/10 shadow-[0_0_15px_rgba(212,175,55,0.1)] relative overflow-hidden">
-                            <div class="flex flex-col z-10">
-                                <span class="text-brand-gold font-bold">10-Year Fast-Track</span>
-                                <span class="text-[10px] text-brand-gold/80 mt-1">Bypasses schedule: Billed at 0.70% SOVEREIGN FLOOR immediately.</span>
-                            </div>
-                            <span class="text-brand-gold font-bold z-10">$625 <span class="text-xs text-brand-gold/60 font-sans">/ mo</span></span>
+                    </div>
+                </div>
+
+                <div class="border-2 border-brand-gold bg-brand-dark rounded-lg overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.15)] flex flex-col relative transform lg:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-white text-[9px] font-mono font-bold px-2 py-1 rounded-bl z-10">RECOMMENDED ENTERPRISE</div>
+                    <div class="p-6 border-b border-white/10 relative z-0 flex-grow-0">
+                        <h3 class="text-xl font-bold text-white mb-1 mt-2">10-Year Fast-Track</h3>
+                        <p class="text-brand-gold font-mono text-[10px] uppercase tracking-widest mb-3 font-bold">Ecosystem Lock-In</p>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                            The ultimate onboarding vehicle. This tier requires a mandatory <strong class="text-white">$11,000 Buy & Lock of UNT</strong> as part of the entry cost. 
+                        </p>
+                        <div class="p-3 border border-brand-gold/30 bg-brand-gold/5 rounded mb-4">
+                            <h5 class="text-brand-gold font-mono text-[10px] font-bold mb-1 uppercase">Why Lock UNT?</h5>
+                            <p class="text-slate-400 text-[10px] leading-relaxed">
+                                Instead of burning capital on SaaS fees, your $11,000 acts as a staked treasury asset. It guarantees a Sovereign Processing Rate (0.70%) for a decade while your capital remains securely vaulted.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-end bg-black/20">
+                        <ul class="text-[10px] text-slate-300 space-y-2 font-mono mb-4">
+                            <li>> Complete Hardware Array Included</li>
+                            <li>> Hey Chef AI Automation</li>
+                            <li class="text-white border-l-2 border-brand-gold pl-2 py-1 bg-brand-gold/10 font-bold">0.70% SOVEREIGN FLOOR</li>
+                        </ul>
+                        <div class="p-4 border border-brand-gold/50 rounded bg-brand-gold/10 text-center">
+                            <span class="block text-brand-gold font-bold font-mono text-[10px] mb-1 uppercase tracking-widest">Total CapEx Entry</span>
+                            <span class="block text-white font-bold text-3xl font-mono mb-1">$56,000</span>
+                            <span class="text-[8px] text-brand-gold/80 uppercase tracking-widest font-mono">(Includes the $11k UNT Lock)</span>
                         </div>
                     </div>
                 </div>
@@ -297,7 +294,7 @@
         </div>
     </section>
 
-    <footer class="bg-brand-dark py-16 px-6 border-t border-brand-accent">
+    <footer class="bg-brand-dark py-16 px-6 border-t border-brand-gold/20">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
             <div class="text-white font-bold text-xl tracking-widest uppercase mb-8">
                 Powell Global
@@ -308,14 +305,14 @@
                     <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, and Unity Protocol architectures are proprietary intellectual property governed entirely by Powell Global LLC.
                 </p>
                 <p>
-                    <strong>Intellectual Property:</strong> The software and physical arrays detailed herein are protected under Utility Patent Application No. 19/559,956. Unauthorized replication of the hardware-software middleware bridge is strictly prohibited.
+                    <strong>Intellectual Property:</strong> The software and physical arrays detailed herein are protected under Utility Patent Application No. 19/559,956. Unauthorized replication of the hardware-software middleware bridge or gravimetric arrays is strictly prohibited.
                 </p>
                 <p>
-                    <strong>Pricing & Estimates Disclaimer:</strong> Pricing models and tier structures outlined for Varis OS and associated hardware bundles reflect baseline modeling. All fees, processing rates, equipment costs, and licensing rates are initial estimates and are strictly subject to change as the ecosystem approaches formal launch, pending finalized hardware prototyping and institutional underwriting. Full hardware deposits required upon execution.
+                    <strong>Pricing & Estimates Disclaimer:</strong> Pricing models and tier structures outlined for V-Shelves and associated hardware bundles reflect baseline modeling. Hardware estimation represents a generalized footprint. All fees, processing rates, equipment costs, and licensing rates are initial estimates and are strictly subject to change as the ecosystem approaches formal launch, pending finalized hardware prototyping and institutional underwriting. Full hardware deposits required upon execution.
                 </p>
             </div>
             
-            <div class="text-slate-700 text-[10px] border-t border-brand-accent mt-10 pt-6 w-full font-mono uppercase tracking-widest">
+            <div class="text-slate-700 text-[10px] border-t border-white/5 mt-10 pt-6 w-full font-mono uppercase tracking-widest">
                 &copy; 2026 Powell Global LLC. All rights reserved.
             </div>
         </div>
