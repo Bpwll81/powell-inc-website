@@ -14,7 +14,7 @@
                             gold: '#D4AF37',
                             dark: '#0B0F19',
                             light: '#EBE9E1',
-                            surface: '#F5F4F0'
+                            metal: '#94a3b8'
                         }
                     }
                 }
@@ -24,84 +24,144 @@
     <style>
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
+        
+        /* Brushed Metal Transparency Effect */
+        .glass-metal {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(148, 163, 184, 0.2));
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .brushed-overlay {
+            background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+            opacity: 0.05;
+        }
     </style>
 </head>
-<body class="bg-brand-light text-slate-700 font-sans antialiased selection:bg-brand-gold selection:text-white pt-24">
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-gold selection:text-white pt-24">
 
-    <nav class="fixed w-full z-50 top-0 border-b border-black/5 bg-brand-surface/90 backdrop-blur-md shadow-sm">
+    <div class="fixed inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=2070&auto=format&fit=crop" 
+             alt="Open architecture" 
+             class="w-full h-full object-cover opacity-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/80 to-brand-dark"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-brand-dark/60 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-slate-900 font-bold text-xl tracking-widest uppercase">
+            <div class="text-white font-bold text-xl tracking-widest uppercase italic">
                 <a href="../index.html">Powell Global</a>
             </div>
-            <div class="flex items-center">
-                <button id="menu-btn" class="text-slate-900 focus:outline-none p-2 hover:text-brand-gold transition-colors">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <div id="menu" class="hidden absolute top-20 right-0 w-full md:w-72 bg-brand-surface border-l border-b border-black/5 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left">
-                <a href="../unity.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">1. Unity Protocol</a>
-                <a href="../varis.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">2. Varis OS</a>
-                <a href="../V-Shelves/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">3. V-Shelves</a>
-                <a href="../heychef/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">4. Hey Chef</a>
-                <a href="../resort/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">5. The Resort</a>
-                <a href="index.html" class="text-sm font-bold uppercase tracking-widest text-brand-gold transition-all">6. Institutional Risk & Disclosure</a>
+            <button id="menu-btn" class="text-white hover:text-brand-gold transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div id="menu" class="hidden absolute top-20 right-0 w-full md:w-72 bg-brand-dark/95 border-l border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right">
+                <a href="../unity.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">1. Unity Protocol</a>
+                <a href="../varis.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
+                <a href="../V-Shelves/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
+                <a href="index.html" class="text-sm font-bold uppercase tracking-widest text-brand-gold">6. Institutional Risk & Disclosure</a>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-6xl mx-auto px-6 py-12">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 uppercase tracking-tighter">Institutional Risk & <span class="text-brand-gold">Disclosure</span></h1>
+    <main class="relative z-10 max-w-6xl mx-auto px-6 py-12">
+        <div class="mb-16 text-center md:text-left">
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 uppercase tracking-tighter">
+                Nothing to <span class="text-brand-gold">Hide.</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl font-light tracking-wide">
+                Institutional-grade transparency for the physical settlement layer of the digital economy.
+            </p>
+        </div>
         
-        <div class="w-full bg-black rounded-2xl shadow-2xl overflow-hidden mb-16 aspect-video border-4 border-brand-dark">
-            <video controls class="w-full h-full" poster="../Logo.jpg">
-                <source src="Powell Global 2026 Pitch Deck.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="glass-metal rounded-3xl overflow-hidden mb-20 p-2 border border-white/20">
+            <div class="aspect-video rounded-2xl overflow-hidden bg-black relative">
+                <video controls class="w-full h-full">
+                    <source src="Powell Global 2026 Pitch Deck.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="md:col-span-1">
-                <div class="sticky top-32 space-y-4">
-                    <div class="p-6 bg-brand-surface border border-black/5 rounded-xl shadow-sm">
-                        <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-4 text-center">Legal Materials</h3>
-                        <ul class="space-y-4 text-xs font-bold uppercase tracking-wider">
-                            <li><a href="#executive-summary" class="hover:text-brand-gold transition-colors block py-2 border-b border-black/5">I. Executive Summary</a></li>
-                            <li><a href="#v1-addendum" class="hover:text-brand-gold transition-colors block py-2 border-b border-black/5">II. V1 Addendum</a></li>
-                            <li><a href="../Certificate_of_Good_Standing.pdf" target="_blank" class="text-slate-400 hover:text-brand-gold transition-colors block py-2 italic">View Good Standing PDF &rarr;</a></li>
-                        </ul>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+            
+            <div class="md:col-span-8 space-y-24 pb-32">
+                
+                <section id="executive-summary" class="glass-metal p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                    <div class="brushed-overlay absolute inset-0 pointer-events-none"></div>
+                    <h2 class="text-3xl font-bold text-brand-gold mb-8 uppercase tracking-widest">I. Executive Summary</h2>
+                    <div class="prose prose-invert max-w-none text-slate-300 space-y-6 text-lg leading-relaxed">
+                        <p class="text-white font-bold text-xl italic border-l-4 border-brand-gold pl-4">
+                            "Integrity in Every Block. Discipline in Every Service."
+                        </p>
+                        <p>
+                            Powell Global LLC is establishing the **Physical Settlement Layer** for the digital economy. While the current market is saturated with "paper promises" and depreciating fiat debt, our ecosystem is built on the restoration of the digital warehouse receipt system.
+                        </p>
+                        <p>
+                            **Unity Protocol (UNT)** and **Unity Gold (UGLD)** separate growth from stability. UGLD acts as the anchor, representing 1oz of physical, verified gold, while UNT serves as the utility engine driven by merchant transaction velocity. 
+                        </p>
+                        <p>
+                            Through **Varis OS**, we provide the sovereign hardware infrastructure—incorporating Samsung Knox Vaults and Gravimetric sensors—to bridge the gap between digital assets and physical hospitality operations.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="v1-addendum" class="glass-metal p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                    <div class="brushed-overlay absolute inset-0 pointer-events-none"></div>
+                    <h2 class="text-3xl font-bold text-brand-gold mb-8 uppercase tracking-widest">II. V1 Addendum</h2>
+                    <div class="prose prose-invert max-w-none text-slate-300 space-y-6 text-lg leading-relaxed">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                                <h4 class="text-brand-gold font-bold mb-2">Post-Ripple Compliance</h4>
+                                <p class="text-sm">Architected to distinguish clearly between Institutional Capital and Ecosystem Utility to meet evolving regulatory standards.</p>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                                <h4 class="text-brand-gold font-bold mb-2">1-Block Anomaly Freeze</h4>
+                                <p class="text-sm">Automatic 24-hour halt if price variance exceeds 10% in a single block, preventing algorithmic collapse.</p>
+                            </div>
+                        </div>
+                        <p>
+                            **Bankruptcy Remoteness:** All assets are held in ring-fenced Special Purpose Vehicles (SPVs). Token holders are recognized as Senior Secured Creditors with explicit redemption rights, ensuring capital protection even in extreme market volatility.
+                        </p>
+                        <p>
+                            **The Partnership Proposal:** We are currently seeking a "Lead Sous" to bring this operational vision to fruition, offering a 0.30% processing royalty and a path to 100% principal recoupment within the first $450,000 of revenue.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="md:col-span-4">
+                <div class="sticky top-32 space-y-6">
+                    <div class="glass-metal p-8 rounded-3xl border border-brand-gold/20">
+                        <h3 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Public Ledger</h3>
+                        <div class="space-y-4">
+                            <a href="../Certificate_of_Good_Standing.pdf" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-brand-gold transition-colors font-medium">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                Certificate of Good Standing
+                            </a>
+                            <a href="../UnityGold.sol" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-brand-gold transition-colors font-medium">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                UnityGold.sol (Verified)
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="md:col-span-3 space-y-24 pb-32">
-                <section id="executive-summary">
-                    <h2 class="text-4xl font-black text-slate-900 border-b-4 border-brand-gold pb-4 mb-8 uppercase tracking-tight">Executive Summary</h2>
-                    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6">
-                        <p class="text-xl font-bold italic text-slate-900">The Physical Settlement Layer for the Digital Economy.</p>
-                        <p>Powell Global LLC is building the sovereign infrastructure required to restore operational discipline to the global service industry. Through the integration of the Unity Protocol and Varis OS, we move beyond paper promises into the realm of physical atoms—anchoring digital utility in hard assets and real-world commerce.</p>
-                        </div>
-                </section>
-
-                <section id="v1-addendum" class="bg-brand-surface p-8 md:p-12 rounded-3xl border border-black/5 shadow-inner">
-                    <h2 class="text-4xl font-black text-slate-900 border-b-4 border-brand-gold pb-4 mb-8 uppercase tracking-tight">V1 Addendum</h2>
-                    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6 font-medium">
-                        <p>This V1 Addendum serves as the formal supplement to the Powell Global 2026 Pitch Deck. It details the precise compliance frameworks, risk-mitigation engineering, and technical specifications of the UNT governance token and the UGLD warehouse receipt system.</p>
-                        <p class="border-l-4 border-brand-gold pl-6 py-2 italic bg-white/50">"Integrity in every block. Discipline in every service."</p>
-                        </div>
-                </section>
-            </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="bg-brand-dark py-16 px-6 border-t border-slate-800 mt-12">
+    <footer class="relative z-10 bg-brand-dark/90 py-16 px-6 border-t border-white/10 mt-24">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
             <div class="text-white font-bold text-2xl tracking-widest uppercase mb-10 italic">Powell Global</div>
-            <p class="text-slate-400 text-[10px] leading-relaxed max-w-4xl mx-auto mb-8 font-mono uppercase tracking-[0.2em]">
-                Powell Incorporated operates as a DBA of Powell Global LLC. All architectures are proprietary intellectual property.
+            <p class="text-slate-500 text-[10px] leading-relaxed max-w-4xl mx-auto mb-8 font-mono uppercase tracking-[0.3em]">
+                Sovereign Infrastructure. Verified Assets. Zero Friction.
             </p>
-            <div class="text-slate-600 text-[10px] pt-8 w-full font-mono uppercase tracking-widest border-t border-slate-800/50">
+            <div class="text-slate-700 text-[10px] pt-8 w-full font-mono uppercase tracking-widest border-t border-white/5">
                 &copy; 2026 Powell Global LLC. All rights reserved.
             </div>
         </div>
