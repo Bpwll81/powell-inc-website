@@ -33,16 +33,13 @@
             <div class="text-slate-900 font-bold text-xl tracking-widest uppercase">
                 <a href="../index.html">Powell Global</a>
             </div>
-
             <div class="flex items-center">
                 <button id="menu-btn" class="text-slate-900 focus:outline-none p-2 hover:text-brand-gold transition-colors">
-                    <span class="sr-only">Open Menu</span>
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
-
             <div id="menu" class="hidden absolute top-20 right-0 w-full md:w-72 bg-brand-surface border-l border-b border-black/5 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left">
                 <a href="../unity.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">1. Unity Protocol</a>
                 <a href="../varis.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">2. Varis OS</a>
@@ -54,46 +51,57 @@
         </div>
     </nav>
 
-    <section class="py-12 px-6 min-h-screen">
-        <div class="max-w-6xl mx-auto">
-            <a href="../index.html" class="inline-block mb-8 text-brand-gold hover:text-slate-900 transition-colors font-bold uppercase tracking-widest text-sm">
-                &larr; Back to Home
-            </a>
-            
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Institutional Risk & <span class="text-brand-gold">Disclosure</span>
-            </h1>
-            <p class="text-lg text-slate-600 mb-10">
-                Review our comprehensive pitch deck and relevant operational disclosures below.
-            </p>
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 uppercase tracking-tighter">Institutional Risk & <span class="text-brand-gold">Disclosure</span></h1>
+        
+        <div class="w-full bg-black rounded-2xl shadow-2xl overflow-hidden mb-16 aspect-video border-4 border-brand-dark">
+            <video controls class="w-full h-full" poster="../Logo.jpg">
+                <source src="Powell Global 2026 Pitch Deck.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-            <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-black/5 h-[800px]">
-                <iframe 
-                    src="YOUR_PITCH_DECK_FILENAME.pdf" 
-                    class="w-full h-full border-0" 
-                    title="Powell Global Pitch Deck">
-                </iframe>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="md:col-span-1">
+                <div class="sticky top-32 space-y-4">
+                    <div class="p-6 bg-brand-surface border border-black/5 rounded-xl shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-4 text-center">Legal Materials</h3>
+                        <ul class="space-y-4 text-xs font-bold uppercase tracking-wider">
+                            <li><a href="#executive-summary" class="hover:text-brand-gold transition-colors block py-2 border-b border-black/5">I. Executive Summary</a></li>
+                            <li><a href="#v1-addendum" class="hover:text-brand-gold transition-colors block py-2 border-b border-black/5">II. V1 Addendum</a></li>
+                            <li><a href="../Certificate_of_Good_Standing.pdf" target="_blank" class="text-slate-400 hover:text-brand-gold transition-colors block py-2 italic">View Good Standing PDF &rarr;</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="mt-6 text-center">
-                <p class="text-sm text-slate-500 font-medium">
-                    Having trouble viewing the document? 
-                    <a href="YOUR_PITCH_DECK_FILENAME.pdf" target="_blank" class="text-brand-gold hover:underline">Download the PDF here</a>.
-                </p>
+
+            <div class="md:col-span-3 space-y-24 pb-32">
+                <section id="executive-summary">
+                    <h2 class="text-4xl font-black text-slate-900 border-b-4 border-brand-gold pb-4 mb-8 uppercase tracking-tight">Executive Summary</h2>
+                    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6">
+                        <p class="text-xl font-bold italic text-slate-900">The Physical Settlement Layer for the Digital Economy.</p>
+                        <p>Powell Global LLC is building the sovereign infrastructure required to restore operational discipline to the global service industry. Through the integration of the Unity Protocol and Varis OS, we move beyond paper promises into the realm of physical atoms—anchoring digital utility in hard assets and real-world commerce.</p>
+                        </div>
+                </section>
+
+                <section id="v1-addendum" class="bg-brand-surface p-8 md:p-12 rounded-3xl border border-black/5 shadow-inner">
+                    <h2 class="text-4xl font-black text-slate-900 border-b-4 border-brand-gold pb-4 mb-8 uppercase tracking-tight">V1 Addendum</h2>
+                    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6 font-medium">
+                        <p>This V1 Addendum serves as the formal supplement to the Powell Global 2026 Pitch Deck. It details the precise compliance frameworks, risk-mitigation engineering, and technical specifications of the UNT governance token and the UGLD warehouse receipt system.</p>
+                        <p class="border-l-4 border-brand-gold pl-6 py-2 italic bg-white/50">"Integrity in every block. Discipline in every service."</p>
+                        </div>
+                </section>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer class="bg-brand-dark py-16 px-6 border-t border-slate-800 mt-12">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
             <div class="text-white font-bold text-2xl tracking-widest uppercase mb-10 italic">Powell Global</div>
-            <p class="text-slate-400 text-xs leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
-                <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, V-Shelves, and Unity Protocol architectures are proprietary intellectual property.
+            <p class="text-slate-400 text-[10px] leading-relaxed max-w-4xl mx-auto mb-8 font-mono uppercase tracking-[0.2em]">
+                Powell Incorporated operates as a DBA of Powell Global LLC. All architectures are proprietary intellectual property.
             </p>
-            <p class="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto mb-10 font-medium">
-                <strong>Regulatory Disclaimer:</strong> The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and consumptive gas fees. It is not an investment contract. Unity Gold (UGLD) acts as a digital warehouse receipt for physical commodities. This ecosystem operates in alignment with the EU MiCA Regulation (2023/1114), the Colorado Digital Token Act (SB 19-023), and ISO 20022 financial messaging standards.
-            </p>
-            <div class="text-slate-600 text-[10px] border-t border-slate-800/50 pt-8 w-full font-mono uppercase tracking-widest">
+            <div class="text-slate-600 text-[10px] pt-8 w-full font-mono uppercase tracking-widest border-t border-slate-800/50">
                 &copy; 2026 Powell Global LLC. All rights reserved.
             </div>
         </div>
@@ -103,23 +111,13 @@
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
         const icon = document.getElementById('menu-icon');
-
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
-            
             if (menu.classList.contains('hidden')) {
                 icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             } else {
                 icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            }
-        });
-
-        window.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                menu.classList.add('hidden');
-                menu.classList.remove('flex');
-                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             }
         });
     </script>
