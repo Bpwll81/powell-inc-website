@@ -37,243 +37,266 @@
         }
 
         .countdown-font { font-family: monospace; font-weight: bold; }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
 </head>
-<body class="bg-brand-dark text-slate-200 font-sans antialiased pt-24">
+<body class="bg-brand-dark text-slate-200 font-sans antialiased pt-20 md:pt-24">
 
     <div class="fixed inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
-             class="w-full h-full object-cover opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-transparent to-brand-dark/90"></div>
+             class="w-full h-full object-cover opacity-30 md:opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-transparent to-brand-dark/90"></div>
     </div>
 
     <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-brand-dark/30 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-white font-bold text-xl tracking-widest uppercase italic">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+            <div class="text-white font-bold text-lg md:text-xl tracking-widest uppercase italic leading-none">
                 <a href="../index.html">Powell Global</a>
             </div>
-            <button id="menu-btn" class="text-white hover:text-brand-gold transition-colors">
+            <button id="menu-btn" class="text-white hover:text-brand-gold transition-colors p-2 focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-            <div id="menu" class="hidden absolute top-20 right-0 w-full md:w-72 bg-brand-dark/95 border-l border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left">
-                <a href="../unity.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">1. Unity Protocol</a>
-                <a href="../varis.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">2. Varis OS</a>
-                <a href="../V-Shelves/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">3. V-Shelves</a>
-                <a href="../heychef/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">4. Hey Chef</a>
-                <a href="../resort/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold transition-all">5. The Resort</a>
-                <a href="index.html" class="text-sm font-bold uppercase tracking-widest text-brand-gold transition-all">6. Institutional Risk & Disclosure</a>
+            <div id="menu" class="hidden absolute top-16 md:top-20 right-0 w-full md:w-80 bg-brand-dark/95 border-l border-white/10 flex-col p-6 md:p-8 space-y-6 shadow-2xl text-right md:text-left">
+                <a href="../unity.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">1. Unity Protocol</a>
+                <a href="../varis.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
+                <a href="../V-Shelves/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-sm font-bold uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
+                <a href="index.html" class="text-sm font-bold uppercase tracking-widest text-brand-gold underline decoration-brand-gold">6. Institutional Risk & Disclosure</a>
             </div>
         </div>
     </nav>
 
-    <main class="relative z-10 max-w-6xl mx-auto px-6 py-12">
+    <main class="relative z-10 max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
         
-        <div class="mb-12">
-            <h1 class="text-6xl font-black text-white mb-2 uppercase tracking-tighter italic">Sovereign <span class="text-brand-gold">Ledger.</span></h1>
-            <p class="text-xl text-slate-300 font-light italic uppercase tracking-widest">Institutional Accountability & Operational Transparency</p>
+        <div class="mb-10 md:mb-12 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-2 uppercase tracking-tighter italic leading-tight">
+                Sovereign <span class="text-brand-gold">Ledger.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light italic uppercase tracking-widest">Accountability & Operational Transparency</p>
         </div>
 
-        <div class="mb-20">
-            <div class="glass-metal rounded-3xl overflow-hidden p-1 border border-white/20">
-                <div class="aspect-video rounded-2xl overflow-hidden bg-black relative">
+        <div class="mb-16 md:mb-20">
+            <div class="glass-metal rounded-2xl md:rounded-3xl overflow-hidden p-1 border border-white/20">
+                <div class="aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black relative">
                     <video controls class="w-full h-full">
                         <source src="Powell Global 2026 Pitch Deck.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
-            <p class="mt-4 text-[11px] text-slate-400 italic leading-relaxed max-w-5xl">
-                <strong>Notice:</strong> Powell Global LLC maintains a standard Business Account with Samsung but has not entered into a formal enterprise partnership at this time. Samsung hardware is currently utilized as the company's baseline example of the rigorous security and hardware standards required for Varis OS integration; communications regarding enterprise coordination are in the initial stages.
+            <p class="mt-4 text-[10px] md:text-[11px] text-slate-400 italic leading-relaxed max-w-5xl">
+                <strong>Notice:</strong> Powell Global LLC has not entered into any formal partnerships with Samsung, save for a Business Account. We are currently in initial stage communications as Samsung serves as the company's baseline example of the hardware and security standards required for Varis OS integration.
             </p>
         </div>
 
-        <section class="mb-24">
-            <h2 class="text-3xl font-bold text-brand-gold mb-10 uppercase tracking-widest italic text-center">III. Tactical Due Diligence Rebuttals</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section class="mb-20 md:mb-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-8 md:mb-10 uppercase tracking-widest italic text-center">III. Tactical Due Diligence Rebuttals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 
-                <div class="glass-metal p-8 rounded-2xl border-2 border-brand-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
-                    <h4 class="text-white font-bold italic text-lg mb-2">"What if Tier-1 exchanges refuse a Day-1 listing?"</h4>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border-2 border-brand-gold/30">
+                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"What if an exchange refuses a Day-1 listing?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        <strong class="text-brand-gold italic">Rebuttal:</strong> We concede that a Day-1 listing refusal is likely due to rigorous security and risk assessments. This is not make-or-break. We are happy to work directly with the investor to resolve security concerns and are open to alternative listing methods, provided the protocol remains sovereign.
+                        <strong class="text-brand-gold italic">Rebuttal (Conceded):</strong> We concede that a Day-1 listing refusal is not make-or-break. We understand security concerns are paramount for exchanges and are happy to work directly with the investor to find a mutually beneficial solution that ensures UNT circulation begins immediately upon audit clearance.
                     </p>
                 </div>
 
-                <div class="glass-metal p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2">"Is this just another algorithmic stablecoin risk?"</h4>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"Is this just another algorithmic stablecoin risk?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        <strong class="text-brand-gold italic">Rebuttal:</strong> Impossible. UGLD is only minted in $5,000\text{ oz}$ intervals and is backed 1:1 by physical gold held in Bail-Free vaults (Texas). There is no fiat backing or speculative circularity; $1\text{ UGLD}$ always equals $1\text{ oz}$ of physical gold.
+                        <strong class="text-brand-gold italic">Rebuttal:</strong> Impossible. UGLD is only minted at 5,000 oz intervals and is backed 1:1 by physical gold held in Bail-Free vaults. It is not supported or backed by fiat or speculation; 1 UGLD will always equal 1 oz of physical gold.
                     </p>
                 </div>
 
-                <div class="glass-metal p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2">"How is founder exit/dump risk mitigated?"</h4>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"How is founder exit/dump risk mitigated?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        <strong class="text-brand-gold italic">Rebuttal:</strong> Founders are cryptographically barred from principal liquidation. Only bi-monthly staking rewards are permitted via the Smart Waterfall Protocol, ensuring zero market dump potential from the team.
+                        <strong class="text-brand-gold italic">Rebuttal:</strong> Founders are cryptographically barred from principal liquidation. Only bi-monthly staking rewards are permitted via the Smart Waterfall Protocol, ensuring zero market dump potential.
                     </p>
                 </div>
 
-                <div class="glass-metal p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2">"What protection exists if the parent entity fails?"</h4>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"What protection exists if the parent entity fails?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         <strong class="text-brand-gold italic">Rebuttal:</strong> Assets are held in ring-fenced SPVs. Token holders are legally defined as Senior Secured Creditors with explicit redemption rights to the underlying physical gold.
                     </p>
                 </div>
 
-                <div class="glass-metal p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2">"Is UNT classified as an unregistered security?"</h4>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"Is UNT classified as an unregistered security?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        <strong class="text-brand-gold italic">Rebuttal:</strong> No. UNT is a utility token for network governance and fees. It alignment with the Colorado Digital Token Act and EU MiCA standards is a core architectural priority.
+                        <strong class="text-brand-gold italic">Rebuttal:</strong> No. UNT is strictly a utility token designed for network governance and hardware fees. Its alignment with the Colorado Digital Token Act and EU MiCA standards is a core priority.
                     </p>
                 </div>
 
-                <div class="glass-metal p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2">"Is the codebase secure and audited?"</h4>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
+                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"Is the codebase secure and audited?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        <strong class="text-brand-gold italic">Rebuttal:</strong> Deployment is cryptographically locked until a Tier-1 audit firm certifies zero critical vulnerabilities. We have allocated specific funds for the investor to manage this audit directly.
+                        <strong class="text-brand-gold italic">Rebuttal:</strong> Deployment is locked until a Tier-1 audit firm certifies zero critical vulnerabilities. We have allocated specific funds for the investor to manage this audit directly.
                     </p>
                 </div>
 
             </div>
         </section>
 
-        <section id="v1-addendum" class="glass-metal p-8 md:p-16 rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-24 text-slate-300">
-            
-            <div class="disclaimer-bar p-6 rounded-xl mb-12">
-                <h4 class="text-brand-gold font-black uppercase tracking-widest text-sm mb-2">⚠️ Formal Protocol Notice</h4>
+        <section id="v1-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-20 md:mb-24 text-slate-300">
+            <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
+                <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Formal Protocol Notice</h4>
                 <p class="text-slate-200 text-sm italic leading-relaxed">
-                    The security and protocol updates contained within this V1 Addendum serve as a mandatory amendment to the Master White Paper. These terms officially supersede and replace all previous architectural descriptions regarding liquidity events, founder vesting, and audit remediation logic.
+                    This V1 Addendum serves as a mandatory amendment to the Master White Paper, officially superseding previous architectural descriptions regarding liquidity events and founder vesting.
                 </p>
             </div>
 
-            <h2 class="text-4xl font-black text-white mb-12 uppercase tracking-tighter italic">APPENDIX A: PROTOCOL AMENDMENTS (V1)</h2>
-            <div class="space-y-12 text-lg leading-relaxed">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em]">Timestamp: March 15, 2026 | 12:53 MDT (Colorado)</p>
-                
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-8 md:mb-12 uppercase tracking-tighter italic leading-tight">APPENDIX A: PROTOCOL AMENDMENTS (V1)</h2>
+            <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
+                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.2em]">Timestamp: March 15, 2026 | 12:53 MDT (Colorado)</p>
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">1. Institutional Custody & The LGE</h3>
-                    <p>Total token supply is secured in audited cold storage. The protocol shifts from a TGE to a Liquidity Generation Event (LGE), where the Exchange Partner autonomously controls the release of circulating supply to enforce the $0.05 USD entry peg.</p>
+                    <h3 class="text-xl font-bold text-white mb-4 italic leading-tight">1. Institutional Custody & The LGE</h3>
+                    <p>Total token supply is secured in audited cold storage. The protocol shifts from a TGE to a Liquidity Generation Event (LGE), with the Exchange Partner autonomously controlling circulating supply to enforce the $0.05 USD entry peg.</p>
                 </div>
-
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">2. Cryptographic Vesting (The Smart Waterfall)</h3>
-                    <p>Powell Global LLC retains a strict 2.75% supply. The 1.00% Team Pool is fragmented into 20 units (0.05% each). Principal remains 100% locked; only bi-monthly staking rewards are permitted for execution.</p>
+                    <h3 class="text-xl font-bold text-white mb-4 italic leading-tight">2. Cryptographic Vesting (The Smart Waterfall)</h3>
+                    <p>Powell Global LLC retains a strict 2.75% supply. The Team Pool is fragmented into 20 units (0.05% each). Principal remains 100% locked; only bi-monthly staking rewards are permitted for execution.</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-32">
-            <h2 class="text-3xl font-bold text-brand-gold mb-12 uppercase tracking-widest italic text-center">IV. Tranche 1 Expenditure Roadmap</h2>
+        <section class="mb-24 md:mb-32">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">IV. Capital Expenditure Roadmap</h2>
             
-            <div class="glass-metal rounded-2xl overflow-hidden mb-8 border-b-4 border-slate-400">
-                <div class="bg-white/10 p-4 font-bold text-white uppercase tracking-widest flex justify-between">
-                    <span>A. Investor-Managed Security Allocation</span>
-                    <span class="text-brand-gold">$65,000.00</span>
+            <div class="glass-metal rounded-xl md:rounded-2xl overflow-hidden mb-12 border-b-4 border-slate-400">
+                <div class="bg-white/10 p-5 md:p-6 font-bold text-white uppercase tracking-widest flex flex-col md:flex-row justify-between gap-2 md:gap-0">
+                    <span class="text-sm md:text-base">A. Investor-Managed Security Allocation</span>
+                    <span class="text-brand-gold italic">$65,000.00</span>
                 </div>
-                <div class="p-6 text-xs text-slate-400 italic">
+                <div class="p-5 md:p-6 text-xs text-slate-400 italic">
                     Note: This allocation is retained by the investor to facilitate and manage the independent Tier-1 Security Audit directly.
                 </div>
             </div>
 
-            <div class="glass-metal rounded-3xl overflow-hidden border-b-4 border-brand-gold mb-16">
-                <div class="bg-white/10 p-6 font-bold text-white uppercase tracking-widest flex justify-between items-center">
-                    <span>B. Powell Global Operational Launch Capital</span>
-                    <span class="text-brand-gold">$385,000.00</span>
+            <div class="glass-metal rounded-2xl md:rounded-3xl overflow-hidden border-b-4 border-brand-gold mb-16">
+                <div class="bg-white/10 p-5 md:p-6 font-bold text-white uppercase tracking-widest flex flex-col md:flex-row justify-between md:items-center gap-2 md:gap-0">
+                    <span class="text-sm md:text-base">B. Operational Launch Capital (Tranche 1)</span>
+                    <span class="text-brand-gold italic">$385,000.00</span>
                 </div>
-                <table class="w-full text-left text-sm italic">
-                    <thead class="bg-white/5 uppercase text-[10px] font-mono tracking-widest text-slate-400">
-                        <tr>
-                            <th class="p-6">Line Item</th>
-                            <th class="p-6">Allocation</th>
-                            <th class="p-6">Status</th>
-                            <th class="p-6">Receipts</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10">
-                        <tr>
-                            <td class="p-6 text-white font-medium">Sovereign Home Office Procurement</td>
-                            <td class="p-6 text-white font-bold">$150,000</td>
-                            <td class="p-6 text-brand-gold font-bold uppercase">In Progress</td>
-                            <td class="p-6 text-slate-500 underline">PENDING</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 text-white font-medium">Enterprise IT & Varis OS Systems</td>
-                            <td class="p-6 text-white font-bold">$45,000</td>
-                            <td class="p-6 text-brand-gold font-bold uppercase">In Progress</td>
-                            <td class="p-6 text-slate-500 underline">PENDING</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 text-white font-medium">Bail-Free Vault (1-Yr Texas Lease)</td>
-                            <td class="p-6 text-white font-bold">$25,000</td>
-                            <td class="p-6 text-brand-gold font-bold uppercase">In Progress</td>
-                            <td class="p-6 text-slate-500 underline">PENDING</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 text-white font-medium">First Strategic Metals Acquisition</td>
-                            <td class="p-6 text-white font-bold">$50,000</td>
-                            <td class="p-6 text-brand-gold font-bold uppercase">In Progress</td>
-                            <td class="p-6 text-slate-500 underline">PENDING</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 text-white font-medium">Operational Liquidity & Reserves</td>
-                            <td class="p-6 text-white font-bold">$115,000</td>
-                            <td class="p-6 text-brand-gold font-bold uppercase">In Progress</td>
-                            <td class="p-6 text-slate-500 underline">PENDING</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table class="w-full text-left text-sm italic min-w-[600px]">
+                        <thead class="bg-white/5 uppercase text-[10px] font-mono tracking-widest text-slate-400">
+                            <tr>
+                                <th class="p-6">Line Item</th>
+                                <th class="p-6 text-center">Allocation</th>
+                                <th class="p-6 text-center">Status</th>
+                                <th class="p-6 text-center">Receipts</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/10 font-medium italic">
+                            <tr>
+                                <td class="p-6 text-white font-medium">Home Office Lease (1-Yr, Lone Tree 80124)</td>
+                                <td class="p-6 text-center text-white font-bold">$25,000</td>
+                                <td class="p-6 text-center text-brand-gold">In Progress</td>
+                                <td class="p-6 text-center text-slate-500">PENDING</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 text-white font-medium">Bail-Free Vault (1-Yr Lease, Texas)</td>
+                                <td class="p-6 text-center text-white font-bold">$10,000</td>
+                                <td class="p-6 text-center text-brand-gold">In Progress</td>
+                                <td class="p-6 text-center text-slate-500">PENDING</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 text-white font-medium">First Strategic Metals Acquisition (Gold)</td>
+                                <td class="p-6 text-center text-white font-bold">$50,000</td>
+                                <td class="p-6 text-center text-brand-gold">In Progress</td>
+                                <td class="p-6 text-center text-slate-500">PENDING</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 text-white font-medium">Enterprise IT & Hardware Systems</td>
+                                <td class="p-6 text-center text-white font-bold">$50,000</td>
+                                <td class="p-6 text-center text-brand-gold">In Progress</td>
+                                <td class="p-6 text-center text-slate-500">PENDING</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 text-white font-medium font-bold">Hiring Costs & Legal Retainer</td>
+                                <td class="p-6 text-center text-white font-bold">$250,000</td>
+                                <td class="p-6 text-center text-brand-gold">In Progress</td>
+                                <td class="p-6 text-center text-slate-500">PENDING</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="glass-metal p-12 rounded-3xl border-4 border-brand-gold/50 shadow-[0_0_40px_rgba(212,175,55,0.15)] relative">
-                <h3 class="text-3xl font-black text-white mb-8 uppercase tracking-widest text-center italic">The "Lead Sous" Unified Tranche</h3>
-                <p class="text-center text-slate-400 text-sm mb-12 italic max-w-2xl mx-auto">Scaling Option: A single investor capitalization of the entire $1.3M Sovereign Infrastructure Roadmap.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/5 p-8 rounded-2xl text-center border border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-24">
+                <div class="glass-metal p-8 rounded-3xl italic text-center border-dashed border-2 border-white/10 opacity-60">
+                    <h4 class="text-brand-gold font-bold mb-2">TRANCHE 2 ($450,000)</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">LOCKED PENDING TRANCHE 1 FINALIZATION</p>
+                </div>
+                <div class="glass-metal p-8 rounded-3xl italic text-center border-dashed border-2 border-white/10 opacity-60">
+                    <h4 class="text-brand-gold font-bold mb-2">TRANCHE 3 ($450,000)</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">LOCKED PENDING TRANCHE 2 FINALIZATION</p>
+                </div>
+            </div>
+
+            <div class="glass-metal p-8 md:p-12 rounded-3xl border-4 border-brand-gold/50 shadow-2xl relative overflow-hidden">
+                <h3 class="text-2xl md:text-3xl font-black text-white mb-8 md:mb-10 uppercase tracking-widest text-center italic leading-tight">The "Lead Sous" Unified Tranche</h3>
+                <p class="text-center text-slate-400 text-sm mb-12 italic max-w-2xl mx-auto font-medium">A single investor capitalization of the entire $1.35M Sovereign Roadmap.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 italic font-medium">
+                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10">
                         <p class="text-xs text-slate-500 uppercase font-mono mb-2">Hardware Scaling</p>
-                        <p class="text-3xl font-black text-brand-gold">$426,000</p>
+                        <p class="text-2xl md:text-3xl font-black text-brand-gold">$150,000</p>
                     </div>
-                    <div class="bg-white/5 p-8 rounded-2xl text-center border border-white/10">
-                        <p class="text-xs text-slate-500 uppercase font-mono mb-2">Strategic Reserves</p>
-                        <p class="text-3xl font-black text-brand-gold">$524,000</p>
+                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10">
+                        <p class="text-xs text-slate-500 uppercase font-mono mb-2 text-center">Initial Metals Basket</p>
+                        <p class="text-2xl md:text-3xl font-black text-brand-gold">$200,000</p>
                     </div>
-                    <div class="bg-white/5 p-8 rounded-2xl text-center border border-white/10">
-                        <p class="text-xs text-slate-500 uppercase font-mono mb-2">Operations & Legal</p>
-                        <p class="text-3xl font-black text-brand-gold">$350,000</p>
+                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10">
+                        <p class="text-xs text-slate-500 uppercase font-mono mb-2">Hiring & Legal (Scaled)</p>
+                        <p class="text-2xl md:text-3xl font-black text-brand-gold">$825,000</p>
                     </div>
                 </div>
-                <div class="mt-12 text-center text-lg text-white font-bold uppercase tracking-[0.4em] italic">
-                    TOTAL SEED CAPITALIZATION: $1,300,000.00
+                <div class="mt-8 text-[11px] text-center text-slate-400 italic">
+                    Includes 5-Year Office Lease ($125,000) & Multi-Year Vaulting ($50,000)
+                </div>
+                <div class="mt-8 md:mt-10 text-center text-base md:text-lg text-white font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] italic border-t border-white/10 pt-8">
+                    TOTAL SEED CAPITALIZATION: $1,350,000.00
                 </div>
             </div>
         </section>
 
-        <section class="mb-32">
-            <h2 class="text-3xl font-bold text-brand-gold mb-12 uppercase tracking-widest italic text-center">V. Staff Vesting Ledger (20 Units)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section class="mb-24 md:mb-32">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">V. Staff Vesting Ledger (The 20 Units)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 
-                <div class="glass-metal p-8 rounded-2xl border-l-4 border-white/20">
-                    <h4 class="text-white font-bold text-xl italic mb-1 uppercase tracking-tight">Unit 01: Lead Developer</h4>
-                    <p class="text-[10px] text-brand-gold font-mono mb-6 uppercase tracking-widest">Status: Awaiting Hire / 30-Day Probation Pending</p>
-                    <div class="bg-black/40 p-4 rounded-xl mb-8">
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-2">Target Wallet Address:</p>
-                        <p class="text-xs font-mono text-slate-500 italic italic">TBD Following Contract Execution</p>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border-l-4 border-white/20">
+                    <h4 class="text-white font-bold text-xl italic mb-1 uppercase tracking-tight">Lead Developer</h4>
+                    <p class="text-[10px] text-brand-gold font-mono mb-6 uppercase">Target Salary: $70,000 - $75,000</p>
+                    <div class="bg-brand-gold/10 p-4 md:p-5 rounded-xl border border-brand-gold/20 mb-8">
+                        <p class="text-[10px] text-brand-gold uppercase font-black mb-1 italic tracking-widest">Sovereign Stake (Unit 01)</p>
+                        <p class="text-white font-bold text-xl md:text-2xl mb-1">35,000,000 UNT</p>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest font-mono italic">Market Valuation: $1,750,000 (@$0.05)</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[9px] uppercase text-slate-500 mb-2 tracking-[0.2em]">3-Year Vesting Lock Period</p>
-                        <div class="countdown-font text-3xl text-white/20 italic tracking-widest">000d : 00h : 00m : 00s</div>
+                        <p class="text-[10px] text-slate-500 uppercase mb-2 tracking-widest">Vesting Unlock Countdown</p>
+                        <div class="countdown-font text-2xl md:text-3xl text-white/20 italic tracking-widest">000d : 00h : 00m : 00s</div>
                     </div>
                 </div>
 
-                <div class="glass-metal p-8 rounded-2xl border-l-4 border-white/20">
-                    <h4 class="text-white font-bold text-xl italic mb-1 uppercase tracking-tight">Unit 02: Marketing & Sales Director</h4>
-                    <p class="text-[10px] text-brand-gold font-mono mb-6 uppercase tracking-widest">Status: Awaiting Hire / 30-Day Probation Pending</p>
-                    <div class="bg-black/40 p-4 rounded-xl mb-8">
-                        <p class="text-[9px] text-slate-500 uppercase tracking-widest mb-2">Target Wallet Address:</p>
-                        <p class="text-xs font-mono text-slate-500 italic">TBD Following Contract Execution</p>
+                <div class="glass-metal p-6 md:p-8 rounded-2xl border-l-4 border-white/20">
+                    <h4 class="text-white font-bold text-xl italic mb-1 uppercase tracking-tight leading-tight">Marketing & Sales Manager</h4>
+                    <p class="text-[10px] text-brand-gold font-mono mb-6 uppercase">Target Salary: $70,000 - $75,000</p>
+                    <div class="bg-brand-gold/10 p-4 md:p-5 rounded-xl border border-brand-gold/20 mb-8">
+                        <p class="text-[10px] text-brand-gold uppercase font-black mb-1 italic tracking-widest">Sovereign Stake (Unit 02)</p>
+                        <p class="text-white font-bold text-xl md:text-2xl mb-1">35,000,000 UNT</p>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest font-mono italic">Market Valuation: $1,750,000 (@$0.05)</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-[9px] uppercase text-slate-500 mb-2 tracking-[0.2em]">3-Year Vesting Lock Period</p>
-                        <div class="countdown-font text-3xl text-white/20 italic tracking-widest">000d : 00h : 00m : 00s</div>
+                        <p class="text-[10px] text-slate-500 uppercase mb-2 tracking-widest">Vesting Unlock Countdown</p>
+                        <div class="countdown-font text-2xl md:text-3xl text-white/20 italic tracking-widest">000d : 00h : 00m : 00s</div>
                     </div>
                 </div>
 
@@ -282,21 +305,16 @@
 
     </main>
 
-    <footer class="bg-brand-dark/95 py-20 px-6 border-t border-white/10 relative z-10">
+    <footer class="bg-brand-dark/95 py-16 md:py-20 px-4 md:px-6 border-t border-white/10 relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <div class="text-white font-bold text-2xl tracking-[0.3em] uppercase mb-10 italic">Powell Global LLC</div>
-            
-            <div class="space-y-8 max-w-5xl">
-                <p class="text-slate-200 text-xs leading-relaxed font-medium">
-                    <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, V-Shelves, and Unity Protocol architectures are proprietary intellectual property.
-                </p>
-                <p class="text-slate-100 text-xs leading-relaxed font-medium italic">
+            <div class="text-white font-bold text-xl md:text-2xl tracking-[0.2em] md:tracking-[0.3em] uppercase mb-8 md:mb-10 italic">Powell Global LLC</div>
+            <div class="space-y-6 md:space-y-8 max-w-5xl">
+                <p class="text-white text-[10px] md:text-[11px] leading-relaxed font-medium italic">
                     <strong>Regulatory Disclosure:</strong> The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and consumptive gas fees. It is <span class="text-white border-b border-brand-gold">NOT an investment contract or a security</span>. This ecosystem operates in strict alignment with the EU MiCA Regulation (2023/1114), the Colorado Digital Token Act (SB 19-023), and ISO 20022 financial messaging standards.
                 </p>
             </div>
-
-            <div class="text-slate-300 text-[10px] border-t border-white/5 pt-12 w-full font-mono uppercase tracking-[0.5em] italic mt-12">
-                &copy; 2026 Powell Global LLC. All rights reserved. Colorado Transparency Ledger ID: #PG-TL-2026
+            <div class="text-slate-100 text-[9px] md:text-[10px] border-t border-white/5 pt-10 md:pt-12 w-full font-mono uppercase tracking-[0.3em] md:tracking-[0.5em] italic mt-10 md:mt-12">
+                &copy; 2026 Powell Global LLC. Colorado Transparency Ledger ID: #PG-TL-2026
             </div>
         </div>
     </footer>
@@ -314,7 +332,6 @@
                 icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             }
         });
-
         window.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !btn.contains(e.target)) {
                 menu.classList.add('hidden');
