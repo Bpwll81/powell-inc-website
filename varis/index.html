@@ -1,61 +1,240 @@
-<section class="py-24 bg-white px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Varis OS Deployment Tiers</h2>
-            <p class="text-slate-600 max-w-2xl mx-auto font-mono text-sm">Flexible entry for merchants providing their own hardware or utilizing our integrated POS stack.</p>
-        </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varis OS | The Operating System for Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',     
+                            dark: '#050914',     
+                            surface: '#f8fafc',  
+                            card: '#ffffff',     
+                            accent: '#e2e8f0'    
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; color: #334155; }
+        #menu.hidden { display: none; }
+        #menu.flex { display: flex; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+    <div class="fixed top-0 w-full z-50">
+        <nav class="flex justify-between items-center px-10 py-6 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm">
+            <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all">Powell Global</a>
             
-            <div class="border border-brand-accent bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
-                <div class="p-8 border-b border-brand-accent bg-slate-100">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-1">Standard OS License</h3>
-                    <p class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">Software Only (BYO Hardware)</p>
-                    <p class="text-slate-600 text-sm leading-relaxed">Full access to Varis OS middleware, Unity Books ERP, and Hey Chef AI integration.</p>
-                </div>
-                <div class="p-8 space-y-4 font-mono text-sm flex-grow bg-white">
-                    <div class="flex justify-between border-b border-slate-100 pb-2"><span>1-Year Term</span><span class="font-bold">$500/mo</span></div>
-                    <div class="flex justify-between border-b border-slate-100 pb-2 text-slate-500"><span>3-Year Term</span><span class="font-bold text-slate-800">$450/mo</span></div>
-                    <div class="flex justify-between border-b border-slate-100 pb-2 text-slate-500"><span>5-Year Term</span><span class="font-bold text-slate-800">$375/mo</span></div>
-                    <div class="flex justify-between border-b border-slate-100 pb-2 text-slate-500"><span>10-Year Term</span><span class="font-bold text-slate-800">$295/mo</span></div>
-                    
-                    <div class="mt-8 pt-4 border-t-2 border-brand-gold/20">
-                        <p class="text-[10px] uppercase font-bold text-brand-gold mb-2">Processing Fee Rollercoaster</p>
-                        <ul class="text-[11px] space-y-1 text-slate-600">
-                            <li>Yr 1-3: 1.25%</li>
-                            <li>Yr 3-5: 1.00%</li>
-                            <li>Yr 5-10: 0.80%</li>
-                            <li class="text-slate-900 font-bold">Yr 10+: 0.70% (Floor)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
 
-            <div class="border-2 border-brand-gold bg-brand-dark rounded-lg overflow-hidden shadow-2xl flex flex-col transform lg:-translate-y-4">
-                <div class="p-8 border-b border-white/10 bg-brand-gold/5">
-                    <h3 class="text-2xl font-bold text-white mb-1">POS Hardware Bundle</h3>
-                    <p class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">Software + Rent-To-Own POS</p>
-                    <p class="text-slate-300 text-sm leading-relaxed">Includes professional POS terminals. The $225 rental fee builds equity until the hardware is yours.</p>
-                </div>
-                <div class="p-8 space-y-4 font-mono text-sm flex-grow bg-black/20 text-slate-300">
-                    <div class="flex justify-between border-b border-white/5 pb-2"><span class="text-white">1-Year Term</span><span class="font-bold text-white">$725/mo</span></div>
-                    <div class="flex justify-between border-b border-white/5 pb-2"><span>3-Year Term</span><span class="font-bold text-slate-100">$675/mo</span></div>
-                    <div class="flex justify-between border-b border-white/5 pb-2"><span>5-Year Term</span><span class="font-bold text-slate-100">$600/mo</span></div>
-                    <div class="flex justify-between border-b border-white/5 pb-2"><span>10-Year Term</span><span class="font-bold text-slate-100">$520/mo</span></div>
-                    
-                    <div class="mt-8 pt-4 border-t-2 border-brand-gold">
-                        <p class="text-[10px] uppercase font-bold text-brand-gold mb-2">Sovereign Processing Rates</p>
-                        <ul class="text-[11px] space-y-1">
-                            <li>Initial Rate: 1.25%</li>
-                            <li>Target Floor: 0.70%</li>
-                        </ul>
-                    </div>
-                </div>
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg">
+                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">Home</a>
+                <hr class="border-white/5">
+                <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">1. Unity Protocol</a>
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">2. Varis OS</a>
+                <a href="../vshelves/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">5. The Resort</a>
             </div>
+        </nav>
+    </div>
+
+    <div class="h-24"></div>
+
+    <section class="relative pt-24 pb-20 px-6 border-b border-brand-accent overflow-hidden min-h-[70vh] flex flex-col justify-center bg-white">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="Circuitry" class="w-full h-full object-cover opacity-[0.05] grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-surface"></div>
         </div>
         
-        <p class="mt-12 text-center text-[10px] text-slate-400 font-mono uppercase tracking-widest max-w-2xl mx-auto">
-            Disclaimer: All pricing tiers, monthly rates, and processing percentages are initial baseline estimates and are strictly subject to change as the ecosystem approaches formal launch.
-        </p>
-    </div>
-</section>
+        <div class="relative max-w-5xl mx-auto z-10 text-center mt-12">
+            <div class="inline-block border border-brand-gold/50 bg-brand-gold/5 text-brand-gold font-mono text-xs px-4 py-1.5 mb-8 rounded shadow-sm uppercase font-bold tracking-widest">
+                ENTERPRISE MIDDLEWARE // VARIS OS
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                The Triple-Entry <br><span class="text-brand-gold">Bridge to Sovereignty.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mb-10">
+                A unified enterprise operating system that interfaces with weight-sensing nodes to autonomously trigger programmatic market executions[cite: 8]. Transition physical corporate environments into autonomous, asset-backed economic nodes[cite: 155].
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-surface px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Ledger Data" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6 text-white font-mono text-xs tracking-widest uppercase">Triple-Entry Ledger Integration</div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Autonomous Distributed Accounting</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Varis OS interfaces with proprietary weight-sensing nodes to autonomously trigger programmatic market executions[cite: 8]. By utilizing a triple-entry ledger bridge, the system resolves inefficiencies in fragmented POS and inventory rails[cite: 12].
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-bold italic">
+                        "If the ingredients aren't in the walk-in, you don't open the doors. Varis OS brings that same ruthless discipline to your financial ledger."
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse flex-col-reverse flex">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">ISO 20022 Financial Messaging</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Varis OS translates physical hardware triggers into ISO 20022-compliant XML financial messages (pacs.008)[cite: 29]. This enables hardware to command automated fiat-to-utility-token market buys[cite: 30].
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Through the XDC Network, operational gas fees are algorithmically rebalanced into a 5-metal digital basket proxy[cite: 29, 35].
+                    </p>
+                </div>
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group w-full">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="Global Connectivity" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6 text-white font-mono text-xs tracking-widest uppercase">Global Settlement Infrastructure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Varis OS Deployment Tiers</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-mono text-sm">Scalable deployment models for independent merchants and enterprise-wide infrastructure.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+                
+                <div class="border border-brand-accent bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
+                    <div class="p-8 border-b border-brand-accent bg-slate-100">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-1">Standard OS License</h3>
+                        <p class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">Software Only (BYO Hardware)</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Full access to Varis OS middleware, Unity Books ERP, and Hey Chef AI integration.</p>
+                    </div>
+                    <div class="p-8 space-y-4 font-mono text-sm flex-grow bg-white">
+                        <div class="flex justify-between border-b border-slate-100 pb-2"><span>1-Year Term</span><span class="font-bold">$500/mo</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2 text-slate-500"><span>3-Year Term (Discounted)</span><span class="font-bold text-slate-800">$450/mo</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2 text-slate-500"><span>5-Year Term (Discounted)</span><span class="font-bold text-slate-800">$375/mo</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2 text-slate-500"><span>10-Year Term (Discounted)</span><span class="font-bold text-slate-800">$295/mo</span></div>
+                        
+                        <div class="mt-8 pt-4 border-t-2 border-brand-gold/20">
+                            <p class="text-[10px] uppercase font-bold text-brand-gold mb-2">Processing Fee Rollercoaster</p>
+                            <ul class="text-[11px] space-y-1 text-slate-600">
+                                <li>Yr 1-3: 1.25%</li>
+                                <li>Yr 3-5: 1.00%</li>
+                                <li>Yr 5-10: 0.80%</li>
+                                <li class="text-slate-900 font-bold">Yr 10+: 0.70% (Floor)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-2 border-brand-gold bg-brand-dark rounded-lg overflow-hidden shadow-2xl flex flex-col transform lg:-translate-y-4">
+                    <div class="p-8 border-b border-white/10 bg-brand-gold/5">
+                        <h3 class="text-2xl font-bold text-white mb-1">POS Hardware Bundle</h3>
+                        <p class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">Software + Rent-To-Own POS</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">Includes professional POS terminals. The $225 rental fee builds equipment equity monthly.</p>
+                    </div>
+                    <div class="p-8 space-y-4 font-mono text-sm flex-grow bg-black/20 text-slate-300">
+                        <div class="flex justify-between border-b border-white/5 pb-2"><span class="text-white">1-Year Term</span><span class="font-bold text-white">$725/mo</span></div>
+                        <div class="flex justify-between border-b border-white/5 pb-2"><span>3-Year Term</span><span class="font-bold text-slate-100">$675/mo</span></div>
+                        <div class="flex justify-between border-b border-white/5 pb-2"><span>5-Year Term</span><span class="font-bold text-slate-100">$600/mo</span></div>
+                        <div class="flex justify-between border-b border-white/5 pb-2"><span>10-Year Term</span><span class="font-bold text-slate-100">$520/mo</span></div>
+                        
+                        <div class="mt-8 pt-4 border-t-2 border-brand-gold">
+                            <p class="text-[10px] uppercase font-bold text-brand-gold mb-2">Equity Dynamics</p>
+                            <p class="text-[10px] text-slate-400 leading-relaxed italic">
+                                Hardware rental fees hit $0 once equipment is fully paid off through the rent-to-own model.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-3xl mx-auto text-center">
+                <p class="text-[10px] text-slate-400 font-mono uppercase tracking-[0.2em] leading-loose">
+                    <strong>Disclaimer:</strong> Pricing models and tier structures outlined reflect baseline modeling. All fees, processing rates, and licensing costs are initial estimates and are strictly subject to change pending finalized prototyping and institutional underwriting.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32 px-6 border-y border-brand-accent overflow-hidden flex items-center justify-center bg-white">
+        <div class="absolute inset-0 z-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D4AF37" stroke-width="1"/></pattern></defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto text-center z-10">
+            <h2 class="text-sm font-mono text-brand-gold mb-4 uppercase tracking-widest font-bold">Intellectual Property</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-slate-900 mb-10">The Operating Moat</h3>
+            
+            <div class="p-10 border border-brand-gold/30 bg-slate-50 shadow-xl rounded text-left relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-brand-gold text-white text-xs font-mono font-bold px-4 py-1.5 rounded-bl">86 CLAIMS SECURED</div>
+                <h4 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 font-mono">Utility Patent Application No. 19/559,956</h4>
+                <p class="text-brand-gold text-sm md:text-base font-bold mb-6">"Protects the proprietary hardware-software middleware bridge, gravimetric physical sensory nodes, and automated smart-contract routing."</p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    This vertical integration secures absolute institutional value—competitors cannot replicate this physical data ingestion hardware loop without infringing on Powell Global LLC IP.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark py-16 px-6 border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="text-white font-bold text-xl tracking-widest uppercase mb-8">
+                Powell Global
+            </div>
+            
+            <div class="text-slate-700 text-[10px] border-t border-white/5 mt-10 pt-6 w-full font-mono uppercase tracking-widest">
+                &copy; 2026 Powell Global LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        window.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        });
+    </script>
+</body>
+</html>
