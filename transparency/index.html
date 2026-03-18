@@ -145,106 +145,8 @@
             </div>
         </section>
 
-        <section id="v1-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-24 text-slate-300">
-            <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
-                <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Formal Protocol Notice</h4>
-                <p class="text-slate-200 text-sm italic leading-relaxed font-medium">
-                    The protocol updates within this V1 Addendum serve as a mandatory amendment to the Master White Paper. These terms officially supersede and replace previous architectural descriptions regarding liquidity events, vesting, and audit remediation. The full whitepaper can be located on the <a href="../unity.html" class="text-brand-gold underline font-bold">Unity Protocol page</a>.
-                </p>
-            </div>
-
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX A: PROTOCOL AMENDMENTS (V1)</h2>
-            <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Timestamp: March 15, 2026 | 12:53 MDT (Colorado)</p>
-                
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">1. Institutional Custody & The LGE</h3>
-                    <p>To permanently eliminate liquidation risk and secure Day-1 market stability, the entirety of the 70,000,000,000 UNT supply has been minted and secured in audited offline cold storage. The protocol timeline officially shifts from a Token Generation Event (TGE) to a Liquidity Generation Event (LGE).</p>
-                    <p class="mt-4">Prior to Month 3 market distribution, the total token supply—excluding the 2.75% retained for internal development—will be transferred to the Alpha Lead Exchange Partner’s institutional custody. Powell Global LLC operates strictly as a facilitator; the Exchange Partner autonomously controls circulating supply release via smart contract to enforce the $0.05 USD entry peg.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">2. Cryptographic Vesting & Anti-Dump Execution</h3>
-                    <p>Founders retain self-custody of a strict 2.75% of the supply, allocated as a 1.75% Founder Share and a 1.00% Team Pool. To facilitate strategic expansion, the 1.00% Team Pool is mathematically fragmented by the smart contract into 20 units (0.05% each) per hire.</p>
-                    <p class="mt-4 text-brand-gold italic">To cryptographically eliminate the possibility of a market dump, all retained allocations are bound to the "Smart Waterfall" Protocol. This contract prioritizes staking rewards over principal liquidation; the principal remains 100% locked, ensuring absolute protection for the circulating market cap.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">3. Cryptographic Audit Lock</h3>
-                    <p>The execution of Tranche 1 capitalization acts as the immediate catalyst for the 60-Day Audit Remediation Protocol (ARP). The protocol deployer function remains cryptographically locked until an independent Tier-1 firm certifies zero Critical vulnerabilities within the tokenomics, fee logic, and UGLD reserve contracts.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">4. Algorithmic Fee-Scaling & Sovereign Floor</h3>
-                    <p>The Company has updated the smart contract logic to support API integrations with the Alpha Lead Exchange. Specific merchant nodes integrated directly through the Alpha Lead's payment rails receive a matched 1.00% onboarding rate, programmed with an exclusive epoch-based glide path down to a 0.65% Sovereign Floor.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">5. Tranche 1 Seniority & Liquidation Bar</h3>
-                    <p>To protect liquidity pools, smart contracts enforce Tranche 1 Seniority Rights. The protocol cryptographically bars Powell Global LLC from executing corporate treasury liquidations during market decoupling events, prioritizing the $0.05 peg stability over corporate equity extraction.</p>
-                </div>
-
-                <div class="border-t border-white/10 pt-8 italic text-sm text-slate-400 text-center md:text-left">
-                    The original foundational Master Whitepaper can be reviewed on the <a href="../unity.html" class="text-brand-gold underline">Unity Protocol page</a>.
-                </div>
-            </div>
-        </section>
-
         <section class="mb-32">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">IV. Capital Expenditure Roadmap</h2>
-            
-            <div class="glass-metal rounded-xl md:rounded-2xl overflow-hidden mb-12 border-b-4 border-slate-400 shadow-xl">
-                <div class="bg-white/10 p-5 md:p-6 font-bold text-white uppercase tracking-widest flex flex-col md:flex-row justify-between gap-2">
-                    <span class="text-sm md:text-base">A. Investor-Managed Security Allocation</span>
-                    <span class="text-brand-gold italic font-bold">$65,000.00</span>
-                </div>
-                <div class="p-5 text-xs text-slate-400 italic">Funds retained by the investor to facilitate the independent Tier-1 Security Audit directly.</div>
-            </div>
-
-            <div class="glass-metal rounded-2xl md:rounded-3xl overflow-hidden border-b-4 border-brand-gold mb-16 shadow-2xl">
-                <div class="bg-white/10 p-5 md:p-6 font-bold text-white uppercase tracking-widest flex flex-col md:flex-row justify-between md:items-center gap-2">
-                    <span>B. Operational Launch Capital (Tranche 1)</span>
-                    <span class="text-brand-gold italic font-bold">$385,000.00</span>
-                </div>
-                <div class="table-container">
-                    <table class="w-full text-left text-sm italic min-w-[750px]">
-                        <thead class="bg-white/5 uppercase text-[10px] font-mono tracking-widest text-slate-400">
-                            <tr><th class="p-6">Line Item</th><th class="p-6 text-center">Allocation</th><th class="p-6 text-center">Status</th><th class="p-6 text-center">Receipts</th></tr>
-                        </thead>
-                        <tbody class="divide-y divide-white/10 font-medium italic">
-                            <tr><td class="p-6 text-white font-bold">Hiring & Legal ($40k Retainer + 2 Lead Staff Salaries)</td><td class="p-6 text-center text-white font-bold italic">$190,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Metals Procurement (Initial 5-Metal Basket)</td><td class="p-6 text-center text-white font-bold italic">$50,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Home Office Lease (1-Yr, Lone Tree 80124)</td><td class="p-6 text-center text-white font-bold italic">$25,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Varis OS Hardware (Merchant 1-5 Load-In)</td><td class="p-6 text-center text-white font-bold italic">$20,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Internal Company IT & Server Hardware</td><td class="p-6 text-center text-white font-bold italic">$15,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Bail-Free Vault (1-Yr Texas Lease)</td><td class="p-6 text-center text-white font-bold italic">$10,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr class="bg-white/5 font-bold"><td class="p-6 text-white">Operating Reserves (Expansion Pool)</td><td class="p-6 text-center text-white font-bold">$75,000</td><td class="p-6 text-center text-brand-gold">RESERVED</td><td class="p-6 text-center text-slate-500">N/A</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-24 opacity-60">
-                <div class="glass-metal p-8 rounded-3xl italic text-center border-dashed border-2 border-white/10 uppercase tracking-widest text-xs font-bold">Tranche 2 ($450,000) - Locked</div>
-                <div class="glass-metal p-8 rounded-3xl italic text-center border-dashed border-2 border-white/10 uppercase tracking-widest text-xs font-bold">Tranche 3 ($450,000) - Locked</div>
-            </div>
-
-            <div class="glass-metal p-8 md:p-12 rounded-3xl border-4 border-brand-gold/50 shadow-[0_0_50px_rgba(212,175,55,0.2)] relative overflow-hidden">
-                <h3 class="text-2xl md:text-3xl font-black text-white mb-6 uppercase tracking-widest text-center italic leading-tight">The "Lead Sous" Unified Tranche</h3>
-                <p class="text-center text-slate-400 text-[10px] mb-10 uppercase italic font-bold tracking-widest max-w-2xl mx-auto">
-                    ⚠️ Disclaimer: These figures are institutional estimates and will update should a lead investor partner with Powell Global.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 italic font-medium">
-                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10"><p class="text-xs text-slate-500 uppercase font-mono mb-2">Scaled Infrastructure</p><p class="text-2xl md:text-3xl font-black text-brand-gold">$425,000</p></div>
-                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10"><p class="text-xs text-slate-500 uppercase font-mono mb-2 text-center">Large Metals Basket</p><p class="text-2xl md:text-3xl font-black text-brand-gold">$400,000</p></div>
-                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10"><p class="text-xs text-slate-500 uppercase font-mono mb-2 text-center">Staffing & Legal (Scaled)</p><p class="text-2xl md:text-3xl font-black text-brand-gold">$525,000</p></div>
-                </div>
-                <div class="mt-10 md:mt-12 text-center text-base md:text-lg text-white font-bold uppercase tracking-[0.4em] italic border-t border-white/10 pt-8">TOTAL SEED CAPITALIZATION: $1,350,000.00</div>
-            </div>
-        </section>
-
-        <section class="mb-32">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">V. Staff Vesting Ledger (20 Units)</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">IV. Staff Vesting Ledger (20 Units)</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 
                 <div class="glass-metal p-6 md:p-8 rounded-2xl border-l-4 border-white/20 shadow-lg">
@@ -272,6 +174,81 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <section id="v1-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-slate-500 mb-12 text-slate-300 opacity-80">
+            <h2 class="text-2xl md:text-3xl font-black text-white mb-8 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX A: PROTOCOL AMENDMENTS (V1)</h2>
+            <div class="space-y-8 text-sm md:text-base leading-relaxed font-medium">
+                <p class="text-xs font-mono text-slate-400 uppercase tracking-[0.3em] text-center md:text-left">Timestamp: March 15, 2026</p>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2 italic">1. Institutional Custody & The LGE</h3>
+                    <p>To permanently eliminate liquidation risk and secure Day-1 market stability, the entirety of the 70,000,000,000 UNT supply has been minted and secured in audited offline cold storage. The protocol timeline officially shifts from a Token Generation Event (TGE) to a Liquidity Generation Event (LGE).</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2 italic">2. Cryptographic Vesting & Anti-Dump Execution</h3>
+                    <p>Founders retain self-custody of a strict 2.75% of the supply, allocated as a 1.75% Founder Share and a 1.00% Team Pool. To facilitate strategic expansion, the 1.00% Team Pool is mathematically fragmented by the smart contract into 20 units (0.05% each) per hire.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2 italic">3. Cryptographic Audit Lock</h3>
+                    <p>The execution of Tranche 1 capitalization acts as the immediate catalyst for the 60-Day Audit Remediation Protocol (ARP). The protocol deployer function remains cryptographically locked until an independent Tier-1 firm certifies zero Critical vulnerabilities.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2 italic">4. Algorithmic Fee-Scaling & Sovereign Floor</h3>
+                    <p>The Company has updated the smart contract logic to support API integrations with the Alpha Lead Exchange. Specific merchant nodes integrated directly through the Alpha Lead's payment rails receive a matched 1.00% onboarding rate, programmed with an exclusive epoch-based glide path down to a 0.65% Sovereign Floor.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2 italic">5. Tranche 1 Seniority & Liquidation Bar</h3>
+                    <p>To protect liquidity pools, smart contracts enforce Tranche 1 Seniority Rights. The protocol cryptographically bars Powell Global LLC from executing corporate treasury liquidations during market decoupling events, prioritizing the $0.05 peg stability over corporate equity extraction.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="v2-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-16 text-slate-300 shadow-[0_0_30px_rgba(212,175,55,0.15)]">
+            <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
+                <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Active Protocol Directive</h4>
+                <p class="text-slate-200 text-sm italic leading-relaxed font-medium">
+                    The protocol updates within Addendum V2 formally upgrade Varis OS to a Universal Commercial Engine and establish strict maturity milestones for the UGLD and UNT digital commodities under the 2025 CLARITY Act.
+                </p>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX B: SOVEREIGN ENGINE UPGRADES (V2)</h2>
+            <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
+                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Timestamp: March 17, 2026 | Active Standards</p>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 italic">1. The Universal Settlement Engine</h3>
+                    <p>Varis OS is no longer restricted to resort or hospitality logic. The <code class="bg-black/50 px-2 py-1 rounded text-brand-gold text-sm font-mono">UniversalSovereignSplitter</code> now acts as the underlying infrastructure for all global commerce. Whether processing transactions for luxury retail, food service, or corporate hospitality, the protocol automatically routes commercial fees to the 50/25/12.5/12.5 Asset-First Engine, ensuring uninterrupted gold accumulation regardless of the merchant sector.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 italic">2. The UGLD "Sovereign Pulse" Standardization</h3>
+                    <p>To align with institutional Pitch Deck metrics and ensure 1:1 physical backing, the protocol formally defines the UGLD minting intervals:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-slate-400">
+                        <li><strong class="text-white">The Peg:</strong> 1 UGLD is strictly pegged to <strong class="text-brand-gold">1 Troy Ounce</strong> of LBMA-certified physical gold.</li>
+                        <li><strong class="text-white">The Minting Pulse:</strong> UGLD is minted exclusively in <strong class="text-brand-gold">5,000 UGLD intervals</strong>, triggered by the accumulation of 5,000 oz of physical metal derived from network processing fees.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 italic">3. The 100-Mint Decentralization Handover (CLARITY Act Compliance)</h3>
+                    <p>To establish "Factual Maturity" as defined by the Digital Asset Market Clarity Act (2025), Powell Global LLC has hardcoded an irrevocable Decentralization Trigger. Upon the completion of the 100th UGLD Minting Pulse (representing 500,000 oz of vaulted gold):</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-slate-400">
+                        <li>The Founder's <code class="bg-black/50 px-2 py-1 rounded text-brand-gold text-sm font-mono">GUARDIAN_ROLE</code> is cryptographically revoked.</li>
+                        <li>Governance control of the circulating supply and asset whitelisting is permanently transferred to the Varis DAO.</li>
+                        <li>This transition legally classifies UNT and UGLD as fully decentralized digital commodities, exempting them from secondary-market securities registration.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 italic">4. Staff Wealth & The UGLD Loyalty Multiplier</h3>
+                    <p>To drive internal adoption of the gold standard, the protocol implements a <strong class="text-brand-gold">2% Sovereign Bonus</strong>. Service industry staff utilizing Varis OS who elect to receive their liquid tips in UGLD receive an automatic 2% smart-contract multiplier, redirecting capital historically lost to legacy banking fees directly into the hands of the workforce.</p>
+                </div>
             </div>
         </section>
 
