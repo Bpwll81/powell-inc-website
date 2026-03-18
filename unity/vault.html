@@ -2,87 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The 7-Year Promise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 7-Year Promise | Varis OS</title>
     <style>
-        body { margin: 0; background: #fff; font-family: 'Helvetica Neue', sans-serif; color: #333; }
-        .header { background: #2c3e50; color: #fff; padding: 60px 20px; text-align: center; }
+        body { margin: 0; background: #f4f7f6; font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6; }
+        .header { background: #0B0F19; color: #fff; padding: 80px 20px; text-align: center; border-bottom: 4px solid #d4af37; }
         .gold { color: #d4af37; }
         
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: -40px auto 40px auto; padding: 0 20px; position: relative; z-index: 10; }
         
-        /* FINANCIAL TABLE */
-        table { width: 100%; border-collapse: collapse; margin-top: 30px; border: 1px solid #eee; }
-        th { background: #f4f4f4; padding: 15px; text-align: left; border-bottom: 2px solid #d4af37; }
-        td { padding: 15px; border-bottom: 1px solid #eee; }
+        .box { background: #fff; padding: 40px; border-radius: 12px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         
-        .box { background: #f9f9f9; padding: 30px; border-radius: 8px; margin-bottom: 40px; }
-        .nav { padding: 20px; background: #eee; text-align: center; }
-        .nav a { text-decoration: none; color: #555; text-transform: uppercase; font-weight: bold; font-size: 0.8rem; }
+        .nav { padding: 20px; background: #0B0F19; text-align: center; }
+        .nav a { text-decoration: none; color: #CBD5E1; text-transform: uppercase; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; transition: color 0.3s; }
+        .nav a:hover { color: #d4af37; }
+
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* PERSONA CARDS */
+        .personas { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .card { flex: 1; min-width: 280px; background: #fff; border: 1px solid #eaeaea; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
+        
+        .card-header { padding: 20px; text-align: center; color: #fff; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .bg-slate { background: #64748b; }
+        .bg-silver { background: #94a3b8; }
+        .bg-gold { background: #d4af37; }
+
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; }
+        .stat-row span:last-child { font-weight: bold; font-family: monospace; font-size: 1.05rem; }
+        .highlight-row { background: rgba(212, 175, 55, 0.1); padding: 10px; border-radius: 6px; color: #b8860b; font-weight: bold; margin-top: 10px; }
+
+        .quip { background: #f8fafc; border-left: 4px solid #d4af37; padding: 15px; font-style: italic; color: #475569; font-size: 0.9rem; margin-top: auto; border-radius: 0 8px 8px 0; }
+        .quip strong { color: #0B0F19; font-style: normal; display: block; margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; }
+
+        .footer-note { text-align: center; font-size: 0.85rem; color: #888; margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
     </style>
 </head>
 <body>
 
-    <div class="nav"><a href="index.html">← Back to Unity Protocol</a></div>
+    <div class="nav"><a href="index.html">← Back to Main Gateway</a></div>
 
     <div class="header">
-        <h1 style="margin:0;">The 7-Year Promise</h1>
-        <p style="letter-spacing: 2px; text-transform: uppercase; color: #d4af37;">Retention & Wealth Building Vault</p>
+        <h1 style="margin:0; font-size: 2.5rem; letter-spacing: -1px;">The 7-Year Promise</h1>
+        <p style="letter-spacing: 3px; text-transform: uppercase; color: #d4af37; font-weight: bold; margin-top: 10px;">Generational Wealth for the Working Class</p>
     </div>
 
     <div class="container">
         
         <div class="box">
-            <h2 style="margin-top:0;">How It Works</h2>
-            <p>The "7-Year Lock" is a smart contract on the XDC Network. It is designed to reward long-term loyalty with real asset accumulation.</p>
-            <ul>
-                <li><strong>Allocation:</strong> A percentage of monthly profits is converted to Gold (PAXG/Xaut).</li>
-                <li><strong>The Lock:</strong> These assets are deposited into a transparent vault that cannot be withdrawn for 84 months (7 Years).</li>
-                <li><strong>The Release:</strong> Upon maturity, the vault unlocks, providing the employee with a lump-sum asset that has hedged against inflation.</li>
+            <h2 style="margin-top:0; color: #0B0F19;">How the Vault Works</h2>
+            <p style="font-size: 1.1rem; color: #555;">The "7-Year Lock" is an immutable smart contract. It is designed to reward your daily grind with a financial safety net that banks simply don't offer.</p>
+            <ul style="color: #444; margin-bottom: 0;">
+                <li style="margin-bottom: 10px;"><strong>The Allocation:</strong> You choose a percentage of your tips/checks to auto-route into the vault. (10% is the protocol minimum).</li>
+                <li style="margin-bottom: 10px;"><strong>The Gold Standard:</strong> Your funds are instantly converted into UGLD—fully backed by physical, inflation-resistant gold.</li>
+                <li style="margin-bottom: 10px;"><strong>The Lock:</strong> The smart contract locks your deposit. You cannot touch it, and we cannot touch it, for exactly 84 months.</li>
+                <li><strong>The Release:</strong> At Year 7, the vault unlocks, handing you a massive, inflation-hedged lump sum to buy a house, start a business, or retire early.</li>
             </ul>
         </div>
 
-        <h2>Projected Earnings (Hypothetical)</h2>
-        <p>Comparison of saving <strong>$500/month</strong> in Cash vs. the Unity Gold Vault.</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Cash Savings</th>
-                    <th>Unity Gold Vault*</th>
-                    <th>Difference</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Year 1</td>
-                    <td>$6,000</td>
-                    <td>$6,420</td>
-                    <td class="gold">+$420</td>
-                </tr>
-                <tr>
-                    <td>Year 3</td>
-                    <td>$18,000</td>
-                    <td>$21,500</td>
-                    <td class="gold">+$3,500</td>
-                </tr>
-                <tr>
-                    <td>Year 7 (Unlock)</td>
-                    <td>$42,000</td>
-                    <td><strong>$68,400</strong></td>
-                    <td class="gold" style="font-weight:bold;">+$26,400</td>
-                </tr>
-            </tbody>
-        </table>
-        <p style="font-size:0.8rem; color:#888;">*Projections based on historical 7% annual gold appreciation. Not financial advice.</p>
+        <h2 style="text-align: center; color: #0B0F19; margin-top: 60px;">Staff Vault Projections</h2>
+        <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto;">See how different allocation strategies play out over the 7-year cycle. (Calculations assume a historical 7% average annual appreciation of gold).</p>
 
-        <div style="margin-top: 50px; text-align: center;">
-            <h3 style="color: #2c3e50;">Why 7 Years?</h3>
-            <p style="max-width: 600px; margin: 0 auto; color: #666;">
-                7 years is a cycle. It is the difference between a job and a career. 
-                By locking these funds, we prevent short-term spending and force long-term wealth generation.
+        <div class="personas">
+            
+            <div class="card">
+                <div class="card-header bg-slate">
+                    "The Set It & Forget It"
+                    <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 5px;">Mandatory 10% Tip Allocation</div>
+                </div>
+                <div class="card-body">
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 0;"><strong>Contribution:</strong> ~$150 / month</p>
+                    <div class="stat-row"><span>Year 1 (Cash):</span> <span>$1,800</span></div>
+                    <div class="stat-row"><span>Year 1 (Vault):</span> <span class="gold">$1,926</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="stat-row"><span>Year 3 (Cash):</span> <span>$5,400</span></div>
+                    <div class="stat-row"><span>Year 3 (Vault):</span> <span class="gold">$6,450</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="stat-row highlight-row"><span>Year 7 Unlock:</span> <span>$20,520</span></div>
+                    
+                    <div class="quip" style="margin-top: 25px;">
+                        <strong>Employee Chat log:</strong>
+                        "I literally forgot I had this thing until my app reminded me I just bought a Honda Civic in my sleep."
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-silver">
+                    "The Mid-Tier Saver"
+                    <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 5px;">25% Tip/Check Allocation</div>
+                </div>
+                <div class="card-body">
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 0;"><strong>Contribution:</strong> ~$500 / month</p>
+                    <div class="stat-row"><span>Year 1 (Cash):</span> <span>$6,000</span></div>
+                    <div class="stat-row"><span>Year 1 (Vault):</span> <span class="gold">$6,420</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="stat-row"><span>Year 3 (Cash):</span> <span>$18,000</span></div>
+                    <div class="stat-row"><span>Year 3 (Vault):</span> <span class="gold">$21,500</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="stat-row highlight-row"><span>Year 7 Unlock:</span> <span>$68,400</span></div>
+                    
+                    <div class="quip" style="margin-top: 25px;">
+                        <strong>Break Room Talk:</strong>
+                        "Year 4. I've survived two breakups, three menu changes, and a global pandemic. This vault is the most stable relationship of my life."
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-gold">
+                    "The Future Mogul"
+                    <div style="font-size: 0.7rem; opacity: 0.9; margin-top: 5px;">50%+ Aggressive Allocation</div>
+                </div>
+                <div class="card-body">
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 0;"><strong>Contribution:</strong> ~$1,200 / month</p>
+                    <div class="stat-row"><span>Year 1 (Cash):</span> <span>$14,400</span></div>
+                    <div class="stat-row"><span>Year 1 (Vault):</span> <span class="gold">$15,408</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="stat-row"><span>Year 3 (Cash):</span> <span>$43,200</span></div>
+                    <div class="stat-row"><span>Year 3 (Vault):</span> <span class="gold">$51,600</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <div class="stat-row highlight-row"><span>Year 7 Unlock:</span> <span>$164,160</span></div>
+                    
+                    <div class="quip" style="margin-top: 25px;">
+                        <strong>Overheard at the Bar:</strong>
+                        "Year 6. The host just complained about a $2 tip. I'm staring at a six-figure gold brick unlocking in 8 months. I am zen."
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 60px; text-align: center; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <h3 style="color: #0B0F19; margin-top: 0;">Why 7 Years?</h3>
+            <p style="max-width: 600px; margin: 0 auto; color: #555; font-size: 1.1rem; line-height: 1.8;">
+                7 years is a full economic cycle. It is the exact difference between a temporary job and a lifelong career. 
+                By hard-locking these funds on the blockchain, we remove the temptation of short-term spending, intercept the damage of inflation, and mathematically force long-term wealth generation for the people who actually run this industry.
             </p>
         </div>
+
+        <p class="footer-note">
+            *Projections are mathematical hypotheticals based on historical ~7% annual physical gold appreciation. Cryptographic asset values may fluctuate. This is for illustrative purposes to demonstrate smart contract mechanics and does not constitute formal financial advice.
+        </p>
 
     </div>
 
