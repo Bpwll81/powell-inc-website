@@ -27,7 +27,17 @@
         }
     </script>
     <style>
-        body { background-color: #050914; color: #cbd5e1; }
+        /* GIANT BACKGROUND IMAGE IMPLEMENTATION */
+        body { 
+            color: #cbd5e1;
+            /* High-res image of a wide, action-packed professional kitchen */
+            background-image: url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax-style: image stays still, content scrolls */
+            background-repeat: no-repeat;
+        }
+        
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
         .text-glow { text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
@@ -36,8 +46,8 @@
 <body class="font-sans antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden">
 
     <div class="fixed top-0 w-full z-50">
-        <nav class="flex justify-between items-center px-10 py-6 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm">
-            <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all">Powell Global</a>
+        <nav class="flex justify-between items-center px-10 py-6 bg-brand-darkbackdrop-blur-md border-b border-white/10 shadow-sm">
+            <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all italic">Powell Global</a>
             
             <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,96 +70,91 @@
 
     <div class="h-24"></div>
 
-    <header class="relative pt-24 pb-24 px-6 overflow-hidden min-h-[80vh] flex flex-col justify-center border-b border-brand-gold/20">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2000" class="w-full h-full object-cover opacity-30 mix-blend-screen">
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
-        </div>
-
+    <header class="relative pt-24 pb-24 px-6 overflow-hidden min-h-[80vh] flex flex-col justify-center border-b border-brand-gold/20 bg-black/40 backdrop-blur-sm">
         <div class="relative max-w-5xl mx-auto w-full z-10 text-center md:text-left">
             <div class="inline-block border border-brand-gold/50 bg-brand-gold/5 text-brand-gold font-mono text-xs px-4 py-1.5 mb-8 rounded shadow-sm uppercase font-bold tracking-widest">
                 AI INNOVATION // HEY CHEF
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 uppercase italic">
                 The Brain of <br><span class="text-brand-gold text-glow">The Kitchen.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl font-light">
+            <p class="text-lg md:text-xl text-slate-100 leading-relaxed max-w-3xl font-light">
                 Hey Chef is the first autonomous intelligence designed to eliminate the mental fatigue of service. Provided as a <strong class="text-white">free activation add-on</strong> for F&B operations, it synchronizes physical gravimetric sensors with real-time POS data to orchestrate the back-of-house with absolute mathematical precision.
             </p>
         </div>
     </header>
 
-    <section class="py-24 px-6 border-b border-white/5 relative z-10 bg-brand-dark">
+    <section class="py-24 px-6 border-b border-white/5 relative z-10 bg-brand-dark/80 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group">
-                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=2068&auto=format&fit=crop" alt="AI Architecture" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-70">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-6 text-brand-gold font-mono text-xs tracking-widest uppercase bg-black/50 px-3 py-1 rounded border border-brand-gold/30">AI Array Sync Active</div>
+            <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl group border border-white/10">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=2068&auto=format&fit=crop" alt="AI Architecture" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-6 text-brand-gold font-mono text-xs tracking-widest uppercase bg-black/70 px-3 py-1 rounded border border-brand-gold/30">AI Array Sync Active</div>
             </div>
             
             <div>
                 <h2 class="text-xs font-bold text-brand-gold uppercase tracking-[0.5em] mb-6 font-mono">Cornerstone Moat</h2>
                 <h3 class="text-4xl font-black text-white mb-8 uppercase italic leading-none">Provisional Patent App. <br>No. 63/997,798</h3>
-                <p class="text-slate-400 leading-relaxed mb-10 text-lg font-light">
+                <p class="text-slate-200 leading-relaxed mb-10 text-lg font-light">
                     Our foundational provisional patent secures the AI-driven hospitality procurement. It is the legal moat protecting the translation of physical gravimetric depletion into autonomous, self-executing hospitality logic via the Unity Protocol.
                 </p>
-                <div class="p-8 bg-white/5 border-l-4 border-brand-gold font-mono text-[12px] text-brand-gold/80 italic backdrop-blur-sm rounded-r">
+                <div class="p-8 bg-black/60 border-l-4 border-brand-gold font-mono text-[12px] text-brand-gold/80 italic rounded-r">
                     "System and Method for Autonomous Distributed Ledger Accounting, AI-Driven Hospitality Procurement, and Multi-Metal Asset-Backed Settlement."
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-[#03050a] relative z-10 border-b border-white/5">
+    <section class="py-24 px-6 bg-black/70 relative z-10 border-b border-white/5 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic mb-16 text-center">Protocol Integration</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                <div class="p-12 border border-white/10 bg-white/5 relative overflow-hidden group hover:border-brand-gold/50 transition-colors rounded-xl">
+                <div class="p-12 border border-white/10 bg-black/40 relative overflow-hidden group hover:border-brand-gold/50 transition-colors rounded-xl backdrop-blur-sm">
                     <div class="flex items-center justify-between mb-8">
                         <span class="text-brand-gold font-mono text-sm font-bold">01</span>
                         <h4 class="text-2xl font-black text-white uppercase tracking-tighter leading-none">Real-Time <br>FOH Sync</h4>
                     </div>
-                    <p class="text-slate-400 leading-relaxed text-lg font-light italic">
+                    <p class="text-slate-200 leading-relaxed text-lg font-light italic">
                         Through deep integration with V-Shelves, the moment depletion is sensed, your legacy POS and PMS systems update instantly. Servers are notified of 86'd items before the order is ever taken, eliminating guest friction and "the apology" forever.
                     </p>
                 </div>
 
-                <div class="p-12 border border-white/10 bg-white/5 relative overflow-hidden group hover:border-brand-gold/50 transition-colors rounded-xl">
+                <div class="p-12 border border-white/10 bg-black/40 relative overflow-hidden group hover:border-brand-gold/50 transition-colors rounded-xl backdrop-blur-sm">
                     <div class="flex items-center justify-between mb-8">
                         <span class="text-brand-gold font-mono text-sm font-bold">02</span>
                         <h4 class="text-2xl font-black text-white uppercase tracking-tighter leading-none">Interactive <br>Assistance</h4>
                     </div>
-                    <p class="text-slate-400 leading-relaxed text-lg font-light italic">
+                    <p class="text-slate-200 leading-relaxed text-lg font-light italic">
                         Standardize the plate. Scalable recipes, plating guides, and allergen cross-checks delivered directly to kitchen display nodes to ensure absolute culinary consistency, regardless of shift rotation.
                     </p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-8 border border-brand-gold/30 bg-brand-gold/5 rounded-xl flex flex-col justify-between">
+                <div class="p-8 border border-brand-gold/30 bg-brand-dark rounded-xl flex flex-col justify-between shadow-xl">
                     <h5 class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">// GRAVITY_SYNC</h5>
                     <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">Autonomous <br>Restocking</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Deeply integrated with V-Shelves to monitor gravimetric mass and autonomously pre-authorize procurement based on inventory velocity.</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Deeply integrated with V-Shelves to monitor gravimetric mass and autonomously pre-authorize procurement based on inventory velocity.</p>
                 </div>
-                <div class="p-8 border border-brand-gold/30 bg-brand-gold/5 rounded-xl flex flex-col justify-between">
+                <div class="p-8 border border-brand-gold/30 bg-brand-dark rounded-xl flex flex-col justify-between shadow-xl">
                     <h5 class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">// VISION_SAFETY</h5>
                     <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">Loss <br>Prevention</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Synchronized with V-Lens optical AI to dynamically track product movement, actively deterring internal theft and eliminating ghost waste.</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Synchronized with V-Lens optical AI to dynamically track product movement, actively deterring internal theft and eliminating ghost waste.</p>
                 </div>
-                <div class="p-8 border border-brand-gold/30 bg-brand-gold/5 rounded-xl flex flex-col justify-between">
+                <div class="p-8 border border-brand-gold/30 bg-brand-dark rounded-xl flex flex-col justify-between shadow-xl">
                     <h5 class="text-brand-gold font-mono text-xs uppercase tracking-widest mb-4 font-bold">// COMPLIANCE_AI</h5>
                     <p class="text-white font-bold text-xl uppercase tracking-tighter mb-4 leading-tight">HACCP <br>Safety</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">Pairs with handheld Scanners to log real-time prep stages, while automated thermal gauges ensure total, 24/7 HACCP compliance.</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Pairs with handheld Scanners to log real-time prep stages, while automated thermal gauges ensure total, 24/7 HACCP compliance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-brand-dark py-16 px-6 border-t border-brand-gold/20 relative z-10">
+    <footer class="bg-brand-dark/90 py-16 px-6 border-t border-brand-gold/20 relative z-10 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic mb-12">
+            <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic mb-12 text-glow">
                 Let them cook.
             </h3>
             <div class="text-white font-bold text-xl tracking-widest uppercase mb-8">
@@ -160,6 +165,7 @@
                     <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, and Unity Protocol architectures are proprietary intellectual property governed entirely by Powell Global LLC.
                 </p>
             </div>
+            
             <div class="text-slate-700 text-[10px] border-t border-white/5 mt-10 pt-6 w-full font-mono uppercase tracking-widest">
                 &copy; 2026 Powell Global LLC. All rights reserved.
             </div>
