@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Varis OS | Sovereign Terminal</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#050914',
+                            surface: '#f8fafc',
+                            card: '#ffffff',
+                            accent: '#e2e8f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #menu.hidden { display: none; }
+        #menu.flex { display: flex; }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DDPEDVNXW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DDPEDVNXW');
+    </script>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "w11yi5tjgj");
+    </script>
+    
     <style>
         /* BASE RESET */
         * {
@@ -51,7 +91,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            padding: 20px;
+            padding: 100px 20px 20px 20px; /* Adjusted top padding to account for global nav bar */
             gap: 20px;
         }
 
@@ -806,1399 +846,1447 @@
         .footer-links a:hover { color: #059669; }
     </style>
 </head>
-<body>
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden">
 
-<div class="app-container">
-    
-    <div class="top-bar glass-panel ui-layer">
-        <div class="brand-section">
-            <div class="brand-name-wrapper">
-                <div id="brand-name" class="brand-name">HOTEL ILONA</div>
-                <div id="brand-context" class="brand-context">500-KEY PREMIUM RESORT | LIVE 2026 METRICS</div>
+    <div class="fixed top-0 w-full z-50">
+        <nav class="flex justify-between items-center px-10 py-6 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 shadow-sm" style="font-family: 'Inter', sans-serif;">
+            <a href="../index.html" class="text-white font-bold tracking-[0.2em] uppercase text-xl hover:text-brand-gold transition-all italic" style="text-decoration: none;">Powell Global</a>
+            
+            <button id="menu-btn" class="text-white focus:outline-none p-2 hover:text-brand-gold transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl text-right md:text-left rounded-lg" style="font-family: 'Inter', sans-serif;">
+                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">Home</a>
+                <hr class="border-white/5">
+                <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">1. Unity Protocol</a>
+                <a href="../varis/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">2. Varis OS</a>
+                <a href="../V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">4. Hey Chef</a>
+                <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">5. The Resort</a>
+                <a href="../transparency/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">6. Institutional Risk & Disclosure</a>
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8" style="text-decoration: none;">7. Unity Books Demo</a>
             </div>
-            <div class="badge">VARIS OS</div>
-        </div>
-
-        <div class="unity-books-watermark">
-            UNITY BOOKS
-        </div>
-
-        <div class="top-nav-buttons">
-            <div id="sys-time" class="sys-clock">--:--:--</div>
-            <button id="speed-btn" class="speed-btn" onclick="toggleSpeed()">1X SPEED</button>
-            <button id="tab-resort" class="nav-btn active" onclick="switchBusiness('resort')">RESORT</button>
-            <button id="tab-restaurant" class="nav-btn" onclick="switchBusiness('restaurant')">RESTAURANT</button>
-            <button id="tab-coffee" class="nav-btn" onclick="switchBusiness('coffee')">COFFEE</button>
-            <button id="tab-auto" class="nav-btn" onclick="switchBusiness('auto')">VARIS MOTORS</button>
-        </div>
+        </nav>
     </div>
 
-    <div class="content-area ui-layer">
+    <div class="app-container">
         
-        <div class="side-panel glass-panel">
-            <div class="side-panel-scroll">
-                <div class="side-nav-title">SYSTEM NAVIGATION</div>
-                <div id="nav-hub" class="side-nav-item active" onclick="switchView('hub')">EXECUTIVE HUB</div>
-                <div id="nav-cash" class="side-nav-item" onclick="switchView('cash')">CASH ON HAND</div>
-                <div id="nav-treasury" class="side-nav-item" onclick="switchView('treasury')">TREASURY VAULT</div>
-                <div id="nav-recon" class="side-nav-item" onclick="switchView('recon')">RECONCILIATION</div>
-                <div id="nav-payroll" class="side-nav-item" onclick="switchView('payroll')">PAYROLL ENGINE</div>
-                
-                <div class="side-nav-title" style="margin-top: 20px;">UBOOKS SUITE</div>
-                <div id="nav-ap" class="side-nav-item" onclick="switchView('ap')">ACCOUNTS PAYABLE</div>
-                <div id="nav-ar" class="side-nav-item" onclick="switchView('ar')">ACCOUNTS RECEIVABLE</div>
-                <div id="nav-tax" class="side-nav-item" onclick="switchView('tax')">TAX CENTER</div>
-                <div id="nav-gl" class="side-nav-item" onclick="switchView('gl')">GENERAL LEDGER</div>
+        <div class="top-bar glass-panel ui-layer">
+            <div class="brand-section">
+                <div class="brand-name-wrapper">
+                    <div id="brand-name" class="brand-name">HOTEL ILONA</div>
+                    <div id="brand-context" class="brand-context">500-KEY PREMIUM RESORT | LIVE 2026 METRICS</div>
+                </div>
+                <div class="badge">VARIS OS</div>
+            </div>
 
-                <div class="core-secure">CORE SECURE</div>
+            <div class="unity-books-watermark">
+                UNITY BOOKS
+            </div>
+
+            <div class="top-nav-buttons">
+                <div id="sys-time" class="sys-clock">--:--:--</div>
+                <button id="speed-btn" class="speed-btn" onclick="toggleSpeed()">1X SPEED</button>
+                <button id="tab-resort" class="nav-btn active" onclick="switchBusiness('resort')">RESORT</button>
+                <button id="tab-restaurant" class="nav-btn" onclick="switchBusiness('restaurant')">RESTAURANT</button>
+                <button id="tab-coffee" class="nav-btn" onclick="switchBusiness('coffee')">COFFEE</button>
+                <button id="tab-auto" class="nav-btn" onclick="switchBusiness('auto')">VARIS MOTORS</button>
             </div>
         </div>
 
-        <div class="dashboard-main">
+        <div class="content-area ui-layer">
             
-            <div id="view-hub" class="dashboard-view active">
-                <div class="time-toggle-container glass-panel">
-                    <button id="time-daily" class="time-btn active" onclick="switchTime('daily')">DAILY</button>
-                    <button id="time-weekly" class="time-btn" onclick="switchTime('weekly')">WEEKLY</button>
-                    <button id="time-monthly" class="time-btn" onclick="switchTime('monthly')">MONTHLY</button>
-                    <button id="time-quarterly" class="time-btn" onclick="switchTime('quarterly')">QUARTERLY</button>
-                    <button id="time-yearly" class="time-btn" onclick="switchTime('yearly')">YEARLY</button>
+            <div class="side-panel glass-panel">
+                <div class="side-panel-scroll">
+                    <div class="side-nav-title">SYSTEM NAVIGATION</div>
+                    <div id="nav-hub" class="side-nav-item active" onclick="switchView('hub')">EXECUTIVE HUB</div>
+                    <div id="nav-cash" class="side-nav-item" onclick="switchView('cash')">CASH ON HAND</div>
+                    <div id="nav-treasury" class="side-nav-item" onclick="switchView('treasury')">TREASURY VAULT</div>
+                    <div id="nav-recon" class="side-nav-item" onclick="switchView('recon')">RECONCILIATION</div>
+                    <div id="nav-payroll" class="side-nav-item" onclick="switchView('payroll')">PAYROLL ENGINE</div>
+                    
+                    <div class="side-nav-title" style="margin-top: 20px;">UBOOKS SUITE</div>
+                    <div id="nav-ap" class="side-nav-item" onclick="switchView('ap')">ACCOUNTS PAYABLE</div>
+                    <div id="nav-ar" class="side-nav-item" onclick="switchView('ar')">ACCOUNTS RECEIVABLE</div>
+                    <div id="nav-tax" class="side-nav-item" onclick="switchView('tax')">TAX CENTER</div>
+                    <div id="nav-gl" class="side-nav-item" onclick="switchView('gl')">GENERAL LEDGER</div>
+
+                    <div class="core-secure">CORE SECURE</div>
                 </div>
+            </div>
 
-                <div class="cards-row">
-                    <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
-                        <div class="card-header">
-                            <div class="card-title">GROSS<br>VOLUME</div>
-                            <div id="badge-gross" class="card-badge">SALES</div>
-                        </div>
-                        
-                        <div class="card-mini-ticker-container">
-                            <div class="card-mini-ticker" id="ticker-gross"></div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="metric-title">REVENUE BREAKDOWN</div>
-                            <div id="detail-gross"></div>
-                            <div id="footer-gross" class="metric-footer"></div>
-                        </div>
-                        <div class="live-chart">
-                            <div class="chart-bar"></div><div class="chart-bar"></div>
-                            <div class="chart-bar"></div><div class="chart-bar"></div>
-                            <div class="chart-bar"></div><div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                        </div>
-                        <div id="val-gross" class="card-value">$0.00</div>
-                        <div class="card-subtitle">TOTAL UNRECONCILED REVENUE</div>
+            <div class="dashboard-main">
+                
+                <div id="view-hub" class="dashboard-view active">
+                    <div class="time-toggle-container glass-panel">
+                        <button id="time-daily" class="time-btn active" onclick="switchTime('daily')">DAILY</button>
+                        <button id="time-weekly" class="time-btn" onclick="switchTime('weekly')">WEEKLY</button>
+                        <button id="time-monthly" class="time-btn" onclick="switchTime('monthly')">MONTHLY</button>
+                        <button id="time-quarterly" class="time-btn" onclick="switchTime('quarterly')">QUARTERLY</button>
+                        <button id="time-yearly" class="time-btn" onclick="switchTime('yearly')">YEARLY</button>
                     </div>
 
-                    <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
-                        <div class="card-header">
-                            <div class="card-title">NET<br>PROFIT</div>
-                            <div class="card-badge">MARGIN</div>
-                        </div>
-
-                        <div class="card-mini-ticker-container">
-                            <div class="card-mini-ticker" id="ticker-net"></div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="metric-title">PROFITABILITY METRICS</div>
-                            <div id="detail-net"></div>
-                            <div id="footer-net" class="metric-footer"></div>
-                        </div>
-                        <div class="live-chart">
-                            <div class="chart-bar" style="height: 30%"></div><div class="chart-bar" style="height: 50%"></div>
-                            <div class="chart-bar" style="height: 80%"></div><div class="chart-bar" style="height: 40%"></div>
-                            <div class="chart-bar" style="height: 70%"></div><div class="chart-bar" style="height: 90%"></div>
-                            <div class="chart-bar" style="height: 65%"></div>
-                        </div>
-                        <div id="val-net" class="card-value">$0.00</div>
-                        <div class="card-subtitle">EBITDA & OPERATING CAPITAL</div>
-                    </div>
-
-                    <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
-                        <div class="card-header">
-                            <div id="title-costs" class="card-title">PAYROLL &<br>COGS</div>
-                            <div id="badge-costs" class="card-badge">COSTS</div>
-                        </div>
-
-                        <div class="card-mini-ticker-container">
-                            <div class="card-mini-ticker" id="ticker-cogs"></div>
-                        </div>
-
-                        <div class="card-details">
-                            <div id="metric-title-costs" class="metric-title">PRIME COST BREAKDOWN</div>
-                            <div id="detail-costs"></div>
-                            <div id="footer-costs" class="metric-footer"></div>
-                        </div>
-                        <div class="live-chart">
-                            <div class="chart-bar" style="height: 60%"></div><div class="chart-bar" style="height: 90%"></div>
-                            <div class="chart-bar" style="height: 40%"></div><div class="chart-bar" style="height: 75%"></div>
-                            <div class="chart-bar" style="height: 50%"></div><div class="chart-bar" style="height: 85%"></div>
-                            <div class="chart-bar" style="height: 100%"></div>
-                        </div>
-                        <div id="val-payroll" class="card-value">$0.00</div>
-                        <div id="subtitle-costs" class="card-subtitle">LABOR & INVENTORY ALLOCATION</div>
-                    </div>
-
-                    <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
-                        <div class="card-header">
-                            <div class="card-title">TREASURY<br>RESERVES</div>
-                            <div class="card-badge">ASSETS</div>
-                        </div>
-                        <div class="card-details">
-                            <div class="metric-title">CORPORATE VAULT ALLOCATION</div>
-                            <div id="detail-treasury"></div>
-                            <div id="footer-treasury" class="metric-footer"></div>
-                        </div>
-                        <div class="live-chart">
-                            <div class="chart-bar" style="height: 80%"></div><div class="chart-bar" style="height: 40%"></div>
-                            <div class="chart-bar" style="height: 100%"></div><div class="chart-bar" style="height: 60%"></div>
-                            <div class="chart-bar" style="height: 90%"></div><div class="chart-bar" style="height: 50%"></div>
-                            <div class="chart-bar" style="height: 70%"></div>
-                        </div>
-                        <div id="val-basket" class="card-value">$0.00</div>
-                        <div class="card-subtitle">FIAT VALUE SECURED OFFLINE</div>
-                    </div>
-
-                    <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
-                        <div class="card-header">
-                            <div class="card-title">OPEX OFFSET<br>& REWARDS</div>
-                            <div class="card-badge">SAVINGS</div>
-                        </div>
-                        <div class="card-details">
-                            <div class="metric-title">MERCHANT FEE REDUCTIONS</div>
-                            <div id="detail-rewards"></div>
-                            <div id="footer-rewards" class="metric-footer"></div>
-                        </div>
-                        <div class="live-chart">
-                            <div class="chart-bar" style="height: 45%"></div><div class="chart-bar" style="height: 100%"></div>
-                            <div class="chart-bar" style="height: 55%"></div><div class="chart-bar" style="height: 85%"></div>
-                            <div class="chart-bar" style="height: 35%"></div><div class="chart-bar" style="height: 75%"></div>
-                            <div class="chart-bar" style="height: 65%"></div>
-                        </div>
-                        <div id="val-yield" class="card-value">$0.00</div>
-                        <div class="card-subtitle">PROCESSING FEES RECOVERED (USD)</div>
-                    </div>
-
-                    <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
-                        <div class="card-header">
-                            <div class="card-title">PROFIT &<br>LOSS</div>
-                            <div class="card-badge">STATEMENT</div>
-                        </div>
-                        
-                        <div class="pnl-pie-container">
-                            <div class="pnl-pie-chart" id="pnl-pie"></div>
-                        </div>
-
-                        <div class="card-details">
-                            <div class="metric-title">DEPARTMENTAL P&L BREAKDOWN</div>
-                            <div id="detail-pnl"></div>
+                    <div class="cards-row">
+                        <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
+                            <div class="card-header">
+                                <div class="card-title">GROSS<br>VOLUME</div>
+                                <div id="badge-gross" class="card-badge">SALES</div>
+                            </div>
                             
-                            <div id="pie-legend" class="pie-legend"></div>
-
-                            <div id="footer-pnl" class="metric-footer"></div>
-                        </div>
-                        
-                        <div id="val-pnl" class="card-value">0.0%</div>
-                        <div class="card-subtitle">CONSOLIDATED NET MARGIN YTD</div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="view-cash" class="dashboard-view">
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header" style="margin-bottom: 0;">
-                            <div class="card-title">CASH ON HAND & BANK DEPOSITS</div>
-                            <div class="card-badge">RECONCILED</div>
-                        </div>
-                        <div style="font-size: 38px; font-weight: 900; color: #000; margin: 20px 0;" id="cash-total-val">$0.00</div>
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>DATE / TIME</th>
-                                        <th>BATCH AMOUNT</th>
-                                        <th>NETWORK STATUS</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="cash-tbody">
-                                    </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="view-treasury" class="dashboard-view">
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel">
-                        <div class="card-header"><div class="card-title">TREASURY VAULT LOGIC</div><div class="card-badge">OFFLINE</div></div>
-                        <div class="metric-list">
-                            > PHYSICAL BAIL-FREE VAULT STATUS: SECURE (DENVER, CO)<br>
-                            > UGLD MINTING THRESHOLD: 5,000 OUNCES (PENDING)<br>
-                            > SMART CONTRACT AUDIT: TIER-1 VERIFIED
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="view-recon" class="dashboard-view">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap:10px;">
-                    <div class="time-toggle-container glass-panel" style="margin-bottom: 0;">
-                        <div style="padding: 6px 14px; font-weight: 900; font-size: 12px; color: #000;">LAST XDC SYNC: <span id="recon-sync">0.0s AGO</span></div>
-                    </div>
-                    <button id="run-eod-btn" class="run-payroll-btn" disabled onclick="executeEOD()">GM FINAL CLEAR & DEPOSIT</button>
-                </div>
-                
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header"><div class="card-title">DEPARTMENTAL EOD APPROVAL MATRIX</div><div class="card-badge">REQUIRED</div></div>
-                        <div id="approval-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                            <div class="card-mini-ticker-container">
+                                <div class="card-mini-ticker" id="ticker-gross"></div>
                             </div>
-                    </div>
 
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header"><div class="card-title">TRIPLE-ENTRY RECONCILIATION</div><div class="card-badge">ISO-20022</div></div>
-                        <div class="metric-list" style="margin-top: 20px;">
-                            > CURRENT UNRECONCILED VOLUME: <span id="recon-unrec" style="color:#000;">$0.00</span><br>
-                            > ACTIVE OPEN TICKETS: <span id="recon-tix" style="color:#000;">0</span><br>
-                            > PENDING SPLIT-SETTLEMENT TIPS: <span id="recon-tips" style="color:#000;">$0.00</span><br>
-                            <br>
-                            *Final GM execution will batch process all volume, zero out open tickets, execute TipSplitter routing, and push capital to Cash On Hand.*
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="view-payroll" class="dashboard-view">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap:10px;">
-                    <div class="time-toggle-container glass-panel" style="margin-bottom: 0;">
-                        <div style="padding: 6px 14px; font-weight: 900; font-size: 12px; color: #000; border-right: 1px solid rgba(0,0,0,0.2);">LIVE HEADCOUNT: <span id="pr-headcount">0</span></div>
-                        <div style="padding: 6px 14px; font-weight: 900; font-size: 12px; color: #000;">EST. WITHHOLDINGS: <span id="pr-taxes" class="text-red-dark">$0.00</span></div>
-                    </div>
-                    <button class="run-payroll-btn" onclick="alert('ADP Integration Active: Executing direct deposits and blockchain transfers.')">RUN PAYROLL EXECUTIONS</button>
-                </div>
-                
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header" style="margin-bottom: 0;">
-                            <div class="card-title">SALARIED & HOURLY LEDGER</div>
-                        </div>
-                        <div style="font-size: 10px; color: #000; font-weight: 800; margin-bottom: 15px; font-style: italic;">*Click any employee row to view compensation profile and routing destinations*</div>
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>EMPLOYEE / ID</th>
-                                        <th>ROLE / TIER</th>
-                                        <th>WAGE RATE</th>
-                                        <th>PAY FREQ.</th>
-                                        <th>RAIL</th>
-                                        <th>GROSS ACCRUED</th>
-                                        <th>TAX (22%)</th>
-                                        <th>NET PAYOUT</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="payroll-base-tbody"></tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div id="tipped-staff-card" class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header" style="margin-bottom: 0;">
-                            <div class="card-title">TIPPED STAFF (TIPSPLITTER LEDGER)</div>
-                        </div>
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>EMPLOYEE / ID</th>
-                                        <th>BASE WAGE</th>
-                                        <th>OPEN TIX</th>
-                                        <th>GROSS CC TIPS</th>
-                                        <th>TIP-SPLITTER (20%)</th>
-                                        <th>NET TIPS</th>
-                                        <th>PAYOUT RAIL</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="payroll-tipped-tbody"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="view-ap" class="dashboard-view">
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header"><div class="card-title">ACCOUNTS PAYABLE & INBOX</div><div class="card-badge">VARIS OS</div></div>
-                        
-                        <div style="font-size: 11px; font-weight: 900; color: #000; margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.3); border-radius: 8px; border: 1px solid rgba(0,0,0,0.2);">
-                            <div style="color: #059669; font-size: 13px; margin-bottom: 8px; text-transform: uppercase;">Active UBooks Email Ingest Routing:</div>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
-                                <div>> <span style="color:#172554;">ExecChef@ubooks.com</span> (F&B)</div>
-                                <div>> <span style="color:#172554;">DirRooms@ubooks.com</span> (Amenities)</div>
-                                <div>> <span style="color:#172554;">Facilities@ubooks.com</span> (Maintenance)</div>
-                                <div>> <span style="color:#172554;">Catering@ubooks.com</span> (Events)</div>
+                            <div class="card-details">
+                                <div class="metric-title">REVENUE BREAKDOWN</div>
+                                <div id="detail-gross"></div>
+                                <div id="footer-gross" class="metric-footer"></div>
                             </div>
-                            <div style="margin-top: 12px; font-style: italic; color: rgba(0,0,0,0.7);">*Vendor PDF invoices sent to these addresses are autonomously parsed by Varis OS (Payroll & Accounting Arm), GL-coded, and staged below. Click any invoice to view itemization.*</div>
+                            <div class="live-chart">
+                                <div class="chart-bar"></div><div class="chart-bar"></div>
+                                <div class="chart-bar"></div><div class="chart-bar"></div>
+                                <div class="chart-bar"></div><div class="chart-bar"></div>
+                                <div class="chart-bar"></div>
+                            </div>
+                            <div id="val-gross" class="card-value">$0.00</div>
+                            <div class="card-subtitle">TOTAL UNRECONCILED REVENUE</div>
                         </div>
 
-                        <div class="table-container">
-                            <table>
-                                <thead><tr><th>VENDOR</th><th>INVOICE REF</th><th>DEPT ROUTING</th><th>DUE DATE</th><th>AMOUNT</th><th>STATUS</th></tr></thead>
-                                <tbody id="ap-tbody">
+                        <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
+                            <div class="card-header">
+                                <div class="card-title">NET<br>PROFIT</div>
+                                <div class="card-badge">MARGIN</div>
+                            </div>
+
+                            <div class="card-mini-ticker-container">
+                                <div class="card-mini-ticker" id="ticker-net"></div>
+                            </div>
+
+                            <div class="card-details">
+                                <div class="metric-title">PROFITABILITY METRICS</div>
+                                <div id="detail-net"></div>
+                                <div id="footer-net" class="metric-footer"></div>
+                            </div>
+                            <div class="live-chart">
+                                <div class="chart-bar" style="height: 30%"></div><div class="chart-bar" style="height: 50%"></div>
+                                <div class="chart-bar" style="height: 80%"></div><div class="chart-bar" style="height: 40%"></div>
+                                <div class="chart-bar" style="height: 70%"></div><div class="chart-bar" style="height: 90%"></div>
+                                <div class="chart-bar" style="height: 65%"></div>
+                            </div>
+                            <div id="val-net" class="card-value">$0.00</div>
+                            <div class="card-subtitle">EBITDA & OPERATING CAPITAL</div>
+                        </div>
+
+                        <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
+                            <div class="card-header">
+                                <div id="title-costs" class="card-title">PAYROLL &<br>COGS</div>
+                                <div id="badge-costs" class="card-badge">COSTS</div>
+                            </div>
+
+                            <div class="card-mini-ticker-container">
+                                <div class="card-mini-ticker" id="ticker-cogs"></div>
+                            </div>
+
+                            <div class="card-details">
+                                <div id="metric-title-costs" class="metric-title">PRIME COST BREAKDOWN</div>
+                                <div id="detail-costs"></div>
+                                <div id="footer-costs" class="metric-footer"></div>
+                            </div>
+                            <div class="live-chart">
+                                <div class="chart-bar" style="height: 60%"></div><div class="chart-bar" style="height: 90%"></div>
+                                <div class="chart-bar" style="height: 40%"></div><div class="chart-bar" style="height: 75%"></div>
+                                <div class="chart-bar" style="height: 50%"></div><div class="chart-bar" style="height: 85%"></div>
+                                <div class="chart-bar" style="height: 100%"></div>
+                            </div>
+                            <div id="val-payroll" class="card-value">$0.00</div>
+                            <div id="subtitle-costs" class="card-subtitle">LABOR & INVENTORY ALLOCATION</div>
+                        </div>
+
+                        <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
+                            <div class="card-header">
+                                <div class="card-title">TREASURY<br>RESERVES</div>
+                                <div class="card-badge">ASSETS</div>
+                            </div>
+                            <div class="card-details">
+                                <div class="metric-title">CORPORATE VAULT ALLOCATION</div>
+                                <div id="detail-treasury"></div>
+                                <div id="footer-treasury" class="metric-footer"></div>
+                            </div>
+                            <div class="live-chart">
+                                <div class="chart-bar" style="height: 80%"></div><div class="chart-bar" style="height: 40%"></div>
+                                <div class="chart-bar" style="height: 100%"></div><div class="chart-bar" style="height: 60%"></div>
+                                <div class="chart-bar" style="height: 90%"></div><div class="chart-bar" style="height: 50%"></div>
+                                <div class="chart-bar" style="height: 70%"></div>
+                            </div>
+                            <div id="val-basket" class="card-value">$0.00</div>
+                            <div class="card-subtitle">FIAT VALUE SECURED OFFLINE</div>
+                        </div>
+
+                        <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
+                            <div class="card-header">
+                                <div class="card-title">OPEX OFFSET<br>& REWARDS</div>
+                                <div class="card-badge">SAVINGS</div>
+                            </div>
+                            <div class="card-details">
+                                <div class="metric-title">MERCHANT FEE REDUCTIONS</div>
+                                <div id="detail-rewards"></div>
+                                <div id="footer-rewards" class="metric-footer"></div>
+                            </div>
+                            <div class="live-chart">
+                                <div class="chart-bar" style="height: 45%"></div><div class="chart-bar" style="height: 100%"></div>
+                                <div class="chart-bar" style="height: 55%"></div><div class="chart-bar" style="height: 85%"></div>
+                                <div class="chart-bar" style="height: 35%"></div><div class="chart-bar" style="height: 75%"></div>
+                                <div class="chart-bar" style="height: 65%"></div>
+                            </div>
+                            <div id="val-yield" class="card-value">$0.00</div>
+                            <div class="card-subtitle">PROCESSING FEES RECOVERED (USD)</div>
+                        </div>
+
+                        <div class="data-card glass-panel" onclick="this.classList.toggle('expanded')">
+                            <div class="card-header">
+                                <div class="card-title">PROFIT &<br>LOSS</div>
+                                <div class="card-badge">STATEMENT</div>
+                            </div>
+                            
+                            <div class="pnl-pie-container">
+                                <div class="pnl-pie-chart" id="pnl-pie"></div>
+                            </div>
+
+                            <div class="card-details">
+                                <div class="metric-title">DEPARTMENTAL P&L BREAKDOWN</div>
+                                <div id="detail-pnl"></div>
+                                
+                                <div id="pie-legend" class="pie-legend"></div>
+
+                                <div id="footer-pnl" class="metric-footer"></div>
+                            </div>
+                            
+                            <div id="val-pnl" class="card-value">0.0%</div>
+                            <div class="card-subtitle">CONSOLIDATED NET MARGIN YTD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-cash" class="dashboard-view">
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header" style="margin-bottom: 0;">
+                                <div class="card-title">CASH ON HAND & BANK DEPOSITS</div>
+                                <div class="card-badge">RECONCILED</div>
+                            </div>
+                            <div style="font-size: 38px; font-weight: 900; color: #000; margin: 20px 0;" id="cash-total-val">$0.00</div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>DATE / TIME</th>
+                                            <th>BATCH AMOUNT</th>
+                                            <th>NETWORK STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cash-tbody">
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-treasury" class="dashboard-view">
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel">
+                            <div class="card-header"><div class="card-title">TREASURY VAULT LOGIC</div><div class="card-badge">OFFLINE</div></div>
+                            <div class="metric-list">
+                                > PHYSICAL BAIL-FREE VAULT STATUS: SECURE (DENVER, CO)<br>
+                                > UGLD MINTING THRESHOLD: 5,000 OUNCES (PENDING)<br>
+                                > SMART CONTRACT AUDIT: TIER-1 VERIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-recon" class="dashboard-view">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap:10px;">
+                        <div class="time-toggle-container glass-panel" style="margin-bottom: 0;">
+                            <div style="padding: 6px 14px; font-weight: 900; font-size: 12px; color: #000;">LAST XDC SYNC: <span id="recon-sync">0.0s AGO</span></div>
+                        </div>
+                        <button id="run-eod-btn" class="run-payroll-btn" disabled onclick="executeEOD()">GM FINAL CLEAR & DEPOSIT</button>
+                    </div>
+                    
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header"><div class="card-title">DEPARTMENTAL EOD APPROVAL MATRIX</div><div class="card-badge">REQUIRED</div></div>
+                            <div id="approval-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                                </div>
+                        </div>
+
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header"><div class="card-title">TRIPLE-ENTRY RECONCILIATION</div><div class="card-badge">ISO-20022</div></div>
+                            <div class="metric-list" style="margin-top: 20px;">
+                                > CURRENT UNRECONCILED VOLUME: <span id="recon-unrec" style="color:#000;">$0.00</span><br>
+                                > ACTIVE OPEN TICKETS: <span id="recon-tix" style="color:#000;">0</span><br>
+                                > PENDING SPLIT-SETTLEMENT TIPS: <span id="recon-tips" style="color:#000;">$0.00</span><br>
+                                <br>
+                                *Final GM execution will batch process all volume, zero out open tickets, execute TipSplitter routing, and push capital to Cash On Hand.*
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-payroll" class="dashboard-view">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap:10px;">
+                        <div class="time-toggle-container glass-panel" style="margin-bottom: 0;">
+                            <div style="padding: 6px 14px; font-weight: 900; font-size: 12px; color: #000; border-right: 1px solid rgba(0,0,0,0.2);">LIVE HEADCOUNT: <span id="pr-headcount">0</span></div>
+                            <div style="padding: 6px 14px; font-weight: 900; font-size: 12px; color: #000;">EST. WITHHOLDINGS: <span id="pr-taxes" class="text-red-dark">$0.00</span></div>
+                        </div>
+                        <button class="run-payroll-btn" onclick="alert('ADP Integration Active: Executing direct deposits and blockchain transfers.')">RUN PAYROLL EXECUTIONS</button>
+                    </div>
+                    
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header" style="margin-bottom: 0;">
+                                <div class="card-title">SALARIED & HOURLY LEDGER</div>
+                            </div>
+                            <div style="font-size: 10px; color: #000; font-weight: 800; margin-bottom: 15px; font-style: italic;">*Click any employee row to view compensation profile and routing destinations*</div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>EMPLOYEE / ID</th>
+                                            <th>ROLE / TIER</th>
+                                            <th>WAGE RATE</th>
+                                            <th>PAY FREQ.</th>
+                                            <th>RAIL</th>
+                                            <th>GROSS ACCRUED</th>
+                                            <th>TAX (22%)</th>
+                                            <th>NET PAYOUT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="payroll-base-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="tipped-staff-card" class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header" style="margin-bottom: 0;">
+                                <div class="card-title">TIPPED STAFF (TIPSPLITTER LEDGER)</div>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>EMPLOYEE / ID</th>
+                                            <th>BASE WAGE</th>
+                                            <th>OPEN TIX</th>
+                                            <th>GROSS CC TIPS</th>
+                                            <th>TIP-SPLITTER (20%)</th>
+                                            <th>NET TIPS</th>
+                                            <th>PAYOUT RAIL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="payroll-tipped-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-ap" class="dashboard-view">
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header"><div class="card-title">ACCOUNTS PAYABLE & INBOX</div><div class="card-badge">VARIS OS</div></div>
+                            
+                            <div style="font-size: 11px; font-weight: 900; color: #000; margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.3); border-radius: 8px; border: 1px solid rgba(0,0,0,0.2);">
+                                <div style="color: #059669; font-size: 13px; margin-bottom: 8px; text-transform: uppercase;">Active UBooks Email Ingest Routing:</div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                                    <div>> <span style="color:#172554;">ExecChef@ubooks.com</span> (F&B)</div>
+                                    <div>> <span style="color:#172554;">DirRooms@ubooks.com</span> (Amenities)</div>
+                                    <div>> <span style="color:#172554;">Facilities@ubooks.com</span> (Maintenance)</div>
+                                    <div>> <span style="color:#172554;">Catering@ubooks.com</span> (Events)</div>
+                                </div>
+                                <div style="margin-top: 12px; font-style: italic; color: rgba(0,0,0,0.7);">*Vendor PDF invoices sent to these addresses are autonomously parsed by Varis OS (Payroll & Accounting Arm), GL-coded, and staged below. Click any invoice to view itemization.*</div>
+                            </div>
+
+                            <div class="table-container">
+                                <table>
+                                    <thead><tr><th>VENDOR</th><th>INVOICE REF</th><th>DEPT ROUTING</th><th>DUE DATE</th><th>AMOUNT</th><th>STATUS</th></tr></thead>
+                                    <tbody id="ap-tbody">
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-ar" class="dashboard-view">
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header"><div class="card-title">ACCOUNTS RECEIVABLE (INVOICING)</div><div class="card-badge">CORPORATE</div></div>
+                            <div class="table-container" style="margin-top: 20px;">
+                                <table>
+                                    <thead><tr><th>CLIENT</th><th>EVENT / REF</th><th>STATUS</th><th>DAYS AGING</th><th>AMOUNT DUE</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Lockheed Martin</td><td>Q3 Corporate Retreat</td><td class="text-red-dark">Overdue</td><td>45</td><td>$42,000.00</td></tr>
+                                        <tr><td>Apex Medical</td><td>Annual Gala Deposit</td><td>Invoiced</td><td>12</td><td>$15,500.00</td></tr>
                                     </tbody>
-                            </table>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="view-ar" class="dashboard-view">
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header"><div class="card-title">ACCOUNTS RECEIVABLE (INVOICING)</div><div class="card-badge">CORPORATE</div></div>
-                        <div class="table-container" style="margin-top: 20px;">
-                            <table>
-                                <thead><tr><th>CLIENT</th><th>EVENT / REF</th><th>STATUS</th><th>DAYS AGING</th><th>AMOUNT DUE</th></tr></thead>
-                                <tbody>
-                                    <tr><td>Lockheed Martin</td><td>Q3 Corporate Retreat</td><td class="text-red-dark">Overdue</td><td>45</td><td>$42,000.00</td></tr>
-                                    <tr><td>Apex Medical</td><td>Annual Gala Deposit</td><td>Invoiced</td><td>12</td><td>$15,500.00</td></tr>
-                                </tbody>
-                            </table>
+                <div id="view-tax" class="dashboard-view">
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header"><div class="card-title">TAX ACCUMULATION & REMITTANCE</div><div class="card-badge">LOCAL/FED</div></div>
+                            <div class="table-container" style="margin-top: 20px;">
+                                <table>
+                                    <thead><tr><th>TAX JURISDICTION</th><th>CATEGORY</th><th>ACCRUED LIABILITY</th><th>NEXT REMITTANCE</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>State of Colorado</td><td>Sales Tax (2.9%)</td><td id="tax-sales-co" style="font-size: 14px; color: #dc2626;">$0.00</td><td>Monthly</td></tr>
+                                        <tr><td>City of Denver</td><td>Sales Tax (4.81%)</td><td id="tax-sales-den" style="font-size: 14px; color: #dc2626;">$0.00</td><td>Monthly</td></tr>
+                                        <tr><td>Federal (IRS)</td><td>Payroll Withholdings (FICA)</td><td id="tax-payroll" style="font-size: 14px; color: #dc2626;">$0.00</td><td>Per Payroll Run</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="view-tax" class="dashboard-view">
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header"><div class="card-title">TAX ACCUMULATION & REMITTANCE</div><div class="card-badge">LOCAL/FED</div></div>
-                        <div class="table-container" style="margin-top: 20px;">
-                            <table>
-                                <thead><tr><th>TAX JURISDICTION</th><th>CATEGORY</th><th>ACCRUED LIABILITY</th><th>NEXT REMITTANCE</th></tr></thead>
-                                <tbody>
-                                    <tr><td>State of Colorado</td><td>Sales Tax (2.9%)</td><td id="tax-sales-co" style="font-size: 14px; color: #dc2626;">$0.00</td><td>Monthly</td></tr>
-                                    <tr><td>City of Denver</td><td>Sales Tax (4.81%)</td><td id="tax-sales-den" style="font-size: 14px; color: #dc2626;">$0.00</td><td>Monthly</td></tr>
-                                    <tr><td>Federal (IRS)</td><td>Payroll Withholdings (FICA)</td><td id="tax-payroll" style="font-size: 14px; color: #dc2626;">$0.00</td><td>Per Payroll Run</td></tr>
-                                </tbody>
-                            </table>
+                <div id="view-gl" class="dashboard-view">
+                    <div class="cards-row">
+                        <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
+                            <div class="card-header"><div class="card-title">IMMUTABLE GENERAL LEDGER</div><div class="card-badge">XDC NETWORK</div></div>
+                            <div class="metric-list" style="margin-top: 20px; font-size: 11px; line-height: 2;">
+                                > [ISO-20022: PACS.008] TX HASH: <span style="color:#172554;">0x9f8e7d6c5b4a3...</span> <span style="color:#059669;">CONFIRMED</span><br>
+                                > [ISO-20022: PAIN.001] TX HASH: <span style="color:#172554;">0x1a2b3c4d5e6f7...</span> <span style="color:#059669;">CONFIRMED</span><br>
+                                > [SMART CONTRACT] UGLD VAULT MINT EXECUTED... <span style="color:#d4af37;">SUCCESS</span><br>
+                                > ...Awaiting next EOD Reconciliation batch...
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="view-gl" class="dashboard-view">
-                <div class="cards-row">
-                    <div class="data-card wide glass-panel" style="padding-bottom: 25px;">
-                        <div class="card-header"><div class="card-title">IMMUTABLE GENERAL LEDGER</div><div class="card-badge">XDC NETWORK</div></div>
-                        <div class="metric-list" style="margin-top: 20px; font-size: 11px; line-height: 2;">
-                            > [ISO-20022: PACS.008] TX HASH: <span style="color:#172554;">0x9f8e7d6c5b4a3...</span> <span style="color:#059669;">CONFIRMED</span><br>
-                            > [ISO-20022: PAIN.001] TX HASH: <span style="color:#172554;">0x1a2b3c4d5e6f7...</span> <span style="color:#059669;">CONFIRMED</span><br>
-                            > [SMART CONTRACT] UGLD VAULT MINT EXECUTED... <span style="color:#d4af37;">SUCCESS</span><br>
-                            > ...Awaiting next EOD Reconciliation batch...
-                        </div>
+                <div class="footer-legal glass-panel">
+                    <div class="footer-legal-text">
+                        &copy; 2026 Powell Global LLC. All Rights Reserved. Varis OS and The Unity Protocol are proprietary trademarks.<br>
+                        <span style="font-size: 9px; color: #000; font-weight: 800; opacity: 0.8; display: block; margin-top: 4px;">*Disclaimer: The merchants and personnel displayed in this terminal are fictitious. Financial metrics, operating volumes, and wage requirements are modeled on actual 2026 Denver, CO economic projections, with margin and operational benchmarks sourced directly from the American Hotel & Lodging Association (AHLA), STR (Smith Travel Research), the National Restaurant Association (NRA), and the National Automobile Dealers Association (NADA).</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Contact Us</a>
+                        <a href="#">Tech Support</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="footer-legal glass-panel">
-                <div class="footer-legal-text">
-                    &copy; 2026 Powell Global LLC. All Rights Reserved. Varis OS and The Unity Protocol are proprietary trademarks.<br>
-                    <span style="font-size: 9px; color: #000; font-weight: 800; opacity: 0.8; display: block; margin-top: 4px;">*Disclaimer: The merchants and personnel displayed in this terminal are fictitious. Financial metrics, operating volumes, and wage requirements are modeled on actual 2026 Denver, CO economic projections, with margin and operational benchmarks sourced directly from the American Hotel & Lodging Association (AHLA), STR (Smith Travel Research), the National Restaurant Association (NRA), and the National Automobile Dealers Association (NADA).</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Contact Us</a>
-                    <a href="#">Tech Support</a>
-                </div>
             </div>
-
         </div>
-    </div>
-    
-    <div class="bottom-ticker glass-panel ui-layer">
-        <div class="ticker-wrap">
-            <div class="ticker-content">
-                <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UNT</span> $0.05 <span class="ticker-note">(LGE LAUNCH PEG)</span></span>
-                <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UGLD</span> $425.00 <span class="ticker-note">(5g GOLD PEG)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #D4AF37;">XAU</span> $2,643.10 <span class="ticker-up">▲ 0.4%</span> <span class="ticker-note">(GOLD)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XAG</span> $28.45 <span class="ticker-down">▼ 0.1%</span> <span class="ticker-note">(SILVER)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPT</span> $985.20 <span class="ticker-up">▲ 1.1%</span> <span class="ticker-note">(PLATINUM)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPD</span> $1,050.80 <span class="ticker-down">▼ 0.8%</span> <span class="ticker-note">(PALLADIUM)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #B87333;">XCU</span> $4.35 <span class="ticker-up">▲ 0.2%</span> <span class="ticker-note">(COPPER)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">BTC</span> $64,230.12 <span class="ticker-up">▲ 1.2%</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">ETH</span> $2,133.25 <span class="ticker-up">▲ 1.1%</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">XRP</span> $1.34 <span class="ticker-up">▲ 1.4%</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">XDC</span> $0.042 <span class="ticker-up">▲ 5.1%</span></span>
-                
-                <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UNT</span> $0.05 <span class="ticker-note">(LGE LAUNCH PEG)</span></span>
-                <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UGLD</span> $425.00 <span class="ticker-note">(5g GOLD PEG)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #D4AF37;">XAU</span> $2,643.10 <span class="ticker-up">▲ 0.4%</span> <span class="ticker-note">(GOLD)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XAG</span> $28.45 <span class="ticker-down">▼ 0.1%</span> <span class="ticker-note">(SILVER)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPT</span> $985.20 <span class="ticker-up">▲ 1.1%</span> <span class="ticker-note">(PLATINUM)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPD</span> $1,050.80 <span class="ticker-down">▼ 0.8%</span> <span class="ticker-note">(PALLADIUM)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol" style="color: #B87333;">XCU</span> $4.35 <span class="ticker-up">▲ 0.2%</span> <span class="ticker-note">(COPPER)</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">BTC</span> $64,230.12 <span class="ticker-up">▲ 1.2%</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">ETH</span> $2,133.25 <span class="ticker-up">▲ 1.1%</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">XRP</span> $1.34 <span class="ticker-up">▲ 1.4%</span></span>
-                <span class="ticker-item"><span class="ticker-symbol">XDC</span> $0.042 <span class="ticker-up">▲ 5.1%</span></span>
+        
+        <div class="bottom-ticker glass-panel ui-layer">
+            <div class="ticker-wrap">
+                <div class="ticker-content">
+                    <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UNT</span> $0.05 <span class="ticker-note">(LGE LAUNCH PEG)</span></span>
+                    <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UGLD</span> $425.00 <span class="ticker-note">(5g GOLD PEG)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #D4AF37;">XAU</span> $2,643.10 <span class="ticker-up">▲ 0.4%</span> <span class="ticker-note">(GOLD)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XAG</span> $28.45 <span class="ticker-down">▼ 0.1%</span> <span class="ticker-note">(SILVER)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPT</span> $985.20 <span class="ticker-up">▲ 1.1%</span> <span class="ticker-note">(PLATINUM)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPD</span> $1,050.80 <span class="ticker-down">▼ 0.8%</span> <span class="ticker-note">(PALLADIUM)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #B87333;">XCU</span> $4.35 <span class="ticker-up">▲ 0.2%</span> <span class="ticker-note">(COPPER)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">BTC</span> $64,230.12 <span class="ticker-up">▲ 1.2%</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">ETH</span> $2,133.25 <span class="ticker-up">▲ 1.1%</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">XRP</span> $1.34 <span class="ticker-up">▲ 1.4%</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">XDC</span> $0.042 <span class="ticker-up">▲ 5.1%</span></span>
+                    
+                    <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UNT</span> $0.05 <span class="ticker-note">(LGE LAUNCH PEG)</span></span>
+                    <span class="ticker-item" style="color: #000;"><span class="ticker-symbol" style="color: #D4AF37;">UGLD</span> $425.00 <span class="ticker-note">(5g GOLD PEG)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #D4AF37;">XAU</span> $2,643.10 <span class="ticker-up">▲ 0.4%</span> <span class="ticker-note">(GOLD)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XAG</span> $28.45 <span class="ticker-down">▼ 0.1%</span> <span class="ticker-note">(SILVER)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPT</span> $985.20 <span class="ticker-up">▲ 1.1%</span> <span class="ticker-note">(PLATINUM)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #CBD5E1;">XPD</span> $1,050.80 <span class="ticker-down">▼ 0.8%</span> <span class="ticker-note">(PALLADIUM)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol" style="color: #B87333;">XCU</span> $4.35 <span class="ticker-up">▲ 0.2%</span> <span class="ticker-note">(COPPER)</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">BTC</span> $64,230.12 <span class="ticker-up">▲ 1.2%</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">ETH</span> $2,133.25 <span class="ticker-up">▲ 1.1%</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">XRP</span> $1.34 <span class="ticker-up">▲ 1.4%</span></span>
+                    <span class="ticker-item"><span class="ticker-symbol">XDC</span> $0.042 <span class="ticker-up">▲ 5.1%</span></span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="invoice-modal" class="modal-overlay">
-    <div class="glass-panel hr-modal-content">
-        <button class="close-btn" onclick="closeInvoiceModal()">X</button>
-        <h2 id="modal-inv-vendor" style="font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 4px;">VENDOR NAME</h2>
-        <div id="modal-inv-ref" style="font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;">REF / ROUTING</div>
-        
-        <div class="table-container" style="max-height: 40vh; margin-bottom: 20px;">
-            <table style="margin-top: 0;">
-                <thead><tr><th>DESCRIPTION</th><th>GL CODE</th><th>AMOUNT</th></tr></thead>
-                <tbody id="modal-inv-items"></tbody>
-                <tfoot>
-                    <tr><td colspan="2" style="text-align: right; font-size: 14px;"><strong>TOTAL DUE:</strong></td><td id="modal-inv-total" style="font-size: 14px; font-weight: 900; color: #dc2626;">$0.00</td></tr>
-                </tfoot>
-            </table>
-        </div>
-        
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <div style="font-size: 10px; font-style: italic; color: rgba(255,255,255,0.6); max-width: 60%;">*Varis OS has verified vendor details and applied automated GL mapping.*</div>
-            <button class="run-payroll-btn" onclick="alert('Invoice Approved. Scheduled for ISO-20022 settlement.'); closeInvoiceModal();">APPROVE & SETTLE</button>
-        </div>
-    </div>
-</div>
-
-<div id="emp-modal" class="modal-overlay">
-    <div class="glass-panel hr-modal-content">
-        <button class="close-btn" onclick="closeModal()">X</button>
-        <h2 id="modal-emp-name" style="font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 4px;">EMPLOYEE NAME</h2>
-        <div id="modal-emp-role" style="font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;">ROLE / DEPARTMENT</div>
-        
-        <div class="hr-grid">
-            <div class="hr-item">
-                <div class="hr-label">Base Rate</div>
-                <div id="modal-emp-wage" class="hr-value">$24.50 / hr</div>
-            </div>
-            <div class="hr-item">
-                <div class="hr-label">Payment Rail & Frequency</div>
-                <div id="modal-emp-rail" class="hr-value" style="color: #059669 !important;">UNT (Weekly)</div>
-            </div>
-            <div class="hr-item full-span">
-                <div class="hr-label">Destination Address / Account</div>
-                <div id="modal-emp-wallet" class="hr-value" style="font-family: monospace; font-size: 11px; word-break: break-all;">0x...</div>
+    <div id="invoice-modal" class="modal-overlay">
+        <div class="glass-panel hr-modal-content">
+            <button class="close-btn" onclick="closeInvoiceModal()">X</button>
+            <h2 id="modal-inv-vendor" style="font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 4px;">VENDOR NAME</h2>
+            <div id="modal-inv-ref" style="font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;">REF / ROUTING</div>
+            
+            <div class="table-container" style="max-height: 40vh; margin-bottom: 20px;">
+                <table style="margin-top: 0;">
+                    <thead><tr><th>DESCRIPTION</th><th>GL CODE</th><th>AMOUNT</th></tr></thead>
+                    <tbody id="modal-inv-items"></tbody>
+                    <tfoot>
+                        <tr><td colspan="2" style="text-align: right; font-size: 14px;"><strong>TOTAL DUE:</strong></td><td id="modal-inv-total" style="font-size: 14px; font-weight: 900; color: #dc2626;">$0.00</td></tr>
+                    </tfoot>
+                </table>
             </div>
             
-            <div id="tip-splitter-container" class="hr-item full-span" style="display: none; background: rgba(5, 150, 105, 0.1); border-color: rgba(5, 150, 105, 0.4);">
-                <div class="hr-label" style="color: #fff !important;">Varis TipSplitter Protocol</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 8px;">
-                    <div>
-                        <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase;">Gross CC Tips</div>
-                        <div id="modal-emp-gross-tips" style="font-size: 14px; font-weight: 900; color: #fff;">$0.00</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase;">Support Tip-Out (20%)</div>
-                        <div id="modal-emp-tipout" style="font-size: 14px; font-weight: 900; color: #f87171;">-$0.00</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase;">Net Realized Tips</div>
-                        <div id="modal-emp-net-tips" style="font-size: 14px; font-weight: 900; color: #34d399;">$0.00</div>
-                    </div>
-                </div>
-                <div style="font-size: 9px; font-style: italic; color: rgba(255,255,255,0.5); margin-top: 8px;">*Tip-Out dynamically routed to support staff via designated smart contract rails.*</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <div style="font-size: 10px; font-style: italic; color: rgba(255,255,255,0.6); max-width: 60%;">*Varis OS has verified vendor details and applied automated GL mapping.*</div>
+                <button class="run-payroll-btn" onclick="alert('Invoice Approved. Scheduled for ISO-20022 settlement.'); closeInvoiceModal();">APPROVE & SETTLE</button>
             </div>
-
-            <div class="hr-item">
-                <div class="hr-label">Pending Compensation Adj.</div>
-                <div id="modal-emp-raise" class="hr-value" style="color: #059669 !important;">+$1.50/hr</div>
-            </div>
-            <div class="hr-item">
-                <div class="hr-label">Adjustment Effective Date</div>
-                <div id="modal-emp-raise-date" class="hr-value">2026-07-01</div>
-            </div>
-            <div class="hr-item">
-                <div class="hr-label">Crypto 401(k) Off-Ramp</div>
-                <div id="modal-emp-401k" class="hr-value">Active (3% Co. Match)</div>
-            </div>
-            <div class="hr-item" style="background: rgba(212, 175, 55, 0.1); border-color: rgba(212, 175, 55, 0.4);">
-                <div class="hr-label" style="color: #fff !important;">7-Year Protocol Lock</div>
-                <div id="modal-emp-lock" class="hr-value" style="color: #D4AF37 !important;">Active (5% Co. Match)</div>
-            </div>
-        </div>
-        <div style="font-size: 10px; font-style: italic; color: rgba(255,255,255,0.6); margin-top: 20px; text-align: center;">
-            *ADP Integration Active: "RUN PAYROLL" instantly issues direct deposits, executes blockchain transfers, prints paper checks (if elected), and remits real-time tax withholdings.*
         </div>
     </div>
-</div>
 
-<script>
-    const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    const numFormatter = new Intl.NumberFormat('en-US');
-
-    // HELPER: Generates rich inner bars for the expanded cards
-    function renderRichBar(label, valueStr, percentage, colorHex) {
-        let p = Math.max(0, Math.min(100, percentage)); 
-        return `
-            <div class="rich-row"><span>${label}</span><span>${valueStr}</span></div>
-            <div class="rich-bar-bg"><div class="rich-bar-fill" style="width: ${p}%; background: ${colorHex};"></div></div>
-        `;
-    }
-
-    // HELPER: Format Ticker Blocks for seamless vertical scroll
-    function formatTicker(arr) {
-        let block = `<div class="card-mini-ticker-block">` + arr.map(t => `<span>${t}</span>`).join('') + `</div>`;
-        return block + block; // Doubled for infinite scroll loop
-    }
-
-    // ---------------------------------------------------------
-    // TIME & SPEED ENGINE (Real Local PC Time + Timezone)
-    // ---------------------------------------------------------
-    let systemClock = new Date();
-    let clockMultiplier = 1;
-    
-    const tzString = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2] || '';
-
-    function toggleSpeed() {
-        clockMultiplier = clockMultiplier === 1 ? 60 : (clockMultiplier === 60 ? 3600 : 1);
-        document.getElementById('speed-btn').innerText = clockMultiplier + "X SPEED";
-        if(clockMultiplier > 1) document.getElementById('speed-btn').classList.add('fast');
-        else document.getElementById('speed-btn').classList.remove('fast');
-    }
-
-    setInterval(() => {
-        if (clockMultiplier > 1) {
-            systemClock = new Date(systemClock.getTime() + (1000 * clockMultiplier));
-        } else {
-            systemClock = new Date(); 
-        }
-        document.getElementById('sys-time').innerText = systemClock.toLocaleTimeString('en-US', {hour12: true}) + " " + tzString;
-    }, 1000);
-
-    // ---------------------------------------------------------
-    // CASH ON HAND LEDGER
-    // ---------------------------------------------------------
-    const cashOnHandData = {
-        resort: { total: 450000, deposits: [] },
-        restaurant: { total: 85000, deposits: [] },
-        coffee: { total: 24000, deposits: [] },
-        auto: { total: 1250000, deposits: [] }
-    };
-
-    function renderCash() {
-        const data = cashOnHandData[activeBusiness];
-        document.getElementById('cash-total-val').innerText = formatter.format(data.total);
-        const tbody = document.getElementById('cash-tbody');
-        tbody.innerHTML = '';
-        data.deposits.forEach(dep => {
-            tbody.innerHTML += `<tr><td>${dep.time}</td><td>${formatter.format(dep.amount)}</td><td style="color:#059669;">${dep.type}</td></tr>`;
-        });
-    }
-
-    // ---------------------------------------------------------
-    // UBOOKS INBOX (ACCOUNTS PAYABLE & GL CODING)
-    // ---------------------------------------------------------
-    const apData = {
-        resort: [
-            { vendor: "Sysco Foods", ref: "INV-84920-A", routing: "ExecChef@ubooks.com", due: "Net-30", total: 14250.00, status: "Pending Approval",
-              items: [ { desc: "Produce & Grocery", gl: "GL-4010", amt: 5200.00 }, { desc: "Meat & Poultry", gl: "GL-4020", amt: 6500.00 }, { desc: "Dairy", gl: "GL-4030", amt: 2550.00 } ] },
-            { vendor: "Ecolab", ref: "INV-77319-B", routing: "Facilities@ubooks.com", due: "Paid", total: 3120.50, status: "CLEARED",
-              items: [ { desc: "Cleaning Supplies", gl: "GL-5010", amt: 2100.00 }, { desc: "Maintenance Chems", gl: "GL-5020", amt: 1020.50 } ] },
-            { vendor: "Staples Business", ref: "INV-11920-O", routing: "DirRooms@ubooks.com", due: "Net-15", total: 840.00, status: "Pending Approval",
-              items: [ { desc: "Office Supplies", gl: "GL-7010", amt: 500.00 }, { desc: "Printer Ink & Toner", gl: "GL-7020", amt: 340.00 } ] },
-            { vendor: "Republic National Dist.", ref: "INV-99201-C", routing: "ExecChef@ubooks.com", due: "Net-15", total: 8400.00, status: "Pending Approval",
-              items: [ { desc: "Liquor", gl: "GL-4110", amt: 5400.00 }, { desc: "Wine", gl: "GL-4120", amt: 3000.00 } ] }
-        ],
-        restaurant: [
-            { vendor: "Sysco Foods", ref: "INV-84921-R", routing: "ExecChef@ubooks.com", due: "Net-30", total: 4250.00, status: "Pending Approval",
-              items: [ { desc: "Produce & Grocery", gl: "GL-4010", amt: 2200.00 }, { desc: "Meat & Poultry", gl: "GL-4020", amt: 2050.00 } ] }
-        ],
-        coffee: [
-            { vendor: "Local Roasters Inc.", ref: "INV-1102-C", routing: "ExecChef@ubooks.com", due: "Net-15", total: 1250.00, status: "Pending Approval",
-              items: [ { desc: "Coffee Beans", gl: "GL-4050", amt: 1250.00 } ] },
-            { vendor: "Staples Business", ref: "INV-11922-O", routing: "ExecChef@ubooks.com", due: "Net-15", total: 140.00, status: "Pending Approval",
-              items: [ { desc: "Office Supplies", gl: "GL-7010", amt: 140.00 } ] }
-        ],
-        auto: [
-            { vendor: "Snap-On Tools", ref: "INV-5544-T", routing: "Facilities@ubooks.com", due: "Net-30", total: 4500.00, status: "Pending Approval",
-              items: [ { desc: "Service Bay Equip", gl: "GL-6010", amt: 4500.00 } ] }
-        ]
-    };
-
-    function renderAP() {
-        const tbody = document.getElementById('ap-tbody');
-        if(!tbody) return;
-        tbody.innerHTML = '';
-        const list = apData[activeBusiness] || [];
-        
-        list.forEach(inv => {
-            const tr = document.createElement('tr');
-            const statHtml = inv.status === "CLEARED" ? `<span style="color:#059669; font-weight:900;">CLEARED (ISO-20022)</span>` : `<span style="color:#d97706; font-weight:900;">${inv.status}</span>`;
-            tr.innerHTML = `
-                <td>${inv.vendor}</td>
-                <td>${inv.ref}</td>
-                <td style="color:#172554;">${inv.routing}</td>
-                <td>${inv.due}</td>
-                <td>${formatter.format(inv.total)}</td>
-                <td>${statHtml}</td>
-            `;
-            tr.onclick = () => openInvoiceModal(inv);
-            tbody.appendChild(tr);
-        });
-    }
-
-    function openInvoiceModal(inv) {
-        document.getElementById('modal-inv-vendor').innerText = inv.vendor;
-        document.getElementById('modal-inv-ref').innerText = `${inv.ref} | ROUTED VIA: ${inv.routing}`;
-        
-        const tItems = document.getElementById('modal-inv-items');
-        tItems.innerHTML = '';
-        inv.items.forEach(item => {
-            tItems.innerHTML += `<tr><td>${item.desc}</td><td style="color:#d4af37;">${item.gl}</td><td>${formatter.format(item.amt)}</td></tr>`;
-        });
-        
-        document.getElementById('modal-inv-total').innerText = formatter.format(inv.total);
-        document.getElementById('invoice-modal').classList.add('active');
-    }
-
-    function closeInvoiceModal() {
-        document.getElementById('invoice-modal').classList.remove('active');
-    }
-
-    // ---------------------------------------------------------
-    // RECONCILIATION APPROVAL MATRIX
-    // ---------------------------------------------------------
-    let reconApprovals = {};
-    
-    function resetApprovals() {
-        reconApprovals = {
-            execChef: false, catering: false, fbDir: false, nightAudit: false, gmAuto: false
-        };
-    }
-
-    function toggleApproval(dept) {
-        reconApprovals[dept] = !reconApprovals[dept];
-        renderRecon();
-    }
-
-    function renderRecon() {
-        const grid = document.getElementById('approval-grid');
-        const eodBtn = document.getElementById('run-eod-btn');
-        if(!grid) return;
-
-        let allApproved = false;
-
-        if(activeBusiness === 'resort') {
-            grid.innerHTML = `
-                <button class="approve-btn ${reconApprovals.execChef ? 'approved' : ''}" onclick="toggleApproval('execChef')">EXEC CHEF (F&B) ${reconApprovals.execChef ? '✓' : ''}</button>
-                <button class="approve-btn ${reconApprovals.catering ? 'approved' : ''}" onclick="toggleApproval('catering')">DIR. OF CATERING ${reconApprovals.catering ? '✓' : ''}</button>
-                <button class="approve-btn ${reconApprovals.fbDir ? 'approved' : ''}" onclick="toggleApproval('fbDir')">F&B DIRECTOR ${reconApprovals.fbDir ? '✓' : ''}</button>
-                <button class="approve-btn ${reconApprovals.nightAudit ? 'approved' : ''}" onclick="toggleApproval('nightAudit')">NIGHT AUDIT (ROOMS) ${reconApprovals.nightAudit ? '✓' : ''}</button>
-            `;
-            allApproved = reconApprovals.execChef && reconApprovals.catering && reconApprovals.fbDir && reconApprovals.nightAudit;
-        } else {
-            grid.innerHTML = `
-                <button class="approve-btn ${reconApprovals.gmAuto ? 'approved' : ''}" onclick="toggleApproval('gmAuto')">GM EOD APPROVAL ${reconApprovals.gmAuto ? '✓' : ''}</button>
-            `;
-            allApproved = reconApprovals.gmAuto;
-        }
-
-        eodBtn.disabled = !allApproved;
-        
-        let pendingTips = 0;
-        let openTix = 0;
-        employeeRoster[activeBusiness].staff.forEach(e => {
-            if(e.ccTips) pendingTips += e.ccTips;
-            if(e.openTickets) openTix += e.openTickets;
-        });
-
-        document.getElementById('recon-unrec').innerText = formatter.format(currentLiveData[activeBusiness].gross);
-        document.getElementById('recon-tips').innerText = formatter.format(pendingTips);
-        document.getElementById('recon-tix').innerText = openTix;
-    }
-
-    // ---------------------------------------------------------
-    // MOCK STAFF GENERATOR
-    // ---------------------------------------------------------
-    const rails = ['FIAT', 'UNT', 'UGLD', 'XRP', 'XDC', 'ETH', 'RLUSD'];
-    const freqs = ['Daily', 'Weekly', 'Bi-Weekly'];
-    const firstNames = ["A.", "B.", "C.", "D.", "E.", "J.", "K.", "L.", "M.", "P.", "R.", "S.", "T.", "W."];
-    const lastNames = ["Smith", "Chen", "Williams", "Brown", "Garcia", "Miller", "Davis", "Rodriguez", "Lopez", "Wilson", "Taylor", "Moore", "Jackson", "Martin"];
-    
-    function generateStaff(rolesArray, prefix) {
-        const roster = [];
-        rolesArray.forEach(r => {
-            for(let i=0; i<r.count; i++) {
-                const hourlyRail = rails[Math.floor(Math.random()*rails.length)];
+    <div id="emp-modal" class="modal-overlay">
+        <div class="glass-panel hr-modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <h2 id="modal-emp-name" style="font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 4px;">EMPLOYEE NAME</h2>
+            <div id="modal-emp-role" style="font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;">ROLE / DEPARTMENT</div>
+            
+            <div class="hr-grid">
+                <div class="hr-item">
+                    <div class="hr-label">Base Rate</div>
+                    <div id="modal-emp-wage" class="hr-value">$24.50 / hr</div>
+                </div>
+                <div class="hr-item">
+                    <div class="hr-label">Payment Rail & Frequency</div>
+                    <div id="modal-emp-rail" class="hr-value" style="color: #059669 !important;">UNT (Weekly)</div>
+                </div>
+                <div class="hr-item full-span">
+                    <div class="hr-label">Destination Address / Account</div>
+                    <div id="modal-emp-wallet" class="hr-value" style="font-family: monospace; font-size: 11px; word-break: break-all;">0x...</div>
+                </div>
                 
-                let wallet = "";
-                if (hourlyRail === 'FIAT') wallet = "ACH Routing: 021000021 / Acct: ****" + Math.floor(1000 + Math.random()*9000);
-                else if (['UNT','UGLD','XDC'].includes(hourlyRail)) wallet = "xdc" + Array(40).fill(0).map(()=>Math.floor(Math.random()*16).toString(16)).join('');
-                else if (hourlyRail === 'XRP') wallet = "r" + Array(33).fill(0).map(()=>Math.floor(Math.random()*16).toString(16)).join('');
-                else wallet = "0x" + Array(40).fill(0).map(()=>Math.floor(Math.random()*16).toString(16)).join('');
+                <div id="tip-splitter-container" class="hr-item full-span" style="display: none; background: rgba(5, 150, 105, 0.1); border-color: rgba(5, 150, 105, 0.4);">
+                    <div class="hr-label" style="color: #fff !important;">Varis TipSplitter Protocol</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 8px;">
+                        <div>
+                            <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase;">Gross CC Tips</div>
+                            <div id="modal-emp-gross-tips" style="font-size: 14px; font-weight: 900; color: #fff;">$0.00</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase;">Support Tip-Out (20%)</div>
+                            <div id="modal-emp-tipout" style="font-size: 14px; font-weight: 900; color: #f87171;">-$0.00</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase;">Net Realized Tips</div>
+                            <div id="modal-emp-net-tips" style="font-size: 14px; font-weight: 900; color: #34d399;">$0.00</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 9px; font-style: italic; color: rgba(255,255,255,0.5); margin-top: 8px;">*Tip-Out dynamically routed to support staff via designated smart contract rails.*</div>
+                </div>
 
-                const hasRaise = Math.random() > 0.8;
-                const isTipped = r.title.includes("Server") || r.title.includes("Bartender") || r.title.includes("Barista") || r.title.includes("Attendant") || r.title.includes("Captain");
-                const randomName = firstNames[Math.floor(Math.random()*firstNames.length)] + " " + lastNames[Math.floor(Math.random()*lastNames.length)];
+                <div class="hr-item">
+                    <div class="hr-label">Pending Compensation Adj.</div>
+                    <div id="modal-emp-raise" class="hr-value" style="color: #059669 !important;">+$1.50/hr</div>
+                </div>
+                <div class="hr-item">
+                    <div class="hr-label">Adjustment Effective Date</div>
+                    <div id="modal-emp-raise-date" class="hr-value">2026-07-01</div>
+                </div>
+                <div class="hr-item">
+                    <div class="hr-label">Crypto 401(k) Off-Ramp</div>
+                    <div id="modal-emp-401k" class="hr-value">Active (3% Co. Match)</div>
+                </div>
+                <div class="hr-item" style="background: rgba(212, 175, 55, 0.1); border-color: rgba(212, 175, 55, 0.4);">
+                    <div class="hr-label" style="color: #fff !important;">7-Year Protocol Lock</div>
+                    <div id="modal-emp-lock" class="hr-value" style="color: #D4AF37 !important;">Active (5% Co. Match)</div>
+                </div>
+            </div>
+            <div style="font-size: 10px; font-style: italic; color: rgba(255,255,255,0.6); margin-top: 20px; text-align: center;">
+                *ADP Integration Active: "RUN PAYROLL" instantly issues direct deposits, executes blockchain transfers, prints paper checks (if elected), and remits real-time tax withholdings.*
+            </div>
+        </div>
+    </div>
 
-                roster.push({
-                    id: `VB-${Math.floor(10000 + Math.random()*90000)}`, 
-                    name: randomName,
-                    role: r.title,
-                    wage: r.wage,
-                    isSalary: r.isSalary,
-                    freq: freqs[Math.floor(Math.random()*freqs.length)],
-                    method: hourlyRail,
-                    walletAddress: wallet,
-                    pendingRaise: hasRaise ? (r.isSalary ? "+$5,000/yr" : "+$1.50/hr") : "None",
-                    raiseEffective: hasRaise ? "2026-07-01" : "N/A",
-                    lockStatus: Math.random() > 0.4 ? "Active (5% Co. Match)" : "Opted Out",
-                    crypto401k: Math.random() > 0.3 ? "Active (3% Co. Match)" : "Standard Fiat 401(k)",
-                    accrued: Math.random() * 150,
-                    isTipped: isTipped,
-                    tipRail: isTipped ? rails[Math.floor(Math.random()*rails.length)] : null,
-                    openTickets: isTipped ? Math.floor(Math.random()*8) : 0,
-                    ccTips: isTipped ? Math.random()*80 : 0
-                });
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const siteMenu = document.getElementById('menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            siteMenu.classList.toggle('hidden');
+            siteMenu.classList.toggle('flex');
+            
+            if (siteMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             }
         });
-        return roster;
-    }
 
-    const hotelRoles = [
-        { title: "General Manager (Upper Mgmt)", wage: 145000, isSalary: true, count: 1 },
-        { title: "Director of Rooms (Middle Mgmt)", wage: 95000, isSalary: true, count: 1 },
-        { title: "Front Desk Manager (Supervisor)", wage: 65000, isSalary: true, count: 1 },
-        { title: "Front Desk Supervisor", wage: 32.00, isSalary: false, count: 2 },
-        { title: "Night Auditor (Staff)", wage: 25.00, isSalary: false, count: 3 },
-        { title: "Front Desk Agent (Staff)", wage: 22.50, isSalary: false, count: 12 },
-        { title: "Exec Housekeeper (Middle Mgmt)", wage: 85000, isSalary: true, count: 1 },
-        { title: "Housekeeping Supervisor", wage: 26.00, isSalary: false, count: 3 },
-        { title: "Housekeeping (Staff)", wage: 21.00, isSalary: false, count: 45 },
-        { title: "Chief Engineer (Middle Mgmt)", wage: 92000, isSalary: true, count: 1 },
-        { title: "Maintenance Tech (Staff)", wage: 28.00, isSalary: false, count: 6 },
-        { title: "F&B Director (Middle Mgmt)", wage: 105000, isSalary: true, count: 1 },
-        { title: "Exec Chef (Upper Mgmt)", wage: 135000, isSalary: true, count: 1 },
-        { title: "Sous Chef (Middle Mgmt)", wage: 75000, isSalary: true, count: 3 },
-        { title: "Line Cook (Staff)", wage: 24.50, isSalary: false, count: 18 },
-        { title: "Bar Manager (Middle Mgmt)", wage: 68000, isSalary: true, count: 2 },
-        { title: "Lead Bartender (Supervisor)", wage: 20.00, isSalary: false, count: 3 },
-        { title: "Resort Bartender (Staff)", wage: 16.27, isSalary: false, count: 8 },
-        { title: "Restaurant Manager", wage: 65000, isSalary: true, count: 2 },
-        { title: "Lead Server (Supervisor)", wage: 18.00, isSalary: false, count: 4 },
-        { title: "Server (Staff)", wage: 16.27, isSalary: false, count: 18 },
-        { title: "Buffet Attendant (Staff)", wage: 16.27, isSalary: false, count: 6 },
-        { title: "Pool Server (Staff)", wage: 16.27, isSalary: false, count: 6 },
-        { title: "Catering Manager (Middle Mgmt)", wage: 75000, isSalary: true, count: 1 },
-        { title: "Banquet Captain (Supervisor)", wage: 22.00, isSalary: false, count: 2 },
-        { title: "Banquet Server (Staff)", wage: 16.27, isSalary: false, count: 15 }
-    ];
+        window.addEventListener('click', () => {
+            siteMenu.classList.add('hidden');
+            siteMenu.classList.remove('flex');
+            menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        });
+    </script>
 
-    const restaurantRoles = [
-        { title: "General Manager (Upper Mgmt)", wage: 110000, isSalary: true, count: 1 },
-        { title: "Exec Chef (Upper Mgmt)", wage: 95000, isSalary: true, count: 1 },
-        { title: "Sous Chef (Middle Mgmt)", wage: 78000, isSalary: true, count: 2 },
-        { title: "Maitre D' (Supervisor)", wage: 32.00, isSalary: false, count: 2 },
-        { title: "Line Cook (Staff)", wage: 24.50, isSalary: false, count: 12 },
-        { title: "Prep Cook (Staff)", wage: 21.00, isSalary: false, count: 6 },
-        { title: "Bar Manager", wage: 70000, isSalary: true, count: 1 },
-        { title: "Lead Bartender", wage: 20.00, isSalary: false, count: 2 },
-        { title: "Bartender (Staff)", wage: 16.27, isSalary: false, count: 6 },
-        { title: "Lead Server (Supervisor)", wage: 18.00, isSalary: false, count: 4 },
-        { title: "Server (Staff)", wage: 16.27, isSalary: false, count: 16 },
-        { title: "Busser/Runner (Staff)", wage: 16.27, isSalary: false, count: 9 }
-    ];
+    <script>
+        const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+        const numFormatter = new Intl.NumberFormat('en-US');
 
-    const cafeRoles = [
-        { title: "Store Manager (Middle Mgmt)", wage: 72000, isSalary: true, count: 1 },
-        { title: "Shift Lead (Supervisor)", wage: 28.50, isSalary: false, count: 3 },
-        { title: "Lead Barista (Staff)", wage: 24.00, isSalary: false, count: 4 },
-        { title: "Barista (Staff)", wage: 16.27, isSalary: false, count: 10 } 
-    ];
-
-    const autoRoles = [
-        { title: "General Manager (Upper Mgmt)", wage: 250000, isSalary: true, count: 1 },
-        { title: "Finance Manager (Middle Mgmt)", wage: 150000, isSalary: true, count: 2 },
-        { title: "Sales Floor Manager (Supervisor)", wage: 120000, isSalary: true, count: 3 },
-        { title: "Sales Rep (Staff)", wage: 45000, isSalary: true, count: 15 }, 
-        { title: "Service Director", wage: 110000, isSalary: true, count: 1 },
-        { title: "Service Advisor", wage: 65000, isSalary: true, count: 5 },
-        { title: "Service Technician (Staff)", wage: 35.00, isSalary: false, count: 14 },
-        { title: "Parts Manager", wage: 75000, isSalary: true, count: 1 },
-        { title: "Parts Counter", wage: 25.00, isSalary: false, count: 3 }
-    ];
-
-    const employeeRoster = {
-        resort: { headcount: "166 TOTAL ACTIVE", staff: generateStaff(hotelRoles, 'HTL') },
-        restaurant: { headcount: "62 TOTAL ACTIVE", staff: generateStaff(restaurantRoles, 'RST') },
-        coffee: { headcount: "18 TOTAL ACTIVE", staff: generateStaff(cafeRoles, 'CFE') },
-        auto: { headcount: "45 TOTAL ACTIVE", staff: generateStaff(autoRoles, 'AUT') }
-    };
-
-    // ---------------------------------------------------------
-    // BASE METRICS & LOGIC (REALISTIC INDUSTRY AVERAGES)
-    // ---------------------------------------------------------
-    const baseData = {
-        resort: {
-            brand: "HOTEL ILONA",
-            context: "500-KEY PREMIUM RESORT | LIVE 2026 METRICS",
-            badgeLabel: "ROOMS/F&B",
-            volume: 440,
-            volumeLabel: "Rooms Sold",
-            occ: 88, 
-            avgRate: 250, 
-            revPar: 220,
-            roomsRev: 110000, 
-            foodRev: 5500,
-            bevRev: 3000,    
-            cateringRev: 5200,
-            spaRev: 2850,
-            incidentalRev: 906.30,
-            gross: 127456.30, 
-            netMargin: 22, 
-            payrollMargin: 35, 
-            cogsMargin: 18, 
-            spoilageMargin: 1.2, 
-            treasuryAlloc: 350,
-            rewardOffset: 85
-        },
-        restaurant: {
-            brand: "THE RUSTIC VINE",
-            context: "220-SEAT FINE DINING | LIVE 2026 METRICS",
-            badgeLabel: "DINING",
-            volume: 340, 
-            volumeLabel: "Covers (Guests)",
-            occ: 95, 
-            avgRate: 85, 
-            revPar: 80, 
-            foodRev: 19500,
-            bevRev: 9400, 
-            ancillaryRev: 0, 
-            gross: 28900,
-            netMargin: 14, 
-            payrollMargin: 35, 
-            cogsMargin: 30, 
-            spoilageMargin: 2.8,
-            treasuryAlloc: 82,
-            rewardOffset: 24
-        },
-        coffee: {
-            brand: "ELEVATION ROASTERS",
-            context: "HIGH-TRAFFIC CAFE | LIVE 2026 METRICS",
-            badgeLabel: "CAFE",
-            volume: 650, 
-            volumeLabel: "POS Tickets",
-            occ: 100, 
-            avgRate: 9.50, 
-            revPar: 9.50,
-            foodRev: 1175,
-            bevRev: 5000, 
-            ancillaryRev: 0, 
-            gross: 6175,
-            netMargin: 16, 
-            payrollMargin: 35, 
-            cogsMargin: 25, 
-            spoilageMargin: 1.5,
-            treasuryAlloc: 18,
-            rewardOffset: 6
-        },
-        auto: {
-            brand: "VARIS MOTORS",
-            context: "FRANCHISE AUTO DEALER | LIVE 2026 METRICS",
-            badgeLabel: "SALES/SERVICE",
-            volume: 14,
-            volumeLabel: "Vehicles Sold",
-            occ: 100,
-            avgRate: 42500, 
-            revPar: 42500,
-            roomsRev: 595000, 
-            foodRev: 45000,
-            bevRev: 0, 
-            ancillaryRev: 28000, 
-            gross: 668000,
-            netMargin: 3.5, 
-            payrollMargin: 8,
-            cogsMargin: 83, 
-            spoilageMargin: 0,
-            treasuryAlloc: 850,
-            rewardOffset: 120,
-            inventoryFloorValue: 8500000, 
-            stakedUNT: 2500000, 
-            apyTarget: 12
+        // HELPER: Generates rich inner bars for the expanded cards
+        function renderRichBar(label, valueStr, percentage, colorHex) {
+            let p = Math.max(0, Math.min(100, percentage)); 
+            return `
+                <div class="rich-row"><span>${label}</span><span>${valueStr}</span></div>
+                <div class="rich-bar-bg"><div class="rich-bar-fill" style="width: ${p}%; background: ${colorHex};"></div></div>
+            `;
         }
-    };
 
-    const timeMultipliers = { daily: 1, weekly: 7, monthly: 30, quarterly: 90, yearly: 365 };
+        // HELPER: Format Ticker Blocks for seamless vertical scroll
+        function formatTicker(arr) {
+            let block = `<div class="card-mini-ticker-block">` + arr.map(t => `<span>${t}</span>`).join('') + `</div>`;
+            return block + block; // Doubled for infinite scroll loop
+        }
 
-    let activeBusiness = 'resort';
-    let activeTime = 'daily';
-    let currentLiveData = {};
-
-    function initData() { 
-        currentLiveData = JSON.parse(JSON.stringify(baseData)); 
-        resetApprovals();
-    }
-
-    function updateDisplay() {
-        const mult = timeMultipliers[activeTime];
-        const data = currentLiveData[activeBusiness];
-
-        const mGross = data.gross * mult;
-        const mVolume = Math.floor(data.volume * mult);
-        const mPayroll = mGross * (data.payrollMargin / 100);
-        const mCogs = mGross * (data.cogsMargin / 100);
-        const mNet = mGross * (data.netMargin / 100);
-        const mTreasury = data.treasuryAlloc * mult;
-        const mRewards = data.rewardOffset * mult;
-
-        const fixedMargin = 100 - data.netMargin - data.payrollMargin - data.cogsMargin;
-
-        document.getElementById('brand-name').innerText = data.brand;
-        document.getElementById('brand-context').innerText = data.context;
+        // ---------------------------------------------------------
+        // TIME & SPEED ENGINE (Real Local PC Time + Timezone)
+        // ---------------------------------------------------------
+        let systemClock = new Date();
+        let clockMultiplier = 1;
         
-        document.getElementById('tax-sales-co').innerText = formatter.format(mGross * 0.029);
-        document.getElementById('tax-sales-den').innerText = formatter.format(mGross * 0.0481);
-        document.getElementById('tax-payroll').innerText = formatter.format(mPayroll * 0.22); 
+        const tzString = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2] || '';
 
-        if(document.getElementById('badge-gross')) {
-            document.getElementById('badge-gross').innerHTML = data.badgeLabel;
-            document.getElementById('val-gross').innerText = formatter.format(mGross);
-            document.getElementById('val-net').innerText = formatter.format(mNet);
-            document.getElementById('val-payroll').innerText = formatter.format(mPayroll + mCogs);
-            document.getElementById('val-basket').innerText = formatter.format(mTreasury);
-            document.getElementById('val-yield').innerText = formatter.format(mRewards);
+        function toggleSpeed() {
+            clockMultiplier = clockMultiplier === 1 ? 60 : (clockMultiplier === 60 ? 3600 : 1);
+            document.getElementById('speed-btn').innerText = clockMultiplier + "X SPEED";
+            if(clockMultiplier > 1) document.getElementById('speed-btn').classList.add('fast');
+            else document.getElementById('speed-btn').classList.remove('fast');
+        }
 
-            let revBreakdownHTML = '';
-            let grossTicks = [];
-            let netTicks = [];
-            let cogsTicks = [];
+        setInterval(() => {
+            if (clockMultiplier > 1) {
+                systemClock = new Date(systemClock.getTime() + (1000 * clockMultiplier));
+            } else {
+                systemClock = new Date(); 
+            }
+            document.getElementById('sys-time').innerText = systemClock.toLocaleTimeString('en-US', {hour12: true}) + " " + tzString;
+        }, 1000);
+
+        // ---------------------------------------------------------
+        // CASH ON HAND LEDGER
+        // ---------------------------------------------------------
+        const cashOnHandData = {
+            resort: { total: 450000, deposits: [] },
+            restaurant: { total: 85000, deposits: [] },
+            coffee: { total: 24000, deposits: [] },
+            auto: { total: 1250000, deposits: [] }
+        };
+
+        function renderCash() {
+            const data = cashOnHandData[activeBusiness];
+            document.getElementById('cash-total-val').innerText = formatter.format(data.total);
+            const tbody = document.getElementById('cash-tbody');
+            tbody.innerHTML = '';
+            data.deposits.forEach(dep => {
+                tbody.innerHTML += `<tr><td>${dep.time}</td><td>${formatter.format(dep.amount)}</td><td style="color:#059669;">${dep.type}</td></tr>`;
+            });
+        }
+
+        // ---------------------------------------------------------
+        // UBOOKS INBOX (ACCOUNTS PAYABLE & GL CODING)
+        // ---------------------------------------------------------
+        const apData = {
+            resort: [
+                { vendor: "Sysco Foods", ref: "INV-84920-A", routing: "ExecChef@ubooks.com", due: "Net-30", total: 14250.00, status: "Pending Approval",
+                  items: [ { desc: "Produce & Grocery", gl: "GL-4010", amt: 5200.00 }, { desc: "Meat & Poultry", gl: "GL-4020", amt: 6500.00 }, { desc: "Dairy", gl: "GL-4030", amt: 2550.00 } ] },
+                { vendor: "Ecolab", ref: "INV-77319-B", routing: "Facilities@ubooks.com", due: "Paid", total: 3120.50, status: "CLEARED",
+                  items: [ { desc: "Cleaning Supplies", gl: "GL-5010", amt: 2100.00 }, { desc: "Maintenance Chems", gl: "GL-5020", amt: 1020.50 } ] },
+                { vendor: "Staples Business", ref: "INV-11920-O", routing: "DirRooms@ubooks.com", due: "Net-15", total: 840.00, status: "Pending Approval",
+                  items: [ { desc: "Office Supplies", gl: "GL-7010", amt: 500.00 }, { desc: "Printer Ink & Toner", gl: "GL-7020", amt: 340.00 } ] },
+                { vendor: "Republic National Dist.", ref: "INV-99201-C", routing: "ExecChef@ubooks.com", due: "Net-15", total: 8400.00, status: "Pending Approval",
+                  items: [ { desc: "Liquor", gl: "GL-4110", amt: 5400.00 }, { desc: "Wine", gl: "GL-4120", amt: 3000.00 } ] }
+            ],
+            restaurant: [
+                { vendor: "Sysco Foods", ref: "INV-84921-R", routing: "ExecChef@ubooks.com", due: "Net-30", total: 4250.00, status: "Pending Approval",
+                  items: [ { desc: "Produce & Grocery", gl: "GL-4010", amt: 2200.00 }, { desc: "Meat & Poultry", gl: "GL-4020", amt: 2050.00 } ] }
+            ],
+            coffee: [
+                { vendor: "Local Roasters Inc.", ref: "INV-1102-C", routing: "ExecChef@ubooks.com", due: "Net-15", total: 1250.00, status: "Pending Approval",
+                  items: [ { desc: "Coffee Beans", gl: "GL-4050", amt: 1250.00 } ] },
+                { vendor: "Staples Business", ref: "INV-11922-O", routing: "ExecChef@ubooks.com", due: "Net-15", total: 140.00, status: "Pending Approval",
+                  items: [ { desc: "Office Supplies", gl: "GL-7010", amt: 140.00 } ] }
+            ],
+            auto: [
+                { vendor: "Snap-On Tools", ref: "INV-5544-T", routing: "Facilities@ubooks.com", due: "Net-30", total: 4500.00, status: "Pending Approval",
+                  items: [ { desc: "Service Bay Equip", gl: "GL-6010", amt: 4500.00 } ] }
+            ]
+        };
+
+        function renderAP() {
+            const tbody = document.getElementById('ap-tbody');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            const list = apData[activeBusiness] || [];
+            
+            list.forEach(inv => {
+                const tr = document.createElement('tr');
+                const statHtml = inv.status === "CLEARED" ? `<span style="color:#059669; font-weight:900;">CLEARED (ISO-20022)</span>` : `<span style="color:#d97706; font-weight:900;">${inv.status}</span>`;
+                tr.innerHTML = `
+                    <td>${inv.vendor}</td>
+                    <td>${inv.ref}</td>
+                    <td style="color:#172554;">${inv.routing}</td>
+                    <td>${inv.due}</td>
+                    <td>${formatter.format(inv.total)}</td>
+                    <td>${statHtml}</td>
+                `;
+                tr.onclick = () => openInvoiceModal(inv);
+                tbody.appendChild(tr);
+            });
+        }
+
+        function openInvoiceModal(inv) {
+            document.getElementById('modal-inv-vendor').innerText = inv.vendor;
+            document.getElementById('modal-inv-ref').innerText = `${inv.ref} | ROUTED VIA: ${inv.routing}`;
+            
+            const tItems = document.getElementById('modal-inv-items');
+            tItems.innerHTML = '';
+            inv.items.forEach(item => {
+                tItems.innerHTML += `<tr><td>${item.desc}</td><td style="color:#d4af37;">${item.gl}</td><td>${formatter.format(item.amt)}</td></tr>`;
+            });
+            
+            document.getElementById('modal-inv-total').innerText = formatter.format(inv.total);
+            document.getElementById('invoice-modal').classList.add('active');
+        }
+
+        function closeInvoiceModal() {
+            document.getElementById('invoice-modal').classList.remove('active');
+        }
+
+        // ---------------------------------------------------------
+        // RECONCILIATION APPROVAL MATRIX
+        // ---------------------------------------------------------
+        let reconApprovals = {};
+        
+        function resetApprovals() {
+            reconApprovals = {
+                execChef: false, catering: false, fbDir: false, nightAudit: false, gmAuto: false
+            };
+        }
+
+        function toggleApproval(dept) {
+            reconApprovals[dept] = !reconApprovals[dept];
+            renderRecon();
+        }
+
+        function renderRecon() {
+            const grid = document.getElementById('approval-grid');
+            const eodBtn = document.getElementById('run-eod-btn');
+            if(!grid) return;
+
+            let allApproved = false;
 
             if(activeBusiness === 'resort') {
-                const rPct = ((data.roomsRev * mult) / mGross) * 100;
-                const fPct = ((data.foodRev * mult) / mGross) * 100;
-                const bPct = ((data.bevRev * mult) / mGross) * 100;
-                const cPct = ((data.cateringRev * mult) / mGross) * 100;
-                const sPct = ((data.spaRev * mult) / mGross) * 100;
-                
-                revBreakdownHTML = `
-                    ${renderRichBar('ROOMS', formatter.format(data.roomsRev * mult), rPct, '#172554')}
-                    ${renderRichBar('FOOD', formatter.format(data.foodRev * mult), fPct, '#059669')}
-                    ${renderRichBar('BEVERAGE', formatter.format(data.bevRev * mult), bPct, '#d97706')}
-                    ${renderRichBar('CATERING', formatter.format(data.cateringRev * mult), cPct, '#dc2626')}
-                    ${renderRichBar('SPA/INCIDENTAL', formatter.format((data.spaRev + data.incidentalRev) * mult), sPct + (((data.incidentalRev*mult)/mGross)*100), '#7c3aed')}
+                grid.innerHTML = `
+                    <button class="approve-btn ${reconApprovals.execChef ? 'approved' : ''}" onclick="toggleApproval('execChef')">EXEC CHEF (F&B) ${reconApprovals.execChef ? '✓' : ''}</button>
+                    <button class="approve-btn ${reconApprovals.catering ? 'approved' : ''}" onclick="toggleApproval('catering')">DIR. OF CATERING ${reconApprovals.catering ? '✓' : ''}</button>
+                    <button class="approve-btn ${reconApprovals.fbDir ? 'approved' : ''}" onclick="toggleApproval('fbDir')">F&B DIRECTOR ${reconApprovals.fbDir ? '✓' : ''}</button>
+                    <button class="approve-btn ${reconApprovals.nightAudit ? 'approved' : ''}" onclick="toggleApproval('nightAudit')">NIGHT AUDIT (ROOMS) ${reconApprovals.nightAudit ? '✓' : ''}</button>
                 `;
-                
-                grossTicks = [
-                    `ROOMS: ${formatter.format(data.roomsRev * mult)}`,
-                    `F&B: ${formatter.format((data.foodRev+data.bevRev) * mult)}`,
-                    `CATERING: ${formatter.format(data.cateringRev * mult)}`,
-                    `SPA/INCID: ${formatter.format((data.spaRev+data.incidentalRev) * mult)}`
-                ];
-                netTicks = [
-                    `NET MARGIN: ${data.netMargin}%`,
-                    `ROOMS TGT: 74%`,
-                    `F&B TGT: 28%`,
-                    `ACTUAL EBITDA: ${formatter.format(mNet * 0.85)}`
-                ];
-                cogsTicks = [
-                    `LABOR: ${formatter.format(mPayroll)} (${data.payrollMargin}%)`,
-                    `F&B COGS: ${formatter.format(mCogs)}`,
-                    `F&B TGT: 28%`,
-                    `CATERING TGT: 35%`
-                ];
-
-            } else if (activeBusiness === 'auto') {
-                const vPct = ((data.roomsRev * mult) / mGross) * 100;
-                const pPct = ((data.foodRev * mult) / mGross) * 100;
-                const fPct = ((data.ancillaryRev * mult) / mGross) * 100;
-                
-                revBreakdownHTML = `
-                    ${renderRichBar('VEHICLE SALES', formatter.format(data.roomsRev * mult), vPct, '#172554')}
-                    ${renderRichBar('PARTS/SERVICE', formatter.format(data.foodRev * mult), pPct, '#059669')}
-                    ${renderRichBar('FINANCE (F&I)', formatter.format(data.ancillaryRev * mult), fPct, '#7c3aed')}
+                allApproved = reconApprovals.execChef && reconApprovals.catering && reconApprovals.fbDir && reconApprovals.nightAudit;
+            } else {
+                grid.innerHTML = `
+                    <button class="approve-btn ${reconApprovals.gmAuto ? 'approved' : ''}" onclick="toggleApproval('gmAuto')">GM EOD APPROVAL ${reconApprovals.gmAuto ? '✓' : ''}</button>
                 `;
-                
-                grossTicks = [
-                    `VEHICLE SALES: ${formatter.format(data.roomsRev * mult)}`,
-                    `PARTS/SERVICE: ${formatter.format(data.foodRev * mult)}`,
-                    `F&I: ${formatter.format(data.ancillaryRev * mult)}`
-                ];
-                netTicks = [
-                    `DEALER NET: ${data.netMargin}%`,
-                    `FRONT-END TGT: 4%`,
-                    `FIXED OPS TGT: 48%`
-                ];
-                cogsTicks = [
-                    `FLOOR PLAN: SWEEP ACTIVE`,
-                    `OPEX ALLOC: ${formatter.format(mPayroll + mCogs)}`
-                ];
-
-            } else if (activeBusiness === 'restaurant') {
-                const fPct = ((data.foodRev * mult) / mGross) * 100;
-                const bPct = ((data.bevRev * mult) / mGross) * 100;
-                const aPct = ((data.ancillaryRev * mult) / mGross) * 100;
-                
-                revBreakdownHTML = `
-                    ${renderRichBar('FOOD SALES', formatter.format(data.foodRev * mult), fPct, '#059669')}
-                    ${renderRichBar('BEVERAGE SALES', formatter.format(data.bevRev * mult), bPct, '#d97706')}
-                    ${renderRichBar('ANCILLARY REV', formatter.format(data.ancillaryRev * mult), aPct, '#172554')}
-                `;
-                
-                grossTicks = [
-                    `FOOD SALES: ${formatter.format(data.foodRev * mult)}`,
-                    `BEVERAGE: ${formatter.format(data.bevRev * mult)}`,
-                    `MERCH: ${formatter.format(data.ancillaryRev * mult)}`
-                ];
-                netTicks = [
-                    `OP MARGIN: ${data.netMargin}%`,
-                    `FOOD COST TGT: 29%`,
-                    `LIQUOR COST TGT: 21%`,
-                    `EBITDA: ${formatter.format(mNet * 0.85)}`
-                ];
-                cogsTicks = [
-                    `LABOR: ${formatter.format(mPayroll)} (${data.payrollMargin}%)`,
-                    `F&B COGS: ${formatter.format(mCogs)}`,
-                    `FIXED COSTS: ${formatter.format(mGross * (fixedMargin/100))}`
-                ];
-
-            } else if (activeBusiness === 'coffee') {
-                const fPct = ((data.foodRev * mult) / mGross) * 100;
-                const bPct = ((data.bevRev * mult) / mGross) * 100;
-                const aPct = ((data.ancillaryRev * mult) / mGross) * 100;
-                
-                revBreakdownHTML = `
-                    ${renderRichBar('FOOD SALES', formatter.format(data.foodRev * mult), fPct, '#059669')}
-                    ${renderRichBar('BEVERAGE SALES', formatter.format(data.bevRev * mult), bPct, '#d97706')}
-                    ${renderRichBar('ANCILLARY REV', formatter.format(data.ancillaryRev * mult), aPct, '#172554')}
-                `;
-                
-                grossTicks = [
-                    `BEVERAGE: ${formatter.format(data.bevRev * mult)}`,
-                    `PASTRY/FOOD: ${formatter.format(data.foodRev * mult)}`,
-                    `BEANS/MERCH: ${formatter.format(data.ancillaryRev * mult)}`
-                ];
-                netTicks = [
-                    `OP MARGIN: ${data.netMargin}%`,
-                    `BEV COGS TGT: 15%`,
-                    `FOOD COGS TGT: 32%`,
-                    `EBITDA: ${formatter.format(mNet * 0.85)}`
-                ];
-                cogsTicks = [
-                    `LABOR: ${formatter.format(mPayroll)} (${data.payrollMargin}%)`,
-                    `STORE COGS: ${formatter.format(mCogs)}`,
-                    `FIXED COSTS: ${formatter.format(mGross * (fixedMargin/100))}`
-                ];
+                allApproved = reconApprovals.gmAuto;
             }
 
-            document.getElementById('detail-gross').innerHTML = `
-                <div style="font-size: 12px; font-weight: 900; margin-bottom: 8px;">> ${data.volumeLabel}: ${numFormatter.format(mVolume)} &nbsp;&nbsp;|&nbsp;&nbsp; AVG: ${formatter.format(data.avgRate)}</div>
-                ${revBreakdownHTML}
-            `;
-            document.getElementById('footer-gross').innerText = activeBusiness === 'auto' ? `VEHICLES SOLD YTD: ${numFormatter.format(mVolume * 15)}` : `YTD RevPAR / RevPASH: ${formatter.format(data.revPar)}`;
+            eodBtn.disabled = !allApproved;
+            
+            let pendingTips = 0;
+            let openTix = 0;
+            employeeRoster[activeBusiness].staff.forEach(e => {
+                if(e.ccTips) pendingTips += e.ccTips;
+                if(e.openTickets) openTix += e.openTickets;
+            });
 
-            // SET THE VERTICAL DEAD SPACE TICKERS
-            document.getElementById('ticker-gross').innerHTML = formatTicker(grossTicks);
-            document.getElementById('ticker-net').innerHTML = formatTicker(netTicks);
-            document.getElementById('ticker-cogs').innerHTML = formatTicker(cogsTicks);
+            document.getElementById('recon-unrec').innerText = formatter.format(currentLiveData[activeBusiness].gross);
+            document.getElementById('recon-tips').innerText = formatter.format(pendingTips);
+            document.getElementById('recon-tix').innerText = openTix;
+        }
 
-            document.getElementById('detail-net').innerHTML = `
-                ${renderRichBar('FIXED COSTS', formatter.format(mGross * (fixedMargin/100)), fixedMargin, '#dc2626')}
-                ${renderRichBar('VARIABLE COSTS', formatter.format(mGross * ((data.payrollMargin+data.cogsMargin)/100)), data.payrollMargin+data.cogsMargin, '#f59e0b')}
-                ${renderRichBar('TAX WITHHOLDINGS', formatter.format(mGross * 0.08), 8, '#7c3aed')}
-                ${renderRichBar('NET GOP MARGIN', formatter.format(mNet), data.netMargin, '#059669')}
-            `;
-            document.getElementById('footer-net').innerText = `EBITDA (Est.): ${formatter.format(mNet * 0.85)}`;
+        // ---------------------------------------------------------
+        // MOCK STAFF GENERATOR
+        // ---------------------------------------------------------
+        const rails = ['FIAT', 'UNT', 'UGLD', 'XRP', 'XDC', 'ETH', 'RLUSD'];
+        const freqs = ['Daily', 'Weekly', 'Bi-Weekly'];
+        const firstNames = ["A.", "B.", "C.", "D.", "E.", "J.", "K.", "L.", "M.", "P.", "R.", "S.", "T.", "W."];
+        const lastNames = ["Smith", "Chen", "Williams", "Brown", "Garcia", "Miller", "Davis", "Rodriguez", "Lopez", "Wilson", "Taylor", "Moore", "Jackson", "Martin"];
+        
+        function generateStaff(rolesArray, prefix) {
+            const roster = [];
+            rolesArray.forEach(r => {
+                for(let i=0; i<r.count; i++) {
+                    const hourlyRail = rails[Math.floor(Math.random()*rails.length)];
+                    
+                    let wallet = "";
+                    if (hourlyRail === 'FIAT') wallet = "ACH Routing: 021000021 / Acct: ****" + Math.floor(1000 + Math.random()*9000);
+                    else if (['UNT','UGLD','XDC'].includes(hourlyRail)) wallet = "xdc" + Array(40).fill(0).map(()=>Math.floor(Math.random()*16).toString(16)).join('');
+                    else if (hourlyRail === 'XRP') wallet = "r" + Array(33).fill(0).map(()=>Math.floor(Math.random()*16).toString(16)).join('');
+                    else wallet = "0x" + Array(40).fill(0).map(()=>Math.floor(Math.random()*16).toString(16)).join('');
+
+                    const hasRaise = Math.random() > 0.8;
+                    const isTipped = r.title.includes("Server") || r.title.includes("Bartender") || r.title.includes("Barista") || r.title.includes("Attendant") || r.title.includes("Captain");
+                    const randomName = firstNames[Math.floor(Math.random()*firstNames.length)] + " " + lastNames[Math.floor(Math.random()*lastNames.length)];
+
+                    roster.push({
+                        id: `VB-${Math.floor(10000 + Math.random()*90000)}`, 
+                        name: randomName,
+                        role: r.title,
+                        wage: r.wage,
+                        isSalary: r.isSalary,
+                        freq: freqs[Math.floor(Math.random()*freqs.length)],
+                        method: hourlyRail,
+                        walletAddress: wallet,
+                        pendingRaise: hasRaise ? (r.isSalary ? "+$5,000/yr" : "+$1.50/hr") : "None",
+                        raiseEffective: hasRaise ? "2026-07-01" : "N/A",
+                        lockStatus: Math.random() > 0.4 ? "Active (5% Co. Match)" : "Opted Out",
+                        crypto401k: Math.random() > 0.3 ? "Active (3% Co. Match)" : "Standard Fiat 401(k)",
+                        accrued: Math.random() * 150,
+                        isTipped: isTipped,
+                        tipRail: isTipped ? rails[Math.floor(Math.random()*rails.length)] : null,
+                        openTickets: isTipped ? Math.floor(Math.random()*8) : 0,
+                        ccTips: isTipped ? Math.random()*80 : 0
+                    });
+                }
+            });
+            return roster;
+        }
+
+        const hotelRoles = [
+            { title: "General Manager (Upper Mgmt)", wage: 145000, isSalary: true, count: 1 },
+            { title: "Director of Rooms (Middle Mgmt)", wage: 95000, isSalary: true, count: 1 },
+            { title: "Front Desk Manager (Supervisor)", wage: 65000, isSalary: true, count: 1 },
+            { title: "Front Desk Supervisor", wage: 32.00, isSalary: false, count: 2 },
+            { title: "Night Auditor (Staff)", wage: 25.00, isSalary: false, count: 3 },
+            { title: "Front Desk Agent (Staff)", wage: 22.50, isSalary: false, count: 12 },
+            { title: "Exec Housekeeper (Middle Mgmt)", wage: 85000, isSalary: true, count: 1 },
+            { title: "Housekeeping Supervisor", wage: 26.00, isSalary: false, count: 3 },
+            { title: "Housekeeping (Staff)", wage: 21.00, isSalary: false, count: 45 },
+            { title: "Chief Engineer (Middle Mgmt)", wage: 92000, isSalary: true, count: 1 },
+            { title: "Maintenance Tech (Staff)", wage: 28.00, isSalary: false, count: 6 },
+            { title: "F&B Director (Middle Mgmt)", wage: 105000, isSalary: true, count: 1 },
+            { title: "Exec Chef (Upper Mgmt)", wage: 135000, isSalary: true, count: 1 },
+            { title: "Sous Chef (Middle Mgmt)", wage: 75000, isSalary: true, count: 3 },
+            { title: "Line Cook (Staff)", wage: 24.50, isSalary: false, count: 18 },
+            { title: "Bar Manager (Middle Mgmt)", wage: 68000, isSalary: true, count: 2 },
+            { title: "Lead Bartender (Supervisor)", wage: 20.00, isSalary: false, count: 3 },
+            { title: "Resort Bartender (Staff)", wage: 16.27, isSalary: false, count: 8 },
+            { title: "Restaurant Manager", wage: 65000, isSalary: true, count: 2 },
+            { title: "Lead Server (Supervisor)", wage: 18.00, isSalary: false, count: 4 },
+            { title: "Server (Staff)", wage: 16.27, isSalary: false, count: 18 },
+            { title: "Buffet Attendant (Staff)", wage: 16.27, isSalary: false, count: 6 },
+            { title: "Pool Server (Staff)", wage: 16.27, isSalary: false, count: 6 },
+            { title: "Catering Manager (Middle Mgmt)", wage: 75000, isSalary: true, count: 1 },
+            { title: "Banquet Captain (Supervisor)", wage: 22.00, isSalary: false, count: 2 },
+            { title: "Banquet Server (Staff)", wage: 16.27, isSalary: false, count: 15 }
+        ];
+
+        const restaurantRoles = [
+            { title: "General Manager (Upper Mgmt)", wage: 110000, isSalary: true, count: 1 },
+            { title: "Exec Chef (Upper Mgmt)", wage: 95000, isSalary: true, count: 1 },
+            { title: "Sous Chef (Middle Mgmt)", wage: 78000, isSalary: true, count: 2 },
+            { title: "Maitre D' (Supervisor)", wage: 32.00, isSalary: false, count: 2 },
+            { title: "Line Cook (Staff)", wage: 24.50, isSalary: false, count: 12 },
+            { title: "Prep Cook (Staff)", wage: 21.00, isSalary: false, count: 6 },
+            { title: "Bar Manager", wage: 70000, isSalary: true, count: 1 },
+            { title: "Lead Bartender", wage: 20.00, isSalary: false, count: 2 },
+            { title: "Bartender (Staff)", wage: 16.27, isSalary: false, count: 6 },
+            { title: "Lead Server (Supervisor)", wage: 18.00, isSalary: false, count: 4 },
+            { title: "Server (Staff)", wage: 16.27, isSalary: false, count: 16 },
+            { title: "Busser/Runner (Staff)", wage: 16.27, isSalary: false, count: 9 }
+        ];
+
+        const cafeRoles = [
+            { title: "Store Manager (Middle Mgmt)", wage: 72000, isSalary: true, count: 1 },
+            { title: "Shift Lead (Supervisor)", wage: 28.50, isSalary: false, count: 3 },
+            { title: "Lead Barista (Staff)", wage: 24.00, isSalary: false, count: 4 },
+            { title: "Barista (Staff)", wage: 16.27, isSalary: false, count: 10 } 
+        ];
+
+        const autoRoles = [
+            { title: "General Manager (Upper Mgmt)", wage: 250000, isSalary: true, count: 1 },
+            { title: "Finance Manager (Middle Mgmt)", wage: 150000, isSalary: true, count: 2 },
+            { title: "Sales Floor Manager (Supervisor)", wage: 120000, isSalary: true, count: 3 },
+            { title: "Sales Rep (Staff)", wage: 45000, isSalary: true, count: 15 }, 
+            { title: "Service Director", wage: 110000, isSalary: true, count: 1 },
+            { title: "Service Advisor", wage: 65000, isSalary: true, count: 5 },
+            { title: "Service Technician (Staff)", wage: 35.00, isSalary: false, count: 14 },
+            { title: "Parts Manager", wage: 75000, isSalary: true, count: 1 },
+            { title: "Parts Counter", wage: 25.00, isSalary: false, count: 3 }
+        ];
+
+        const employeeRoster = {
+            resort: { headcount: "166 TOTAL ACTIVE", staff: generateStaff(hotelRoles, 'HTL') },
+            restaurant: { headcount: "62 TOTAL ACTIVE", staff: generateStaff(restaurantRoles, 'RST') },
+            coffee: { headcount: "18 TOTAL ACTIVE", staff: generateStaff(cafeRoles, 'CFE') },
+            auto: { headcount: "45 TOTAL ACTIVE", staff: generateStaff(autoRoles, 'AUT') }
+        };
+
+        // ---------------------------------------------------------
+        // BASE METRICS & LOGIC (REALISTIC INDUSTRY AVERAGES)
+        // ---------------------------------------------------------
+        const baseData = {
+            resort: {
+                brand: "HOTEL ILONA",
+                context: "500-KEY PREMIUM RESORT | LIVE 2026 METRICS",
+                badgeLabel: "ROOMS/F&B",
+                volume: 440,
+                volumeLabel: "Rooms Sold",
+                occ: 88, 
+                avgRate: 250, 
+                revPar: 220,
+                roomsRev: 110000, 
+                foodRev: 5500,
+                bevRev: 3000,    
+                cateringRev: 5200,
+                spaRev: 2850,
+                incidentalRev: 906.30,
+                gross: 127456.30, 
+                netMargin: 22, 
+                payrollMargin: 35, 
+                cogsMargin: 18, 
+                spoilageMargin: 1.2, 
+                treasuryAlloc: 350,
+                rewardOffset: 85
+            },
+            restaurant: {
+                brand: "THE RUSTIC VINE",
+                context: "220-SEAT FINE DINING | LIVE 2026 METRICS",
+                badgeLabel: "DINING",
+                volume: 340, 
+                volumeLabel: "Covers (Guests)",
+                occ: 95, 
+                avgRate: 85, 
+                revPar: 80, 
+                foodRev: 19500,
+                bevRev: 9400, 
+                ancillaryRev: 0, 
+                gross: 28900,
+                netMargin: 14, 
+                payrollMargin: 35, 
+                cogsMargin: 30, 
+                spoilageMargin: 2.8,
+                treasuryAlloc: 82,
+                rewardOffset: 24
+            },
+            coffee: {
+                brand: "ELEVATION ROASTERS",
+                context: "HIGH-TRAFFIC CAFE | LIVE 2026 METRICS",
+                badgeLabel: "CAFE",
+                volume: 650, 
+                volumeLabel: "POS Tickets",
+                occ: 100, 
+                avgRate: 9.50, 
+                revPar: 9.50,
+                foodRev: 1175,
+                bevRev: 5000, 
+                ancillaryRev: 0, 
+                gross: 6175,
+                netMargin: 16, 
+                payrollMargin: 35, 
+                cogsMargin: 25, 
+                spoilageMargin: 1.5,
+                treasuryAlloc: 18,
+                rewardOffset: 6
+            },
+            auto: {
+                brand: "VARIS MOTORS",
+                context: "FRANCHISE AUTO DEALER | LIVE 2026 METRICS",
+                badgeLabel: "SALES/SERVICE",
+                volume: 14,
+                volumeLabel: "Vehicles Sold",
+                occ: 100,
+                avgRate: 42500, 
+                revPar: 42500,
+                roomsRev: 595000, 
+                foodRev: 45000,
+                bevRev: 0, 
+                ancillaryRev: 28000, 
+                gross: 668000,
+                netMargin: 3.5, 
+                payrollMargin: 8,
+                cogsMargin: 83, 
+                spoilageMargin: 0,
+                treasuryAlloc: 850,
+                rewardOffset: 120,
+                inventoryFloorValue: 8500000, 
+                stakedUNT: 2500000, 
+                apyTarget: 12
+            }
+        };
+
+        const timeMultipliers = { daily: 1, weekly: 7, monthly: 30, quarterly: 90, yearly: 365 };
+
+        let activeBusiness = 'resort';
+        let activeTime = 'daily';
+        let currentLiveData = {};
+
+        function initData() { 
+            currentLiveData = JSON.parse(JSON.stringify(baseData)); 
+            resetApprovals();
+        }
+
+        function updateDisplay() {
+            const mult = timeMultipliers[activeTime];
+            const data = currentLiveData[activeBusiness];
+
+            const mGross = data.gross * mult;
+            const mVolume = Math.floor(data.volume * mult);
+            const mPayroll = mGross * (data.payrollMargin / 100);
+            const mCogs = mGross * (data.cogsMargin / 100);
+            const mNet = mGross * (data.netMargin / 100);
+            const mTreasury = data.treasuryAlloc * mult;
+            const mRewards = data.rewardOffset * mult;
+
+            const fixedMargin = 100 - data.netMargin - data.payrollMargin - data.cogsMargin;
+
+            document.getElementById('brand-name').innerText = data.brand;
+            document.getElementById('brand-context').innerText = data.context;
+            
+            document.getElementById('tax-sales-co').innerText = formatter.format(mGross * 0.029);
+            document.getElementById('tax-sales-den').innerText = formatter.format(mGross * 0.0481);
+            document.getElementById('tax-payroll').innerText = formatter.format(mPayroll * 0.22); 
+
+            if(document.getElementById('badge-gross')) {
+                document.getElementById('badge-gross').innerHTML = data.badgeLabel;
+                document.getElementById('val-gross').innerText = formatter.format(mGross);
+                document.getElementById('val-net').innerText = formatter.format(mNet);
+                document.getElementById('val-payroll').innerText = formatter.format(mPayroll + mCogs);
+                document.getElementById('val-basket').innerText = formatter.format(mTreasury);
+                document.getElementById('val-yield').innerText = formatter.format(mRewards);
+
+                let revBreakdownHTML = '';
+                let grossTicks = [];
+                let netTicks = [];
+                let cogsTicks = [];
+
+                if(activeBusiness === 'resort') {
+                    const rPct = ((data.roomsRev * mult) / mGross) * 100;
+                    const fPct = ((data.foodRev * mult) / mGross) * 100;
+                    const bPct = ((data.bevRev * mult) / mGross) * 100;
+                    const cPct = ((data.cateringRev * mult) / mGross) * 100;
+                    const sPct = ((data.spaRev * mult) / mGross) * 100;
+                    
+                    revBreakdownHTML = `
+                        ${renderRichBar('ROOMS', formatter.format(data.roomsRev * mult), rPct, '#172554')}
+                        ${renderRichBar('FOOD', formatter.format(data.foodRev * mult), fPct, '#059669')}
+                        ${renderRichBar('BEVERAGE', formatter.format(data.bevRev * mult), bPct, '#d97706')}
+                        ${renderRichBar('CATERING', formatter.format(data.cateringRev * mult), cPct, '#dc2626')}
+                        ${renderRichBar('SPA/INCIDENTAL', formatter.format((data.spaRev + data.incidentalRev) * mult), sPct + (((data.incidentalRev*mult)/mGross)*100), '#7c3aed')}
+                    `;
+                    
+                    grossTicks = [
+                        `ROOMS: ${formatter.format(data.roomsRev * mult)}`,
+                        `F&B: ${formatter.format((data.foodRev+data.bevRev) * mult)}`,
+                        `CATERING: ${formatter.format(data.cateringRev * mult)}`,
+                        `SPA/INCID: ${formatter.format((data.spaRev+data.incidentalRev) * mult)}`
+                    ];
+                    netTicks = [
+                        `NET MARGIN: ${data.netMargin}%`,
+                        `ROOMS TGT: 74%`,
+                        `F&B TGT: 28%`,
+                        `ACTUAL EBITDA: ${formatter.format(mNet * 0.85)}`
+                    ];
+                    cogsTicks = [
+                        `LABOR: ${formatter.format(mPayroll)} (${data.payrollMargin}%)`,
+                        `F&B COGS: ${formatter.format(mCogs)}`,
+                        `F&B TGT: 28%`,
+                        `CATERING TGT: 35%`
+                    ];
+
+                } else if (activeBusiness === 'auto') {
+                    const vPct = ((data.roomsRev * mult) / mGross) * 100;
+                    const pPct = ((data.foodRev * mult) / mGross) * 100;
+                    const fPct = ((data.ancillaryRev * mult) / mGross) * 100;
+                    
+                    revBreakdownHTML = `
+                        ${renderRichBar('VEHICLE SALES', formatter.format(data.roomsRev * mult), vPct, '#172554')}
+                        ${renderRichBar('PARTS/SERVICE', formatter.format(data.foodRev * mult), pPct, '#059669')}
+                        ${renderRichBar('FINANCE (F&I)', formatter.format(data.ancillaryRev * mult), fPct, '#7c3aed')}
+                    `;
+                    
+                    grossTicks = [
+                        `VEHICLE SALES: ${formatter.format(data.roomsRev * mult)}`,
+                        `PARTS/SERVICE: ${formatter.format(data.foodRev * mult)}`,
+                        `F&I: ${formatter.format(data.ancillaryRev * mult)}`
+                    ];
+                    netTicks = [
+                        `DEALER NET: ${data.netMargin}%`,
+                        `FRONT-END TGT: 4%`,
+                        `FIXED OPS TGT: 48%`
+                    ];
+                    cogsTicks = [
+                        `FLOOR PLAN: SWEEP ACTIVE`,
+                        `OPEX ALLOC: ${formatter.format(mPayroll + mCogs)}`
+                    ];
+
+                } else if (activeBusiness === 'restaurant') {
+                    const fPct = ((data.foodRev * mult) / mGross) * 100;
+                    const bPct = ((data.bevRev * mult) / mGross) * 100;
+                    const aPct = ((data.ancillaryRev * mult) / mGross) * 100;
+                    
+                    revBreakdownHTML = `
+                        ${renderRichBar('FOOD SALES', formatter.format(data.foodRev * mult), fPct, '#059669')}
+                        ${renderRichBar('BEVERAGE SALES', formatter.format(data.bevRev * mult), bPct, '#d97706')}
+                        ${renderRichBar('ANCILLARY REV', formatter.format(data.ancillaryRev * mult), aPct, '#172554')}
+                    `;
+                    
+                    grossTicks = [
+                        `FOOD SALES: ${formatter.format(data.foodRev * mult)}`,
+                        `BEVERAGE: ${formatter.format(data.bevRev * mult)}`,
+                        `MERCH: ${formatter.format(data.ancillaryRev * mult)}`
+                    ];
+                    netTicks = [
+                        `OP MARGIN: ${data.netMargin}%`,
+                        `FOOD COST TGT: 29%`,
+                        `LIQUOR COST TGT: 21%`,
+                        `EBITDA: ${formatter.format(mNet * 0.85)}`
+                    ];
+                    cogsTicks = [
+                        `LABOR: ${formatter.format(mPayroll)} (${data.payrollMargin}%)`,
+                        `F&B COGS: ${formatter.format(mCogs)}`,
+                        `FIXED COSTS: ${formatter.format(mGross * (fixedMargin/100))}`
+                    ];
+
+                } else if (activeBusiness === 'coffee') {
+                    const fPct = ((data.foodRev * mult) / mGross) * 100;
+                    const bPct = ((data.bevRev * mult) / mGross) * 100;
+                    const aPct = ((data.ancillaryRev * mult) / mGross) * 100;
+                    
+                    revBreakdownHTML = `
+                        ${renderRichBar('FOOD SALES', formatter.format(data.foodRev * mult), fPct, '#059669')}
+                        ${renderRichBar('BEVERAGE SALES', formatter.format(data.bevRev * mult), bPct, '#d97706')}
+                        ${renderRichBar('ANCILLARY REV', formatter.format(data.ancillaryRev * mult), aPct, '#172554')}
+                    `;
+                    
+                    grossTicks = [
+                        `BEVERAGE: ${formatter.format(data.bevRev * mult)}`,
+                        `PASTRY/FOOD: ${formatter.format(data.foodRev * mult)}`,
+                        `BEANS/MERCH: ${formatter.format(data.ancillaryRev * mult)}`
+                    ];
+                    netTicks = [
+                        `OP MARGIN: ${data.netMargin}%`,
+                        `BEV COGS TGT: 15%`,
+                        `FOOD COGS TGT: 32%`,
+                        `EBITDA: ${formatter.format(mNet * 0.85)}`
+                    ];
+                    cogsTicks = [
+                        `LABOR: ${formatter.format(mPayroll)} (${data.payrollMargin}%)`,
+                        `STORE COGS: ${formatter.format(mCogs)}`,
+                        `FIXED COSTS: ${formatter.format(mGross * (fixedMargin/100))}`
+                    ];
+                }
+
+                document.getElementById('detail-gross').innerHTML = `
+                    <div style="font-size: 12px; font-weight: 900; margin-bottom: 8px;">> ${data.volumeLabel}: ${numFormatter.format(mVolume)} &nbsp;&nbsp;|&nbsp;&nbsp; AVG: ${formatter.format(data.avgRate)}</div>
+                    ${revBreakdownHTML}
+                `;
+                document.getElementById('footer-gross').innerText = activeBusiness === 'auto' ? `VEHICLES SOLD YTD: ${numFormatter.format(mVolume * 15)}` : `YTD RevPAR / RevPASH: ${formatter.format(data.revPar)}`;
+
+                // SET THE VERTICAL DEAD SPACE TICKERS
+                document.getElementById('ticker-gross').innerHTML = formatTicker(grossTicks);
+                document.getElementById('ticker-net').innerHTML = formatTicker(netTicks);
+                document.getElementById('ticker-cogs').innerHTML = formatTicker(cogsTicks);
+
+                document.getElementById('detail-net').innerHTML = `
+                    ${renderRichBar('FIXED COSTS', formatter.format(mGross * (fixedMargin/100)), fixedMargin, '#dc2626')}
+                    ${renderRichBar('VARIABLE COSTS', formatter.format(mGross * ((data.payrollMargin+data.cogsMargin)/100)), data.payrollMargin+data.cogsMargin, '#f59e0b')}
+                    ${renderRichBar('TAX WITHHOLDINGS', formatter.format(mGross * 0.08), 8, '#7c3aed')}
+                    ${renderRichBar('NET GOP MARGIN', formatter.format(mNet), data.netMargin, '#059669')}
+                `;
+                document.getElementById('footer-net').innerText = `EBITDA (Est.): ${formatter.format(mNet * 0.85)}`;
+
+                if(activeBusiness === 'auto') {
+                    document.getElementById('title-costs').innerHTML = `FLOOR PLAN<br>& COGS`;
+                    document.getElementById('badge-costs').innerHTML = `BASE LOAD`;
+                    document.getElementById('metric-title-costs').innerHTML = `INVENTORY FINANCE PROTOCOL`;
+                    document.getElementById('subtitle-costs').innerHTML = `ISO 20022 YIELD SWEEP ACTIVE`;
+                    
+                    document.getElementById('detail-costs').innerHTML = `
+                        ${renderRichBar('INVENTORY FLOOR', formatter.format(data.inventoryFloorValue), 100, '#172554')}
+                        ${renderRichBar('VAULT STAKED', formatter.format(data.stakedUNT) + ' UNT', 30, '#d4af37')}
+                        <div class="rich-row" style="margin-top: 12px; font-size: 13px;"><span>PROTOCOL YIELD (${data.apyTarget}%)</span><span style="color:#059669;">+${formatter.format((data.stakedUNT * (data.apyTarget/100)) / 365 * mult)}</span></div>
+                    `;
+                    document.getElementById('footer-costs').innerText = `NET FLOOR PLAN INTEREST DUE: $0.00`;
+                    document.getElementById('tipped-staff-card').style.display = 'none';
+                } else {
+                    document.getElementById('title-costs').innerHTML = `PAYROLL &<br>COGS`;
+                    document.getElementById('badge-costs').innerHTML = `COSTS`;
+                    document.getElementById('metric-title-costs').innerHTML = `PRIME COST BREAKDOWN`;
+                    document.getElementById('subtitle-costs').innerHTML = `LABOR & INVENTORY ALLOCATION`;
+                    
+                    document.getElementById('detail-costs').innerHTML = `
+                        ${renderRichBar('LABOR & WAGES', formatter.format(mPayroll), data.payrollMargin, '#dc2626')}
+                        ${renderRichBar('F&B COGS', formatter.format(mCogs), data.cogsMargin, '#f59e0b')}
+                        ${renderRichBar('WASTE / SPOILAGE', formatter.format(mGross * (data.spoilageMargin/100)), data.spoilageMargin, '#991b1b')}
+                    `;
+                    document.getElementById('footer-costs').innerText = `PRIME COST %: ${data.payrollMargin + data.cogsMargin}%`;
+                    document.getElementById('tipped-staff-card').style.display = 'block';
+                }
+
+                document.getElementById('detail-treasury').innerHTML = `
+                    ${renderRichBar('LBMA GOLD (Au)', formatter.format(mTreasury * 0.45), 45, '#d4af37')}
+                    ${renderRichBar('PLATINUM/PALLADIUM', formatter.format(mTreasury * 0.40), 40, '#94a3b8')}
+                    ${renderRichBar('SILVER/COPPER', formatter.format(mTreasury * 0.15), 15, '#b87333')}
+                    <div class="rich-row" style="margin-top: 12px; font-size: 12px;"><span>VAULT AUDIT STATUS</span><span style="color:#059669;">VERIFIED</span></div>
+                `;
+                document.getElementById('footer-treasury').innerText = `TOTAL SECURED: ${formatter.format(mTreasury)}`;
+
+                const legacyFee = mGross * 0.029;
+                const varisFee = mGross * 0.007;
+                document.getElementById('detail-rewards').innerHTML = `
+                    ${renderRichBar('LEGACY PROCESSOR FEES', formatter.format(legacyFee), 100, '#dc2626')}
+                    ${renderRichBar('VARIS SOVEREIGN RATE', formatter.format(varisFee), (varisFee/legacyFee)*100, '#059669')}
+                    <div class="rich-row" style="margin-top: 12px; font-size: 13px;"><span>DIRECT FEE SAVINGS</span><span style="color:#059669;">+${formatter.format(legacyFee - varisFee)}</span></div>
+                `;
+                document.getElementById('footer-rewards').innerText = `TOTAL OPEX REDUCTION: ${formatter.format(mRewards + (legacyFee - varisFee))}`;
+
+                // P&L DETAILS INJECTION
+                let pnlBreakdownHTML = '';
+                const opEx = mPayroll + mCogs + (mGross * (fixedMargin/100));
+                const actualMargin = (mNet / mGross) * 100;
+
+                if(activeBusiness === 'resort') {
+                    pnlBreakdownHTML = `
+                        ${renderRichBar('ROOMS DEPT MARGIN (TARGET: 74%)', formatter.format(data.roomsRev * mult * 0.74), 74, '#172554')}
+                        ${renderRichBar('F&B DEPT MARGIN (TARGET: 28%)', formatter.format((data.foodRev + data.bevRev + data.cateringRev) * mult * 0.28), 28, '#059669')}
+                        ${renderRichBar('TOTAL OPEX (LABOR/COGS/FIXED)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
+                        ${renderRichBar('CONSOLIDATED NOI', formatter.format(mNet), actualMargin, '#7c3aed')}
+                    `;
+                } else if (activeBusiness === 'restaurant') {
+                    pnlBreakdownHTML = `
+                        ${renderRichBar('FOOD SALES MARGIN (TARGET: 29% COGS)', formatter.format((data.foodRev * mult) * 0.71), 71, '#172554')}
+                        ${renderRichBar('BEVERAGE SALES MARGIN (TARGET: 21% COGS)', formatter.format((data.bevRev * mult) * 0.79), 79, '#059669')}
+                        ${renderRichBar('TOTAL OPEX (PRIME + FIXED)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
+                        ${renderRichBar('OPERATING MARGIN (EBITDA)', formatter.format(mNet), actualMargin, '#7c3aed')}
+                    `;
+                } else if (activeBusiness === 'coffee') {
+                    pnlBreakdownHTML = `
+                        ${renderRichBar('BEVERAGE MARGIN (TARGET: 15% COGS)', formatter.format((data.bevRev * mult) * 0.85), 85, '#172554')}
+                        ${renderRichBar('FOOD/PASTRY MARGIN (TARGET: 32% COGS)', formatter.format((data.foodRev * mult) * 0.68), 68, '#059669')}
+                        ${renderRichBar('TOTAL OPEX (PRIME + FIXED)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
+                        ${renderRichBar('OPERATING MARGIN (EBITDA)', formatter.format(mNet), actualMargin, '#7c3aed')}
+                    `;
+                } else if (activeBusiness === 'auto') {
+                    pnlBreakdownHTML = `
+                        ${renderRichBar('FRONT-END GROSS (SALES TARGET: 4%)', formatter.format((data.roomsRev * mult) * 0.04), 4, '#172554')}
+                        ${renderRichBar('BACK-END GROSS (FIXED OPS TARGET: 48%)', formatter.format((data.foodRev + data.ancillaryRev) * mult * 0.48), 48, '#059669')}
+                        ${renderRichBar('TOTAL OPEX (FLOOR PLAN/LABOR)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
+                        ${renderRichBar('NET OPERATING INCOME', formatter.format(mNet), actualMargin, '#7c3aed')}
+                    `;
+                }
+                
+                document.getElementById('detail-pnl').innerHTML = pnlBreakdownHTML;
+                document.getElementById('val-pnl').innerText = actualMargin.toFixed(1) + "%";
+                document.getElementById('footer-pnl').innerText = `TOTAL NET PROFIT: ${formatter.format(mNet)}`;
+                
+                // DYNAMIC PIE CHART (Red=COGS, Orange=Labor, Blue=Fixed, Green=Net)
+                let cogsP = data.cogsMargin;
+                let payP = data.payrollMargin;
+                let fixedP = fixedMargin;
+                let netP = data.netMargin;
+                
+                let conicStr = `conic-gradient(
+                    #dc2626 0% ${cogsP}%, 
+                    #f59e0b ${cogsP}% ${cogsP + payP}%, 
+                    #172554 ${cogsP + payP}% ${cogsP + payP + fixedP}%, 
+                    #059669 ${cogsP + payP + fixedP}% 100%
+                )`;
+                
+                const pieEl = document.getElementById('pnl-pie');
+                if(pieEl) {
+                    pieEl.style.background = conicStr;
+                    
+                    // Dynamic scaling based on volume fluctuation vs baseline
+                    const baseGross = baseData[activeBusiness].gross * mult;
+                    const fluctuationRatio = mGross / baseGross; 
+                    const pieScale = Math.max(0.8, Math.min(1.3, fluctuationRatio)); 
+                    pieEl.style.transform = `scale(${pieScale})`;
+                }
+
+                // Inject the Legend
+                const legendHTML = `
+                    <div class="legend-item"><div class="legend-color" style="background:#dc2626;"></div> COGS (${cogsP.toFixed(1)}%)</div>
+                    <div class="legend-item"><div class="legend-color" style="background:#f59e0b;"></div> Labor (${payP.toFixed(1)}%)</div>
+                    <div class="legend-item"><div class="legend-color" style="background:#172554;"></div> Fixed (${fixedP.toFixed(1)}%)</div>
+                    <div class="legend-item"><div class="legend-color" style="background:#059669;"></div> Net Margin (${netP.toFixed(1)}%)</div>
+                `;
+                document.getElementById('pie-legend').innerHTML = legendHTML;
+            }
+        }
+
+        function renderPayroll() {
+            const roster = employeeRoster[activeBusiness];
+            document.getElementById('pr-headcount').innerText = roster.headcount;
+            
+            const baseBody = document.getElementById('payroll-base-tbody');
+            const tipBody = document.getElementById('payroll-tipped-tbody');
+            if(baseBody) baseBody.innerHTML = '';
+            if(tipBody) tipBody.innerHTML = '';
+            
+            let totalTaxes = 0;
 
             if(activeBusiness === 'auto') {
-                document.getElementById('title-costs').innerHTML = `FLOOR PLAN<br>& COGS`;
-                document.getElementById('badge-costs').innerHTML = `BASE LOAD`;
-                document.getElementById('metric-title-costs').innerHTML = `INVENTORY FINANCE PROTOCOL`;
-                document.getElementById('subtitle-costs').innerHTML = `ISO 20022 YIELD SWEEP ACTIVE`;
-                
-                document.getElementById('detail-costs').innerHTML = `
-                    ${renderRichBar('INVENTORY FLOOR', formatter.format(data.inventoryFloorValue), 100, '#172554')}
-                    ${renderRichBar('VAULT STAKED', formatter.format(data.stakedUNT) + ' UNT', 30, '#d4af37')}
-                    <div class="rich-row" style="margin-top: 12px; font-size: 13px;"><span>PROTOCOL YIELD (${data.apyTarget}%)</span><span style="color:#059669;">+${formatter.format((data.stakedUNT * (data.apyTarget/100)) / 365 * mult)}</span></div>
-                `;
-                document.getElementById('footer-costs').innerText = `NET FLOOR PLAN INTEREST DUE: $0.00`;
                 document.getElementById('tipped-staff-card').style.display = 'none';
             } else {
-                document.getElementById('title-costs').innerHTML = `PAYROLL &<br>COGS`;
-                document.getElementById('badge-costs').innerHTML = `COSTS`;
-                document.getElementById('metric-title-costs').innerHTML = `PRIME COST BREAKDOWN`;
-                document.getElementById('subtitle-costs').innerHTML = `LABOR & INVENTORY ALLOCATION`;
-                
-                document.getElementById('detail-costs').innerHTML = `
-                    ${renderRichBar('LABOR & WAGES', formatter.format(mPayroll), data.payrollMargin, '#dc2626')}
-                    ${renderRichBar('F&B COGS', formatter.format(mCogs), data.cogsMargin, '#f59e0b')}
-                    ${renderRichBar('WASTE / SPOILAGE', formatter.format(mGross * (data.spoilageMargin/100)), data.spoilageMargin, '#991b1b')}
-                `;
-                document.getElementById('footer-costs').innerText = `PRIME COST %: ${data.payrollMargin + data.cogsMargin}%`;
                 document.getElementById('tipped-staff-card').style.display = 'block';
             }
 
-            document.getElementById('detail-treasury').innerHTML = `
-                ${renderRichBar('LBMA GOLD (Au)', formatter.format(mTreasury * 0.45), 45, '#d4af37')}
-                ${renderRichBar('PLATINUM/PALLADIUM', formatter.format(mTreasury * 0.40), 40, '#94a3b8')}
-                ${renderRichBar('SILVER/COPPER', formatter.format(mTreasury * 0.15), 15, '#b87333')}
-                <div class="rich-row" style="margin-top: 12px; font-size: 12px;"><span>VAULT AUDIT STATUS</span><span style="color:#059669;">VERIFIED</span></div>
-            `;
-            document.getElementById('footer-treasury').innerText = `TOTAL SECURED: ${formatter.format(mTreasury)}`;
+            roster.staff.forEach(emp => {
+                const tax = emp.accrued * 0.22; 
+                const net = emp.accrued - tax;
+                totalTaxes += tax;
 
-            const legacyFee = mGross * 0.029;
-            const varisFee = mGross * 0.007;
-            document.getElementById('detail-rewards').innerHTML = `
-                ${renderRichBar('LEGACY PROCESSOR FEES', formatter.format(legacyFee), 100, '#dc2626')}
-                ${renderRichBar('VARIS SOVEREIGN RATE', formatter.format(varisFee), (varisFee/legacyFee)*100, '#059669')}
-                <div class="rich-row" style="margin-top: 12px; font-size: 13px;"><span>DIRECT FEE SAVINGS</span><span style="color:#059669;">+${formatter.format(legacyFee - varisFee)}</span></div>
-            `;
-            document.getElementById('footer-rewards').innerText = `TOTAL OPEX REDUCTION: ${formatter.format(mRewards + (legacyFee - varisFee))}`;
+                let wageDisplay = emp.isSalary ? formatter.format(emp.wage) + "/yr" : formatter.format(emp.wage) + "/hr";
 
-            // P&L DETAILS INJECTION
-            let pnlBreakdownHTML = '';
-            const opEx = mPayroll + mCogs + (mGross * (fixedMargin/100));
-            const actualMargin = (mNet / mGross) * 100;
+                if(emp.isTipped && activeBusiness !== 'auto' && tipBody) {
+                    const grossTips = emp.ccTips;
+                    const supportTipOut = grossTips * 0.20; 
+                    const netTips = grossTips - supportTipOut;
+                    
+                    const trTip = document.createElement('tr');
+                    trTip.innerHTML = `
+                        <td>${emp.name} <span style="color:rgba(0,0,0,0.5); font-size: 10px;">${emp.id}</span></td>
+                        <td>${wageDisplay}</td>
+                        <td style="color:#059669;">${emp.openTickets}</td>
+                        <td>${formatter.format(grossTips)}</td>
+                        <td class="text-red-dark">-${formatter.format(supportTipOut)}</td>
+                        <td style="color:#059669;">${formatter.format(netTips)}</td>
+                        <td style="color:#D4AF37;">${emp.tipRail}</td>
+                    `;
+                    trTip.onclick = () => openModal(emp);
+                    tipBody.appendChild(trTip);
+                }
 
-            if(activeBusiness === 'resort') {
-                pnlBreakdownHTML = `
-                    ${renderRichBar('ROOMS DEPT MARGIN (TARGET: 74%)', formatter.format(data.roomsRev * mult * 0.74), 74, '#172554')}
-                    ${renderRichBar('F&B DEPT MARGIN (TARGET: 28%)', formatter.format((data.foodRev + data.bevRev + data.cateringRev) * mult * 0.28), 28, '#059669')}
-                    ${renderRichBar('TOTAL OPEX (LABOR/COGS/FIXED)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
-                    ${renderRichBar('CONSOLIDATED NOI', formatter.format(mNet), actualMargin, '#7c3aed')}
-                `;
-            } else if (activeBusiness === 'restaurant') {
-                pnlBreakdownHTML = `
-                    ${renderRichBar('FOOD SALES MARGIN (TARGET: 29% COGS)', formatter.format((data.foodRev * mult) * 0.71), 71, '#172554')}
-                    ${renderRichBar('BEVERAGE SALES MARGIN (TARGET: 21% COGS)', formatter.format((data.bevRev * mult) * 0.79), 79, '#059669')}
-                    ${renderRichBar('TOTAL OPEX (PRIME + FIXED)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
-                    ${renderRichBar('OPERATING MARGIN (EBITDA)', formatter.format(mNet), actualMargin, '#7c3aed')}
-                `;
-            } else if (activeBusiness === 'coffee') {
-                pnlBreakdownHTML = `
-                    ${renderRichBar('BEVERAGE MARGIN (TARGET: 15% COGS)', formatter.format((data.bevRev * mult) * 0.85), 85, '#172554')}
-                    ${renderRichBar('FOOD/PASTRY MARGIN (TARGET: 32% COGS)', formatter.format((data.foodRev * mult) * 0.68), 68, '#059669')}
-                    ${renderRichBar('TOTAL OPEX (PRIME + FIXED)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
-                    ${renderRichBar('OPERATING MARGIN (EBITDA)', formatter.format(mNet), actualMargin, '#7c3aed')}
-                `;
-            } else if (activeBusiness === 'auto') {
-                pnlBreakdownHTML = `
-                    ${renderRichBar('FRONT-END GROSS (SALES TARGET: 4%)', formatter.format((data.roomsRev * mult) * 0.04), 4, '#172554')}
-                    ${renderRichBar('BACK-END GROSS (FIXED OPS TARGET: 48%)', formatter.format((data.foodRev + data.ancillaryRev) * mult * 0.48), 48, '#059669')}
-                    ${renderRichBar('TOTAL OPEX (FLOOR PLAN/LABOR)', formatter.format(opEx), (opEx/mGross)*100, '#dc2626')}
-                    ${renderRichBar('NET OPERATING INCOME', formatter.format(mNet), actualMargin, '#7c3aed')}
-                `;
-            }
-            
-            document.getElementById('detail-pnl').innerHTML = pnlBreakdownHTML;
-            document.getElementById('val-pnl').innerText = actualMargin.toFixed(1) + "%";
-            document.getElementById('footer-pnl').innerText = `TOTAL NET PROFIT: ${formatter.format(mNet)}`;
-            
-            // DYNAMIC PIE CHART (Red=COGS, Orange=Labor, Blue=Fixed, Green=Net)
-            let cogsP = data.cogsMargin;
-            let payP = data.payrollMargin;
-            let fixedP = fixedMargin;
-            let netP = data.netMargin;
-            
-            let conicStr = `conic-gradient(
-                #dc2626 0% ${cogsP}%, 
-                #f59e0b ${cogsP}% ${cogsP + payP}%, 
-                #172554 ${cogsP + payP}% ${cogsP + payP + fixedP}%, 
-                #059669 ${cogsP + payP + fixedP}% 100%
-            )`;
-            
-            const pieEl = document.getElementById('pnl-pie');
-            if(pieEl) {
-                pieEl.style.background = conicStr;
-                
-                // Dynamic scaling based on volume fluctuation vs baseline
-                const baseGross = baseData[activeBusiness].gross * mult;
-                const fluctuationRatio = mGross / baseGross; 
-                const pieScale = Math.max(0.8, Math.min(1.3, fluctuationRatio)); 
-                pieEl.style.transform = `scale(${pieScale})`;
-            }
+                if(baseBody) {
+                    const trBase = document.createElement('tr');
+                    trBase.innerHTML = `
+                        <td>${emp.name} <span style="color:rgba(0,0,0,0.5); font-size: 10px;">${emp.id}</span></td>
+                        <td>${emp.role}</td>
+                        <td>${wageDisplay}</td>
+                        <td>${emp.freq}</td>
+                        <td style="color: ${emp.method === 'FIAT' ? '#000' : '#059669'};">${emp.method}</td>
+                        <td>${formatter.format(emp.accrued)}</td>
+                        <td class="text-red-dark">-${formatter.format(tax)}</td>
+                        <td style="color: #059669;">${formatter.format(net)}</td>
+                    `;
+                    trBase.onclick = () => openModal(emp);
+                    baseBody.appendChild(trBase);
+                }
+            });
 
-            // Inject the Legend
-            const legendHTML = `
-                <div class="legend-item"><div class="legend-color" style="background:#dc2626;"></div> COGS (${cogsP.toFixed(1)}%)</div>
-                <div class="legend-item"><div class="legend-color" style="background:#f59e0b;"></div> Labor (${payP.toFixed(1)}%)</div>
-                <div class="legend-item"><div class="legend-color" style="background:#172554;"></div> Fixed (${fixedP.toFixed(1)}%)</div>
-                <div class="legend-item"><div class="legend-color" style="background:#059669;"></div> Net Margin (${netP.toFixed(1)}%)</div>
-            `;
-            document.getElementById('pie-legend').innerHTML = legendHTML;
-        }
-    }
-
-    function renderPayroll() {
-        const roster = employeeRoster[activeBusiness];
-        document.getElementById('pr-headcount').innerText = roster.headcount;
-        
-        const baseBody = document.getElementById('payroll-base-tbody');
-        const tipBody = document.getElementById('payroll-tipped-tbody');
-        if(baseBody) baseBody.innerHTML = '';
-        if(tipBody) tipBody.innerHTML = '';
-        
-        let totalTaxes = 0;
-
-        if(activeBusiness === 'auto') {
-            document.getElementById('tipped-staff-card').style.display = 'none';
-        } else {
-            document.getElementById('tipped-staff-card').style.display = 'block';
+            if(document.getElementById('pr-taxes')) document.getElementById('pr-taxes').innerText = formatter.format(totalTaxes);
         }
 
-        roster.staff.forEach(emp => {
-            const tax = emp.accrued * 0.22; 
-            const net = emp.accrued - tax;
-            totalTaxes += tax;
-
-            let wageDisplay = emp.isSalary ? formatter.format(emp.wage) + "/yr" : formatter.format(emp.wage) + "/hr";
-
-            if(emp.isTipped && activeBusiness !== 'auto' && tipBody) {
-                const grossTips = emp.ccTips;
-                const supportTipOut = grossTips * 0.20; 
-                const netTips = grossTips - supportTipOut;
-                
-                const trTip = document.createElement('tr');
-                trTip.innerHTML = `
-                    <td>${emp.name} <span style="color:rgba(0,0,0,0.5); font-size: 10px;">${emp.id}</span></td>
-                    <td>${wageDisplay}</td>
-                    <td style="color:#059669;">${emp.openTickets}</td>
-                    <td>${formatter.format(grossTips)}</td>
-                    <td class="text-red-dark">-${formatter.format(supportTipOut)}</td>
-                    <td style="color:#059669;">${formatter.format(netTips)}</td>
-                    <td style="color:#D4AF37;">${emp.tipRail}</td>
-                `;
-                trTip.onclick = () => openModal(emp);
-                tipBody.appendChild(trTip);
+        function openModal(emp) {
+            document.getElementById('modal-emp-name').innerText = emp.name + " (" + emp.id + ")";
+            document.getElementById('modal-emp-role').innerText = emp.role;
+            document.getElementById('modal-emp-wage').innerText = emp.isSalary ? formatter.format(emp.wage) + " / yr" : formatter.format(emp.wage) + " / hr";
+            document.getElementById('modal-emp-rail').innerText = `${emp.method} (${emp.freq})`;
+            document.getElementById('modal-emp-rail').style.color = emp.method === 'FIAT' ? '#fff' : '#059669';
+            
+            document.getElementById('modal-emp-wallet').innerText = emp.walletAddress;
+            
+            if (emp.isTipped && activeBusiness !== 'auto') {
+                document.getElementById('tip-splitter-container').style.display = 'block';
+                document.getElementById('modal-emp-gross-tips').innerText = formatter.format(emp.ccTips);
+                document.getElementById('modal-emp-tipout').innerText = "-" + formatter.format(emp.ccTips * 0.20);
+                document.getElementById('modal-emp-net-tips').innerText = formatter.format(emp.ccTips * 0.80);
+            } else {
+                document.getElementById('tip-splitter-container').style.display = 'none';
             }
 
-            if(baseBody) {
-                const trBase = document.createElement('tr');
-                trBase.innerHTML = `
-                    <td>${emp.name} <span style="color:rgba(0,0,0,0.5); font-size: 10px;">${emp.id}</span></td>
-                    <td>${emp.role}</td>
-                    <td>${wageDisplay}</td>
-                    <td>${emp.freq}</td>
-                    <td style="color: ${emp.method === 'FIAT' ? '#000' : '#059669'};">${emp.method}</td>
-                    <td>${formatter.format(emp.accrued)}</td>
-                    <td class="text-red-dark">-${formatter.format(tax)}</td>
-                    <td style="color: #059669;">${formatter.format(net)}</td>
-                `;
-                trBase.onclick = () => openModal(emp);
-                baseBody.appendChild(trBase);
-            }
-        });
+            document.getElementById('modal-emp-raise').innerText = emp.pendingRaise;
+            document.getElementById('modal-emp-raise-date').innerText = emp.raiseEffective;
 
-        if(document.getElementById('pr-taxes')) document.getElementById('pr-taxes').innerText = formatter.format(totalTaxes);
-    }
+            document.getElementById('modal-emp-401k').innerText = emp.crypto401k;
+            document.getElementById('modal-emp-lock').innerText = emp.lockStatus;
 
-    function openModal(emp) {
-        document.getElementById('modal-emp-name').innerText = emp.name + " (" + emp.id + ")";
-        document.getElementById('modal-emp-role').innerText = emp.role;
-        document.getElementById('modal-emp-wage').innerText = emp.isSalary ? formatter.format(emp.wage) + " / yr" : formatter.format(emp.wage) + " / hr";
-        document.getElementById('modal-emp-rail').innerText = `${emp.method} (${emp.freq})`;
-        document.getElementById('modal-emp-rail').style.color = emp.method === 'FIAT' ? '#fff' : '#059669';
-        
-        document.getElementById('modal-emp-wallet').innerText = emp.walletAddress;
-        
-        if (emp.isTipped && activeBusiness !== 'auto') {
-            document.getElementById('tip-splitter-container').style.display = 'block';
-            document.getElementById('modal-emp-gross-tips').innerText = formatter.format(emp.ccTips);
-            document.getElementById('modal-emp-tipout').innerText = "-" + formatter.format(emp.ccTips * 0.20);
-            document.getElementById('modal-emp-net-tips').innerText = formatter.format(emp.ccTips * 0.80);
-        } else {
-            document.getElementById('tip-splitter-container').style.display = 'none';
+            document.getElementById('emp-modal').classList.add('active');
         }
 
-        document.getElementById('modal-emp-raise').innerText = emp.pendingRaise;
-        document.getElementById('modal-emp-raise-date').innerText = emp.raiseEffective;
+        function closeModal() {
+            document.getElementById('emp-modal').classList.remove('active');
+        }
 
-        document.getElementById('modal-emp-401k').innerText = emp.crypto401k;
-        document.getElementById('modal-emp-lock').innerText = emp.lockStatus;
+        function switchBusiness(silo) {
+            activeBusiness = silo;
+            document.querySelectorAll('.top-bar .nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('tab-' + silo).classList.add('active');
+            resetApprovals();
+            updateDisplay();
+            renderRecon();
+            renderCash();
+            renderAP();
+            if(document.getElementById('view-payroll').classList.contains('active')) renderPayroll();
+        }
 
-        document.getElementById('emp-modal').classList.add('active');
-    }
+        function switchTime(timeframe) {
+            activeTime = timeframe;
+            document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('time-' + timeframe).classList.add('active');
+            updateDisplay();
+        }
 
-    function closeModal() {
-        document.getElementById('emp-modal').classList.remove('active');
-    }
+        function switchView(viewId) {
+            document.querySelectorAll('.side-nav-item').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('nav-' + viewId).classList.add('active');
+            
+            document.querySelectorAll('.dashboard-view').forEach(view => view.classList.remove('active'));
+            document.getElementById('view-' + viewId).classList.add('active');
+            
+            if(viewId === 'payroll') renderPayroll();
+            if(viewId === 'recon') renderRecon();
+            if(viewId === 'cash') renderCash();
+            if(viewId === 'ap') renderAP();
+        }
 
-    function switchBusiness(silo) {
-        activeBusiness = silo;
-        document.querySelectorAll('.top-bar .nav-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById('tab-' + silo).classList.add('active');
-        resetApprovals();
+        initData();
         updateDisplay();
         renderRecon();
         renderCash();
         renderAP();
-        if(document.getElementById('view-payroll').classList.contains('active')) renderPayroll();
-    }
 
-    function switchTime(timeframe) {
-        activeTime = timeframe;
-        document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById('time-' + timeframe).classList.add('active');
-        updateDisplay();
-    }
+        let syncTick = 0;
+        setInterval(async () => {
+            try {
+                const fluctuate = (val) => val + (val * (((Math.random() * 0.005) / 100) * clockMultiplier));
+                currentLiveData[activeBusiness].gross = fluctuate(currentLiveData[activeBusiness].gross);
+                if(currentLiveData[activeBusiness].roomsRev) currentLiveData[activeBusiness].roomsRev = fluctuate(currentLiveData[activeBusiness].roomsRev);
+                currentLiveData[activeBusiness].foodRev = fluctuate(currentLiveData[activeBusiness].foodRev);
+                if(currentLiveData[activeBusiness].bevRev) currentLiveData[activeBusiness].bevRev = fluctuate(currentLiveData[activeBusiness].bevRev);
+                
+                Object.keys(employeeRoster).forEach(biz => {
+                    employeeRoster[biz].staff.forEach(emp => {
+                        let hourlyRate = emp.isSalary ? (emp.wage / 2080) : emp.wage;
+                        let tickAccrual = (hourlyRate / 3600) * (2.5 * clockMultiplier); 
+                        emp.accrued += tickAccrual;
 
-    function switchView(viewId) {
-        document.querySelectorAll('.side-nav-item').forEach(btn => btn.classList.remove('active'));
-        document.getElementById('nav-' + viewId).classList.add('active');
-        
-        document.querySelectorAll('.dashboard-view').forEach(view => view.classList.remove('active'));
-        document.getElementById('view-' + viewId).classList.add('active');
-        
-        if(viewId === 'payroll') renderPayroll();
-        if(viewId === 'recon') renderRecon();
-        if(viewId === 'cash') renderCash();
-        if(viewId === 'ap') renderAP();
-    }
-
-    initData();
-    updateDisplay();
-    renderRecon();
-    renderCash();
-    renderAP();
-
-    let syncTick = 0;
-    setInterval(async () => {
-        try {
-            const fluctuate = (val) => val + (val * (((Math.random() * 0.005) / 100) * clockMultiplier));
-            currentLiveData[activeBusiness].gross = fluctuate(currentLiveData[activeBusiness].gross);
-            if(currentLiveData[activeBusiness].roomsRev) currentLiveData[activeBusiness].roomsRev = fluctuate(currentLiveData[activeBusiness].roomsRev);
-            currentLiveData[activeBusiness].foodRev = fluctuate(currentLiveData[activeBusiness].foodRev);
-            if(currentLiveData[activeBusiness].bevRev) currentLiveData[activeBusiness].bevRev = fluctuate(currentLiveData[activeBusiness].bevRev);
-            
-            Object.keys(employeeRoster).forEach(biz => {
-                employeeRoster[biz].staff.forEach(emp => {
-                    let hourlyRate = emp.isSalary ? (emp.wage / 2080) : emp.wage;
-                    let tickAccrual = (hourlyRate / 3600) * (2.5 * clockMultiplier); 
-                    emp.accrued += tickAccrual;
-
-                    if(emp.isTipped && clockMultiplier > 1 && Math.random() > 0.7) {
-                        emp.ccTips += (Math.random() * 2);
-                        if(Math.random() > 0.9) emp.openTickets += 1;
-                    }
+                        if(emp.isTipped && clockMultiplier > 1 && Math.random() > 0.7) {
+                            emp.ccTips += (Math.random() * 2);
+                            if(Math.random() > 0.9) emp.openTickets += 1;
+                        }
+                    });
                 });
-            });
 
-            syncTick += (2.5 * clockMultiplier);
-            if(document.getElementById('recon-sync')) document.getElementById('recon-sync').innerText = syncTick.toFixed(1) + "s AGO";
+                syncTick += (2.5 * clockMultiplier);
+                if(document.getElementById('recon-sync')) document.getElementById('recon-sync').innerText = syncTick.toFixed(1) + "s AGO";
 
-            updateDisplay();
-            
-            if(document.getElementById('view-payroll').classList.contains('active')) renderPayroll();
-            if(document.getElementById('view-recon').classList.contains('active')) renderRecon();
+                updateDisplay();
+                
+                if(document.getElementById('view-payroll').classList.contains('active')) renderPayroll();
+                if(document.getElementById('view-recon').classList.contains('active')) renderRecon();
 
-        } catch (error) {
-            console.warn(error);
-        }
-    }, 2500); 
-</script>
+            } catch (error) {
+                console.warn(error);
+            }
+        }, 2500); 
+    </script>
 
 </body>
 </html>
