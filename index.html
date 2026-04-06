@@ -24,6 +24,8 @@
     <style>
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
+        /* This blend mode helps remove white backgrounds from images automatically */
+        .blend-crest { mix-blend-mode: multiply; }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DDPEDVNXW"></script>
@@ -150,10 +152,10 @@
         </div>
     </section>
 
-    <footer class="relative bg-brand-dark py-16 px-6 border-t border-slate-800 overflow-hidden">
+    <footer class="relative bg-[#0B0F19] py-20 px-6 border-t border-white/5 overflow-hidden">
         
-        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.06]">
-            <img src="familycrest.png" alt="Family Crest" class="w-full h-full object-contain max-h-[90%]">
+        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.10]">
+            <img src="familycrest.png" alt="Crest" class="w-full h-full object-contain max-h-[85%] blend-crest">
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
@@ -162,11 +164,11 @@
                 <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, V-Shelves, and Unity Protocol architectures are proprietary intellectual property.
             </p>
             
-            <p class="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto mb-4 font-medium">
+            <p class="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto mb-10 font-medium">
                 <strong>Regulatory Disclaimer:</strong> The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and consumptive gas fees. It is not an investment contract. Unity Gold (UGLD) acts as a digital warehouse receipt for physical commodities. This ecosystem operates in alignment with the EU MiCA Regulation (2023/1114), the Colorado Digital Token Act (SB 19-023), and ISO 20022 financial messaging standards.
             </p>
             
-            <div class="text-slate-600 text-[10px] w-full font-mono uppercase tracking-widest pt-4 border-t border-white/5">
+            <div class="text-slate-600 text-[10px] w-full font-mono uppercase tracking-[0.3em] pt-8 border-t border-white/5">
                 &copy; 2026 Powell Global LLC. All rights reserved.
             </div>
         </div>
