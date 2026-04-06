@@ -152,14 +152,14 @@
 
     <footer class="relative bg-gradient-to-b from-[#0B0F19] via-[#0D1425] to-[#0B0F19] py-20 px-6 border-t border-white/5 overflow-hidden">
         
-        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.08]">
-            <img src="familycrest.png" alt="Powell Family Crest" class="w-full h-full object-contain max-h-[90%] scale-110">
-        </div>
+        <img src="familycrest.png" alt="Crest" class="absolute inset-0 m-auto opacity-[0.08] w-full h-full max-h-[85%] object-contain pointer-events-none z-0">
 
         <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
+            
             <p class="text-slate-400 text-xs leading-relaxed max-w-4xl mx-auto mb-6 font-medium">
                 <strong>Corporate Structure:</strong> Powell Incorporated operates as a DBA of the parent entity, Powell Global LLC. The Varis OS, Hey Chef, V-Shelves, and Unity Protocol architectures are proprietary intellectual property.
             </p>
+            
             <p class="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto mb-10 font-medium">
                 <strong>Regulatory Disclaimer:</strong> The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and consumptive gas fees. It is not an investment contract. Unity Gold (UGLD) acts as a digital warehouse receipt for physical commodities. This ecosystem operates in alignment with the EU MiCA Regulation (2023/1114), the Colorado Digital Token Act (SB 19-023), and ISO 20022 financial messaging standards.
             </p>
@@ -179,6 +179,7 @@
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
             
+            // Toggle hamburger icon to X icon
             if (menu.classList.contains('hidden')) {
                 icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             } else {
@@ -186,6 +187,7 @@
             }
         });
 
+        // Close menu if user clicks outside
         window.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !btn.contains(e.target)) {
                 menu.classList.add('hidden');
