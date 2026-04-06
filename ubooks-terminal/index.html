@@ -60,6 +60,11 @@
             background-color: #000;
         }
 
+        /* MOBILE SCROLL FIX */
+        @media (max-width: 1024px) {
+            body, html { overflow-y: auto; height: auto; }
+        }
+
         /* CUSTOM FUTURISTIC SCROLLBARS */
         ::-webkit-scrollbar {
             width: 6px;
@@ -77,9 +82,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.5);
         }
-        ::-webkit-scrollbar-corner {
-            background: transparent;
-        }
 
         /* LAYER 1: THE STORY BACKGROUND */
         .app-container {
@@ -91,8 +93,12 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            padding: 100px 20px 20px 20px; /* Adjusted top padding to account for global nav bar */
+            padding: 100px 20px 20px 20px; 
             gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .app-container { height: auto; padding: 110px 10px 20px 10px; }
         }
 
         /* LAYER 2: TRANSPARENT BRUSHED ALUMINUM OVERLAY */
@@ -135,7 +141,7 @@
                 0 35px 55px -10px rgba(0, 0, 0, 0.9);
         }
 
-        /* --- LAYOUT SPECIFICS: TOP BAR GRID OVERHAUL --- */
+        /* --- LAYOUT SPECIFICS: TOP BAR GRID --- */
         .top-bar {
             width: 100%;
             min-height: 80px;
@@ -150,6 +156,10 @@
             gap: 15px;
         }
 
+        @media (max-width: 1024px) {
+            .top-bar { display: flex; flex-direction: column; padding: 20px; text-align: center; }
+        }
+
         .brand-section {
             display: flex;
             align-items: center;
@@ -158,6 +168,8 @@
             justify-self: start;
             flex-wrap: wrap;
         }
+
+        @media (max-width: 1024px) { .brand-section { justify-content: center; } }
 
         .brand-name-wrapper {
             display: flex;
@@ -206,6 +218,8 @@
             justify-self: center;
         }
 
+        @media (max-width: 1024px) { .unity-books-watermark { display: none; } }
+
         .top-nav-buttons {
             display: flex;
             gap: 10px;
@@ -215,6 +229,8 @@
             justify-self: end;
             justify-content: flex-end;
         }
+
+        @media (max-width: 1024px) { .top-nav-buttons { justify-content: center; width: 100%; } }
 
         .sys-clock {
             font-size: 12px;
@@ -256,86 +272,12 @@
             white-space: nowrap;
         }
 
+        @media (max-width: 640px) { .nav-btn { padding: 8px 12px; font-size: 11px; } }
+
         .nav-btn.active {
             background: #000;
             color: #fff;
             border: 1px solid #000;
-        }
-
-        /* --- RESPONSIVE MINIMIZATION ENGINE --- */
-        @media (max-width: 1300px) {
-            .top-bar { 
-                display: flex; 
-                flex-direction: column; 
-                justify-content: center; 
-                padding: 15px 20px; 
-            }
-            .brand-section { justify-content: center; }
-            .brand-name { font-size: 22px; }
-            .unity-books-watermark { display: none; }
-            .top-nav-buttons { justify-content: center; width: 100%; }
-            .nav-btn { padding: 8px 12px; font-size: 11px; }
-            .sys-clock { margin: 0; text-align: center; }
-            
-            .content-area { flex-direction: row; } 
-            .side-panel { width: 160px; padding: 15px 0; }
-            .side-nav-title { font-size: 9px; padding: 0 10px; margin-bottom: 10px; }
-            .side-nav-item { padding: 10px; font-size: 11px; margin: 0 10px; }
-            .side-nav-item.active { padding: 10px; margin: 0 10px; }
-            
-            .dashboard-main { padding: 10px 10px 0 10px; }
-            
-            /* 3x2 Grid Scaling Fixes */
-            .cards-row { gap: 10px; padding-bottom: 10px; }
-            .data-card { 
-                padding: 15px; 
-                min-height: 160px; 
-                padding-bottom: 70px; 
-            }
-            .card-value { font-size: 20px !important; bottom: 30px !important; left: 15px !important; }
-            .card-subtitle { font-size: 9px !important; bottom: 12px !important; left: 15px !important; }
-            .card-title { font-size: 11px !important; }
-            .card-badge { font-size: 8px !important; padding: 2px 4px !important; }
-            .metric-title { font-size: 10px !important; margin-bottom: 4px !important; }
-            .rich-row { font-size: 9px !important; margin-top: 4px !important; }
-            .rich-bar-bg { height: 4px !important; margin-bottom: 4px !important; }
-            .live-chart { bottom: 25px !important; left: 15px !important; height: 35px !important; }
-            .chart-bar { width: 10px !important; }
-            .pnl-pie-container { bottom: 20px !important; right: 15px !important; }
-            .pnl-pie-chart { width: 40px !important; height: 40px !important; }
-            .card-mini-ticker-container { top: 50px !important; height: 12px !important; }
-            .card-mini-ticker { font-size: 8px !important; }
-        }
-
-        .dashboard-view { display: none; width: 100%; flex-direction: column; flex: 1 0 auto; }
-        .dashboard-view.active { display: flex; }
-
-        .time-toggle-container {
-            display: flex;
-            gap: 8px;
-            padding: 8px 16px;
-            width: max-content;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            flex-wrap: wrap;
-        }
-
-        .time-btn {
-            background: transparent;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-weight: 900;
-            font-size: 11px;
-            color: #000;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .time-btn.active {
-            background: #000;
-            color: #fff;
         }
 
         .content-area {
@@ -346,6 +288,8 @@
             overflow: hidden; 
         }
 
+        @media (max-width: 1024px) { .content-area { flex-direction: column; overflow: visible; } }
+
         .side-panel {
             width: 250px;
             flex: none;
@@ -355,6 +299,15 @@
             padding: 20px 0; 
             position: relative;
             overflow: hidden; 
+        }
+
+        @media (max-width: 1024px) {
+            .side-panel { width: 100%; height: auto; padding: 10px 0; }
+            .side-panel-scroll { flex-direction: row !important; overflow-x: auto; padding-bottom: 10px; }
+            .side-nav-title { display: none; }
+            .side-nav-item { white-space: nowrap; padding: 10px 15px !important; margin: 0 5px !important; font-size: 12px !important; }
+            .side-nav-item.active { border-bottom: 2px solid #000; width: auto !important; }
+            .core-secure { display: none; }
         }
 
         .side-panel-scroll {
@@ -419,6 +372,8 @@
             overflow-y: auto; 
         }
 
+        @media (max-width: 1024px) { .dashboard-main { overflow-y: visible; padding: 0; } }
+
         /* THE 3x2 METRIC GRID LOGIC */
         .cards-row {
             display: grid;
@@ -428,6 +383,9 @@
             padding-bottom: 20px;
             width: 100%;
         }
+
+        @media (max-width: 1280px) { .cards-row { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .cards-row { grid-template-columns: 1fr; } }
 
         .data-card {
             width: 100%;
@@ -498,6 +456,8 @@
             z-index: 10;
             transition: opacity 0.2s;
         }
+
+        @media (max-width: 640px) { .card-value { font-size: 30px; } }
 
         .card-subtitle {
             font-size: 11px;
@@ -644,21 +604,14 @@
             animation: pulseBar 1.5s infinite alternate ease-in-out;
         }
 
-        .chart-bar:nth-child(1), .inner-chart-bar:nth-child(1) { animation-delay: 0.1s; animation-duration: 1.2s; }
-        .chart-bar:nth-child(2), .inner-chart-bar:nth-child(2) { animation-delay: 0.5s; animation-duration: 1.8s; }
-        .chart-bar:nth-child(3), .inner-chart-bar:nth-child(3) { animation-delay: 0.2s; animation-duration: 1.4s; }
-        .chart-bar:nth-child(4), .inner-chart-bar:nth-child(4) { animation-delay: 0.7s; animation-duration: 2.0s; }
-        .chart-bar:nth-child(5), .inner-chart-bar:nth-child(5) { animation-delay: 0.3s; animation-duration: 1.5s; }
-        .chart-bar:nth-child(6), .inner-chart-bar:nth-child(6) { animation-delay: 0.8s; animation-duration: 1.9s; }
-        .chart-bar:nth-child(7), .inner-chart-bar:nth-child(7) { animation-delay: 0.4s; animation-duration: 1.6s; }
-
-        /* PNL PIE CHART MOVED TO CORNER SO IT NEVER OVERLAPS */
         .pnl-pie-container {
             position: absolute;
             bottom: 30px;
             right: 25px;
             z-index: 10;
         }
+
+        @media (max-width: 640px) { .pnl-pie-container { display: none; } }
 
         .pnl-pie-chart {
             width: 60px;
@@ -670,7 +623,6 @@
             transform-origin: bottom right;
         }
 
-        /* PIE LEGEND (Expanded View) */
         .pie-legend {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -731,13 +683,7 @@
             border-right: 1px solid rgba(0,0,0,0.2);
         }
 
-        .ticker-symbol {
-            font-style: italic;
-        }
-
-        .ticker-up { color: #059669; font-size: 12px; }
-        .ticker-down { color: #dc2626; font-size: 12px; }
-        .ticker-note { color: rgba(0,0,0,0.6); font-size: 10px; font-weight: 800; letter-spacing: 0.5px; }
+        @media (max-width: 640px) { .ticker-item { padding: 0 15px; font-size: 12px; } }
 
         @keyframes tickerScroll {
             0% { transform: translateX(0); }
@@ -748,10 +694,11 @@
         .table-container {
             width: 100%;
             max-height: 45vh; 
+            overflow-x: auto;
             overflow-y: auto;
             border-bottom: 1px solid rgba(0,0,0,0.2);
         }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; min-width: 800px; }
         th, td { padding: 12px 8px; text-align: left; font-size: 12px; font-weight: 900; color: #000; border-bottom: 1px solid rgba(0,0,0,0.1); }
         th { font-size: 10px; text-transform: uppercase; color: rgba(0,0,0,0.6); border-bottom: 2px solid rgba(0,0,0,0.3); position: sticky; top: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(5px); z-index: 10; }
         tbody tr { cursor: pointer; transition: background 0.2s; }
@@ -786,6 +733,9 @@
             max-height: 90vh;
             overflow-y: auto;
         }
+
+        @media (max-width: 640px) { .hr-modal-content { padding: 15px; } }
+
         .hr-modal-content h2, .hr-modal-content .hr-value { color: #ffffff !important; }
         .hr-modal-content .hr-label { color: rgba(255,255,255,0.7) !important; }
         
@@ -805,6 +755,9 @@
             gap: 15px;
             margin-top: 20px;
         }
+
+        @media (max-width: 640px) { .hr-grid { grid-template-columns: 1fr; } .hr-item.full-span { grid-column: span 1; } }
+
         .hr-item {
             background: rgba(255,255,255,0.05);
             padding: 12px;
@@ -814,11 +767,6 @@
         .hr-item.full-span { grid-column: span 2; }
         .hr-label { font-size: 10px; text-transform: uppercase; font-weight: 800; margin-bottom: 4px; }
         .hr-value { font-size: 14px; font-weight: 900; }
-
-        /* INVOICE MODAL SPECIFICS */
-        #invoice-modal .hr-modal-content th, #invoice-modal .hr-modal-content td { color: #fff; border-color: rgba(255,255,255,0.2); }
-        #invoice-modal .hr-modal-content th { background: rgba(0,0,0,0.5); color: rgba(255,255,255,0.7); }
-        #invoice-modal .hr-modal-content tbody tr:hover { background: rgba(255,255,255,0.1); }
 
         /* GLASS FOOTER */
         .footer-legal {
@@ -1273,7 +1221,7 @@
                 <div class="footer-legal glass-panel">
                     <div class="footer-legal-text">
                         &copy; 2026 Powell Global LLC. All Rights Reserved. Varis OS and The Unity Protocol are proprietary trademarks.<br>
-                        <span style="font-size: 9px; color: #000; font-weight: 800; opacity: 0.8; display: block; margin-top: 4px;">*Disclaimer: The merchants and personnel displayed in this terminal are fictitious. Financial metrics, operating volumes, and wage requirements are modeled on actual 2026 Denver, CO economic projections, with margin and operational benchmarks sourced directly from the American Hotel & Lodging Association (AHLA), STR (Smith Travel Research), the National Restaurant Association (NRA), and the National Automobile Dealers Association (NADA).</span>
+                        <span style="font-size: 9px; color: #000; font-weight: 800; opacity: 0.8; display: block; margin-top: 4px;">*Disclaimer: The merchants and personnel displayed in this terminal are fictitious. Financial metrics, operating volumes, and wage requirements are modeled on actual 2026 Denver, CO economic projections.</span>
                     </div>
                     <div class="footer-links">
                         <a href="#">Contact Us</a>
@@ -1519,9 +1467,8 @@
 
         function renderAP() {
             const tbody = document.getElementById('ap-tbody');
-            if(!tbody) return;
             tbody.innerHTML = '';
-            const list = apData[activeBusiness] || [];
+            const list = apData[activeBusiness];
             
             list.forEach(inv => {
                 const tr = document.createElement('tr');
@@ -1576,7 +1523,6 @@
         function renderRecon() {
             const grid = document.getElementById('approval-grid');
             const eodBtn = document.getElementById('run-eod-btn');
-            if(!grid) return;
 
             let allApproved = false;
 
@@ -1728,7 +1674,7 @@
         };
 
         // ---------------------------------------------------------
-        // BASE METRICS & LOGIC (REALISTIC INDUSTRY AVERAGES)
+        // BASE METRICS & LOGIC
         // ---------------------------------------------------------
         const baseData = {
             resort: {
