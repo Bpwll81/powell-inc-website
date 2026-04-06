@@ -87,6 +87,7 @@
                 <a href="../heychef/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
                 <a href="../resort/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
                 <a href="index.html" class="text-sm uppercase tracking-widest text-brand-gold underline decoration-brand-gold">6. Institutional Risk & Disclosure</a>
+                <a href="../ubooks-terminal/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">7. Unity Books Demo</a>
             </div>
         </div>
     </nav>
@@ -360,7 +361,8 @@
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
         const icon = document.getElementById('menu-icon');
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
             if (menu.classList.contains('hidden')) {
