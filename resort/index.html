@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Ledger | Powell Global LLC</title>
+    <title>The Resort | Powell Global LLC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
                     colors: {
                         brand: {
-                            gold: '#D4AF37',
-                            dark: '#0B0F19',
-                            metal: '#CBD5E1'
+                            gold: '#D4AF37',     
+                            dark: '#0F172A',     
+                            light: '#FFFFFF',    
+                            slate: '#475569',    
+                            accent: '#F8FAFC'    
                         }
                     }
                 }
@@ -21,28 +27,29 @@
         }
     </script>
     <style>
+        body, html { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #FFFFFF; color: #475569; overflow-x: hidden; line-height: 1.8; }
         #menu.hidden { display: none; }
         #menu.flex { display: flex; }
+
+        .hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: #f1f5f9; }
+        .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; opacity: 0; animation: headerFade 15s infinite; }
+        .hero-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.8)); }
+        .hero-1 { background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070'); animation-delay: 0s; } 
+        .hero-2 { background-image: url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=2069'); animation-delay: 5s; } 
+        .hero-3 { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069'); animation-delay: 10s; } 
+        @keyframes headerFade { 0%, 25% { opacity: 1; } 33%, 100% { opacity: 0; } }
+
+        .banner-dark { background: #0F172A; color: white; padding: 100px 0; text-align: center; width: 100%; }
+        .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); color: #0F172A; margin-bottom: 40px; text-transform: uppercase; border-left: 8px solid #D4AF37; padding-left: 25px; font-weight: 900; }
+        .feature-list li { margin-bottom: 25px; padding-left: 35px; position: relative; font-size: 1.1rem; }
+        .feature-list li strong { color: #0F172A; }
+        .feature-list li::before { content: '◈'; position: absolute; left: 0; color: #D4AF37; font-size: 1.2rem; }
         
-        .glass-metal {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px) saturate(160%);
-            -webkit-backdrop-filter: blur(12px) saturate(160%);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        .m-visual { 
+            width: 100%; height: 600px; background-image: url('merc 2.jpg'); background-size: cover; background-position: center; 
+            border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); margin: 40px 0 10px 0;
         }
-
-        .disclaimer-bar {
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-        }
-
-        .countdown-font { font-family: monospace; font-weight: bold; }
-
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+        .v-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; transition: all 0.3s ease; }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DDPEDVNXW"></script>
@@ -62,314 +69,256 @@
         })(window, document, "clarity", "script", "w11yi5tjgj");
     </script>
 </head>
-<body class="bg-brand-dark text-slate-200 font-sans antialiased pt-20 md:pt-24 leading-relaxed">
+<body class="selection:bg-brand-gold selection:text-black">
 
-    <div class="fixed inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
-             class="w-full h-full object-cover opacity-30 md:opacity-40" alt="Corporate Infrastructure">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-transparent to-brand-dark/90"></div>
-    </div>
-
-    <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-brand-dark/40 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
-            <div class="text-white font-bold text-lg md:text-xl tracking-widest uppercase italic leading-none">
-                <a href="../index.html">Powell Global</a>
-            </div>
-            <button id="menu-btn" class="text-white hover:text-brand-gold transition-colors p-2 focus:outline-none">
+    <div class="fixed top-0 w-full z-50">
+        <nav class="flex justify-between items-center px-10 py-6 bg-white/90 backdrop-blur-lg border-b border-slate-100">
+            <a href="../index.html" class="text-slate-900 font-black tracking-[0.2em] uppercase text-xl italic transition-all hover:text-brand-gold">Powell Global</a>
+            <button id="menu-btn" class="text-slate-900 p-2 hover:text-brand-gold transition-colors">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-            <div id="menu" class="hidden absolute top-16 md:top-20 right-0 w-full md:w-96 bg-brand-dark/95 border-l border-white/10 flex-col p-6 md:p-8 space-y-6 shadow-2xl text-right md:text-left font-bold">
-                <a href="../unity.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">1. Unity Protocol</a>
-                <a href="../varis.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">2. Varis OS</a>
-                <a href="../V-Shelves/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
-                <a href="../heychef/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
-                <a href="../resort/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
-                <a href="index.html" class="text-sm uppercase tracking-widest text-brand-gold underline decoration-brand-gold">6. Institutional Risk & Disclosure</a>
-                <a href="../ubooks-terminal/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">7. Unity Books Demo</a>
+            <div id="menu" class="hidden absolute top-24 right-6 w-full md:w-72 bg-brand-dark border border-white/10 flex-col p-8 space-y-6 shadow-2xl rounded-lg">
+                <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">Home</a>
+                <hr class="border-white/5">
+                <a href="../unity/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">1. Unity Protocol</a>
+                <a href="../varis/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">2. Varis OS</a>
+                <a href="../V-Shelves/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">3. V-Shelves</a>
+                <a href="../heychef/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">4. Hey Chef</a>
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8">5. The Resort</a>
+                <a href="../transparency/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">6. Institutional Risk & Disclosure</a>
+                <a href="../ubooks-terminal/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">7. Unity Books Demo</a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
-    <main class="relative z-10 max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
-        
-        <div class="mb-10 md:mb-12 text-center md:text-left">
-            <h1 class="text-4xl md:text-6xl font-black text-white mb-2 uppercase tracking-tighter italic leading-tight">
-                Sovereign <span class="text-brand-gold">Ledger.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 font-light italic uppercase tracking-widest">Accountability & Operational Transparency</p>
+    <div class="hero">
+        <div class="hero-slide hero-1"></div>
+        <div class="hero-slide hero-2"></div>
+        <div class="hero-slide hero-3"></div>
+        <div class="hero-content z-10">
+            <h1 class="drop-shadow-sm font-black text-slate-900 text-6xl md:text-8xl tracking-tighter uppercase italic">The Resort</h1>
+            <p class="text-slate-900 text-lg font-bold tracking-[0.4em] uppercase mt-4 italic">Sovereign Community Architecture</p>
         </div>
+    </div>
 
-        <div class="mb-16 md:mb-20">
-            <div class="glass-metal rounded-2xl md:rounded-3xl overflow-hidden p-1 border border-white/20 shadow-2xl">
-                <div class="aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black relative">
-                    <video controls class="w-full h-full">
-                        <source src="Powell Global 2026 Pitch Deck.mp4" type="video/mp4">
-                    </video>
+    <div class="max-w-7xl mx-auto px-6 py-32 border-b border-slate-100">
+        <h2 class="section-title">Hotel Ilona: Family Sanctuary</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div class="space-y-8">
+                <p class="text-2xl text-slate-900 font-bold leading-tight italic">Elite Hospitality meets Autonomous Finance.</p>
+                <p class="text-xl text-slate-500 font-light leading-relaxed">Designed as the bridge to a closed-circuit lifestyle, Ilona restores family connection through high-fidelity security and private social cores.</p>
+                <ul class="feature-list">
+                    <li><strong>Integrated Knee Hockey Arena:</strong> A private athletic hub located within the hotel architecture for social connectivity.</li>
+                    <li><strong>Lifetime V-Band Assets:</strong> Permanent badges for wellness, notifications, and real-time resort sync.</li>
+                    <li><strong>Child Independence:</strong> Parents load funds for kids to purchase artisan lunches at the Mercantile independently.</li>
+                    <li><strong>Biometric Privacy:</strong> Proximity triggers for suite entry are automatically disabled off Resort grounds.</li>
+                </ul>
+            </div>
+            <div class="relative">
+                <img src="Hotel Ilona.png" alt="Hotel Ilona" class="w-full h-auto rounded-xl shadow-2xl border border-slate-100">
+                <div class="mt-4 p-4 bg-brand-accent rounded border border-slate-200 text-center">
+                    <p class="text-[10px] uppercase tracking-[0.2em] font-mono text-slate-500 leading-relaxed italic">
+                        <strong>Architectural Notice:</strong> The visual representation provided above reflects the finalized, conceptualized architectural design for Hotel Ilona. It serves as an accurate model of the planned structural footprint.
+                    </p>
                 </div>
             </div>
-            <p class="mt-4 text-[10px] md:text-[11px] text-slate-400 italic leading-relaxed max-w-5xl">
-                <strong>Third-Party Disclosure:</strong> Powell Global LLC maintains a standard commercial business account with Samsung. No formal enterprise partnership, joint venture, or endorsement exists between Powell Global LLC and Samsung at this time. Any reference to Samsung hardware or security architecture serves as an illustrative benchmark for the integration standards required for Varis OS. Communications regarding future enterprise coordination are in the initial stages as Samsung hardware is viewed as the current industry standard for the required security parameters.
+        </div>
+    </div>
+
+    <div class="bg-brand-accent py-32 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-block border border-brand-gold/50 bg-white text-brand-gold font-mono text-xs px-4 py-1.5 mb-6 rounded shadow-sm uppercase font-bold tracking-widest">
+                    WEARABLE NODE // THE V-BAND
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 uppercase italic tracking-tighter mb-6">Total Ecosystem Immersion</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    The V-Band is a biometric, wearable node designed exclusively for luxury hotel environments. It eliminates the friction of traditional hospitality, acting as a digital key, a seamless payment rail, and an autonomous operational manager.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+                <div class="relative h-[500px] rounded-xl overflow-hidden shadow-xl border border-slate-200 group">
+                    <img src="https://images.unsplash.com/photo-1555861496-0666c8981751?q=80&w=2070&auto=format&fit=crop" alt="Tap to Pay Technology" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="bg-black/60 backdrop-blur-sm border-l-4 border-brand-gold p-4 rounded-r">
+                            <p class="text-white font-mono text-[10px] uppercase tracking-widest font-bold mb-1">Patent App. 19/559,956 // Claim 19</p>
+                            <p class="text-slate-300 text-xs italic">"The proximity-triggered power delivery network... configured to maximize RF-to-DC conversion efficiency via the V-Band node array."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900 uppercase italic mb-4">For the Guest: Sovereign Hospitality</h3>
+                        <ul class="feature-list">
+                            <li><strong>Proximity Authentication:</strong> Legacy keycards are dead. As a guest approaches their assigned suite, the V-Band utilizes proximity sensors and preferred biometric data to automatically unlock the door.</li>
+                            <li><strong>Zero-Friction Commerce:</strong> A virtual, biometrically-secured PIN allows guests to use tap-to-pay at *any* console on the property. No wallets, no bank card PINs—just an instant, seamless transaction across the resort.</li>
+                            <li><strong>The Personal Node:</strong> Beyond access, the V-Band acts as a localized health tracker and digital concierge, pushing subtle haptic notifications for spa appointments and dining reservations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse">
+                <div class="space-y-12 order-2 lg:order-1">
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900 uppercase italic mb-4">For the Staff: Autonomous Management</h3>
+                        <ul class="feature-list">
+                            <li><strong>Algorithmic Timekeeping:</strong> The system knows when you are supposed to be on the floor. V-Bands automatically clock staff in and out based on uploaded schedules the moment they cross the geofenced threshold.</li>
+                            <li><strong>Seamless Override:</strong> For leadership, the V-Band acts as a cryptographic manager’s key. It grants instant, touchless access to restricted areas and secure POS terminal overrides instantly.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 group order-1 lg:order-2">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop" alt="Frictionless Hotel Management" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="bg-black/60 backdrop-blur-sm border-l-4 border-brand-gold p-4 rounded-r">
+                            <p class="text-white font-mono text-[10px] uppercase tracking-widest font-bold mb-1">Patent App. 19/559,956 // Claim 86</p>
+                            <p class="text-slate-300 text-xs italic">"A legally compliant architecture for transitioning physical environments into autonomous, asset-backed economic nodes via Unity 2.0."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-dark">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-4">The Mercantile</h2>
+            <p class="text-brand-gold text-xl font-bold uppercase tracking-widest">Sovereign Financial Circuit Active</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-8">Culinary Marketplace</h3>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">A culinary marketplace operating on a 100% closed circuit, powered by native settlement logic and physical gold/silver exchange hubs.</p>
+                <ul class="feature-list">
+                    <li><strong>Omni-Channel Delivery:</strong> V-Band tracking delivers artisan meals directly to your Viewing Hub or Suite.</li>
+                    <li><strong>Closed-Loop Economy:</strong> Decoupled from legacy banking through Unity Protocol settlement.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="m-visual"></div>
+                <p class="text-[10px] text-slate-400 mt-2 text-center uppercase tracking-[0.2em] font-bold italic">Conceptual Rendering: Marketplace Central Hub</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-dark bg-[#1a2233]">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-2">The V-Plex</h2>
+            <p class="text-brand-gold text-sm md:text-lg font-bold uppercase tracking-widest italic opacity-90">(The Vaitukaitis Learning and Sports Complex)</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-32">
+        <div class="mb-20">
+            <h2 class="section-title">Concentric Infrastructure</h2>
+            <p class="text-xl text-slate-500 font-light italic">Layered rings of security, education, and athletics.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div class="space-y-16">
+                <div class="p-8 border-l-4 border-brand-gold bg-slate-50">
+                    <h3 class="text-2xl font-black text-slate-900 uppercase italic mb-4">Ring 1: Outermost Hub – Foundation Center</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Education is the first circle of defense. This ring protects the core by ensuring **knowledge comes before anything.** Enrollment begins at **age 8**.</p>
+                    <ul class="feature-list text-sm">
+                        <li><strong>Core Foundations:</strong> Mastery of Reading, Writing, Arithmetic, and the Sciences.</li>
+                        <li><strong>Self-Sustenance:</strong> Passion-based training in homesteading, gardening, and hunting.</li>
+                        <li><strong>Self-Governance:</strong> Mastering the specific knowledge for institutional freedom.</li>
+                    </ul>
+                </div>
+                <div class="p-8 border-l-4 border-slate-900 bg-slate-50">
+                    <h3 class="text-2xl font-black text-slate-900 uppercase italic mb-4">Ring 2: Inner Hub – Sibling Play & Viewing</h3>
+                    <p class="text-slate-600 leading-relaxed">A sanctuary for active siblings and a control node for parents. Keeps the central building productive and the commons clear.</p>
+                    <ul class="feature-list text-sm">
+                        <li><strong>Integrated Play:</strong> Wall climbing, active play arrays, and gated outdoor access.</li>
+                        <li><strong>Viewing Hubs:</strong> Parents monitor the ice while synchronized with children via V-Band.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-12 rounded-2xl border border-slate-200">
+                <h3 class="text-3xl font-black text-slate-900 uppercase italic mb-8 text-center underline decoration-brand-gold underline-offset-8">The Core: 5-Rink Ice Campus</h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 1: Denver</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">Olympic / College D2</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 2: Birmingham</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">NHL / AAA Varsity</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 3: Lancaster</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">NHL / Travel AA</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 4: Lafayette</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">Standard / House</span>
+                    </div>
+                    <div class="v-card p-6 border-l-8 border-blue-500 flex justify-between items-center">
+                        <span class="font-bold text-slate-900">Rink 5: Staten Island</span>
+                        <span class="text-[10px] uppercase font-mono text-slate-400 italic">Standard / Figure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 p-8 bg-brand-accent border border-slate-200 rounded-xl text-center">
+            <p class="text-xs text-slate-400 font-mono uppercase tracking-[0.2em] leading-relaxed max-w-4xl mx-auto italic">
+                Architectural mockups in design. The V-Plex is engineered as a layered ecosystem of massive concentric rings surrounding a central ice campus building.
             </p>
         </div>
+    </div>
 
-        <section class="mb-24">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 uppercase tracking-widest italic text-center">III. Tactical Due Diligence Rebuttals</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border-2 border-brand-gold/30">
-                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"What if an exchange refuses a Day-1 listing?"</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> Powell Global LLC concedes that a Day-1 listing refusal is a standard outcome of rigorous institutional risk assessments. This is not make-or-break. The Company is prepared to work directly with the investor to find a mutually beneficial solution that ensures UNT circulation begins immediately upon audit finalization.
-                    </p>
+    <section class="py-24 px-6 bg-brand-dark text-white">
+        <div class="max-w-5xl mx-auto font-mono text-[11px] text-slate-500 leading-relaxed">
+            <h3 class="text-brand-gold mb-10 text-xs font-bold uppercase tracking-widest italic">// Institutional IP Architecture: Patent 19/559,956 (Resort Claims)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 border border-white/10 rounded-xl">
+                    <strong class="text-white block mb-4 uppercase tracking-widest">// Claim 19: Proximity Triggered Node Activation</strong>
+                    "The proximity-triggered power delivery network... configured to maximize RF-to-DC conversion efficiency via the V-Band node array."
                 </div>
-
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"Is this an algorithmic stablecoin risk?"</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> Impossible. UGLD is exclusively minted via 25kg intervals and is backed 1:1 by physical GOLD held in Bail-Free vaults. It is not supported or backed by fiat or speculation; 1 UGLD will always equal exactly 5 grams of physical GOLD.
-                    </p>
+                <div class="p-8 border border-white/10 rounded-xl">
+                    <strong class="text-white block mb-4 uppercase tracking-widest">// Claim 47: Seniority Tranche Liquidation Bars</strong>
+                    "Cryptographically barring treasury liquidations during recognized decoupling events to ensure asset-backed settlement stability."
                 </div>
-
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"How is founder exit/dump risk mitigated?"</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> Founders are cryptographically barred from principal liquidation via the Smart Waterfall Protocol. Only bi-monthly staking rewards are permitted for execution, ensuring zero sell-pressure from the founding stake and total alignment with long-term protocol utility.
-                    </p>
+                <div class="p-8 border border-white/10 rounded-xl">
+                    <strong class="text-white block mb-4 uppercase tracking-widest">// Claim 86: Physical Environment Decoupling Protocol</strong>
+                    "A legally compliant architecture for transitioning physical environments into autonomous, asset-backed economic nodes via Unity 2.0."
                 </div>
-
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"What protection exists if the parent entity fails?"</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> Assets are held in ring-fenced Special Purpose Vehicles (SPVs). Token holders are legally defined as Senior Secured Creditors with explicit redemption rights to the underlying physical metal assets, providing a bankruptcy-remote safety net.
-                    </p>
-                </div>
-
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"Is UNT an unregistered security?"</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> No. UNT is strictly a utility token designed for network governance, hardware financing, and gas fees. The Company has prioritized alignment with the Colorado Digital Token Act and EU MiCA standards to ensure the protocol operates within established regulatory frameworks.
-                    </p>
-                </div>
-
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border border-white/10">
-                    <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"Is the codebase secure?"</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> Protocol deployment is locked until an independent Tier-1 audit firm certifies zero critical vulnerabilities. Powell Global LLC has allocated specific funds for the investor to manage this audit directly, removing any conflict of interest and ensuring total technical integrity.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="v1-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-24 text-slate-300">
-            <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
-                <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Formal Protocol Notice</h4>
-                <p class="text-slate-200 text-sm italic leading-relaxed font-medium">
-                    The protocol updates within this V1 Addendum serve as a mandatory amendment to the Master White Paper. These terms officially supersede and replace previous architectural descriptions regarding liquidity events, vesting, and audit remediation. The full whitepaper can be located on the <a href="../unity.html" class="text-brand-gold underline font-bold">Unity Protocol page</a>.
-                </p>
-            </div>
-
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX A: PROTOCOL AMENDMENTS (V1)</h2>
-            <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Timestamp: March 15, 2026 | 12:53 MDT (Colorado)</p>
-                
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">1. Institutional Custody & The LGE</h3>
-                    <p>To permanently eliminate liquidation risk and secure Day-1 market stability, the entirety of the 70,000,000,000 UNT supply has been minted and secured in audited offline cold storage. The protocol timeline officially shifts from a Token Generation Event (TGE) to a Liquidity Generation Event (LGE).</p>
-                    <p class="mt-4">Prior to Month 3 market distribution, the total token supply—excluding the 2.75% retained for internal development—will be transferred to the Alpha Lead Exchange Partner’s institutional custody. Powell Global LLC operates strictly as a facilitator; the Exchange Partner autonomously controls circulating supply release via smart contract to enforce the $0.05 USD entry peg.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">2. Cryptographic Vesting & Anti-Dump Execution</h3>
-                    <p>Founders retain self-custody of a strict 2.75% of the supply, allocated as a 1.75% Founder Share and a 1.00% Team Pool. To facilitate strategic expansion, the 1.00% Team Pool is mathematically fragmented by the smart contract into 20 units (0.05% each) per hire.</p>
-                    <p class="mt-4 text-brand-gold italic">To cryptographically eliminate the possibility of a market dump, all retained allocations are bound to the "Smart Waterfall" Protocol. This contract prioritizes staking rewards over principal liquidation; the principal remains 100% locked, ensuring absolute protection for the circulating market cap.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">3. Cryptographic Audit Lock</h3>
-                    <p>The execution of Tranche 1 capitalization acts as the immediate catalyst for the 60-Day Audit Remediation Protocol (ARP). The protocol deployer function remains cryptographically locked until an independent Tier-1 firm certifies zero Critical vulnerabilities within the tokenomics, fee logic, and UGLD reserve contracts.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">4. Algorithmic Fee-Scaling & Sovereign Floor</h3>
-                    <p>The Company has updated the smart contract logic to support API integrations with the Alpha Lead Exchange. Specific merchant nodes integrated directly through the Alpha Lead's payment rails receive a matched 1.00% onboarding rate, programmed with an exclusive epoch-based glide path down to a 0.65% Sovereign Floor.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">5. Tranche 1 Seniority & Liquidation Bar</h3>
-                    <p>To protect liquidity pools, smart contracts enforce Tranche 1 Seniority Rights. The protocol cryptographically bars Powell Global LLC from executing corporate treasury liquidations during market decoupling events, prioritizing the $0.05 peg stability over corporate equity extraction.</p>
-                </div>
-
-                <div class="border-t border-white/10 pt-8 italic text-sm text-slate-400 text-center md:text-left">
-                    The original foundational Master Whitepaper can be reviewed on the <a href="../unity.html" class="text-brand-gold underline">Unity Protocol page</a>.
+                <div class="p-8 border border-white/10 rounded-xl">
+                    <strong class="text-white block mb-4 uppercase tracking-widest">// Claim 144: Sovereign Closed-Circuit Settlement</strong>
+                    "Executing automated financial settlements within a 100% closed financial circuit, decoupled from legacy banking intermediaries."
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="v2-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-24 text-slate-300 shadow-[0_0_30px_rgba(212,175,55,0.15)]">
-            <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
-                <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Active Protocol Directive</h4>
-                <p class="text-slate-200 text-sm italic leading-relaxed font-medium">
-                    The protocol updates within Addendum V2 formally upgrade Varis OS to a Universal Commercial Engine and establish strict maturity milestones for the UGLD and UNT digital commodities under the 2025 CLARITY Act.
-                </p>
-            </div>
-
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX B: SOVEREIGN ENGINE UPGRADES (V2)</h2>
-            <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Timestamp: March 17, 2026 | Active Standards</p>
-                
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">1. The Universal Settlement Engine</h3>
-                    <p>Varis OS is no longer restricted to resort or hospitality logic. The <code class="bg-black/50 px-2 py-1 rounded text-brand-gold text-sm font-mono">UniversalSovereignSplitter</code> now acts as the underlying infrastructure for all global commerce. Whether processing transactions for luxury retail, food service, or corporate hospitality, the protocol automatically routes commercial fees to the 50/25/12.5/12.5 Asset-First Engine, ensuring uninterrupted GOLD accumulation regardless of the merchant sector.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">2. The UGLD "Sovereign Pulse" Standardization</h3>
-                    <p>To align with active V3 protocol logic and ensure seamless 1:1 physical backing, the protocol formally defines the UGLD minting intervals (superseding legacy 1 oz Pitch Deck metrics):</p>
-                    <ul class="list-disc list-inside mt-4 space-y-2 text-slate-400">
-                        <li><strong class="text-white">The Peg:</strong> 1 UGLD is strictly pegged to <strong class="text-brand-gold">5 Grams</strong> of LBMA-certified physical GOLD.</li>
-                        <li><strong class="text-white">The Minting Pulse:</strong> UGLD is minted exclusively in <strong class="text-brand-gold">25kg intervals</strong> (yielding exactly 5,000 UGLD per pulse), triggered by the accumulation of 25kg of physical GOLD derived from network processing fees.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">3. The 100-Mint Decentralization Handover (CLARITY Act Compliance)</h3>
-                    <p>To establish "Factual Maturity" as defined by the Digital Asset Market Clarity Act (2025), Powell Global LLC has hardcoded an irrevocable Decentralization Trigger. Upon the completion of the 100th UGLD Minting Pulse (representing <strong class="text-white">2,500 kg</strong> of vaulted GOLD):</p>
-                    <ul class="list-disc list-inside mt-4 space-y-2 text-slate-400">
-                        <li>The Founder's <code class="bg-black/50 px-2 py-1 rounded text-brand-gold text-sm font-mono">GUARDIAN_ROLE</code> is cryptographically revoked.</li>
-                        <li>Governance control of the circulating supply and asset whitelisting is permanently transferred to the Varis DAO.</li>
-                        <li>This transition legally classifies UNT and UGLD as fully decentralized digital commodities, exempting them from secondary-market securities registration.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">4. Staff Wealth & The UGLD Loyalty Multiplier</h3>
-                    <p>To drive internal adoption of the GOLD standard, the protocol implements a <strong class="text-brand-gold">2% Sovereign Bonus</strong>. Service industry staff utilizing Varis OS who elect to receive their liquid tips in UGLD receive an automatic 2% smart-contract multiplier, redirecting capital historically lost to legacy banking fees directly into the hands of the workforce.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">5. UNT Network Equity & The 5-Metals Basket</h3>
-                    <p>While UGLD serves as the immutable pure GOLD peg, the UNT utility token functions as the broader network equity. UNT is fundamentally backed by the growing <strong class="text-brand-gold">5-Metals Basket</strong>. As total transaction volume scales globally, the Varis Protocol's 50% Asset-First fee split continuously fortifies this 5-Metals treasury. This mechanism mathematically increases the physical asset-backing per UNT token over time, providing a stabilizing counterbalance to naturally smooth and absorb the network's 40-year halving schedule.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-32">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">IV. Capital Expenditure Roadmap</h2>
-            
-            <div class="glass-metal rounded-xl md:rounded-2xl overflow-hidden mb-12 border-b-4 border-slate-400 shadow-xl">
-                <div class="bg-white/10 p-5 md:p-6 font-bold text-white uppercase tracking-widest flex flex-col md:flex-row justify-between gap-2">
-                    <span class="text-sm md:text-base">A. Investor-Managed Security Allocation</span>
-                    <span class="text-brand-gold italic font-bold">$65,000.00</span>
-                </div>
-                <div class="p-5 text-xs text-slate-400 italic">Funds retained by the investor to facilitate the independent Tier-1 Security Audit directly.</div>
-            </div>
-
-            <div class="glass-metal rounded-2xl md:rounded-3xl overflow-hidden border-b-4 border-brand-gold mb-16 shadow-2xl">
-                <div class="bg-white/10 p-5 md:p-6 font-bold text-white uppercase tracking-widest flex flex-col md:flex-row justify-between md:items-center gap-2">
-                    <span>B. Operational Launch Capital (Tranche 1)</span>
-                    <span class="text-brand-gold italic font-bold">$385,000.00</span>
-                </div>
-                <div class="table-container">
-                    <table class="w-full text-left text-sm italic min-w-[750px]">
-                        <thead class="bg-white/5 uppercase text-[10px] font-mono tracking-widest text-slate-400">
-                            <tr><th class="p-6">Line Item</th><th class="p-6 text-center">Allocation</th><th class="p-6 text-center">Status</th><th class="p-6 text-center">Receipts</th></tr>
-                        </thead>
-                        <tbody class="divide-y divide-white/10 font-medium italic">
-                            <tr><td class="p-6 text-white font-bold">Hiring & Legal ($40k Retainer + 2 Lead Staff Salaries)</td><td class="p-6 text-center text-white font-bold italic">$190,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Metals Procurement (Initial 5-Metal Basket)</td><td class="p-6 text-center text-white font-bold italic">$50,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Home Office Lease (1-Yr, Lone Tree 80124)</td><td class="p-6 text-center text-white font-bold italic">$25,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Varis OS Hardware (Merchant 1-5 Load-In)</td><td class="p-6 text-center text-white font-bold italic">$20,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Internal Company IT & Server Hardware</td><td class="p-6 text-center text-white font-bold italic">$15,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr><td class="p-6 text-white font-medium">Bail-Free Vault (1-Yr Texas Lease)</td><td class="p-6 text-center text-white font-bold italic">$10,000</td><td class="p-6 text-center text-brand-gold uppercase italic">In Progress</td><td class="p-6 text-center text-slate-500 underline italic">PENDING</td></tr>
-                            <tr class="bg-white/5 font-bold"><td class="p-6 text-white">Operating Reserves (Expansion Pool)</td><td class="p-6 text-center text-white font-bold">$75,000</td><td class="p-6 text-center text-brand-gold">RESERVED</td><td class="p-6 text-center text-slate-500">N/A</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-24 opacity-60">
-                <div class="glass-metal p-8 rounded-3xl italic text-center border-dashed border-2 border-white/10 uppercase tracking-widest text-xs font-bold">Tranche 2 ($450,000) - Locked</div>
-                <div class="glass-metal p-8 rounded-3xl italic text-center border-dashed border-2 border-white/10 uppercase tracking-widest text-xs font-bold">Tranche 3 ($450,000) - Locked</div>
-            </div>
-
-            <div class="glass-metal p-8 md:p-12 rounded-3xl border-4 border-brand-gold/50 shadow-[0_0_50px_rgba(212,175,55,0.2)] relative overflow-hidden">
-                <h3 class="text-2xl md:text-3xl font-black text-white mb-6 uppercase tracking-widest text-center italic leading-tight">The "Lead Sous" Unified Tranche</h3>
-                <p class="text-center text-slate-400 text-[10px] mb-10 uppercase italic font-bold tracking-widest max-w-2xl mx-auto">
-                    ⚠️ Disclaimer: These figures are institutional estimates and will update should a lead investor partner with Powell Global.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 italic font-medium">
-                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10"><p class="text-xs text-slate-500 uppercase font-mono mb-2">Scaled Infrastructure</p><p class="text-2xl md:text-3xl font-black text-brand-gold">$425,000</p></div>
-                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10"><p class="text-xs text-slate-500 uppercase font-mono mb-2 text-center">Large Metals Basket</p><p class="text-2xl md:text-3xl font-black text-brand-gold">$400,000</p></div>
-                    <div class="bg-white/5 p-6 md:p-8 rounded-2xl text-center border border-white/10"><p class="text-xs text-slate-500 uppercase font-mono mb-2 text-center">Staffing & Legal (Scaled)</p><p class="text-2xl md:text-3xl font-black text-brand-gold">$525,000</p></div>
-                </div>
-                <div class="mt-10 md:mt-12 text-center text-base md:text-lg text-white font-bold uppercase tracking-[0.4em] italic border-t border-white/10 pt-8">TOTAL SEED CAPITALIZATION: $1,350,000.00</div>
-            </div>
-        </section>
-
-        <section class="mb-32">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand-gold mb-10 md:mb-12 uppercase tracking-widest italic text-center">V. Staff Vesting Ledger (20 Units)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border-l-4 border-white/20 shadow-lg">
-                    <h4 class="text-white font-bold text-xl italic mb-1 uppercase leading-tight">Lead Developer</h4>
-                    <p class="text-[10px] text-brand-gold font-mono mb-6 uppercase tracking-widest">Base Salary: $75,000.00</p>
-                    <div class="bg-brand-gold/10 p-5 rounded-xl border border-brand-gold/20 mb-8 text-center">
-                        <p class="text-[10px] text-brand-gold uppercase font-black mb-1 italic tracking-widest">Sovereign Stake: 35,000,000 UNT</p>
-                        <p class="text-white font-black text-2xl md:text-3xl leading-none">$1,750,000</p>
-                        <p class="text-[9px] text-slate-400 uppercase font-mono mt-1 italic">Launch Valuation (@$0.05)</p>
-                    </div>
-                    <div class="countdown-font text-2xl md:text-3xl text-white/20 text-center italic">000d : 00h : 00m : 00s</div>
-                </div>
-
-                <div class="glass-metal p-6 md:p-8 rounded-2xl border-l-4 border-white/20 shadow-lg">
-                    <h4 class="text-white font-bold text-xl italic mb-1 uppercase leading-tight">Marketing & Sales Manager</h4>
-                    <p class="text-[10px] text-brand-gold font-mono mb-6 uppercase tracking-widest">Base Salary: $75,000.00</p>
-                    <div class="bg-brand-gold/10 p-5 rounded-xl border border-brand-gold/20 mb-8 text-center">
-                        <p class="text-[10px] text-brand-gold uppercase font-black mb-1 italic tracking-widest">Sovereign Stake: 35,000,000 UNT</p>
-                        <p class="text-white font-black text-2xl md:text-3xl leading-none">$1,750,000</p>
-                        <p class="text-[9px] text-slate-400 uppercase font-mono mt-1 italic">Launch Valuation (@$0.05)</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-[9px] uppercase text-slate-500 mb-2 tracking-widest">Vesting Unlock Countdown</p>
-                        <div class="countdown-font text-2xl md:text-3xl text-white/20 italic tracking-widest">000d : 00h : 00m : 00s</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <section class="bg-white/5 py-16 px-6 border-t border-white/10 relative z-10 backdrop-blur-md">
+    <section class="bg-[#f8fafc] py-16 px-6 border-t border-slate-200">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-block border-2 border-brand-gold bg-black/40 text-brand-gold font-black text-sm px-6 py-2 mb-6 rounded shadow-sm uppercase tracking-[0.2em] italic">
+            <div class="inline-block border-2 border-brand-gold bg-white text-brand-gold font-black text-sm px-6 py-2 mb-6 rounded shadow-sm uppercase tracking-[0.2em] italic">
                 MACRO DEPLOYMENT HORIZON
             </div>
-            <h3 class="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-6">A 10-15 Year Sovereign Culmination</h3>
-            <p class="text-lg text-slate-300 leading-relaxed font-medium">
+            <h3 class="text-2xl md:text-4xl font-black text-slate-900 uppercase italic tracking-tighter mb-6">A 10-15 Year Sovereign Culmination</h3>
+            <p class="text-lg text-slate-600 leading-relaxed font-medium">
                 The Resort outlined above is not a conceptual render—it is the finalized, 10-15 year architectural culmination of the UNT and Varis Protocol. This structure represents a fully enclosed, sovereign economic ecosystem operating entirely on Unity logic.
             </p>
-            <p class="text-lg text-slate-300 leading-relaxed font-medium mt-6 border-t border-white/10 pt-6">
+            <p class="text-lg text-slate-600 leading-relaxed font-medium mt-6 border-t border-slate-200 pt-6">
                 <strong>Project Funding Architecture:</strong> Driven entirely by Powell Global's active cryptocurrency holdings, matched with the structured liquidity rollout and market success of the UNT token. The capital pathway to build this sanctuary is viable, modeled, and engineered.
             </p>
         </div>
     </section>
 
-    <footer class="bg-brand-dark/95 py-20 px-4 md:px-6 border-t border-white/10 relative z-10 text-center font-medium italic">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-white font-bold text-2xl tracking-[0.3em] uppercase mb-10">Powell Global LLC</div>
-            <div class="space-y-6 md:space-y-8 max-w-5xl mx-auto">
-                <p class="text-slate-100 text-[11px] md:text-xs leading-relaxed">
-                    <strong>Regulatory Disclosure:</strong> Powell Global LLC operates in strict alignment with the Colorado Digital Token Act (SB 19-023) and EU MiCA financial standards. The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and gas fees. It is <span class="text-white border-b border-brand-gold">NOT an investment contract or a security</span>. Any reference to asset-backing refers to the underlying settlement value of UGLD Digital Warehouse Receipts.
-                </p>
-            </div>
-            <div class="text-slate-200 text-[10px] border-t border-white/5 pt-12 w-full font-mono uppercase tracking-[0.5em] mt-12 leading-relaxed">
-                &copy; 2026 Powell Global LLC. Colorado Transparency Ledger ID: #PG-TL-2026
-            </div>
-        </div>
+    <footer class="bg-white py-20 text-center border-t border-slate-100">
+        <div class="font-black text-2xl tracking-widest uppercase italic text-slate-900 mb-4 transition-all hover:tracking-[0.4em]">Powell Global</div>
+        <p class="text-[10px] font-mono uppercase tracking-widest text-slate-400">&copy; 2026 Powell Global LLC. All rights reserved.</p>
     </footer>
 
     <script>
