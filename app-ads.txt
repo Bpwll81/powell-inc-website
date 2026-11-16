@@ -1,0 +1,3 @@
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+unity3d.com, 1234567, DIRECT
+tapjoy.com, 1234567, DIRECT

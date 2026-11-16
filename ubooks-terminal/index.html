@@ -55,8 +55,8 @@
 
         body, html {
             width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
             background-color: #000;
         }
 
@@ -895,6 +895,7 @@
             <a href="../resort/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">5. The Resort</a>
             <a href="../transparency/index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold" style="text-decoration: none;">6. Institutional Risk & Disclosure</a>
             <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold underline underline-offset-8" style="text-decoration: none;">7. Unity Books Demo</a>
+            <a href="/legal/" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">8. Legal</a>
         </div>
     </nav>
 </div>
@@ -2286,5 +2287,9 @@
     }, 2500); 
 </script>
 
+    <footer class="relative bg-[#050914] text-slate-300 px-6 py-10 border-t border-white/10" style="position:relative;z-index:60">
+        <nav aria-label="Footer navigation" data-footer-navigation class="relative flex flex-wrap justify-center gap-6 max-w-7xl mx-auto"><a href="/legal/">Legal &amp; Privacy</a></nav>
+    </footer>
+    <script src="/navigation.js" defer></script>
 </body>
 </html>
