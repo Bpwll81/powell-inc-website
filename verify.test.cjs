@@ -78,6 +78,6 @@ test('contact section uses the correct email and a separate protected message fo
     assert.match(html, /input id="contact-email"[^>]*type="email"[^>]*required/);
     assert.ok(fs.existsSync(path.join(__dirname, 'legal/message-received/index.html')));
 });
-test('app-ads.txt contains exactly the supplied raw placeholder records', () => {
-    assert.equal(read('app-ads.txt').replace(/\r\n/g, '\n'), 'google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\nunity3d.com, 1234567, DIRECT\ntapjoy.com, 1234567, DIRECT\n');
+test('app-ads.txt contains exactly the supplied network records', () => {
+    assert.equal(read('app-ads.txt').replace(/\r\n/g, '\n'), 'google.com, pub-5635535280522583, DIRECT, f08c47fec0942fa0\nunity3d.com, 299700dcd, DIRECT\ntapjoy.com, 299700dcd, DIRECT\n');
 });

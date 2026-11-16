@@ -6,5 +6,5 @@
 - Preview from the repository root with `python -m http.server 8080`; visit `/legal/`.
 - `navigation.js` is the shared header/footer route map. Preserve the on-disk `V-Shelves` capitalization.
 - The privacy form uses Netlify Forms with Netlify-managed reCAPTCHA and a honeypot. Local static previews cannot render or validate the managed CAPTCHA. Verify Forms detection, notifications and a real CAPTCHA submission on a Netlify preview before claiming delivery works.
-- app-ads.txt currently contains user-requested placeholder publisher IDs; real IDs must be supplied before monetization verification can succeed.
+- app-ads.txt contains the owner's supplied Google, Unity and Tapjoy publisher records. Keep it raw text; Android manifest XML belongs in Unity, not this file.
 - Legal wording needs owner approval. Preserve the exact multi-name App definition in the introduction.
