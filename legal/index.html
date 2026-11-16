@@ -79,13 +79,12 @@
         <section id="contact" class="mt-12 border border-white/10 rounded-xl bg-brand-surface p-6 md:p-10" aria-labelledby="contact-title">
             <h2 id="contact-title" class="text-2xl text-white font-bold">Contact us</h2>
             <p class="mt-4">Email <a href="mailto:bpwll@powellincorporated.com">bpwll@powellincorporated.com</a>, or send a message below without opening your email app.</p>
-            <p id="contact-notice" class="mt-3 text-sm text-slate-400">We use your email and message to respond to your enquiry. Please do not include passwords, payment details or identity documents. Messages are processed by Netlify. Google's <a href="https://policies.google.com/privacy">privacy policy</a> applies to the spam-prevention CAPTCHA.</p>
-            <form name="legal-contact" method="POST" action="/legal/message-received/" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" aria-describedby="contact-notice" class="mt-8 space-y-6">
+            <p id="contact-notice" class="mt-3 text-sm text-slate-400">We use your email and message to respond to your enquiry. Please do not include passwords, payment details or identity documents. Messages are processed by Netlify with automated spam filtering.</p>
+            <form name="legal-contact" method="POST" action="/legal/message-received/" data-netlify="true" netlify-honeypot="bot-field" aria-describedby="contact-notice" class="mt-8 space-y-6">
                 <input type="hidden" name="form-name" value="legal-contact">
                 <p hidden><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
                 <label class="block" for="contact-email">Your email <span aria-hidden="true">*</span><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
                 <label class="block" for="contact-message">Message <span aria-hidden="true">*</span><textarea id="contact-message" name="message" rows="6" minlength="10" maxlength="5000" required></textarea></label>
-                <div data-netlify-recaptcha="true"></div>
                 <button type="submit" class="bg-brand-gold text-brand-dark font-bold px-6 py-3 rounded hover:bg-yellow-300">Send message</button>
             </form>
         </section>

@@ -72,7 +72,8 @@ test('duplicate concurrent submissions are suppressed', async () => {
 test('contact section uses the correct email and a separate protected message form', () => {
     const html = read('legal/index.html');
     assert.match(html, /Email: <a href="mailto:bpwll@powellincorporated.com">/);
-    assert.match(html, /form name="legal-contact"[^>]*method="POST"[^>]*data-netlify="true"[^>]*netlify-honeypot="bot-field"[^>]*data-netlify-recaptcha="true"/);
+    assert.match(html, /form name="legal-contact"[^>]*method="POST"[^>]*data-netlify="true"[^>]*netlify-honeypot="bot-field"/);
+    assert.equal((html.match(/<div data-netlify-recaptcha="true"/g) || []).length, 1);
     assert.match(html, /textarea id="contact-message"[^>]*required/);
     assert.match(html, /input id="contact-email"[^>]*type="email"[^>]*required/);
     assert.ok(fs.existsSync(path.join(__dirname, 'legal/message-received/index.html')));
