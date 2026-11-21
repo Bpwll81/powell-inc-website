@@ -2,7 +2,6 @@
     const routes = [
         ['/', 'Home'], ['/unity/', '1. Unity Protocol'], ['/varis/', '2. Varis OS'],
         ['/V-Shelves/', '3. V-Shelves'], ['/heychef/', '4. Hey Chef'], ['/resort/', '5. The Resort'],
-        ['/transparency/', '6. Institutional Risk & Disclosure'],
         ['/ubooks-terminal/', '7. Unity Books Demo'], ['/legal/', '8. Legal']
     ];
     const normalize = path => path.replace(/index\.html$/, '').replace(/\/$/, '').toLowerCase() || '/';

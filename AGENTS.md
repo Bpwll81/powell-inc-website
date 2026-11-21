@@ -8,3 +8,10 @@
 - The privacy form uses Netlify Forms with Netlify-managed reCAPTCHA and a honeypot. Local static previews cannot render or validate the managed CAPTCHA. Verify Forms detection, notifications and a real CAPTCHA submission on a Netlify preview before claiming delivery works.
 - app-ads.txt contains the owner's supplied Google, Unity and Tapjoy publisher records. Keep it raw text; Android manifest XML belongs in Unity, not this file.
 - Legal wording needs owner approval. Preserve the exact multi-name App definition in the introduction.
+- The owner requested removal of the old Unity White Paper PDF, with update-pending placeholders on both Unity and Transparency. Do not restore the old download or publish a replacement without the owner supplying it.
+- Transparency is direct-link only: keep it out of static and shared navigation; preserve its noindex/nofollow robots metadata. This is not authentication.
+- The owner approved https://xdc.public-rpc.com as the first browser RPC after actual CORS failures from rpc.xinfin.network and erpc.xinfin.network; retain those two as fallbacks. Verify chain ID 50 before displaying LIVE.
+- Demo code is transparency/demo.js. Settlement and epoch outputs are simulations, separate from live token balances. No wallet connection or transaction sending is permitted.
+- Tests include cent-conserving settlement arithmetic, epoch boundaries, navigation exclusion, White Paper removal, and mocked RPC failover. Browser QA verified successful live reads and forced-offline fallback without console errors.
+- The owner confirmed main as the production push target. Obtain explicit authorization before future deployment pushes.
+- Video production is separately paused in C:/Users/livin/OneDrive/Desktop/Pitch Docs. Five v4 chunks and the production state JSON are saved; final video QA and staging must not resume until requested.

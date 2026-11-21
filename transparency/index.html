@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js" defer></script>
+    <script src="/transparency/demo.js" defer></script>
     <title>Sovereign Ledger | Powell Global LLC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -86,7 +89,6 @@
                 <a href="../V-Shelves/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">3. V-Shelves</a>
                 <a href="../heychef/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">4. Hey Chef</a>
                 <a href="../resort/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">5. The Resort</a>
-                <a href="index.html" class="text-sm uppercase tracking-widest text-brand-gold underline decoration-brand-gold">6. Institutional Risk & Disclosure</a>
                 <a href="../ubooks-terminal/index.html" class="text-sm uppercase tracking-widest hover:text-brand-gold">7. Unity Books Demo</a>
                 <a href="/legal/" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-brand-gold">8. Legal</a>
             </div>
@@ -122,7 +124,7 @@
                 <div class="glass-metal p-6 md:p-8 rounded-2xl border-2 border-brand-gold/30">
                     <h4 class="text-white font-bold italic text-lg mb-2 leading-tight">"What if an exchange refuses a Day-1 listing?"</h4>
                     <p class="text-slate-400 text-sm leading-relaxed italic">
-                        <strong class="text-brand-gold">Rebuttal:</strong> Powell Global LLC concedes that a Day-1 listing refusal is a standard outcome of rigorous institutional risk assessments. This is not make-or-break. The Company is prepared to work directly with the investor to find a mutually beneficial solution that ensures UNT circulation begins immediately upon audit finalization.
+                        <strong class="text-brand-gold">Rebuttal:</strong> Powell Global LLC concedes that a Day-1 listing refusal is a standard outcome of rigorous institutional risk assessments. This is not make-or-break. The Company is prepared to work directly with the investor to find a collaborative solution that ensures UNT circulation begins immediately upon audit finalization.
                     </p>
                 </div>
 
@@ -168,7 +170,7 @@
             <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
                 <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Formal Protocol Notice</h4>
                 <p class="text-slate-200 text-sm italic leading-relaxed font-medium">
-                    The protocol updates within this V1 Addendum serve as a mandatory amendment to the Master White Paper. These terms officially supersede and replace previous architectural descriptions regarding liquidity events, vesting, and audit remediation. The full whitepaper can be located on the <a href="/unity/" class="text-brand-gold underline font-bold">Unity Protocol page</a>.
+                    The protocol updates within this V1 Addendum serve as a mandatory amendment to the Master White Paper. These terms officially supersede and replace previous architectural descriptions regarding liquidity events, vesting, and audit remediation. The White Paper is being updated; the replacement will be published on this page when ready.
                 </p>
             </div>
 
@@ -195,7 +197,7 @@
 
                 <div>
                     <h3 class="text-xl font-bold text-white mb-4 italic">4. Algorithmic Fee-Scaling & Sovereign Floor</h3>
-                    <p>The Company has updated the smart contract logic to support API integrations with the Alpha Lead Exchange. Specific merchant nodes integrated directly through the Alpha Lead's payment rails receive a matched 1.00% onboarding rate, programmed with an exclusive epoch-based glide path down to a 0.65% Sovereign Floor.</p>
+                    <p>The Company has updated the smart contract logic to support API integrations with the Alpha Lead Exchange. Specific merchant nodes integrated directly through the Alpha Lead's payment rails receive a 2.00% launch merchant fee, programmed with an epoch-based glide path down to a permanent 1.25% floor. Fees route 2/3 to permanent UNT burn and 1/3 to treasury (85% physical metals / 15% operations).</p>
                 </div>
 
                 <div>
@@ -204,7 +206,7 @@
                 </div>
 
                 <div class="border-t border-white/10 pt-8 italic text-sm text-slate-400 text-center md:text-left">
-                    The original foundational Master Whitepaper can be reviewed on the <a href="/unity/" class="text-brand-gold underline">Unity Protocol page</a>.
+                    Updated White Paper forthcoming. The previous document has been removed; no download is available until the replacement is published.
                 </div>
             </div>
         </section>
@@ -223,7 +225,7 @@
                 
                 <div>
                     <h3 class="text-xl font-bold text-white mb-4 italic">1. The Universal Settlement Engine</h3>
-                    <p>Varis OS is no longer restricted to resort or hospitality logic. The <code class="bg-black/50 px-2 py-1 rounded text-brand-gold text-sm font-mono">UniversalSovereignSplitter</code> now acts as the underlying infrastructure for all global commerce. Whether processing transactions for luxury retail, food service, or corporate hospitality, the protocol automatically routes commercial fees to the 50/25/12.5/12.5 Asset-First Engine, ensuring uninterrupted GOLD accumulation regardless of the merchant sector.</p>
+                    <p>Varis OS is no longer restricted to resort or hospitality logic. The <code class="bg-black/50 px-2 py-1 rounded text-brand-gold text-sm font-mono">UniversalSovereignSplitter</code> now acts as the underlying infrastructure for all global commerce. Whether processing transactions for luxury retail, food service, or corporate hospitality, the protocol automatically routes 2/3 of commercial fees to permanent UNT supply burn and 1/3 to treasury (85% physical metals / 15% operations), with metal-specific fail-stops redirecting capped acquisition flows to the Null Address burn.</p>
                 </div>
 
                 <div>
@@ -251,8 +253,8 @@
                 </div>
 
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">5. UNT Network Equity & The 5-Metals Basket</h3>
-                    <p>While UGLD serves as the immutable pure GOLD peg, the UNT utility token functions as the broader network equity. UNT is fundamentally backed by the growing <strong class="text-brand-gold">5-Metals Basket</strong>. As total transaction volume scales globally, the Varis Protocol's 50% Asset-First fee split continuously fortifies this 5-Metals treasury. This mechanism mathematically increases the physical asset-backing per UNT token over time, providing a stabilizing counterbalance to naturally smooth and absorb the network's 40-year halving schedule.</p>
+                    <h3 class="text-xl font-bold text-white mb-4 italic">5. UNT Utility & Secondary Metals Bedrock</h3>
+                    <p>UGLD has a hard cap of 100,000,000 tokens backed by physical gold only: 500,000,000 grams at 5 grams per UGLD, modeled at 9.47% historical CAGR. At Month 153, the gold vault locks and 100% of overflow redirects to UNT Null Address burn. UNT is the utility and deflationary rail token with a separate <strong class="text-brand-gold">Secondary Metals Bedrock: Silver, Platinum, Palladium, and Copper</strong>. Its 70,000,000,000 genesis supply has a 35,000,000,000 target across the 25-year halving epoch. At Month 80, Copper caps at 5,000,000,000 grams and 100% of overflow redirects to UNT Null Address burn.</p>
                 </div>
             </div>
         </section>
@@ -260,14 +262,31 @@
         <section id="v3-addendum" class="glass-metal p-6 md:p-16 rounded-2xl md:rounded-3xl relative overflow-hidden border-t-8 border-brand-gold mb-24 text-slate-300 shadow-[0_0_30px_rgba(212,175,55,0.15)]">
             <div class="disclaimer-bar p-5 md:p-6 rounded-xl mb-10 md:mb-12 text-center">
                 <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Addendum In Development</h4>
-                <p class="text-slate-200 text-sm italic leading-relaxed font-medium">Addendum Version 3 is currently being worked out and will be updated.</p>
+                <p class="text-slate-200 text-sm italic leading-relaxed font-medium">The White Paper is being updated. The previous PDF has been removed. The revised document will be published on this page when ready.</p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX C: ADDENDUM VERSION 3</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">XDC Mainnet Verification</h2>
             <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Status: In Development | Update Pending</p>
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">Addendum Version 3 Placeholder</h3>
-                    <p>This addendum is currently being worked out and will be updated.</p>
+                <p id="xdc-status" role="status" aria-live="polite" class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">RPC Syncing · Chain 50</p>
+                <p id="xdc-note" class="text-sm text-slate-400">Genesis reference: 70,000,000,000 UNT. Live balances are pending RPC verification. Read-only: no wallet or transaction required.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl text-sm">
+                        <h3 class="text-white font-bold mb-4">UNT Smart Contract (XDC Network)</h3>
+                        <code class="text-xs text-brand-gold break-all">xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271</code>
+                        <div class="mt-4 flex flex-wrap gap-4"><button type="button" data-copy="xdcba20e18817b93894f4667b8f7c5d5d1ba94cf271" class="text-brand-gold underline">Copy address</button><a href="https://xdcscan.com/address/0xba20e18817b93894f4667b8f7c5d5d1ba94cf271" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">Verify on XDCScan</a></div>
+                    </div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl text-sm">
+                        <h3 class="text-white font-bold mb-4">Genesis Treasury (Cold Storage)</h3>
+                        <code class="text-xs text-brand-gold break-all">xdc33CE501714DEB68C56a7A27ad369de7B62846Cda</code>
+                        <div class="mt-4 flex flex-wrap gap-4"><button type="button" data-copy="xdc33CE501714DEB68C56a7A27ad369de7B62846Cda" class="text-brand-gold underline">Copy address</button><a href="https://xdcscan.com/address/0x33CE501714DEB68C56a7A27ad369de7B62846Cda" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">Verify on XDCScan</a></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-sm">
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Token name / symbol</h3><p><span id="token-name">Unity Protocol (genesis reference)</span> / <span id="token-symbol">UNT</span></p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Decimals</h3><p id="token-decimals">Awaiting RPC</p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">On-chain totalSupply()</h3><p id="token-supply">70,000,000,000 UNT · genesis reference</p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Dead address UNT balance</h3><p id="burn-dead">Awaiting RPC</p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Null address UNT balance</h3><p id="burn-null">Awaiting RPC</p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Genesis treasury UNT balance</h3><p id="treasury-balance">Awaiting RPC</p></div>
                 </div>
             </div>
         </section>
@@ -277,12 +296,21 @@
                 <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Addendum In Development</h4>
                 <p class="text-slate-200 text-sm italic leading-relaxed font-medium">Addendum Version 4 is currently being worked out and will be updated.</p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX D: ADDENDUM VERSION 4</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">Varis OS → XDC Settlement Sandbox</h2>
             <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Status: In Development | Update Pending</p>
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">Addendum Version 4 Placeholder</h3>
-                    <p>This addendum is currently being worked out and will be updated.</p>
+                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Illustrative simulation · No funds move</p>
+                <form id="settlement-form" class="space-y-6">
+                    <div class="flex flex-wrap gap-4"><button type="button" data-preset="142.50" class="px-4 py-2 bg-black/50 border border-brand-gold/40 rounded text-brand-gold text-sm">$142.50 Dinner Check</button><button type="button" data-preset="1850.00" class="px-4 py-2 bg-black/50 border border-brand-gold/40 rounded text-brand-gold text-sm">$1,850.00 Resort Folio</button><button type="button" data-preset="12400.00" class="px-4 py-2 bg-black/50 border border-brand-gold/40 rounded text-brand-gold text-sm">$12,400.00 Banquet</button></div>
+                    <div><label for="settlement-amount" class="block text-white text-sm mb-2">Custom check amount (USD)</label><input id="settlement-amount" name="amount" type="number" min="0.01" max="999999999.99" step="0.01" value="142.50" required class="w-full p-4 rounded bg-black/50 border border-white/10 text-brand-gold font-mono"></div>
+                    <div><label for="fee-tier" class="block text-white text-sm mb-2">Merchant fee: <output id="fee-label" for="fee-tier">2.00%</output> · 2.00% Launch → 1.25% Floor</label><input id="fee-tier" type="range" min="125" max="200" step="1" value="200" class="w-full accent-[#D4AF37]"></div>
+                    <button type="submit" id="simulate-settlement" class="px-6 py-4 border border-brand-gold/40 bg-brand-gold/5 text-brand-gold font-bold uppercase text-sm tracking-widest rounded">Simulate Instant XDC Settlement</button>
+                </form>
+                <p id="settlement-status" role="status" aria-live="polite" class="text-sm text-slate-400">Local simulation only. No wallet connection or on-chain transaction.</p>
+                <div id="settlement-result" hidden class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Legacy rail drain · 3.00%</h3><p id="legacy-fee" class="text-brand-gold font-mono"></p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">Varis OS merchant fee</h3><p id="varis-fee" class="text-brand-gold font-mono"></p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">2/3 Permanent UNT Supply Burn</h3><p id="burn-fee" class="text-brand-gold font-mono"></p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">1/3 Physical Metals Treasury · 85/15</h3><p id="treasury-fee" class="text-brand-gold font-mono"></p><p id="treasury-allocation" class="text-slate-400 mt-2"></p></div>
                 </div>
             </div>
         </section>
@@ -292,13 +320,16 @@
                 <h4 class="text-brand-gold font-black uppercase tracking-widest text-xs md:text-sm mb-2">⚠️ Addendum In Development</h4>
                 <p class="text-slate-200 text-sm italic leading-relaxed font-medium">Addendum Version 5 is currently being worked out and will be updated.</p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">APPENDIX E: ADDENDUM VERSION 5</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-10 md:mb-12 uppercase tracking-tighter italic leading-tight text-center md:text-left">25-Year Epoch &amp; Fail-Stop Scrubber</h2>
             <div class="space-y-10 md:space-y-12 text-base md:text-lg leading-relaxed font-medium">
-                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Status: In Development | Update Pending</p>
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4 italic">Addendum Version 5 Placeholder</h3>
-                    <p>This addendum is currently being worked out and will be updated.</p>
+                <p class="text-xs font-mono text-brand-gold uppercase tracking-[0.3em] text-center md:text-left">Model milestones · Not live vault balances</p>
+                <div><label for="epoch-month" class="block text-white mb-4">Month <output id="epoch-label" for="epoch-month">1</output> of 300</label><input id="epoch-month" type="range" min="1" max="300" step="1" value="1" class="w-full accent-[#D4AF37]"></div>
+                <div class="flex flex-wrap gap-4"><button type="button" data-month="80" class="px-4 py-2 border border-brand-gold/40 rounded text-brand-gold text-sm">Month 80 · Copper</button><button type="button" data-month="153" class="px-4 py-2 border border-brand-gold/40 rounded text-brand-gold text-sm">Month 153 · Gold</button><button type="button" data-month="300" class="px-4 py-2 border border-brand-gold/40 rounded text-brand-gold text-sm">Month 300 · Halving</button></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm" aria-live="polite">
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">UNT · Secondary Metals Bedrock</h3><p>Silver, Platinum, Palladium, and Copper. 70,000,000,000 genesis → 35,000,000,000 UNT 25-year target.</p><p id="epoch-supply" class="text-brand-gold font-mono mt-4">70,000,000,000 UNT</p><p id="copper-state" class="mt-4"></p><p id="copper-grams" class="text-slate-400 mt-2"></p></div>
+                    <div class="p-6 bg-black/50 border border-white/10 rounded-xl"><h3 class="text-white font-bold mb-2">UGLD · Physical Gold Only</h3><p>100,000,000 UGLD hard cap · 500,000,000 grams gold target · 5 grams per UGLD · 9.47% historical CAGR modeling assumption.</p><p id="gold-state" class="text-brand-gold mt-4"></p><p id="gold-grams" class="text-slate-400 mt-2"></p></div>
                 </div>
+                <p class="text-xs text-slate-400 leading-relaxed">Illustrative linear interpolation between model milestones, not an on-chain supply forecast or proof of physical reserves. At each cap, 100% of that metal's acquisition overflow redirects to the UNT Null Address burn.</p>
             </div>
         </section>
 
@@ -308,6 +339,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-white font-bold text-2xl tracking-[0.3em] uppercase mb-10">Powell Global LLC</div>
             <div class="space-y-6 md:space-y-8 max-w-5xl mx-auto">
+                <p class="text-slate-400 text-xs leading-relaxed"><strong>Pre-Audit Technical Specification &amp; Living Document Notice:</strong> This White Paper and accompanying protocol documentation constitute a pre-audit technical specification and living document subject to ongoing updates, parameter refinements, and revisions prior to the completion of formal third-party smart contract and security audits. All architectural descriptions, tokenomics models, and economic simulations are provided strictly for informational and technical evaluation purposes only and do not constitute an offer to sell, a solicitation of an offer to buy, a prospectus, financial advice, or a legally binding commitment by Powell Global LLC.</p>
                 <p class="text-slate-100 text-[11px] md:text-xs leading-relaxed">
                     <strong>Regulatory Disclosure:</strong> Powell Global LLC operates in strict alignment with the Colorado Digital Token Act (SB 19-023) and EU MiCA financial standards. The Unity Protocol (UNT) is strictly classified as a utility token designed for network governance, hardware financing, and gas fees. It is <span class="text-white border-b border-brand-gold">NOT an investment contract or a security</span>. Any reference to asset-backing refers to the underlying settlement value of UGLD Digital Warehouse Receipts.
                 </p>
