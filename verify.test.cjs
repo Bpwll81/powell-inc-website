@@ -153,3 +153,15 @@ test('RPC verification checks chain 50, reads all fields, and fails over without
     assert.deepEqual(closed, attempted);
     await assert.rejects(demo.liveSnapshot(lib, ['offline']), /RPC Syncing/);
 });
+test('reserve diagram pairs five periodic elements with exactly two token cards', () => {
+    const html = read('unity/index.html');
+    const reserve = html.match(/<section\b[\s\S]*?<\/section>/)[0];
+    assert.deepEqual([...reserve.matchAll(/data-element="([^"]+)"/g)].map(m => m[1]), ['Ag', 'Pt', 'Pd', 'Cu', 'Au']);
+    assert.deepEqual([...reserve.matchAll(/class="atomic-number">(\d+)/g)].map(m => m[1]), ['47', '78', '46', '29', '79']);
+    assert.equal((reserve.match(/<article class="reserve-token /g) || []).length, 2);
+    assert.match(reserve, /5B g Cap · Month 80 Fail-Stop/);
+    assert.match(reserve, /Overflow → UNT Null burn/);
+    assert.match(reserve, /Full vaulting thresholds, audit intervals, and fail-stop mechanics are detailed in the White Paper\./);
+    assert.doesNotMatch(reserve, /500M g|500,000,000/);
+    assert.match(html, /grid-template-columns: repeat\(5, minmax\(0, 1fr\)\)/);
+});

@@ -14,4 +14,5 @@
 - Demo code is transparency/demo.js. Settlement and epoch outputs are simulations, separate from live token balances. No wallet connection or transaction sending is permitted.
 - Tests include cent-conserving settlement arithmetic, epoch boundaries, navigation exclusion, White Paper removal, and mocked RPC failover. Browser QA verified successful live reads and forced-offline fallback without console errors.
 - The owner confirmed main as the production push target. Obtain explicit authorization before future deployment pushes.
+- Unity's reserve diagram uses scoped .reserve-* styles and a width-observing equal-height card adjustment in unity/index.html. Verify tile/card geometry and overflow at 1440, 1280, 768, 390, and 320px. Capture a desktop section screenshot and obtain visual approval before pushing reserve layout changes.
 - Video production is separately paused in C:/Users/livin/OneDrive/Desktop/Pitch Docs. Five v4 chunks and the production state JSON are saved; final video QA and staging must not resume until requested.
